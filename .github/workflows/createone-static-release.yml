@@ -1,4 +1,4 @@
-name: Windows release
+name: Static release
 
 env:
   VITE_VERCEL_ENV: production
@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
     inputs:
       tag_name:
-        description: 'Release tag to create or update, for example v2026.1.4-windows'
+        description: 'Release tag to create or update, for example v2026.1.4'
         required: true
         type: string
       prerelease:
@@ -24,33 +24,34 @@ permissions:
 
 jobs:
   build-release:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.0
 
       - name: Set release metadata
-        shell: pwsh
+        shell: bash
         run: |
-          $tagName = '${{ github.ref_name }}'
-          $prerelease = 'false'
+          tag_name='${{ github.ref_name }}'
+          prerelease='false'
 
-          if ('${{ github.event_name }}' -eq 'workflow_dispatch') {
-            $tagName = '${{ inputs.tag_name }}'
-            $prerelease = '${{ inputs.prerelease }}'
-          }
+          if [ '${{ github.event_name }}' = 'workflow_dispatch' ]; then
+            tag_name='${{ inputs.tag_name }}'
+            prerelease='${{ inputs.prerelease }}'
+          fi
 
-          if (-not $tagName) {
-            throw 'A release tag is required.'
-          }
+          if [ -z "$tag_name" ]; then
+            echo 'A release tag is required.' >&2
+            exit 1
+          fi
 
-          $releaseVersion = $tagName -replace '^v', ''
-          $safeVersion = $releaseVersion -replace '[^A-Za-z0-9._-]', '-'
+          release_version="${tag_name#v}"
+          safe_version="$(printf '%s' "$release_version" | tr -c 'A-Za-z0-9._-' '-')"
 
-          "TAG_NAME=$tagName" >> $env:GITHUB_ENV
-          "RELEASE_VERSION=$safeVersion" >> $env:GITHUB_ENV
-          "RELEASE_ASSET_NAME=it-tools-$safeVersion-windows.zip" >> $env:GITHUB_ENV
-          "PRERELEASE=$prerelease" >> $env:GITHUB_ENV
+          echo "TAG_NAME=$tag_name" >> "$GITHUB_ENV"
+          echo "RELEASE_VERSION=$safe_version" >> "$GITHUB_ENV"
+          echo "RELEASE_ASSET_NAME=it-tools-$safe_version-static.tar.zst" >> "$GITHUB_ENV"
+          echo "PRERELEASE=$prerelease" >> "$GITHUB_ENV"
 
       - name: Install pnpm
         uses: pnpm/action-setup@v6.0.9
@@ -67,12 +68,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --ignore-scripts
 
-      - name: Build Windows app
-        run: pnpm build:win
+      - name: Build static app
+        run: pnpm build
 
-      - name: Zip Windows build
-        shell: pwsh
-        run: Compress-Archive -Path 'dist\*' -DestinationPath $env:RELEASE_ASSET_NAME -Force
+      - name: Create tar.zst archive
+        run: tar --zstd -cf "$RELEASE_ASSET_NAME" -C dist .
 
       - name: Create GitHub release
         uses: softprops/action-gh-release@v3.0.1
@@ -84,8 +84,7 @@ jobs:
           draft: false
           prerelease: ${{ env.PRERELEASE == 'true' }}
           body: |
-            ## Windows build
+            ## Static web build
 
-            - Built on `windows-latest`
-            - Build command: `pnpm build:win`
+            - Build command: `pnpm build`
             - Asset: `${{ env.RELEASE_ASSET_NAME }}`

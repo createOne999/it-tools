@@ -10,11 +10,25 @@ If the container needs to listen to IPv6, it needs to be enabled: https://server
 
 **To build this project**, you need around **16GB** (as it builds on Github workers). Below, you will get some `out of memory` or `node allocation failed`.
 
+> [!WARNING]
+> Some maintenance changes in this fork were AI-assisted, then reviewed and validated with lint, typecheck, and production builds.
+
+## Fork status
+
+This repository is the `createOne999/it-tools` fork. It is based on the `sharevb/it-tools` upstream fork, which itself is based on the original `CorentinTh/it-tools` project.
+
+Fork-specific references to use when publishing from this repository:
+- GitHub Pages: `https://createone999.github.io/it-tools/`
+- Source repository: `https://github.com/createOne999/it-tools.git`
+- Pages workflow: `.github/workflows/createone-pages.yml`
+- Static release workflow: `.github/workflows/createone-static-release.yml`
+- Container image examples still point to `sharevb/it-tools` until this fork publishes its own Docker images.
+
 ## PR Welcome
 
 Especially for UI improvements and translation. And for anything else.
 
-Want to support this fork of IT Tools: [Buy me a coffee](https://www.buymeacoffee.com/sharevb)
+Want to support the upstream fork of IT Tools: [Buy me a coffee](https://www.buymeacoffee.com/sharevb)
 
 ## HTTPS is recommended
 
@@ -29,11 +43,11 @@ Some docs about DNS Challenge:
 
 Related doc for CyberPanel: https://community.cyberpanel.net/t/reverse-proxy-traffic-to-docker-container-on-cyberpanel/30644
 
-### Check out these change here: <https://sharevb-it-tools.vercel.app/> or <https://sharevb.github.io/it-tools/>
+### Check out this fork here: <https://createone999.github.io/it-tools/>
 
-You can use my image in your docker-compose/quadlet file if you want an up-to-date version of it-tools (with my PR and some of others) until the main branch has been updated.
+You can use the upstream fork image in your docker-compose/quadlet file if you want an up-to-date version of it-tools with upstream PRs and customizations until the main branch has been updated.
 
-- github action triggers on every push to this branch - [view package here](https://github.com/sharevb/it-tools/pkgs/container/it-tools)
+- The upstream fork GitHub action triggers on every push to its branch - [view package here](https://github.com/sharevb/it-tools/pkgs/container/it-tools)
 
 (Thanks to [gitmotion](https://github.com/gitmotion/it-tools) for this model of README fork)
 
@@ -49,13 +63,11 @@ Use of WSL2 is recommended to develop using VSCode on Windows. Direct developmen
 
 ## Added features
 
-- Almost [all tools PR, 192 of mine, of original it-tools](https://github.com/CorentinTh/it-tools/pulls)
-- 95% of [issues if original it-tools](https://github.com/CorentinTh/it-tools/issues)
+- Almost all tool PRs from the [original IT Tools project](https://github.com/CorentinTh/it-tools/pulls)
+- Many issue fixes from the [original IT Tools project](https://github.com/CorentinTh/it-tools/issues)
 - Full UI translation in many language (Google Translated)
-- Many [new tools](https://sharevb-it-tools.vercel.app/about)
 - Many bug fixes and enhancements
 - Many customizations (Docker version), see below
-- AI-assisted maintenance changes, reviewed and validated with lint/typecheck/build.
 - Reduced startup downloads by limiting PWA precaching and lazy-loading locale data.
 - Added a Windows-friendly production build command: `pnpm build:win`.
 
@@ -323,6 +335,8 @@ On native Windows, use:
 ```sh
 pnpm build:win
 ```
+
+Static release archives are built by `.github/workflows/createone-static-release.yml` as `.tar.zst` files.
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
