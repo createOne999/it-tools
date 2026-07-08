@@ -1,0 +1,91 @@
+name: Windows release
+
+env:
+  VITE_VERCEL_ENV: production
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Release tag to create or update, for example v2026.1.4-windows'
+        required: true
+        type: string
+      prerelease:
+        description: 'Mark the GitHub release as a prerelease'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.0
+
+      - name: Set release metadata
+        shell: pwsh
+        run: |
+          $tagName = '${{ github.ref_name }}'
+          $prerelease = 'false'
+
+          if ('${{ github.event_name }}' -eq 'workflow_dispatch') {
+            $tagName = '${{ inputs.tag_name }}'
+            $prerelease = '${{ inputs.prerelease }}'
+          }
+
+          if (-not $tagName) {
+            throw 'A release tag is required.'
+          }
+
+          $releaseVersion = $tagName -replace '^v', ''
+          $safeVersion = $releaseVersion -replace '[^A-Za-z0-9._-]', '-'
+
+          "TAG_NAME=$tagName" >> $env:GITHUB_ENV
+          "RELEASE_VERSION=$safeVersion" >> $env:GITHUB_ENV
+          "RELEASE_ASSET_NAME=it-tools-$safeVersion-windows.zip" >> $env:GITHUB_ENV
+          "PRERELEASE=$prerelease" >> $env:GITHUB_ENV
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6.0.9
+        with:
+          version: 11.10.0
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v6.4.0
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --ignore-scripts
+
+      - name: Build Windows app
+        run: pnpm build:win
+
+      - name: Zip Windows build
+        shell: pwsh
+        run: Compress-Archive -Path 'dist\*' -DestinationPath $env:RELEASE_ASSET_NAME -Force
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v3.0.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: ${{ env.RELEASE_ASSET_NAME }}
+          tag_name: ${{ env.TAG_NAME }}
+          target_commitish: ${{ github.sha }}
+          draft: false
+          prerelease: ${{ env.PRERELEASE == 'true' }}
+          body: |
+            ## Windows build
+
+            - Built on `windows-latest`
+            - Build command: `pnpm build:win`
+            - Asset: `${{ env.RELEASE_ASSET_NAME }}`
