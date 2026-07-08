@@ -23,6 +23,19 @@ import { visualizer } from 'rollup-plugin-visualizer';
 
 const baseUrl = process.env.BASE_URL || '/';
 
+function isCacheableStaticAsset({ sameOrigin, url }: { sameOrigin: boolean; url: URL }) {
+  if (!sameOrigin) {
+    return false;
+  }
+
+  const { pathname } = url;
+  if (/\/(?:sw|workbox-[^/]+)\.js$/.test(pathname) || pathname.endsWith('/manifest.webmanifest')) {
+    return false;
+  }
+
+  return /\.(?:js|mjs|css|wasm|png|jpe?g|gif|svg|ico|webp|avif|mp3|flf|woff2?|ttf|otf)$/i.test(pathname);
+}
+
 const VITE_AVAILABLE_LOCALES = process.env.VITE_AVAILABLE_LOCALES;
 console.log(`Building for locales: ${VITE_AVAILABLE_LOCALES}`);
 
@@ -78,7 +91,24 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
-        globPatterns: (process.env.VITE_VERCEL_DEPLOY ? ['**\/*.{css,html}'] : ['**\/*.{js,wasm,css,html}']),
+        globPatterns: ['index.html'],
+        cleanupOutdatedCaches: true,
+        runtimeCaching: [
+          {
+            urlPattern: isCacheableStaticAsset,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'it-tools-static-assets',
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+              expiration: {
+                maxAgeSeconds: 30 * 24 * 60 * 60,
+                maxEntries: 2000,
+              },
+            },
+          },
+        ],
         maximumFileSizeToCacheInBytes: 25 * 1024 ** 2,
       },
       strategies: 'generateSW',
