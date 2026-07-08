@@ -1,5 +1,5 @@
 import { type MaybeRef, get } from '@vueuse/core';
-import { type Ref, computed, ref } from 'vue';
+import { computed, shallowRef } from 'vue';
 import FlexSearch from 'flexsearch';
 
 // Define key types to match Fuse.js format
@@ -66,8 +66,10 @@ export function useFlexSearch<Data extends Record<string, any>>({
   // Helper to get unique key for each item (prefer 'id', fallback to index)
   const getItemKey = (item: Data, idx: number) => (item.id !== undefined ? item.id : idx);
 
-  // Map to store original data items by unique key
-  const dataMap = ref(new Map<any, Data>()) as Ref<Map<any, Data>>;
+  // Keep the index data outside Vue reactivity; mutating a large Map creates many devtools events otherwise.
+  const dataMap = new Map<any, Data>();
+  const isIndexReady = shallowRef(false);
+  let initializationPromise: Promise<void> | null = null;
 
   // Create separate indices for each key with weight info
   const indices = normalizedKeys.map(({ name, weight }) => ({
@@ -86,7 +88,7 @@ export function useFlexSearch<Data extends Record<string, any>>({
 
   // Initialize indices with data
   const initializeIndices = async () => {
-    dataMap.value.clear();
+    dataMap.clear();
     indices.forEach(({ index }) => index.clear());
 
     // Pre-calculate all the values to avoid repeated nested property access
@@ -106,7 +108,7 @@ export function useFlexSearch<Data extends Record<string, any>>({
 
     // Batch add to dataMap
     itemData.forEach(({ itemKey, item }) => {
-      dataMap.value.set(itemKey, item);
+      dataMap.set(itemKey, item);
     });
 
     // Process indices sequentially to avoid event loop flooding
@@ -132,10 +134,40 @@ export function useFlexSearch<Data extends Record<string, any>>({
         });
       }
     }
+
+    isIndexReady.value = true;
   };
 
-  // Initialize on creation
-  initializeIndices();
+  function ensureIndexInitialized() {
+    if (!initializationPromise) {
+      initializationPromise = initializeIndices();
+    }
+    return initializationPromise;
+  }
+
+  function scheduleIndexInitialization() {
+    if (typeof window === 'undefined') {
+      void ensureIndexInitialized();
+      return;
+    }
+
+    const requestIdleCallback = (window as Window & {
+      requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
+    }).requestIdleCallback;
+
+    if (requestIdleCallback) {
+      requestIdleCallback(() => {
+        void ensureIndexInitialized();
+      }, { timeout: 3000 });
+      return;
+    }
+
+    window.setTimeout(() => {
+      void ensureIndexInitialized();
+    }, 0);
+  }
+
+  scheduleIndexInitialization();
 
   // Function to search across all indices with weight consideration
   const searchAllIndices = (query: string, searchLimit: number) => {
@@ -180,7 +212,7 @@ export function useFlexSearch<Data extends Record<string, any>>({
     // If shouldn't be sorted by similarity, apply limit here and return early
     if (!shouldSort) {
       const limitedIds = searchLimit > 0 ? sortedIds.slice(0, searchLimit) : sortedIds;
-      return limitedIds.map((id) => dataMap.value.get(id)).filter(Boolean) as Data[];
+      return limitedIds.map((id) => dataMap.get(id)).filter(Boolean) as Data[];
     }
 
     // Calculate Levenshtein distance
@@ -224,7 +256,7 @@ export function useFlexSearch<Data extends Record<string, any>>({
     // Sort ALL results by similarity score, then apply limit at the end
     const sortedResults = sortedIds
       .map((id) => {
-        const item = dataMap.value.get(id);
+        const item = dataMap.get(id);
         if (!item) {
           return null;
         }
@@ -277,6 +309,11 @@ export function useFlexSearch<Data extends Record<string, any>>({
     }
 
     if (!query) {
+      return [];
+    }
+
+    if (!isIndexReady.value) {
+      void ensureIndexInitialized();
       return [];
     }
 

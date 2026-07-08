@@ -24,6 +24,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && . ./set_node_mem.sh && vite build",
+    "build:win": "vue-tsc --noEmit && node scripts/build-win.mjs",
     "preview": "vite preview --port 5050",
     "test": "TZ=UTC npm run test:unit",
     "test:unit": "TZ=UTC . ./set_node_mem.sh && vitest --environment jsdom",

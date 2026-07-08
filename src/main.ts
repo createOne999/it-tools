@@ -34,7 +34,29 @@ installAbortSignalPolyfill();
 
 library.add(fas);
 
-registerSW();
+function registerServiceWorkerWhenIdle() {
+  const register = () => {
+    const requestIdleCallback = (window as Window & {
+      requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
+    }).requestIdleCallback;
+
+    if (requestIdleCallback) {
+      requestIdleCallback(() => registerSW(), { timeout: 5000 });
+      return;
+    }
+
+    window.setTimeout(() => registerSW(), 0);
+  };
+
+  if (document.readyState === 'complete') {
+    register();
+    return;
+  }
+
+  window.addEventListener('load', register, { once: true });
+}
+
+registerServiceWorkerWhenIdle();
 
 const app = createApp(App);
 

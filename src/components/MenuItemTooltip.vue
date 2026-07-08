@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
-import { nextTick, onMounted, onUnmounted, ref } from 'vue';
+import { nextTick, onMounted, ref } from 'vue';
 import type { Tool } from '@/tools/tools.types';
 
 defineProps<{
@@ -9,7 +9,6 @@ defineProps<{
 
 const textRef = ref<HTMLElement>();
 const showTooltip = ref(false);
-let resizeTimeout: ReturnType<typeof setTimeout> | null = null;
 
 async function checkTruncation() {
   await nextTick();
@@ -33,24 +32,8 @@ async function checkTruncation() {
   }
 }
 
-function debouncedCheckTruncation() {
-  if (resizeTimeout) {
-    clearTimeout(resizeTimeout);
-  }
-  // Prevent the truncation check from running too frequently when the window is resized
-  resizeTimeout = setTimeout(checkTruncation, 500);
-}
-
 onMounted(() => {
   checkTruncation();
-  window.addEventListener('resize', debouncedCheckTruncation);
-});
-
-onUnmounted(() => {
-  if (resizeTimeout) {
-    clearTimeout(resizeTimeout);
-  }
-  window.removeEventListener('resize', debouncedCheckTruncation);
 });
 </script>
 

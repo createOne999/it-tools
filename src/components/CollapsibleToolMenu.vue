@@ -48,7 +48,7 @@ const isToggling = ref(false);
 const menuContainerRefs = ref<Record<string, HTMLElement>>({});
 
 function toggleCategoryCollapse({ name }: { name: string }) {
-  collapsedCategories.value[name] = !collapsedCategories.value[name];
+  collapsedCategories.value[name] = collapsedCategories.value[name] !== false ? false : true;
 }
 
 const areAllCollapsed = computed(() => {
@@ -91,17 +91,21 @@ function isCategoryActive(components: Tool[]): boolean {
 }
 
 const menuOptions = computed(() =>
-  toolsByCategory.value.map(({ name, components }) => ({
-    name,
-    isCollapsed: collapsedCategories.value[name],
-    isActive: isCategoryActive(components),
-    animationDuration: getAnimationDuration(components.length),
-    tools: components.map(tool => ({
-      label: makeLabel(tool),
-      icon: makeIcon(tool),
-      key: tool.path,
-    })),
-  })),
+  toolsByCategory.value.map(({ name, components }) => {
+    const isCollapsed = collapsedCategories.value[name] !== false;
+
+    return {
+      name,
+      isCollapsed,
+      isActive: isCategoryActive(components),
+      animationDuration: getAnimationDuration(components.length),
+      tools: isCollapsed ? [] : components.map(tool => ({
+        label: makeLabel(tool),
+        icon: makeIcon(tool),
+        key: tool.path,
+      })),
+    };
+  }),
 );
 
 async function scrollToActiveItem() {
@@ -176,6 +180,7 @@ const themeVars = useThemeVars();
         <div class="toggle-bar" @click="toggleCategoryCollapse({ name })" />
 
         <n-menu
+          v-if="!isCollapsed"
           class="menu"
           :value="route.path"
           :collapsed-width="64"
