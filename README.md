@@ -55,6 +55,9 @@ Use of WSL2 is recommended to develop using VSCode on Windows. Direct developmen
 - Many [new tools](https://sharevb-it-tools.vercel.app/about)
 - Many bug fixes and enhancements
 - Many customizations (Docker version), see below
+- AI-assisted maintenance changes, reviewed and validated with lint/typecheck/build.
+- Reduced startup downloads by limiting PWA precaching and lazy-loading locale data.
+- Added a Windows-friendly production build command: `pnpm build:win`.
 
 ## Container images
 
@@ -313,6 +316,12 @@ pnpm dev
 
 ```sh
 pnpm build
+```
+
+On native Windows, use:
+
+```sh
+pnpm build:win
 ```
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)

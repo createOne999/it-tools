@@ -2,7 +2,14 @@ import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import { createHead } from '@vueuse/head';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCirclePause,
+  faCirclePlay,
+  faComputer,
+  faMugHot,
+  faPersonWalking,
+  faVolumeHigh,
+} from '@fortawesome/free-solid-svg-icons';
 import { LoadingPlugin } from 'vue-loading-overlay';
 
 import { installAbortSignalPolyfill } from 'abort-signal-polyfill';
@@ -20,7 +27,7 @@ import { naive } from './plugins/naive.plugin';
 
 import App from './App.vue';
 import router from './router';
-import { i18nPlugin } from './plugins/i18n.plugin';
+import { getCurrentLocale, i18nPlugin, setLocale } from './plugins/i18n.plugin';
 
 import store from './tools/pomodoro-timer/app/store';
 
@@ -32,13 +39,15 @@ window.addEventListener('vite:preloadError', (event: Event) => {
 
 installAbortSignalPolyfill();
 
-library.add(fas);
+library.add(faCirclePause, faCirclePlay, faComputer, faMugHot, faPersonWalking, faVolumeHigh);
 
 function registerServiceWorkerWhenIdle() {
   const register = () => {
-    const requestIdleCallback = (window as Window & {
-      requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
-    }).requestIdleCallback;
+    const requestIdleCallback = (
+      window as Window & {
+        requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
+      }
+    ).requestIdleCallback;
 
     if (requestIdleCallback) {
       requestIdleCallback(() => registerSW(), { timeout: 5000 });
@@ -67,9 +76,12 @@ try {
   if (remoteSettingsResponse.ok) {
     toolsSettings = (await remoteSettingsResponse.json()) as Record<string, Record<string, any> | any>;
   }
-}
-catch {}
+} catch {}
 app.config.globalProperties.$itToolsSettings = toolsSettings;
+
+const configuredLocale = String(toolsSettings.default_locale || getCurrentLocale());
+const storedLocale = window.localStorage.getItem('locale');
+await setLocale(storedLocale || configuredLocale);
 
 app.use(LoadingPlugin);
 app.use(createPinia());

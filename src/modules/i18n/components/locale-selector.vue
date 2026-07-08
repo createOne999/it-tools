@@ -1,5 +1,13 @@
 <script setup lang="ts">
-const { availableLocales, locale, t } = useI18n();
+import { availableLocales as supportedLocales, setLocale } from '@/plugins/i18n.plugin';
+
+const { locale, t } = useI18n();
+const selectedLocale = computed({
+  get: () => locale.value,
+  set: (value: string) => {
+    void setLocale(value);
+  },
+});
 
 const localesLong: Record<string, string> = {
   en: 'English',
@@ -24,7 +32,7 @@ const localesLong: Record<string, string> = {
 };
 
 const localeOptions = computed(() =>
-  availableLocales.map(locale => ({
+  supportedLocales.map((locale) => ({
     label: localesLong[locale] ?? locale,
     value: locale,
   })),
@@ -33,7 +41,7 @@ const localeOptions = computed(() =>
 
 <template>
   <c-select
-    v-model:value="locale"
+    v-model:value="selectedLocale"
     :options="localeOptions"
     :placeholder="t('locale-selector.select-a-language')"
     w-100px

@@ -4,7 +4,7 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills';
 import wasm from 'vite-plugin-wasm';
 import { splashScreen } from 'vite-plugin-splash-screen';
 
-import { defineConfig } from 'vite';
+import { defineConfig, type PluginOption } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import markdown from 'unplugin-vue-markdown/vite';
@@ -20,37 +20,23 @@ import IconsResolver from 'unplugin-icons/resolver';
 import VueI18n from '@intlify/unplugin-vue-i18n/vite';
 
 import { visualizer } from 'rollup-plugin-visualizer';
+import { itToolsLocalesPlugin } from './vite.config.locales.js';
 
 const baseUrl = process.env.BASE_URL || '/';
-
-function isCacheableStaticAsset({ sameOrigin, url }: { sameOrigin: boolean; url: URL }) {
-  if (!sameOrigin) {
-    return false;
-  }
-
-  const { pathname } = url;
-  if (/\/(?:sw|workbox-[^/]+)\.js$/.test(pathname) || pathname.endsWith('/manifest.webmanifest')) {
-    return false;
-  }
-
-  return /\.(?:js|mjs|css|wasm|png|jpe?g|gif|svg|ico|webp|avif|mp3|flf|woff2?|ttf|otf)$/i.test(pathname);
-}
 
 const VITE_AVAILABLE_LOCALES = process.env.VITE_AVAILABLE_LOCALES;
 console.log(`Building for locales: ${VITE_AVAILABLE_LOCALES}`);
 
-let includeLocales = [
-  resolve(__dirname, 'locales/en.yml'),
-];
+const wasmPlugin = wasm as unknown as () => PluginOption;
+
+let includeLocales = [resolve(__dirname, 'locales/en.yml')];
 if (!process.env.VITEST) {
   if (!VITE_AVAILABLE_LOCALES || VITE_AVAILABLE_LOCALES === '*' || VITE_AVAILABLE_LOCALES === 'all') {
-    includeLocales = [
-      resolve(__dirname, 'src/tools/*/locales/**'),
-      resolve(__dirname, 'locales/**'),
-    ];
-  }
-  else {
-    const fileNameMatching = VITE_AVAILABLE_LOCALES.includes(',') ? `{${VITE_AVAILABLE_LOCALES}}` : VITE_AVAILABLE_LOCALES;
+    includeLocales = [resolve(__dirname, 'src/tools/*/locales/**'), resolve(__dirname, 'locales/**')];
+  } else {
+    const fileNameMatching = VITE_AVAILABLE_LOCALES.includes(',')
+      ? `{${VITE_AVAILABLE_LOCALES}}`
+      : VITE_AVAILABLE_LOCALES;
     includeLocales = [
       resolve(__dirname, `src/tools/*/locales/${fileNameMatching}.*`),
       resolve(__dirname, `locales/${fileNameMatching}.*`),
@@ -61,6 +47,11 @@ if (!process.env.VITEST) {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    itToolsLocalesPlugin({
+      root: __dirname,
+      availableLocales: VITE_AVAILABLE_LOCALES,
+      isVitest: Boolean(process.env.VITEST),
+    }),
     VueI18n({
       runtimeOnly: true,
       compositionOnly: true,
@@ -86,30 +77,27 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/],
     }),
     vueJsx(),
-    markdown(),
+    markdown({}),
     svgLoader(),
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
-        globPatterns: ['index.html'],
+        globPatterns: ['**\/*.{css,html,ico,png,svg,webmanifest}'],
         cleanupOutdatedCaches: true,
+        maximumFileSizeToCacheInBytes: 25 * 1024 ** 2,
         runtimeCaching: [
           {
-            urlPattern: isCacheableStaticAsset,
+            urlPattern: /.*\.(?:js|css|wasm)$/,
             handler: 'CacheFirst',
             options: {
-              cacheName: 'it-tools-static-assets',
-              cacheableResponse: {
-                statuses: [0, 200],
-              },
+              cacheName: 'it-tools-runtime-assets',
               expiration: {
+                maxEntries: 200,
                 maxAgeSeconds: 30 * 24 * 60 * 60,
-                maxEntries: 2000,
               },
             },
           },
         ],
-        maximumFileSizeToCacheInBytes: 25 * 1024 ** 2,
       },
       strategies: 'generateSW',
       manifest: {
@@ -157,7 +145,7 @@ export default defineConfig({
     }),
     Unocss(),
     nodePolyfills(),
-    wasm(),
+    wasmPlugin(),
     splashScreen({
       logoSrc: 'logo.svg',
       splashBg: '#383838',
@@ -170,12 +158,14 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       'node:fs/promises': fileURLToPath(new URL('./src/_empty.ts', import.meta.url)),
       'node:fs': fileURLToPath(new URL('./src/_empty.ts', import.meta.url)),
-      'fs': fileURLToPath(new URL('./src/_empty.ts', import.meta.url)),
+      fs: fileURLToPath(new URL('./src/_empty.ts', import.meta.url)),
       '@babel/core': fileURLToPath(new URL('./src/_empty.ts', import.meta.url)),
       'isolated-vm': fileURLToPath(new URL('./src/_empty.ts', import.meta.url)),
       'onnxruntime-node': fileURLToPath(new URL('./src/_empty.ts', import.meta.url)),
       'unpdf/pdfjs': fileURLToPath(new URL('./src/_empty.ts', import.meta.url)),
-      'webcrypto-liner-shim': !process.env.VERCEL ? 'webcrypto-liner-shim' : fileURLToPath(new URL('./src/_empty.ts', import.meta.url)),
+      'webcrypto-liner-shim': !process.env.VERCEL
+        ? 'webcrypto-liner-shim'
+        : fileURLToPath(new URL('./src/_empty.ts', import.meta.url)),
     },
   },
   define: {
@@ -204,7 +194,16 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['isolated-vm', '@lezer/highlight', 'pdfjs-dist', 'onnxruntime-node', 'onnxruntime-web', 'unpdf', 'unpdf/pdfjs', ...(process.env.VERCEL ? ['webcrypto-liner-shim'] : [])], // optionally specify dependency name
+    include: [
+      'isolated-vm',
+      '@lezer/highlight',
+      'pdfjs-dist',
+      'onnxruntime-node',
+      'onnxruntime-web',
+      'unpdf',
+      'unpdf/pdfjs',
+      ...(process.env.VERCEL ? ['webcrypto-liner-shim'] : []),
+    ], // optionally specify dependency name
   },
   // server: {
   // headers: {
