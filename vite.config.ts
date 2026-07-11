@@ -2,9 +2,8 @@ import { URL, fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 import wasm from 'vite-plugin-wasm';
-import { splashScreen } from 'vite-plugin-splash-screen';
 
-import { defineConfig, type PluginOption } from 'vite';
+import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import markdown from 'unplugin-vue-markdown/vite';
@@ -27,9 +26,7 @@ const baseUrl = process.env.BASE_URL || '/';
 const VITE_AVAILABLE_LOCALES = process.env.VITE_AVAILABLE_LOCALES;
 console.log(`Building for locales: ${VITE_AVAILABLE_LOCALES}`);
 
-const wasmPlugin = wasm as unknown as () => PluginOption;
-
-let includeLocales = [resolve(__dirname, 'locales/en.yml')];
+let includeLocales = [resolve(__dirname, 'src/tools/*/locales/en.yml'), resolve(__dirname, 'locales/en.yml')];
 if (!process.env.VITEST) {
   if (!VITE_AVAILABLE_LOCALES || VITE_AVAILABLE_LOCALES === '*' || VITE_AVAILABLE_LOCALES === 'all') {
     includeLocales = [resolve(__dirname, 'src/tools/*/locales/**'), resolve(__dirname, 'locales/**')];
@@ -82,19 +79,33 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
-        globPatterns: ['**\/*.{css,html,ico,png,svg,webmanifest}'],
+        // Precache the app shell and PWA assets. Hashed scripts, workers and WASM
+        // are cached on demand unless full precaching is explicitly requested.
+        globPatterns:
+          process.env.VITE_PWA_FULL_PRECACHE === 'true' && !process.env.VITE_VERCEL_DEPLOY
+            ? ['**\/*.{js,wasm,css,html,ico,png,svg,webmanifest}']
+            : ['**\/*.{css,html,ico,png,svg,webmanifest}'],
         cleanupOutdatedCaches: true,
         maximumFileSizeToCacheInBytes: 25 * 1024 ** 2,
+        navigateFallback: `${baseUrl}index.html`,
         runtimeCaching: [
           {
-            urlPattern: /.*\.(?:js|css|wasm)$/,
+            urlPattern: ({ sameOrigin, request }) =>
+              sameOrigin && (request.destination === 'script' || request.destination === 'worker'),
             handler: 'CacheFirst',
             options: {
-              cacheName: 'it-tools-runtime-assets',
-              expiration: {
-                maxEntries: 200,
-                maxAgeSeconds: 30 * 24 * 60 * 60,
-              },
+              cacheName: 'app-chunks',
+              expiration: { maxEntries: 2000, maxAgeSeconds: 60 * 60 * 24 * 30 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            urlPattern: ({ sameOrigin, url }) => sameOrigin && url.pathname.endsWith('.wasm'),
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'app-wasm',
+              expiration: { maxEntries: 30, maxAgeSeconds: 60 * 60 * 24 * 30 },
+              cacheableResponse: { statuses: [0, 200] },
             },
           },
         ],
@@ -145,11 +156,7 @@ export default defineConfig({
     }),
     Unocss(),
     nodePolyfills(),
-    wasmPlugin(),
-    splashScreen({
-      logoSrc: 'logo.svg',
-      splashBg: '#383838',
-    }),
+    wasm(),
     visualizer(),
   ],
   base: baseUrl,
@@ -190,6 +197,20 @@ export default defineConfig({
       external: ['regex', './out/isolated_vm', 'isolated-vm', 'onnxruntime-node', 'unpdf/pdfjs'],
       output: {
         format: 'es',
+        advancedChunks: {
+          // Tool icons are loaded through per-icon dynamic imports (see src/tools/*/index.ts);
+          // merge them into a single lazy chunk instead of ~450 tiny ones.
+          // includeDependenciesRecursively must stay off: with it, shared helper modules
+          // get captured into this chunk and entry chunks end up statically importing it,
+          // which drags the whole icon set back into the startup payload.
+          groups: [
+            {
+              name: 'tool-icons',
+              test: /node_modules[\\/](?:@vicons[\\/]|@tabler[\\/]icons-vue[\\/]dist[\\/]esm[\\/]icons[\\/])/,
+              includeDependenciesRecursively: false,
+            },
+          ],
+        },
       },
     },
   },

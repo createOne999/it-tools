@@ -20,6 +20,7 @@ import { titleCase } from 'title-case';
 import InputCopyable from '../../components/InputCopyable.vue';
 import { useQueryParam, useQueryParamOrStorage } from '@/composable/queryParams';
 import { useValidation } from '@/composable/validation';
+import { getSupportedLanguages, toLanguageTitleCase } from './case-converter.service.ts';
 
 const { t } = useI18n();
 
@@ -43,6 +44,7 @@ const cleaningRegexValidation = useValidation({
 });
 
 const input = useQueryParam({ tool: 'case-conv', name: 'text', defaultValue: 'lorem ipsum dolor sit amet' });
+const language = useQueryParam({ tool: 'case-conv', name: 'lang', defaultValue: 'eng' });
 const inputCleaned = computed(() => {
   if (!cleaningRegexValidation.isValid) {
     return input.value.split('\n');
@@ -51,6 +53,10 @@ const inputCleaned = computed(() => {
 });
 
 const formats = computed(() => [
+  {
+    label: t('tools.case-converter.texts.label-lang-title-case'),
+    value: inputCleaned.value.map((s) => toLanguageTitleCase(s, language.value)),
+  },
   {
     label: t('tools.case-converter.texts.label-lowercase'),
     value: inputCleaned.value.map((s) => s.toLocaleLowerCase()),
@@ -150,6 +156,15 @@ const inputLabelAlignmentConfig = {
       :label="t('tools.case-converter.texts.label-cleaning-regex')"
       :placeholder="t('tools.case-converter.texts.placeholder-your-cleaning-regex')"
       raw-text
+      v-bind="inputLabelAlignmentConfig"
+      mb-1
+    />
+
+    <c-select
+      v-model:value="language"
+      :options="getSupportedLanguages()"
+      :label="t('tools.case-converter.texts.label-language')"
+      :placeholder="t('tools.case-converter.texts.placeholder-your-language')"
       v-bind="inputLabelAlignmentConfig"
       mb-1
     />

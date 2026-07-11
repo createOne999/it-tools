@@ -1,6 +1,10 @@
 import { getCurrentLocale, translate as t } from '@/plugins/i18n.plugin';
 
-Intl.DurationFormat ??= class DurationFormat {
+const intlWithDurationFormat = Intl as unknown as {
+  DurationFormat?: new () => { format(duration: { seconds?: number; milliseconds?: number }): string }
+};
+
+intlWithDurationFormat.DurationFormat ??= class DurationFormat {
   format(duration: { seconds?: number; milliseconds?: number }): string {
     return 'seconds' in duration
       ? `${duration.seconds} seconds`
