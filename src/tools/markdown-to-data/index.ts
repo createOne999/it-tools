@@ -1,9 +1,10 @@
+import { translate as t } from '@/plugins/i18n.plugin';
 import { defineTool } from '../tool';
 
 export const tool = defineTool({
-  name: 'Markdown to data',
+  name: t('tools.markdown-to-data.title'),
   path: '/markdown-to-data',
-  description: 'Convert Markdown table to JSON, YAML, CSV, SQL INSERT, XML, Markdown or XLSX',
+  description: t('tools.markdown-to-data.description'),
   keywords: ['markdown', 'table', 'excel', 'csv', 'xlsx', 'sql', 'json', 'yaml', 'insert', 'md', 'tsv', 'xml'],
   component: () => import('./markdown-to-data.vue'),
   icon: defineAsyncComponent(() => import('@vicons/tabler/es/TableExport')),

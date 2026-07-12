@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 import { useCopy } from '@/composable/copy';
 import { applyPatch, compare } from 'fast-json-patch';
 
 const jsonPathsInput = ref('');
 const pathRows = ref<{ op: string; path: string; value: string }[]>([]);
 const paths = computed(() => pathRows.value.map((r) => r.path).join('\n'));
-const { copy: copyPaths } = useCopy({ source: paths, text: 'JSON Paths copied to clipboard!' });
+const { copy: copyPaths } = useCopy({ source: paths, text: t('tools.json-patch.texts.text-json-paths-copied-to-clipboard') });
 
 const pathColumns = [
   { title: 'Operation', key: 'op' },
@@ -93,79 +95,79 @@ function applyPatchToJson() {
   <div>
     <n-tabs type="line" animated>
       <!-- TAB 1: PATHS -->
-      <n-tab-pane name="paths" tab="Paths">
+      <n-tab-pane name="paths" :tab="t('tools.json-patch.texts.tab-paths')">
         <c-input-text
           v-model:value="jsonPathsInput"
-          label="Input JSON"
+          :label="t('tools.json-patch.texts.label-input-json')"
           multiline
           rows="10"
-          placeholder="Paste JSON..."
+          :placeholder="t('tools.json-patch.texts.placeholder-paste-json')"
           mb-1
         />
         <div mb-2 flex justify-center>
-          <c-button @click="generatePaths()"> Generate paths </c-button>
+          <c-button @click="generatePaths()">{{ t('tools.json-patch.texts.tag-generate-paths') }}</c-button>
         </div>
 
         <n-data-table :columns="pathColumns" :data="pathRows" size="small" :bordered="false" mb-1 />
 
         <div flex justify-center>
-          <c-button @click="copyPaths()"> Copy JSON paths </c-button>
+          <c-button @click="copyPaths()">{{ t('tools.json-patch.texts.tag-copy-json-paths') }}</c-button>
         </div>
       </n-tab-pane>
 
       <!-- TAB 2: GENERATE PATCH -->
-      <n-tab-pane name="generate" tab="Generate Patch">
+      <n-tab-pane name="generate" :tab="t('tools.json-patch.texts.tab-generate-patch')">
         <c-input-text
           v-model:value="beforeJson"
-          label="Before JSON"
+          :label="t('tools.json-patch.texts.label-before-json')"
           multiline
           rows="10"
-          placeholder="Before JSON..."
+          :placeholder="t('tools.json-patch.texts.placeholder-before-json')"
           mb-1
         />
         <c-input-text
           v-model:value="afterJson"
-          label="After JSON"
+          :label="t('tools.json-patch.texts.label-after-json')"
           multiline
           rows="10"
-          placeholder="After JSON..."
+          :placeholder="t('tools.json-patch.texts.placeholder-after-json')"
           mb-1
         />
 
         <div mb-2 flex justify-center>
-          <c-button @click="generatePatch()"> Generate patch </c-button>
+          <c-button @click="generatePatch()">{{ t('tools.json-patch.texts.tag-generate-patch') }}</c-button>
         </div>
 
-        <n-card v-if="generatedPatch" title="Generate JSON Patch">
+        <n-card v-if="generatedPatch" :title="t('tools.json-patch.texts.title-generate-json-patch')">
           <CodeBlockCopyable :value="generatedPatch" language="json" />
         </n-card>
       </n-tab-pane>
 
       <!-- TAB 3: APPLY PATCH -->
-      <n-tab-pane name="apply" tab="Apply Patch">
+      <n-tab-pane name="apply" :tab="t('tools.json-patch.texts.tab-apply-patch')">
         <n-space vertical :size="16">
           <c-input-text
             v-model:value="applyJson"
-            label="JSON to patch"
+            :label="t('tools.json-patch.texts.label-json-to-patch')"
             multiline
             rows="10"
-            placeholder="JSON to patch..."
+            :placeholder="t('tools.json-patch.texts.placeholder-json-to-patch')"
             mb-1
           />
           <c-input-text
             v-model:value="applyPatchInput"
-            label="JSON Patch array"
+            :label="t('tools.json-patch.texts.label-json-patch-array')"
             multiline
             rows="10"
-            placeholder="JSON Patch array..."
+            :placeholder="t('tools.json-patch.texts.placeholder-json-patch-array')"
             mb-1
           />
 
           <div mb-2 flex justify-center>
-            <c-button @click="applyPatchToJson()"> Apply patch </c-button>
+            <c-button @click="applyPatchToJson()">{{ t('tools.json-patch.texts.tag-apply-patch') }}</c-button>
           </div>
 
-          <n-card v-if="applyResult" title="Patched JSON">
+          <n-card v-if="applyResult" :title="t('tools.json-patch.texts.title-patched-json')">
             <CodeBlockCopyable :value="applyResult" language="json" />
           </n-card>
         </n-space>

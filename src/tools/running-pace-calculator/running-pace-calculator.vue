@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 import * as runPace from 'run-pace';
 
 // Inputs
@@ -79,46 +81,40 @@ function calculateStuff() {
 <template>
   <div>
     <NForm label-placement="left" label-width="70px">
-      <NFormItem label="Length:">
-        <NInput v-model:value="length" placeholder="e.g. 10km or 100m" clearable />
+      <NFormItem :label="t('tools.running-pace-calculator.texts.label-length')">
+        <NInput v-model:value="length" :placeholder="t('tools.running-pace-calculator.texts.placeholder-e-g-10km-or-100m')" clearable />
       </NFormItem>
 
-      <NFormItem label="Time:">
-        <NInput v-model:value="time" placeholder="e.g. 45:00 or 45min or 1h30m..." clearable />
+      <NFormItem :label="t('tools.running-pace-calculator.texts.label-time')">
+        <NInput v-model:value="time" :placeholder="t('tools.running-pace-calculator.texts.placeholder-e-g-45-00-or-45min-or-1h30m')" clearable />
       </NFormItem>
 
-      <NFormItem label="Pace:">
-        <NInput v-model:value="pace" placeholder="e.g. 4:30/km" clearable />
+      <NFormItem :label="t('tools.running-pace-calculator.texts.label-pace')">
+        <NInput v-model:value="pace" :placeholder="t('tools.running-pace-calculator.texts.placeholder-e-g-4-30-km')" clearable />
       </NFormItem>
 
       <n-space justify="center">
-        <NFormItem label="Unit:">
+        <NFormItem :label="t('tools.running-pace-calculator.texts.label-unit')">
           <NRadioGroup v-model:value="unit">
-            <NRadio value="km">
-              km
-            </NRadio>
-            <NRadio value="mile">
-              mile
-            </NRadio>
+            <NRadio value="km">{{ t('tools.running-pace-calculator.texts.tag-km') }}</NRadio>
+            <NRadio value="mile">{{ t('tools.running-pace-calculator.texts.tag-mile') }}</NRadio>
           </NRadioGroup>
         </NFormItem>
-        <NFormItem label="Output speed in instead of pace:" label-width="auto">
+        <NFormItem :label="t('tools.running-pace-calculator.texts.label-output-speed-in-instead-of-pace')" label-width="auto">
           <NSwitch v-model:value="speed" />
         </NFormItem>
       </n-space>
     </NForm>
 
     <n-space justify="center" mb-2>
-      <NButton type="primary" @click="calculateStuff">
-        Calculate
-      </NButton>
+      <NButton type="primary" @click="calculateStuff">{{ t('tools.running-pace-calculator.texts.tag-calculate') }}</NButton>
     </n-space>
 
     <c-alert v-if="error">
       {{ error }}
     </c-alert>
 
-    <c-card v-if="result" title="Result">
+    <c-card v-if="result" :title="t('tools.running-pace-calculator.texts.title-result')">
       <input-copyable :label="`${resultType}:`" label-position="left" :value="result" />
     </c-card>
   </div>

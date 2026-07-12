@@ -1,9 +1,10 @@
+import { translate as t } from '@/plugins/i18n.plugin';
 import { defineTool } from '../tool';
 
 export const tool = defineTool({
-  name: 'HTML to data',
+  name: t('tools.html-to-data.title'),
   path: '/html-to-data',
-  description: 'Convert HTML table to JSON, YAML, CSV, SQL INSERT, XML, Markdown or XLSX',
+  description: t('tools.html-to-data.description'),
   keywords: ['html', 'table', 'excel', 'csv', 'xlsx', 'sql', 'json', 'yaml', 'insert', 'markdown', 'md', 'tsv', 'xml'],
   component: () => import('./html-to-data.vue'),
   icon: defineAsyncComponent(() => import('@vicons/tabler/es/TableExport')),

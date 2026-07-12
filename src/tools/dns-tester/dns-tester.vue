@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 import { useNetworkUtilsConfig } from '@/tools/network-utils/network-utils-config';
 import { Base64 } from 'js-base64';
 import { isIP } from 'is-ip';
@@ -98,94 +100,94 @@ function prettyJSON(value: unknown): string {
 }
 
 const dnsTypes = [
-  { value: 'A', label: 'A — IPv4 address' },
-  { value: 'AAAA', label: 'AAAA — IPv6 address' },
-  { value: 'AFSDB', label: 'AFSDB — AFS database location' },
-  { value: 'APL', label: 'APL — Address prefix list' },
-  { value: 'CAA', label: 'CAA — Certificate Authority Authorization' },
-  { value: 'CDNSKEY', label: 'CDNSKEY — Child DNSKEY' },
-  { value: 'CDS', label: 'CDS — Child DS' },
-  { value: 'CERT', label: 'CERT — Certificate storage' },
-  { value: 'CNAME', label: 'CNAME — Canonical name' },
-  { value: 'CSYNC', label: 'CSYNC — Child-to-parent sync' },
-  { value: 'DHCID', label: 'DHCID — DHCP identifier' },
-  { value: 'DLV', label: 'DLV — DNSSEC Lookaside Validation (obsolete)' },
-  { value: 'DNAME', label: 'DNAME — Non-terminal rename' },
-  { value: 'DNSKEY', label: 'DNSKEY — DNSSEC public key' },
-  { value: 'DS', label: 'DS — Delegation signer' },
-  { value: 'EUI48', label: 'EUI48 — MAC address (48-bit)' },
-  { value: 'EUI64', label: 'EUI64 — MAC address (64-bit)' },
-  { value: 'HINFO', label: 'HINFO — Host information' },
-  { value: 'HIP', label: 'HIP — Host identity protocol' },
-  { value: 'HTTPS', label: 'HTTPS — HTTPS service binding' },
-  { value: 'IPSECKEY', label: 'IPSECKEY — IPsec key' },
-  { value: 'KEY', label: 'KEY — Security key (obsolete)' },
-  { value: 'KX', label: 'KX — Key exchanger' },
-  { value: 'LOC', label: 'LOC — Geographic location' },
-  { value: 'MX', label: 'MX — Mail exchanger' },
-  { value: 'NAPTR', label: 'NAPTR — Regex-based rewrite' },
-  { value: 'NS', label: 'NS — Name server' },
-  { value: 'NSEC', label: 'NSEC — DNSSEC denial of existence' },
-  { value: 'NSEC3', label: 'NSEC3 — Hashed denial of existence' },
-  { value: 'NSEC3PARAM', label: 'NSEC3PARAM — NSEC3 parameters' },
-  { value: 'OPENPGPKEY', label: 'OPENPGPKEY — OpenPGP public key' },
-  { value: 'PTR', label: 'PTR — Reverse lookup pointer' },
-  { value: 'RRSIG', label: 'RRSIG — DNSSEC signature' },
-  { value: 'RP', label: 'RP — Responsible person' },
-  { value: 'SIG', label: 'SIG — Signature (obsolete)' },
-  { value: 'SMIMEA', label: 'SMIMEA — S/MIME cert association' },
-  { value: 'SOA', label: 'SOA — Start of authority' },
-  { value: 'SPF', label: 'SPF — Sender Policy Framework (deprecated)' },
-  { value: 'SRV', label: 'SRV — Service locator' },
-  { value: 'SSHFP', label: 'SSHFP — SSH public key fingerprint' },
-  { value: 'SVCB', label: 'SVCB — Service binding' },
-  { value: 'TA', label: 'TA — Trust anchor (experimental)' },
-  { value: 'TKEY', label: 'TKEY — Secret key agreement' },
-  { value: 'TLSA', label: 'TLSA — DANE TLS association' },
-  { value: 'TSIG', label: 'TSIG — Transaction signature' },
-  { value: 'TXT', label: 'TXT — Text record' },
-  { value: 'URI', label: 'URI — URI template' },
-  { value: 'ZONEMD', label: 'ZONEMD — Zone message digest' },
+  { value: 'A', label: t('tools.dns-tester.texts.label-a-ipv4-address') },
+  { value: 'AAAA', label: t('tools.dns-tester.texts.label-aaaa-ipv6-address') },
+  { value: 'AFSDB', label: t('tools.dns-tester.texts.label-afsdb-afs-database-location') },
+  { value: 'APL', label: t('tools.dns-tester.texts.label-apl-address-prefix-list') },
+  { value: 'CAA', label: t('tools.dns-tester.texts.label-caa-certificate-authority-authorization') },
+  { value: 'CDNSKEY', label: t('tools.dns-tester.texts.label-cdnskey-child-dnskey') },
+  { value: 'CDS', label: t('tools.dns-tester.texts.label-cds-child-ds') },
+  { value: 'CERT', label: t('tools.dns-tester.texts.label-cert-certificate-storage') },
+  { value: 'CNAME', label: t('tools.dns-tester.texts.label-cname-canonical-name') },
+  { value: 'CSYNC', label: t('tools.dns-tester.texts.label-csync-child-to-parent-sync') },
+  { value: 'DHCID', label: t('tools.dns-tester.texts.label-dhcid-dhcp-identifier') },
+  { value: 'DLV', label: t('tools.dns-tester.texts.label-dlv-dnssec-lookaside-validation-obsolete') },
+  { value: 'DNAME', label: t('tools.dns-tester.texts.label-dname-non-terminal-rename') },
+  { value: 'DNSKEY', label: t('tools.dns-tester.texts.label-dnskey-dnssec-public-key') },
+  { value: 'DS', label: t('tools.dns-tester.texts.label-ds-delegation-signer') },
+  { value: 'EUI48', label: t('tools.dns-tester.texts.label-eui48-mac-address-48-bit') },
+  { value: 'EUI64', label: t('tools.dns-tester.texts.label-eui64-mac-address-64-bit') },
+  { value: 'HINFO', label: t('tools.dns-tester.texts.label-hinfo-host-information') },
+  { value: 'HIP', label: t('tools.dns-tester.texts.label-hip-host-identity-protocol') },
+  { value: 'HTTPS', label: t('tools.dns-tester.texts.label-https-https-service-binding') },
+  { value: 'IPSECKEY', label: t('tools.dns-tester.texts.label-ipseckey-ipsec-key') },
+  { value: 'KEY', label: t('tools.dns-tester.texts.label-key-security-key-obsolete') },
+  { value: 'KX', label: t('tools.dns-tester.texts.label-kx-key-exchanger') },
+  { value: 'LOC', label: t('tools.dns-tester.texts.label-loc-geographic-location') },
+  { value: 'MX', label: t('tools.dns-tester.texts.label-mx-mail-exchanger') },
+  { value: 'NAPTR', label: t('tools.dns-tester.texts.label-naptr-regex-based-rewrite') },
+  { value: 'NS', label: t('tools.dns-tester.texts.label-ns-name-server') },
+  { value: 'NSEC', label: t('tools.dns-tester.texts.label-nsec-dnssec-denial-of-existence') },
+  { value: 'NSEC3', label: t('tools.dns-tester.texts.label-nsec3-hashed-denial-of-existence') },
+  { value: 'NSEC3PARAM', label: t('tools.dns-tester.texts.label-nsec3param-nsec3-parameters') },
+  { value: 'OPENPGPKEY', label: t('tools.dns-tester.texts.label-openpgpkey-openpgp-public-key') },
+  { value: 'PTR', label: t('tools.dns-tester.texts.label-ptr-reverse-lookup-pointer') },
+  { value: 'RRSIG', label: t('tools.dns-tester.texts.label-rrsig-dnssec-signature') },
+  { value: 'RP', label: t('tools.dns-tester.texts.label-rp-responsible-person') },
+  { value: 'SIG', label: t('tools.dns-tester.texts.label-sig-signature-obsolete') },
+  { value: 'SMIMEA', label: t('tools.dns-tester.texts.label-smimea-s-mime-cert-association') },
+  { value: 'SOA', label: t('tools.dns-tester.texts.label-soa-start-of-authority') },
+  { value: 'SPF', label: t('tools.dns-tester.texts.label-spf-sender-policy-framework-deprecated') },
+  { value: 'SRV', label: t('tools.dns-tester.texts.label-srv-service-locator') },
+  { value: 'SSHFP', label: t('tools.dns-tester.texts.label-sshfp-ssh-public-key-fingerprint') },
+  { value: 'SVCB', label: t('tools.dns-tester.texts.label-svcb-service-binding') },
+  { value: 'TA', label: t('tools.dns-tester.texts.label-ta-trust-anchor-experimental') },
+  { value: 'TKEY', label: t('tools.dns-tester.texts.label-tkey-secret-key-agreement') },
+  { value: 'TLSA', label: t('tools.dns-tester.texts.label-tlsa-dane-tls-association') },
+  { value: 'TSIG', label: t('tools.dns-tester.texts.label-tsig-transaction-signature') },
+  { value: 'TXT', label: t('tools.dns-tester.texts.label-txt-text-record') },
+  { value: 'URI', label: t('tools.dns-tester.texts.label-uri-uri-template') },
+  { value: 'ZONEMD', label: t('tools.dns-tester.texts.label-zonemd-zone-message-digest') },
 ];
 
 const resolverOptions = [
-  { label: 'System default', value: '' },
-  { label: 'Custom DNS Resolver', value: '__custom__' },
-  { label: 'Google 8.8.8.8', value: '8.8.8.8' },
-  { label: 'Google 8.8.4.4', value: '8.8.4.4' },
-  { label: 'Cloudflare 1.1.1.1', value: '1.1.1.1' },
-  { label: 'Cloudflare 1.0.0.1', value: '1.0.0.1' },
-  { label: 'Quad9 9.9.9.9', value: '9.9.9.9' },
-  { label: 'Quad9 149.112.112.112', value: '149.112.112.112' },
-  { label: 'OpenDNS 208.67.222.222', value: '208.67.222.222' },
-  { label: 'OpenDNS 208.67.220.220', value: '208.67.220.220' },
-  { label: 'CleanBrowsing 185.228.168.9', value: '185.228.168.9' },
-  { label: 'CleanBrowsing 185.228.169.9', value: '185.228.169.9' },
-  { label: 'DNS.Watch 84.200.69.80', value: '84.200.69.80' },
-  { label: 'DNS.Watch 84.200.70.40', value: '84.200.70.40' },
-  { label: 'FreeDNS 37.235.1.174', value: '37.235.1.174' },
-  { label: 'FreeDNS 37.235.1.177', value: '37.235.1.177' },
-  { label: 'FDN France 80.67.169.12', value: '80.67.169.12' },
-  { label: 'FDN France 80.67.169.40', value: '80.67.169.40' },
-  { label: 'Neustar EU 156.154.70.1', value: '156.154.70.1' },
-  { label: 'Neustar EU 156.154.71.1', value: '156.154.71.1' },
-  { label: 'Level3 209.244.0.3', value: '209.244.0.3' },
-  { label: 'Level3 209.244.0.4', value: '209.244.0.4' },
-  { label: 'Comodo 8.26.56.26', value: '8.26.56.26' },
-  { label: 'Comodo 8.20.247.20', value: '8.20.247.20' },
-  { label: 'CenturyLink 205.171.3.65', value: '205.171.3.65' },
-  { label: 'CenturyLink 205.171.2.65', value: '205.171.2.65' },
-  { label: 'DNSPod 119.29.29.29', value: '119.29.29.29' },
-  { label: 'AliDNS 223.5.5.5', value: '223.5.5.5' },
-  { label: 'AliDNS 223.6.6.6', value: '223.6.6.6' },
-  { label: 'Yandex 77.88.8.8', value: '77.88.8.8' },
-  { label: 'Yandex 77.88.8.1', value: '77.88.8.1' },
-  { label: 'Naver Korea 125.209.222.141', value: '125.209.222.141' },
-  { label: 'Naver Korea 125.209.249.1', value: '125.209.249.1' },
-  { label: 'GigaDNS Brazil 189.38.95.95', value: '189.38.95.95' },
-  { label: 'GigaDNS Brazil 189.38.95.96', value: '189.38.95.96' },
-  { label: 'OpenDNS Africa 196.3.132.153', value: '196.3.132.153' },
-  { label: 'OpenDNS Africa 196.3.132.154', value: '196.3.132.154' },
+  { label: t('tools.dns-tester.texts.label-system-default'), value: '' },
+  { label: t('tools.dns-tester.texts.label-custom-dns-resolver'), value: '__custom__' },
+  { label: t('tools.dns-tester.texts.label-google-8-8-8-8'), value: '8.8.8.8' },
+  { label: t('tools.dns-tester.texts.label-google-8-8-4-4'), value: '8.8.4.4' },
+  { label: t('tools.dns-tester.texts.label-cloudflare-1-1-1-1'), value: '1.1.1.1' },
+  { label: t('tools.dns-tester.texts.label-cloudflare-1-0-0-1'), value: '1.0.0.1' },
+  { label: t('tools.dns-tester.texts.label-quad9-9-9-9-9'), value: '9.9.9.9' },
+  { label: t('tools.dns-tester.texts.label-quad9-149-112-112-112'), value: '149.112.112.112' },
+  { label: t('tools.dns-tester.texts.label-opendns-208-67-222-222'), value: '208.67.222.222' },
+  { label: t('tools.dns-tester.texts.label-opendns-208-67-220-220'), value: '208.67.220.220' },
+  { label: t('tools.dns-tester.texts.label-cleanbrowsing-185-228-168-9'), value: '185.228.168.9' },
+  { label: t('tools.dns-tester.texts.label-cleanbrowsing-185-228-169-9'), value: '185.228.169.9' },
+  { label: t('tools.dns-tester.texts.label-dns-watch-84-200-69-80'), value: '84.200.69.80' },
+  { label: t('tools.dns-tester.texts.label-dns-watch-84-200-70-40'), value: '84.200.70.40' },
+  { label: t('tools.dns-tester.texts.label-freedns-37-235-1-174'), value: '37.235.1.174' },
+  { label: t('tools.dns-tester.texts.label-freedns-37-235-1-177'), value: '37.235.1.177' },
+  { label: t('tools.dns-tester.texts.label-fdn-france-80-67-169-12'), value: '80.67.169.12' },
+  { label: t('tools.dns-tester.texts.label-fdn-france-80-67-169-40'), value: '80.67.169.40' },
+  { label: t('tools.dns-tester.texts.label-neustar-eu-156-154-70-1'), value: '156.154.70.1' },
+  { label: t('tools.dns-tester.texts.label-neustar-eu-156-154-71-1'), value: '156.154.71.1' },
+  { label: t('tools.dns-tester.texts.label-level3-209-244-0-3'), value: '209.244.0.3' },
+  { label: t('tools.dns-tester.texts.label-level3-209-244-0-4'), value: '209.244.0.4' },
+  { label: t('tools.dns-tester.texts.label-comodo-8-26-56-26'), value: '8.26.56.26' },
+  { label: t('tools.dns-tester.texts.label-comodo-8-20-247-20'), value: '8.20.247.20' },
+  { label: t('tools.dns-tester.texts.label-centurylink-205-171-3-65'), value: '205.171.3.65' },
+  { label: t('tools.dns-tester.texts.label-centurylink-205-171-2-65'), value: '205.171.2.65' },
+  { label: t('tools.dns-tester.texts.label-dnspod-119-29-29-29'), value: '119.29.29.29' },
+  { label: t('tools.dns-tester.texts.label-alidns-223-5-5-5'), value: '223.5.5.5' },
+  { label: t('tools.dns-tester.texts.label-alidns-223-6-6-6'), value: '223.6.6.6' },
+  { label: t('tools.dns-tester.texts.label-yandex-77-88-8-8'), value: '77.88.8.8' },
+  { label: t('tools.dns-tester.texts.label-yandex-77-88-8-1'), value: '77.88.8.1' },
+  { label: t('tools.dns-tester.texts.label-naver-korea-125-209-222-141'), value: '125.209.222.141' },
+  { label: t('tools.dns-tester.texts.label-naver-korea-125-209-249-1'), value: '125.209.249.1' },
+  { label: t('tools.dns-tester.texts.label-gigadns-brazil-189-38-95-95'), value: '189.38.95.95' },
+  { label: t('tools.dns-tester.texts.label-gigadns-brazil-189-38-95-96'), value: '189.38.95.96' },
+  { label: t('tools.dns-tester.texts.label-opendns-africa-196-3-132-153'), value: '196.3.132.153' },
+  { label: t('tools.dns-tester.texts.label-opendns-africa-196-3-132-154'), value: '196.3.132.154' },
 ];
 
 const resolverIP = ref('');
@@ -258,29 +260,25 @@ const labelProps = {
 <template>
   <div style="min-height: 80vh;">
     <details v-if="!hasFixedConfig" mb-2>
-      <summary>Network Utilities Service Configuration (self hosted)</summary>
+      <summary>{{ t('tools.dns-tester.texts.tag-network-utilities-service-configuration-self-hosted') }}</summary>
       <n-card>
-        <NFormItem label="Network Utilities Service Url:" label-placement="top">
-          <NInput v-model:value="serverHost" placeholder="http://localhost:3000" />
+        <NFormItem :label="t('tools.dns-tester.texts.label-network-utilities-service-url')" label-placement="top">
+          <NInput v-model:value="serverHost" :placeholder="t('tools.dns-tester.texts.placeholder-http-localhost-3000')" />
         </NFormItem>
-        <NFormItem label="Basic Authentication:" label-placement="left" label-width="auto">
-          <NInput v-model:value="serverAuth" placeholder="username:password" />
+        <NFormItem :label="t('tools.dns-tester.texts.label-basic-authentication')" label-placement="left" label-width="auto">
+          <NInput v-model:value="serverAuth" :placeholder="t('tools.dns-tester.texts.placeholder-username-password')" />
         </NFormItem>
-        <n-p>
-          You must self host Network Utilities Service. See:
-          <c-link href="https://github.com/sharevb/network-utils-ws#running-in-docker" target="_blank">
-            Network Utilities Service docker install
-          </c-link>
+        <n-p>{{ t('tools.dns-tester.texts.tag-you-must-self-host-network-utilities-service-see') }}<c-link href="https://github.com/sharevb/network-utils-ws#running-in-docker" target="_blank">{{ t('tools.dns-tester.texts.tag-network-utilities-service-docker-install') }}</c-link>
         </n-p>
       </n-card>
     </details>
 
-    <NFormItem label="Target DNS Resolver IP:" label-placement="left">
+    <NFormItem :label="t('tools.dns-tester.texts.label-target-dns-resolver-ip')" label-placement="left">
       <div style="width: 100%;">
         <NSelect
           v-model:value="resolverIP"
           :options="resolverOptions"
-          placeholder="System default"
+          :placeholder="t('tools.dns-tester.texts.placeholder-system-default')"
           filterable
           clearable
           mb-1
@@ -288,7 +286,7 @@ const labelProps = {
         <NInput
           v-if="resolverIP === '__custom__'"
           v-model:value="customResolverIP"
-          placeholder="e.g. 10.0.0.53"
+          :placeholder="t('tools.dns-tester.texts.placeholder-e-g-10-0-0-53')"
         />
         <div v-if="customResolverIpError" style="margin-top: 6px; color: var(--n-error-color); font-size: 12px;">
           {{ customResolverIpError }}
@@ -298,32 +296,30 @@ const labelProps = {
 
     <n-tabs type="line" animated>
       <!-- DNS QUERY -->
-      <n-tab-pane name="dns" tab="DNS Query" style="min-height: 80vh;">
-        <c-input-text v-model:value="dnsDomain" label="Domain:" v-bind="labelProps" placeholder="example.com" mb-1 />
+      <n-tab-pane name="dns" :tab="t('tools.dns-tester.texts.tab-dns-query')" style="min-height: 80vh;">
+        <c-input-text v-model:value="dnsDomain" :label="t('tools.dns-tester.texts.label-domain')" v-bind="labelProps" :placeholder="t('tools.dns-tester.texts.placeholder-example-com')" mb-1 />
         <c-select
           v-model:value="dnsType"
-          label="DNS Record type:"
+          :label="t('tools.dns-tester.texts.label-dns-record-type')"
           v-bind="labelProps"
           :options="dnsTypes"
           mb-1
         />
         <div mb-2 flex justify-center>
-          <n-button :loading="loading" :disabled="!canRunWithSelectedResolver" @click="runDns">
-            Query DNS
-          </n-button>
+          <n-button :loading="loading" :disabled="!canRunWithSelectedResolver" @click="runDns">{{ t('tools.dns-tester.texts.tag-query-dns') }}</n-button>
         </div>
 
-        <n-card v-if="dnsResult" title="Result">
+        <n-card v-if="dnsResult" :title="t('tools.dns-tester.texts.title-result')">
           <n-space justify="center" mb-1>
             <n-tag :type="dnsResult.ok ? 'success' : 'error'" size="small">
               {{ dnsResult.ok ? 'OK' : 'FAILED' }}
             </n-tag>
           </n-space>
 
-          <input-copyable label="Domain" v-bind="labelProps" :value="dnsResult.domain" mb-1 />
-          <input-copyable label="Record type" v-bind="labelProps" :value="dnsResult.record_type" mb-1 />
+          <input-copyable :label="t('tools.dns-tester.texts.label-domain')" v-bind="labelProps" :value="dnsResult.domain" mb-1 />
+          <input-copyable :label="t('tools.dns-tester.texts.label-record-type')" v-bind="labelProps" :value="dnsResult.record_type" mb-1 />
 
-          <n-card v-if="dnsResult.answers" title="Answers" mb-1>
+          <n-card v-if="dnsResult.answers" :title="t('tools.dns-tester.texts.title-answers')" mb-1>
             <textarea-copyable
               v-if="dnsResult.answers"
               :value="dnsResult.answers.join('\n')"
@@ -347,33 +343,31 @@ const labelProps = {
       </n-tab-pane>
 
       <!-- WHOIS -->
-      <n-tab-pane name="whois" tab="WHOIS">
-        <c-input-text v-model:value="whoisDomain" label="Domain:" v-bind="labelProps" placeholder="example.com" mb-1 />
+      <n-tab-pane name="whois" :tab="t('tools.dns-tester.texts.tab-whois')">
+        <c-input-text v-model:value="whoisDomain" :label="t('tools.dns-tester.texts.label-domain')" v-bind="labelProps" :placeholder="t('tools.dns-tester.texts.placeholder-example-com')" mb-1 />
         <div mb-2 flex justify-center>
-          <n-button type="primary" :loading="loading" @click="runWhois">
-            Lookup WHOIS
-          </n-button>
+          <n-button type="primary" :loading="loading" @click="runWhois">{{ t('tools.dns-tester.texts.tag-lookup-whois') }}</n-button>
         </div>
 
-        <n-card v-if="whoisResult" title="Result">
+        <n-card v-if="whoisResult" :title="t('tools.dns-tester.texts.title-result')">
           <n-space justify="center" mb-1>
             <n-tag :type="whoisResult.ok ? 'success' : 'error'" size="small" mb-1>
               {{ whoisResult.ok ? 'OK' : 'FAILED' }}
             </n-tag>
           </n-space>
 
-          <input-copyable label="Domain" v-bind="labelProps" :value="whoisResult.domain" mb-1 />
+          <input-copyable :label="t('tools.dns-tester.texts.label-domain')" v-bind="labelProps" :value="whoisResult.domain" mb-1 />
 
           <textarea-copyable
             v-if="whoisResult.raw"
-            label="Raw WHOIS"
+            :label="t('tools.dns-tester.texts.label-raw-whois')"
             :value="whoisResult.raw"
             mb-1
           />
 
           <CodeBlockCopyable
             v-if="whoisResult.parsed"
-            label="Parsed"
+            :label="t('tools.dns-tester.texts.label-parsed')"
             :value="prettyJSON(whoisResult.parsed)"
             language="json"
             mb-1
@@ -395,25 +389,23 @@ const labelProps = {
       </n-tab-pane>
 
       <!-- DNSSEC -->
-      <n-tab-pane name="dnssec" tab="DNSSEC Validation">
-        <c-input-text v-model:value="dnssecDomain" label="Domain:" v-bind="labelProps" placeholder="example.com" mb-1 />
+      <n-tab-pane name="dnssec" :tab="t('tools.dns-tester.texts.tab-dnssec-validation')">
+        <c-input-text v-model:value="dnssecDomain" :label="t('tools.dns-tester.texts.label-domain')" v-bind="labelProps" :placeholder="t('tools.dns-tester.texts.placeholder-example-com')" mb-1 />
         <div mb-2 flex justify-center>
-          <n-button type="primary" :loading="loading" :disabled="!canRunWithSelectedResolver" @click="runDnssec">
-            Validate DNSSEC
-          </n-button>
+          <n-button type="primary" :loading="loading" :disabled="!canRunWithSelectedResolver" @click="runDnssec">{{ t('tools.dns-tester.texts.tag-validate-dnssec') }}</n-button>
         </div>
 
-        <n-card v-if="dnssecResult" title="Result">
+        <n-card v-if="dnssecResult" :title="t('tools.dns-tester.texts.title-result')">
           <n-space justify="center" mb-1>
             <n-tag :type="dnssecResult.ok ? 'success' : 'error'" size="small" mb-1>
               {{ dnssecResult.ok ? 'OK' : 'FAILED' }}
             </n-tag>
           </n-space>
 
-          <input-copyable label="Domain" v-bind="labelProps" :value="dnssecResult.domain" mb-1 />
+          <input-copyable :label="t('tools.dns-tester.texts.label-domain')" v-bind="labelProps" :value="dnssecResult.domain" mb-1 />
 
           <input-copyable
-            label="Validated"
+            :label="t('tools.dns-tester.texts.label-validated')"
             v-bind="labelProps"
             :value="dnssecResult.validated ? 'Yes' : 'No'"
             mb-1
@@ -421,7 +413,7 @@ const labelProps = {
 
           <input-copyable
             v-if="dnssecResult.dnskey"
-            label="DNSKEY"
+            :label="t('tools.dns-tester.texts.label-dnskey')"
             v-bind="labelProps"
             :value="dnssecResult.dnskey"
             mb-1
@@ -429,7 +421,7 @@ const labelProps = {
 
           <input-copyable
             v-if="dnssecResult.rrsig"
-            label="RRSIG"
+            :label="t('tools.dns-tester.texts.label-rrsig')"
             v-bind="labelProps"
             :value="dnssecResult.rrsig"
             mb-1
@@ -451,26 +443,24 @@ const labelProps = {
       </n-tab-pane>
 
       <!-- REVERSE DNS -->
-      <n-tab-pane name="reverse" tab="Reverse DNS (PTR)">
-        <c-input-text v-model:value="reverseIp" label="IP Address:" v-bind="labelProps" placeholder="8.8.8.8" mb-1 />
+      <n-tab-pane name="reverse" :tab="t('tools.dns-tester.texts.tab-reverse-dns-ptr')">
+        <c-input-text v-model:value="reverseIp" :label="t('tools.dns-tester.texts.label-ip-address')" v-bind="labelProps" :placeholder="t('tools.dns-tester.texts.placeholder-8-8-8-8')" mb-1 />
         <div mb-2 flex justify-center>
-          <n-button type="primary" :loading="loading" :disabled="!canRunWithSelectedResolver" @click="runReverse">
-            Reverse Lookup
-          </n-button>
+          <n-button type="primary" :loading="loading" :disabled="!canRunWithSelectedResolver" @click="runReverse">{{ t('tools.dns-tester.texts.tag-reverse-lookup') }}</n-button>
         </div>
 
-        <n-card v-if="reverseResult" title="Result">
+        <n-card v-if="reverseResult" :title="t('tools.dns-tester.texts.title-result')">
           <n-space justify="center" mb-1>
             <n-tag :type="reverseResult.ok ? 'success' : 'error'" size="small" mb-1>
               {{ reverseResult.ok ? 'OK' : 'FAILED' }}
             </n-tag>
           </n-space>
 
-          <input-copyable label="IP" v-bind="labelProps" :value="reverseResult.ip" mb-1 />
+          <input-copyable :label="t('tools.dns-tester.texts.label-ip')" v-bind="labelProps" :value="reverseResult.ip" mb-1 />
 
           <input-copyable
             v-if="reverseResult.ptr"
-            label="PTR"
+            :label="t('tools.dns-tester.texts.label-ptr')"
             v-bind="labelProps"
             :value="reverseResult.ptr"
             mb-1
@@ -492,32 +482,30 @@ const labelProps = {
       </n-tab-pane>
 
       <!-- SOA + AXFR -->
-      <n-tab-pane name="axfr" tab="SOA + AXFR Test">
-        <c-input-text v-model:value="axfrDomain" label="Domain:" v-bind="labelProps" placeholder="example.com" mb-1 />
+      <n-tab-pane name="axfr" :tab="t('tools.dns-tester.texts.tab-soa-axfr-test')">
+        <c-input-text v-model:value="axfrDomain" :label="t('tools.dns-tester.texts.label-domain')" v-bind="labelProps" :placeholder="t('tools.dns-tester.texts.placeholder-example-com')" mb-1 />
         <div mb-2 flex justify-center>
-          <n-button type="primary" :loading="loading" :disabled="!canRunWithSelectedResolver" @click="runAxfr">
-            Run SOA + AXFR
-          </n-button>
+          <n-button type="primary" :loading="loading" :disabled="!canRunWithSelectedResolver" @click="runAxfr">{{ t('tools.dns-tester.texts.tag-run-soa-axfr') }}</n-button>
         </div>
 
-        <n-card v-if="axfrResult" title="Result">
+        <n-card v-if="axfrResult" :title="t('tools.dns-tester.texts.title-result')">
           <n-space justify="center" mb-1>
             <n-tag :type="axfrResult.ok ? 'success' : 'error'" size="small" mb-1>
               {{ axfrResult.ok ? 'OK' : 'FAILED' }}
             </n-tag>
           </n-space>
 
-          <input-copyable label="Domain" v-bind="labelProps" :value="axfrResult.domain" mb-1 />
+          <input-copyable :label="t('tools.dns-tester.texts.label-domain')" v-bind="labelProps" :value="axfrResult.domain" mb-1 />
 
           <textarea-copyable
             v-if="axfrResult.soa"
-            label="SOA"
+            :label="t('tools.dns-tester.texts.label-soa')"
             :value="axfrResult.soa"
             mb-1
           />
 
           <input-copyable
-            label="AXFR allowed"
+            :label="t('tools.dns-tester.texts.label-axfr-allowed')"
             v-bind="labelProps"
             :value="axfrResult.axfr_allowed ? 'Yes' : 'No'"
             mb-1
@@ -525,7 +513,7 @@ const labelProps = {
 
           <textarea-copyable
             v-if="axfrResult.records"
-            label="Records"
+            :label="t('tools.dns-tester.texts.label-records')"
             :value="axfrResult.records.join('\n')"
             mb-1
           />

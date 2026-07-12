@@ -50,7 +50,7 @@ function selectOption(option: CButtonSelectOption<T>) {
     <div class="flex gap-2">
       <c-tooltip v-for="option in options" :key="option.value as PropertyKey" :tooltip="option.tooltip">
         <c-button
-          :test-id="option.value"
+          :data-test-id="option.value"
           :size="size"
           :type="option.value === value ? 'primary' : 'default'"
           @click="selectOption(option)"

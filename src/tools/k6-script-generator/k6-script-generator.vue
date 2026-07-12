@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 import JSON5 from 'json5';
 
 const scenario = ref('smoke');
@@ -196,73 +198,73 @@ ${stepsBlock.value}
 <template>
   <div>
     <NForm label-placement="left" mb-2 label-width="140">
-      <NFormItem label="Scenario Preset:">
+      <NFormItem :label="t('tools.k6-script-generator.texts.label-scenario-preset')">
         <NSelect
           v-model:value="scenario"
           :options="[
-            { label: 'Smoke Test', value: 'smoke' },
-            { label: 'Load Test', value: 'load' },
-            { label: 'Stress Test', value: 'stress' },
-            { label: 'Spike Test', value: 'spike' },
-            { label: 'Soak Test', value: 'soak' },
+            { label: t('tools.k6-script-generator.texts.label-smoke-test'), value: 'smoke' },
+            { label: t('tools.k6-script-generator.texts.label-load-test'), value: 'load' },
+            { label: t('tools.k6-script-generator.texts.label-stress-test'), value: 'stress' },
+            { label: t('tools.k6-script-generator.texts.label-spike-test'), value: 'spike' },
+            { label: t('tools.k6-script-generator.texts.label-soak-test'), value: 'soak' },
           ]"
         />
-        <NButton @click="applyPreset" ml-1> Apply Preset </NButton>
+        <NButton @click="applyPreset" ml-1>{{ t('tools.k6-script-generator.texts.tag-apply-preset') }}</NButton>
       </NFormItem>
 
       <n-space mb-1>
-        <NFormItem label="Virtual Users (VUs):">
+        <NFormItem :label="t('tools.k6-script-generator.texts.label-virtual-users-vus')">
           <NInputNumber v-model:value="vus" :min="1" />
         </NFormItem>
 
-        <NFormItem label="Duration:">
+        <NFormItem :label="t('tools.k6-script-generator.texts.label-duration')">
           <NInput v-model:value="duration" />
         </NFormItem>
       </n-space>
 
       <n-space mb-1 v-if="scenario === 'stress'">
-        <NFormItem label="Ramp Up Duration:">
+        <NFormItem :label="t('tools.k6-script-generator.texts.label-ramp-up-duration')">
           <NInput v-model:value="rampUp" />
         </NFormItem>
 
-        <NFormItem label="Ramp Down Duration:">
+        <NFormItem :label="t('tools.k6-script-generator.texts.label-ramp-down-duration')">
           <NInput v-model:value="rampDown" />
         </NFormItem>
       </n-space>
 
-      <NFormItem label="Thresholds (Name/Expression):">
+      <NFormItem :label="t('tools.k6-script-generator.texts.label-thresholds-name-expression')">
         <NDynamicInput v-model:value="thresholds" :on-create="() => ({ metric: '', rule: '' })">
           <template #default="{ value, index }">
             <NSpace>
-              <NInput v-model:value="value.metric" placeholder="Metric" style="width: 240px" />
-              <NInput v-model:value="value.rule" placeholder="Rule" style="width: 200px" />
-              <NButton type="error" ghost @click="thresholds.splice(index, 1)" mr-2> Remove </NButton>
+              <NInput v-model:value="value.metric" :placeholder="t('tools.k6-script-generator.texts.placeholder-metric')" style="width: 240px" />
+              <NInput v-model:value="value.rule" :placeholder="t('tools.k6-script-generator.texts.placeholder-rule')" style="width: 200px" />
+              <NButton type="error" ghost @click="thresholds.splice(index, 1)" mr-2>{{ t('tools.k6-script-generator.texts.tag-remove') }}</NButton>
             </NSpace>
           </template>
 
           <template #action>
-            <NButton type="primary" ghost @click="thresholds.push({ metric: '', rule: '' })"> Add Threshold </NButton>
+            <NButton type="primary" ghost @click="thresholds.push({ metric: '', rule: '' })">{{ t('tools.k6-script-generator.texts.tag-add-threshold') }}</NButton>
           </template>
         </NDynamicInput>
       </NFormItem>
 
-      <NFormItem label="Checks (Name/Expression):">
+      <NFormItem :label="t('tools.k6-script-generator.texts.label-checks-name-expression')">
         <NDynamicInput v-model:value="checks" :on-create="() => ({ name: '', expr: '' })">
           <template #default="{ value, index }">
             <NSpace>
-              <NInput v-model:value="value.name" placeholder="Check name" style="width: 240px" />
-              <NInput v-model:value="value.expr" placeholder="Expression" style="width: 260px" />
-              <NButton type="error" ghost @click="checks.splice(index, 1)" mr-2> Remove </NButton>
+              <NInput v-model:value="value.name" :placeholder="t('tools.k6-script-generator.texts.placeholder-check-name')" style="width: 240px" />
+              <NInput v-model:value="value.expr" :placeholder="t('tools.k6-script-generator.texts.placeholder-expression')" style="width: 260px" />
+              <NButton type="error" ghost @click="checks.splice(index, 1)" mr-2>{{ t('tools.k6-script-generator.texts.tag-remove') }}</NButton>
             </NSpace>
           </template>
 
           <template #action>
-            <NButton type="primary" ghost @click="checks.push({ name: '', expr: '' })"> Add Check </NButton>
+            <NButton type="primary" ghost @click="checks.push({ name: '', expr: '' })">{{ t('tools.k6-script-generator.texts.tag-add-check') }}</NButton>
           </template>
         </NDynamicInput>
       </NFormItem>
 
-      <NFormItem label="Request Steps:">
+      <NFormItem :label="t('tools.k6-script-generator.texts.label-request-steps')">
         <NDynamicInput
           v-model:value="steps"
           :on-create="() => ({ method: 'GET', url: '', payload: '', headers: {}, sleep: 1 })"
@@ -273,40 +275,40 @@ ${stepsBlock.value}
                 <NSelect
                   v-model:value="value.method"
                   :options="[
-                    { label: 'GET', value: 'GET' },
-                    { label: 'POST', value: 'POST' },
-                    { label: 'PUT', value: 'PUT' },
-                    { label: 'PATCH', value: 'PATCH' },
-                    { label: 'DELETE', value: 'DELETE' },
+                    { label: t('tools.k6-script-generator.texts.label-get'), value: 'GET' },
+                    { label: t('tools.k6-script-generator.texts.label-post'), value: 'POST' },
+                    { label: t('tools.k6-script-generator.texts.label-put'), value: 'PUT' },
+                    { label: t('tools.k6-script-generator.texts.label-patch'), value: 'PATCH' },
+                    { label: t('tools.k6-script-generator.texts.label-delete'), value: 'DELETE' },
                   ]"
                   style="width: 120px"
                   mr-1
                 />
-                <NInput v-model:value="value.url" placeholder="Request URL" style="flex: 1" />
+                <NInput v-model:value="value.url" :placeholder="t('tools.k6-script-generator.texts.placeholder-request-url')" style="flex: 1" />
               </div>
 
               <c-input-text
                 multiline
                 v-model:value="value.payload"
-                label="Payload:"
-                placeholder="Payload (JSON or text)"
+                :label="t('tools.k6-script-generator.texts.label-payload')"
+                :placeholder="t('tools.k6-script-generator.texts.placeholder-payload-json-or-text')"
                 mb-1
               />
 
               <c-input-text
                 multiline
                 v-model:value="value.headers"
-                placeholder="Headers (JSON)"
-                label="Headers:"
+                :placeholder="t('tools.k6-script-generator.texts.placeholder-headers-json')"
+                :label="t('tools.k6-script-generator.texts.label-headers')"
                 mb-1
               />
 
-              <NFormItem label="Sleep after this step (seconds):" label-width="auto" mb-1>
+              <NFormItem :label="t('tools.k6-script-generator.texts.label-sleep-after-this-step-seconds')" label-width="auto" mb-1>
                 <NInputNumber v-model:value="value.sleep" :min="0" />
               </NFormItem>
 
               <n-space justify="center">
-                <NButton type="error" ghost @click="steps.splice(index, 1)"> Remove Step </NButton>
+                <NButton type="error" ghost @click="steps.splice(index, 1)">{{ t('tools.k6-script-generator.texts.tag-remove-step') }}</NButton>
               </n-space>
             </NCard>
           </template>
@@ -316,15 +318,13 @@ ${stepsBlock.value}
               type="primary"
               ghost
               @click="steps.push({ method: 'GET', url: '', payload: '', headers: '', sleep: 1 })"
-            >
-              Add Step
-            </NButton>
+            >{{ t('tools.k6-script-generator.texts.tag-add-step') }}</NButton>
           </template>
         </NDynamicInput>
       </NFormItem>
     </NForm>
 
-    <n-card title="Generated K6 Script">
+    <n-card :title="t('tools.k6-script-generator.texts.title-generated-k6-script')">
       <textarea-copyable :value="script" language="javascript" />
     </n-card>
   </div>

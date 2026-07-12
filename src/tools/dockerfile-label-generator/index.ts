@@ -1,9 +1,10 @@
+import { translate as t } from '@/plugins/i18n.plugin';
 import { defineTool } from '../tool';
 
 export const tool = defineTool({
-  name: 'Dockerfile Label Generator',
+  name: t('tools.dockerfile-label-generator.title'),
   path: '/dockerfile-label-generator',
-  description: 'A simple tool for generating labels for Dockerfiles.',
+  description: t('tools.dockerfile-label-generator.description'),
   keywords: ['dockerfile', 'label', 'generator'],
   component: () => import('./dockerfile-label-generator.vue'),
   icon: defineAsyncComponent(() => import('@vicons/tabler/es/BrandDocker')),

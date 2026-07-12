@@ -1,9 +1,10 @@
+import { translate as t } from '@/plugins/i18n.plugin';
 import { defineTool } from '../tool';
 
 export const tool = defineTool({
-  name: 'Picomatch Tester',
+  name: t('tools.picomatch-tester.title'),
   path: '/picomatch-tester',
-  description: 'A simple tester for the picomatch library, which is used for glob pattern matching.',
+  description: t('tools.picomatch-tester.description'),
   keywords: ['picomatch', 'tester', 'glob', 'pattern', 'matching'],
   component: () => import('./picomatch-tester.vue'),
   icon: defineAsyncComponent(() => import('@vicons/tabler/es/FileDiff')),

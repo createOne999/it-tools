@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 import { useQueryParamOrStorage } from '@/composable/queryParams';
 import { NDatePicker, NInput, NInputNumber, NSwitch } from 'naive-ui';
 
@@ -302,24 +304,22 @@ const finalUrl = computed(() => {
 
 <template>
   <div>
-    <NFormItem label="Load Url:" label-placement="left">
+    <NFormItem :label="t('tools.url-builder.texts.label-load-url')" label-placement="left">
       <NInput
         v-model:value="loadUrl"
-        placeholder="Paste URL to parse"
+        :placeholder="t('tools.url-builder.texts.placeholder-paste-url-to-parse')"
         mr-1
       />
-      <NButton @click="parseInitialUrl()">
-        Parse
-      </NButton>
+      <NButton @click="parseInitialUrl()">{{ t('tools.url-builder.texts.tag-parse') }}</NButton>
     </NFormItem>
 
     <n-divider style="margin-top: 8px" />
 
-    <NFormItem label="Base URL:" label-placement="left">
-      <NInput v-model:value="baseUrl" placeholder="Base URL" />
+    <NFormItem :label="t('tools.url-builder.texts.label-base-url')" label-placement="left">
+      <NInput v-model:value="baseUrl" :placeholder="t('tools.url-builder.texts.placeholder-base-url')" />
     </NFormItem>
 
-    <c-card v-if="baseUrl" title="Url Parameters" mb-3>
+    <c-card v-if="baseUrl" :title="t('tools.url-builder.texts.title-url-parameters')" mb-3>
       <NDynamicInput
         v-model:value="params"
         :on-create="createParam"
@@ -328,19 +328,19 @@ const finalUrl = computed(() => {
           <div style="display:flex; gap:12px; width:100%">
             <NInput
               v-model:value="value.key"
-              placeholder="key"
+              :placeholder="t('tools.url-builder.texts.placeholder-key')"
               style="width: 140px"
             />
 
             <NSelect
               v-model:value="value.type"
               :options="[
-                { label: 'string', value: 'string' },
-                { label: 'number', value: 'number' },
-                { label: 'boolean', value: 'boolean' },
-                { label: 'date', value: 'date' },
-                { label: 'datetime', value: 'datetime' },
-                { label: 'array', value: 'array' },
+                { label: t('tools.url-builder.texts.label-string'), value: 'string' },
+                { label: t('tools.url-builder.texts.label-number'), value: 'number' },
+                { label: t('tools.url-builder.texts.label-boolean'), value: 'boolean' },
+                { label: t('tools.url-builder.texts.label-date'), value: 'date' },
+                { label: t('tools.url-builder.texts.label-datetime'), value: 'datetime' },
+                { label: t('tools.url-builder.texts.label-array'), value: 'array' },
               ]"
               style="width: 140px"
               @update:value="(newType: string) => {
@@ -358,11 +358,11 @@ const finalUrl = computed(() => {
               v-if="value.type === 'array'"
               v-model:value="value.elementType"
               :options="[
-                { label: 'string', value: 'string' },
-                { label: 'number', value: 'number' },
-                { label: 'boolean', value: 'boolean' },
-                { label: 'date', value: 'date' },
-                { label: 'datetime', value: 'datetime' },
+                { label: t('tools.url-builder.texts.label-string'), value: 'string' },
+                { label: t('tools.url-builder.texts.label-number'), value: 'number' },
+                { label: t('tools.url-builder.texts.label-boolean'), value: 'boolean' },
+                { label: t('tools.url-builder.texts.label-date'), value: 'date' },
+                { label: t('tools.url-builder.texts.label-datetime'), value: 'datetime' },
               ]"
               style="width: 140px"
               @update:value="(newElementType: string) => {
@@ -405,7 +405,7 @@ const finalUrl = computed(() => {
               v-else
               v-model:value="value.value"
               :type="value.type === 'datetime' ? 'datetime' : undefined"
-              placeholder="value"
+              :placeholder="t('tools.url-builder.texts.placeholder-value')"
               style="flex:1"
             />
           </div>
@@ -413,7 +413,7 @@ const finalUrl = computed(() => {
       </NDynamicInput>
     </c-card>
 
-    <c-card v-if="finalUrl && baseUrl" title="Generated Url">
+    <c-card v-if="finalUrl && baseUrl" :title="t('tools.url-builder.texts.title-generated-url')">
       <textarea-copyable :value="finalUrl" />
     </c-card>
   </div>

@@ -114,6 +114,10 @@ home:
     lightMode: Light mode
     mode: Toggle dark/light mode
     aboutLabel: About
+    language: Language
+    themeSystem: System
+    themeLight: Light
+    themeDark: Dark
   page:
     text:
       collection-of-handy-online-tools-for-developers-with-great-ux-it-tools-is-a-free-and-open-source-collection-of-handy-online-tools-for-developers-and-people-working-in-it: >-
@@ -156,6 +160,9 @@ tools:
       width-original: Original Crop Size
       width-viewport: Viewport Size
       width-custom: Custom Width
+      label-png: PNG
+      label-jpeg: JPEG
+      label-webp: WebP
   chronometer:
     title: Chronometer
     description: >-
@@ -184,6 +191,7 @@ tools:
       label-denied-characters-ie-visually-similar-oo01li-or-punctuations: Denied Characters (ie, visually similar { oO01lI } or punctuations)
       placeholder-put-characters-to-deny-from-token: Put characters to deny from token
       label-number-of-token-to-generate: Number of token to generate
+      label-allow-ambiguous-characters: Allows Visually Ambigous Characters
   percentage-calculator:
     title: Percentage calculator
     description: >-
@@ -592,6 +600,52 @@ tools:
       placeholder-the-decoded-string-will-be-here: The decoded string will be here
       tag-copy-base64: Copy base64
       tag-copy-decoded-string: Copy decoded string
+      text-encoding: 'Text Encoding:'
+      label-utf-8: UTF-8
+      label-utf-8-alias-utf8: 'UTF-8 (Alias: UTF8)'
+      label-utf-16le: UTF-16LE
+      label-utf-16be: UTF-16BE
+      label-utf-7: UTF-7
+      label-utf-7-imap: UTF-7 (IMAP)
+      label-utf-32le: UTF-32LE
+      label-utf-32be: UTF-32BE
+      label-iso-8859-1-latin-1: ISO-8859-1 (Latin-1)
+      label-iso-8859-2-central-european: ISO-8859-2 (Central European)
+      label-iso-8859-3-south-european: ISO-8859-3 (South European)
+      label-iso-8859-4-north-european: ISO-8859-4 (North European)
+      label-iso-8859-5-cyrillic: ISO-8859-5 (Cyrillic)
+      label-iso-8859-6-arabic: ISO-8859-6 (Arabic)
+      label-iso-8859-7-greek: ISO-8859-7 (Greek)
+      label-iso-8859-8-hebrew: ISO-8859-8 (Hebrew)
+      label-iso-8859-9-turkish: ISO-8859-9 (Turkish)
+      label-iso-8859-10-nordic: ISO-8859-10 (Nordic)
+      label-iso-8859-13-baltic: ISO-8859-13 (Baltic)
+      label-iso-8859-14-celtic: ISO-8859-14 (Celtic)
+      label-iso-8859-15-latin-9: ISO-8859-15 (Latin-9)
+      label-iso-8859-16-romanian: ISO-8859-16 (Romanian)
+      label-windows-1250-central-european: Windows-1250 (Central European)
+      label-windows-1251-cyrillic: Windows-1251 (Cyrillic)
+      label-windows-1252-western-european: Windows-1252 (Western European)
+      label-windows-1253-greek: Windows-1253 (Greek)
+      label-windows-1254-turkish: Windows-1254 (Turkish)
+      label-windows-1255-hebrew: Windows-1255 (Hebrew)
+      label-windows-1256-arabic: Windows-1256 (Arabic)
+      label-windows-1257-baltic: Windows-1257 (Baltic)
+      label-windows-1258-vietnamese: Windows-1258 (Vietnamese)
+      label-koi8-r-russian: KOI8-R (Russian)
+      label-koi8-u-ukrainian: KOI8-U (Ukrainian)
+      label-gbk-simplified-chinese: GBK (Simplified Chinese)
+      label-gb2312-simplified-chinese: GB2312 (Simplified Chinese)
+      label-gb18030-simplified-chinese: GB18030 (Simplified Chinese)
+      label-big5-traditional-chinese: Big5 (Traditional Chinese)
+      label-shift-jis-japanese: Shift-JIS (Japanese)
+      label-euc-jp-japanese: EUC-JP (Japanese)
+      label-macroman: MacRoman
+      label-macgreek: MacGreek
+      label-macturkish: MacTurkish
+      label-maccyrillic: MacCyrillic
+      label-maccentraleurope: MacCentralEurope
+      label-maciceland: MacIceland
   toml-to-yaml:
     title: TOML to YAML
     description: Parse and convert TOML to YAML.
@@ -4684,6 +4738,31 @@ tools:
       placeholder-your-url-to-parse: Your url to parse...
       url-must-have-http-or-https-prefix: Url must have http:// or https:// prefix
       button-open-url: Open URL
+  keyboard-tester:
+    instructions:
+      highlight: Pressed keys will be highlighted
+      press: Press any key on your keyboard to test it
+      reset: Click the "Reset" button to clear test records
+      tested: Tested keys will be shown in green
+      title: Instructions
+    keys: Keys
+    layout: 'Keyboard Layout:'
+    legend:
+      pressed: Pressed
+      tested: Tested
+      untested: Untested
+    progress: Test Progress
+    reset: Reset
+    size: 'Keyboard Size:'
+    sizes:
+      '60': 60% Compact
+      full: Full Size (100%)
+      tkl: TKL (80%)
+    texts:
+      label-qwerty: QWERTY
+      label-azerty: AZERTY
+      label-dvorak: DVORAK
+      label-colemak: COLEMAK
   text-to-binary:
     title: Text to UTF-8 binary
     description: Convert text to its UTF-8 binary representation and vice-versa.
@@ -5716,6 +5795,11 @@ tools:
       placeholder-enter-an-iban-to-check-for-validity: Enter an IBAN to check for validity...
       title-valid-iban-examples: Valid IBAN examples
       placeholder-enter-ibans-to-check-for-validity: Enter an IBAN per line to check for validity
+      bank-name: Bank Name
+      account-number: Account Number
+      branch-identifier: Branch Identifier
+      bank-identifier: Bank Identifier
+      bic: BIC
     service:
       text:
         qr-iban-not-allowed: QR-IBAN not allowed
@@ -8036,6 +8120,10 @@ tools:
       hemisphere: Hemisphere
       easting: Easting
       northing: Northing
+      label-n: 'N'
+      label-s: S
+      label-e: E
+      label-w: W
     text:
       coordinate-system: Coordinate System
       decimal-format-lng-lat: Decimal Format (lng, lat)
@@ -8867,11 +8955,597 @@ tools:
     texts:
       label-paste-your-markdown-content: 'Paste your markdown content:'
       placeholder-your-markdown: Your markdown...
+    title: Markdown to data
+    description: >-
+      Convert Markdown table to JSON, YAML, CSV, SQL INSERT, XML, Markdown or
+      XLSX
+    externalAccess: 'null'
   html-to-data:
     texts:
       label-paste-your-html-content: 'Paste your HTML content:'
       placeholder-your-html: Your HTML here...
       error-multiple-json-blocks: Cannot convert multiple tables at once
+    title: HTML to data
+    description: Convert HTML table to JSON, YAML, CSV, SQL INSERT, XML, Markdown or XLSX
+    externalAccess: 'null'
+  cron-expression-builder:
+    title: Cron Expression Builder
+    description: Generate Cron expressions from a UI
+    externalAccess: 'null'
+    texts:
+      label-seconds: Seconds
+      label-minutes: Minutes
+      label-hours: Hours
+      label-day-of-month: Day of Month
+      label-month: Month
+      label-january: January
+      label-february: February
+      label-march: March
+      label-april: April
+      label-may: May
+      label-june: June
+      label-july: July
+      label-august: August
+      label-september: September
+      label-october: October
+      label-november: November
+      label-december: December
+      label-day-of-week: Day of Week
+      label-sunday: Sunday
+      label-monday: Monday
+      label-tuesday: Tuesday
+      label-wednesday: Wednesday
+      label-thursday: Thursday
+      label-friday: Friday
+      label-saturday: Saturday
+      label-year: Year
+      label-every: every
+      label-specific-values: Specific values
+      label-range: Range
+      label-increment: Increment
+      title-generated-cron-expression: Generated Cron Expression
+      title-validation-errors: Validation Errors
+      label-mode: 'Mode:'
+      label-from: 'From:'
+      label-to: 'To:'
+      label-start-at: 'Start at:'
+      tag-cron-expression-is-invalid: Cron expression is invalid
+      paste-cron-expression: Paste Cron Expression
+      e-g-5-0-12-1-2025: e.g. */5 0 12 * * 1 2025
+      0-6-sunday-0-monday-1-saturday-6: 0-6 (Sunday=0, Monday=1, ..., Saturday=6)
+      label-select-at-least-one-value: '{0}: select at least one value'
+      day-of-month-and-day-of-week-cannot-both-be-specific: Day of Month and Day of Week cannot both be specific
+      label-start-cannot-be-greater-than-end: '{0}: start cannot be greater than end'
+      label-start-must-be-within-allowed-range: '{0}: start must be within allowed range'
+      label-step-must-be-greater-than-1: '{0}: step must be >= 1'
+      label-start-cannot-be-greater-than-end-0: '{0}: start cannot be greater than end'
+      seconds: Seconds
+      minutes: Minutes
+      hours: Hours
+      day-of-month: Day of Month
+      month: Month
+      day-of-week: Day of Week
+      year: Year
+  css-js-prettify-minify:
+    title: CSS/JS Prettify & Minify
+    description: Prettify or minify your CSS and JavaScript code online.
+    externalAccess: 'null'
+    texts:
+      label-javascript: JavaScript
+      label-css: CSS
+      label-language: Language
+      label-indent-size: Indent size
+      placeholder-2: '2'
+      title-prettify: Prettify
+      label-your-code: Your code
+      placeholder-paste-your-code-to-prettify: Paste your code to prettify...
+      label-prettified-code: Prettified code
+      title-minify: Minify
+      placeholder-paste-your-code-to-minify: Paste your code to minify...
+      label-minified-code: Minified code
+  dns-propagation-tester:
+    title: DNS Propagation Tester
+    description: A simple tool for testing DNS propagation across different servers.
+    externalAccess: >-
+      This tool calls your Self Host Network Utilities Service to perform DNS
+      queries.
+    texts:
+      label-network-utilities-service-url: 'Network Utilities Service Url:'
+      placeholder-http-localhost-3000: http://localhost:3000
+      label-basic-authentication: 'Basic Authentication:'
+      placeholder-username-password: username:password
+      tab-dns-propagation: DNS Propagation
+      label-domain: 'Domain:'
+      placeholder-example-com: example.com
+      label-record-type: 'Record Type:'
+      title-resolvers-to-check: Resolvers to Check
+      title-results: Results
+      tab-custom-resolvers: Custom Resolvers
+      title-add-custom-resolver: Add Custom Resolver
+      label-resolver-name: 'Resolver Name:'
+      placeholder-resolver-name-e-g-my-dns: Resolver name (e.g. My DNS)
+      label-resolver-ip: 'Resolver IP:'
+      placeholder-resolver-ip-e-g-10-0-0-1: Resolver IP (e.g. 10.0.0.1)
+      title-your-custom-resolvers: Your Custom Resolvers
+      tag-network-utilities-service-configuration-self-hosted: Network Utilities Service Configuration (self hosted)
+      tag-you-must-self-host-network-utilities-service-see: 'You must self host Network Utilities Service. See:'
+      tag-network-utilities-service-docker-install: Network Utilities Service docker install
+      tag-select-all: Select All
+      tag-deselect-all: Deselect All
+      tag-check-propagation: Check Propagation
+      tag-resolver: Resolver
+      tag-resolver-ip: Resolver IP
+      tag-status: Status
+      tag-answers: Answers
+      tag-checking: Checking...
+      tag-no-answers: No answers
+      tag-add-resolver: Add Resolver
+      tag-remove: Remove
+      tag-no-custom-resolvers-added-yet: No custom resolvers added yet.
+  dns-query:
+    title: Cloudflare DNS/RDAP Queries
+    description: >-
+      Query DNS records and RDAP for any domain name online using Cloudflare
+      DNS/RDAP.org.
+    externalAccess: 'null'
+    texts:
+      message-please-enter-a-valid-domain-name: Please enter a valid domain name
+      text-dns-records-copied-to-the-clipboard: DNS records copied to the clipboard
+      label-domain-name: Domain name
+      placeholder-e-g-example-com: e.g. example.com
+      tag-name: Name
+      tag-ttl: TTL
+      tag-data: Data
+      tag-copy-results: Copy results
+      tag-no-records-found-for-this-domain: No records found for this domain.
+      tag-loading-whois-info: Loading WHOIS info...
+      tag-whois: WHOIS
+      tag-domain-name: Domain Name
+      tag-registrar: Registrar
+      tag-registration-date: Registration Date
+      tag-expiration-date: Expiration Date
+      tag-updated-date: Updated Date
+      tag-registrant: Registrant
+      tag-name-servers: Name Servers
+      tag-domain-status: Domain Status
+      tag-dnssec: DNSSEC
+  dns-tester:
+    title: DNS Tester
+    description: >-
+      A simple tool for testing DNS resolution, whois queries, and other
+      DNS-related tasks.
+    externalAccess: >-
+      This tool calls your Self Host Network Utilities Service to perform
+      DNS/Whois queries and related tasks.
+    texts:
+      label-a-ipv4-address: A — IPv4 address
+      label-aaaa-ipv6-address: AAAA — IPv6 address
+      label-afsdb-afs-database-location: AFSDB — AFS database location
+      label-apl-address-prefix-list: APL — Address prefix list
+      label-caa-certificate-authority-authorization: CAA — Certificate Authority Authorization
+      label-cdnskey-child-dnskey: CDNSKEY — Child DNSKEY
+      label-cds-child-ds: CDS — Child DS
+      label-cert-certificate-storage: CERT — Certificate storage
+      label-cname-canonical-name: CNAME — Canonical name
+      label-csync-child-to-parent-sync: CSYNC — Child-to-parent sync
+      label-dhcid-dhcp-identifier: DHCID — DHCP identifier
+      label-dlv-dnssec-lookaside-validation-obsolete: DLV — DNSSEC Lookaside Validation (obsolete)
+      label-dname-non-terminal-rename: DNAME — Non-terminal rename
+      label-dnskey-dnssec-public-key: DNSKEY — DNSSEC public key
+      label-ds-delegation-signer: DS — Delegation signer
+      label-eui48-mac-address-48-bit: EUI48 — MAC address (48-bit)
+      label-eui64-mac-address-64-bit: EUI64 — MAC address (64-bit)
+      label-hinfo-host-information: HINFO — Host information
+      label-hip-host-identity-protocol: HIP — Host identity protocol
+      label-https-https-service-binding: HTTPS — HTTPS service binding
+      label-ipseckey-ipsec-key: IPSECKEY — IPsec key
+      label-key-security-key-obsolete: KEY — Security key (obsolete)
+      label-kx-key-exchanger: KX — Key exchanger
+      label-loc-geographic-location: LOC — Geographic location
+      label-mx-mail-exchanger: MX — Mail exchanger
+      label-naptr-regex-based-rewrite: NAPTR — Regex-based rewrite
+      label-ns-name-server: NS — Name server
+      label-nsec-dnssec-denial-of-existence: NSEC — DNSSEC denial of existence
+      label-nsec3-hashed-denial-of-existence: NSEC3 — Hashed denial of existence
+      label-nsec3param-nsec3-parameters: NSEC3PARAM — NSEC3 parameters
+      label-openpgpkey-openpgp-public-key: OPENPGPKEY — OpenPGP public key
+      label-ptr-reverse-lookup-pointer: PTR — Reverse lookup pointer
+      label-rrsig-dnssec-signature: RRSIG — DNSSEC signature
+      label-rp-responsible-person: RP — Responsible person
+      label-sig-signature-obsolete: SIG — Signature (obsolete)
+      label-smimea-s-mime-cert-association: SMIMEA — S/MIME cert association
+      label-soa-start-of-authority: SOA — Start of authority
+      label-spf-sender-policy-framework-deprecated: SPF — Sender Policy Framework (deprecated)
+      label-srv-service-locator: SRV — Service locator
+      label-sshfp-ssh-public-key-fingerprint: SSHFP — SSH public key fingerprint
+      label-svcb-service-binding: SVCB — Service binding
+      label-ta-trust-anchor-experimental: TA — Trust anchor (experimental)
+      label-tkey-secret-key-agreement: TKEY — Secret key agreement
+      label-tlsa-dane-tls-association: TLSA — DANE TLS association
+      label-tsig-transaction-signature: TSIG — Transaction signature
+      label-txt-text-record: TXT — Text record
+      label-uri-uri-template: URI — URI template
+      label-zonemd-zone-message-digest: ZONEMD — Zone message digest
+      label-system-default: System default
+      label-custom-dns-resolver: Custom DNS Resolver
+      label-google-8-8-8-8: Google 8.8.8.8
+      label-google-8-8-4-4: Google 8.8.4.4
+      label-cloudflare-1-1-1-1: Cloudflare 1.1.1.1
+      label-cloudflare-1-0-0-1: Cloudflare 1.0.0.1
+      label-quad9-9-9-9-9: Quad9 9.9.9.9
+      label-quad9-149-112-112-112: Quad9 149.112.112.112
+      label-opendns-208-67-222-222: OpenDNS 208.67.222.222
+      label-opendns-208-67-220-220: OpenDNS 208.67.220.220
+      label-cleanbrowsing-185-228-168-9: CleanBrowsing 185.228.168.9
+      label-cleanbrowsing-185-228-169-9: CleanBrowsing 185.228.169.9
+      label-dns-watch-84-200-69-80: DNS.Watch 84.200.69.80
+      label-dns-watch-84-200-70-40: DNS.Watch 84.200.70.40
+      label-freedns-37-235-1-174: FreeDNS 37.235.1.174
+      label-freedns-37-235-1-177: FreeDNS 37.235.1.177
+      label-fdn-france-80-67-169-12: FDN France 80.67.169.12
+      label-fdn-france-80-67-169-40: FDN France 80.67.169.40
+      label-neustar-eu-156-154-70-1: Neustar EU 156.154.70.1
+      label-neustar-eu-156-154-71-1: Neustar EU 156.154.71.1
+      label-level3-209-244-0-3: Level3 209.244.0.3
+      label-level3-209-244-0-4: Level3 209.244.0.4
+      label-comodo-8-26-56-26: Comodo 8.26.56.26
+      label-comodo-8-20-247-20: Comodo 8.20.247.20
+      label-centurylink-205-171-3-65: CenturyLink 205.171.3.65
+      label-centurylink-205-171-2-65: CenturyLink 205.171.2.65
+      label-dnspod-119-29-29-29: DNSPod 119.29.29.29
+      label-alidns-223-5-5-5: AliDNS 223.5.5.5
+      label-alidns-223-6-6-6: AliDNS 223.6.6.6
+      label-yandex-77-88-8-8: Yandex 77.88.8.8
+      label-yandex-77-88-8-1: Yandex 77.88.8.1
+      label-naver-korea-125-209-222-141: Naver Korea 125.209.222.141
+      label-naver-korea-125-209-249-1: Naver Korea 125.209.249.1
+      label-gigadns-brazil-189-38-95-95: GigaDNS Brazil 189.38.95.95
+      label-gigadns-brazil-189-38-95-96: GigaDNS Brazil 189.38.95.96
+      label-opendns-africa-196-3-132-153: OpenDNS Africa 196.3.132.153
+      label-opendns-africa-196-3-132-154: OpenDNS Africa 196.3.132.154
+      label-network-utilities-service-url: 'Network Utilities Service Url:'
+      placeholder-http-localhost-3000: http://localhost:3000
+      label-basic-authentication: 'Basic Authentication:'
+      placeholder-username-password: username:password
+      label-target-dns-resolver-ip: 'Target DNS Resolver IP:'
+      placeholder-system-default: System default
+      placeholder-e-g-10-0-0-53: e.g. 10.0.0.53
+      tab-dns-query: DNS Query
+      label-domain: Domain
+      placeholder-example-com: example.com
+      label-dns-record-type: 'DNS Record type:'
+      title-result: Result
+      label-record-type: Record type
+      title-answers: Answers
+      tab-whois: WHOIS
+      label-raw-whois: Raw WHOIS
+      label-parsed: Parsed
+      tab-dnssec-validation: DNSSEC Validation
+      label-validated: Validated
+      label-dnskey: DNSKEY
+      label-rrsig: RRSIG
+      tab-reverse-dns-ptr: Reverse DNS (PTR)
+      label-ip-address: 'IP Address:'
+      placeholder-8-8-8-8: 8.8.8.8
+      label-ip: IP
+      label-ptr: PTR
+      tab-soa-axfr-test: SOA + AXFR Test
+      label-soa: SOA
+      label-axfr-allowed: AXFR allowed
+      label-records: Records
+      tag-network-utilities-service-configuration-self-hosted: Network Utilities Service Configuration (self hosted)
+      tag-you-must-self-host-network-utilities-service-see: 'You must self host Network Utilities Service. See:'
+      tag-network-utilities-service-docker-install: Network Utilities Service docker install
+      tag-query-dns: Query DNS
+      tag-lookup-whois: Lookup WHOIS
+      tag-validate-dnssec: Validate DNSSEC
+      tag-reverse-lookup: Reverse Lookup
+      tag-run-soa-axfr: Run SOA + AXFR
+  dockerfile-label-generator:
+    title: Dockerfile Label Generator
+    description: A simple tool for generating labels for Dockerfiles.
+    externalAccess: 'null'
+    texts:
+      label-title: 'Title:'
+      placeholder-my-project: My Project
+      label-description: 'Description:'
+      placeholder-short-project-description: Short project description
+      label-repository-url: 'Repository URL:'
+      placeholder-https-github-com-username-repo: https://github.com/username/repo
+      label-source-url: 'Source URL:'
+      label-documentation-url: 'Documentation URL:'
+      placeholder-https-github-com-username-repo-readme: https://github.com/username/repo#readme
+      label-license-spdx: 'License (SPDX):'
+      placeholder-mit: MIT
+      label-version: 'Version:'
+      placeholder-1-0-0: 1.0.0
+      label-revision-commit-sha: 'Revision (Commit SHA):'
+      placeholder-abcdef123456: abcdef123456
+      label-created: 'Created:'
+      placeholder-2024-01-01t12-00-00z: '2024-01-01T12:00:00.000Z'
+      label-authors: 'Authors:'
+      placeholder-your-name-you-example-com: Your Name {'<'}you{'@'}example.com{'>'}
+      title-generated-label-block: Generated LABEL block
+  https-tester:
+    title: HTTPS Tester
+    description: Validate HTTPS certificate, HSTS and 302 redirection
+    externalAccess: >-
+      This tool calls your Self Host Network Utilities Service to perform
+      HTTPS/HSTS related tasks.
+    texts:
+      label-network-utilities-service-url: 'Network Utilities Service Url:'
+      placeholder-http-localhost-3000: http://localhost:3000
+      label-basic-authentication: 'Basic Authentication:'
+      placeholder-username-password: username:password
+      tab-certificate: Certificate
+      label-host: 'Host:'
+      placeholder-example-com: example.com
+      label-port: 'Port:'
+      placeholder-443: '443'
+      title-result: Result
+      label-hostname: 'Hostname:'
+      label-not-before: 'Not before:'
+      label-not-after: 'Not after:'
+      label-days-until-expiry: 'Days until expiry:'
+      label-subject: 'Subject:'
+      label-issuer: 'Issuer:'
+      label-sub-alt-name: 'Sub. Alt. Name:'
+      tab-hsts: HSTS
+      label-url: URL
+      placeholder-https-example-com: https://example.com
+      label-hsts-present: HSTS present
+      label-max-age: Max-Age
+      label-inc-subdomains: Inc. subdomains
+      label-preload: Preload
+      label-raw-header: Raw header
+      tab-http-https-redirect: HTTP → HTTPS Redirect
+      label-domain: 'Domain:'
+      label-http-url: HTTP URL
+      label-redirected: Redirected
+      label-final-url: Final URL
+      label-status-code: Status code
+      label-redirect-chain: Redirect chain
+      title-redirect-chain-details: Redirect chain details
+      tag-network-utilities-service-configuration-self-hosted: Network Utilities Service Configuration (self hosted)
+      tag-you-must-self-host-network-utilities-service-see: 'You must self host Network Utilities Service. See:'
+      tag-network-utilities-service-docker-install: Network Utilities Service docker install
+      tag-check-certificate: Check Certificate
+      tag-check-hsts: Check HSTS
+      tag-check-redirect: Check Redirect
+  k6-script-generator:
+    title: K6 Load Testing Script Generator
+    description: Generate k6 load testing scripts with common presets
+    externalAccess: 'null'
+    texts:
+      label-smoke-test: Smoke Test
+      label-load-test: Load Test
+      label-stress-test: Stress Test
+      label-spike-test: Spike Test
+      label-soak-test: Soak Test
+      label-get: GET
+      label-post: POST
+      label-put: PUT
+      label-patch: PATCH
+      label-delete: DELETE
+      label-scenario-preset: 'Scenario Preset:'
+      label-virtual-users-vus: 'Virtual Users (VUs):'
+      label-duration: 'Duration:'
+      label-ramp-up-duration: 'Ramp Up Duration:'
+      label-ramp-down-duration: 'Ramp Down Duration:'
+      label-thresholds-name-expression: 'Thresholds (Name/Expression):'
+      placeholder-metric: Metric
+      placeholder-rule: Rule
+      label-checks-name-expression: 'Checks (Name/Expression):'
+      placeholder-check-name: Check name
+      placeholder-expression: Expression
+      label-request-steps: 'Request Steps:'
+      placeholder-request-url: Request URL
+      label-payload: 'Payload:'
+      placeholder-payload-json-or-text: Payload (JSON or text)
+      placeholder-headers-json: Headers (JSON)
+      label-headers: 'Headers:'
+      label-sleep-after-this-step-seconds: 'Sleep after this step (seconds):'
+      title-generated-k6-script: Generated K6 Script
+      tag-apply-preset: Apply Preset
+      tag-remove: Remove
+      tag-add-threshold: Add Threshold
+      tag-add-check: Add Check
+      tag-remove-step: Remove Step
+      tag-add-step: Add Step
+  markdown-diff:
+    title: Markdown Diff
+    description: Compare two Markdown documents and see the differences between them.
+    externalAccess: 'null'
+    texts:
+      label-code: Code
+      label-preview: Preview
+      tag-source-markdown: Source Markdown
+      tag-modified-markdown: Modified Markdown
+  markdown-preview:
+    title: Markdown preview
+    description: Live preview of Markdown as you type
+    externalAccess: 'null'
+    texts:
+      placeholder-your-markdown-content: Your Markdown content...
+      label-your-markdown-to-preview: 'Your Markdown to preview:'
+      label-rendered-preview: 'Rendered preview:'
+  markdown-table-generator:
+    title: Markdown Table Generator
+    description: Create GitHub-flavored Markdown tables with a visual editor.
+    externalAccess: 'null'
+    texts:
+      label-left: Left
+      label-center: Center
+      label-right: Right
+      label-paste-clipboard-table-data-here: 'Paste clipboard table data here:'
+      placeholder-paste-your-table-to-edit: Paste your table to edit...
+      label-generated-markdown-table: 'Generated Markdown table:'
+      tag-import-table-data: Import Table Data
+      tag-add-row: Add row
+      tag-add-column: Add column
+  nmap-command-builder:
+    title: Nmap Command Builder
+    description: A simple command builder for generating Nmap scan commands.
+    externalAccess: 'null'
+    texts:
+      label-default-scan: Default Scan
+      label-quick-scan: Quick Scan
+      label-intense-scan: Intense Scan
+      label-full-tcp-scan: Full TCP Scan
+      label-udp-scan: UDP Scan
+      label-ping-sweep: Ping Sweep
+      label-no-ping-stealth-host-discovery: No Ping (Stealth Host Discovery)
+      label-top-ports-100: Top Ports (100)
+      label-top-ports-1000: Top Ports (1000)
+      label-firewall-evasion: Firewall Evasion
+      label-ipv6-scan: IPv6 Scan
+      label-service-version-deep-scan: Service & Version Deep Scan
+      label-vulnerability-scan-nse-vuln: Vulnerability Scan (NSE vuln)
+      label-http-enumeration: HTTP Enumeration
+      label-smb-enumeration: SMB Enumeration
+      label-dns-brute-force: DNS Brute Force
+      label-ftp-audit: FTP Audit
+      label-ssh-audit: SSH Audit
+      label-full-recon-os-version-scripts: Full Recon (OS + Version + Scripts)
+      label-target: 'Target:'
+      placeholder-example-com-or-192-168-1-1: example.com or 192.168.1.1
+      tab-presets: Presets
+      label-preset: 'Preset:'
+      placeholder-choose-a-preset: Choose a preset
+      tab-custom: Custom
+      title-scan-options: Scan Options
+      label-os-detection-o: OS Detection (-O)
+      label-version-detection-sv: Version Detection (-sV)
+      label-default-scripts-sc: Default Scripts (-sC)
+      label-traceroute-traceroute: Traceroute (--traceroute)
+      label-verbose-v: Verbose (-v)
+      label-aggressive-a: Aggressive (-A)
+      title-advanced: Advanced
+      label-custom-ports-p: Custom Ports (-p)
+      placeholder-80-443-or-1-65535: 80,443 or 1-65535
+      label-timing-t: Timing (-T)
+      label-nse-scripts-script: NSE Scripts (--script)
+      placeholder-vuln-http-title: vuln, http-title, ...
+      label-output-file-on: Output File (-oN)
+      placeholder-scan-txt: scan.txt
+      title-generated-command: Generated Command
+  picomatch-tester:
+    title: Picomatch Tester
+    description: >-
+      A simple tester for the picomatch library, which is used for glob pattern
+      matching.
+    externalAccess: 'null'
+    texts:
+      label-pattern: 'Pattern:'
+      placeholder-enter-a-glob-pattern-like-js: Enter a glob pattern like *.js
+      label-options: 'Options:'
+      label-generated-regex: 'Generated Regex:'
+      label-test-lines-one-per-line: 'Test Lines (one per line):'
+      placeholder-enter-one-string-per-line: Enter one string per line
+      tag-case-insensitive: Case insensitive
+      tag-match-dotfiles: Match dotfiles
+      tag-no-nested-directories-with-globstars: No nested directories with globstars (**)
+      tag-allows-glob-to-match-any-part-of-the-given-string-s: Allows glob to match any part of the given string(s)
+      tag-don-t-match-trailing-slashes-with-single-stars: Don't match trailing slashes with single stars
+  powershell-memo:
+    title: Powershell Cheatsheet
+    description: >-
+      Powershell is a powerful scripting language and command-line shell
+      designed for system administration and automation. It provides a wide
+      range of cmdlets and features that allow users to manage and automate
+      tasks on Windows systems efficiently.
+    externalAccess: 'null'
+  running-pace-calculator:
+    title: Running Pace Calculator
+    description: >-
+      Calculate your running pace, estimate your finish times for popular races,
+      break down splits, and find your training zones.
+    externalAccess: 'null'
+    texts:
+      label-length: 'Length:'
+      placeholder-e-g-10km-or-100m: e.g. 10km or 100m
+      label-time: 'Time:'
+      placeholder-e-g-45-00-or-45min-or-1h30m: e.g. 45:00 or 45min or 1h30m...
+      label-pace: 'Pace:'
+      placeholder-e-g-4-30-km: e.g. 4:30/km
+      label-unit: 'Unit:'
+      label-output-speed-in-instead-of-pace: 'Output speed in instead of pace:'
+      title-result: Result
+      tag-km: km
+      tag-mile: mile
+      tag-calculate: Calculate
+  saml-parser:
+    title: SAML Parser
+    description: >-
+      Detects SAML input (Base64, DEFLATE, or XML), parses, validates its
+      signature, and displays a structured view of the assertion—including
+      issuer, subject, conditions, authentication context, claims, and
+      validation status.
+    externalAccess: 'null'
+    texts:
+      label-saml-assertion-base64-deflate-or-xml: 'SAML assertion (Base64, DEFLATE, or XML):'
+      placeholder-paste-saml-assertion-base64-deflate-or-xml: Paste SAML assertion (Base64, DEFLATE, or XML)
+      title-validation-options: Validation Options
+      label-thumbprint: 'Thumbprint:'
+      placeholder-thumbprint-optional: Thumbprint (optional)
+      label-public-key: 'Public Key:'
+      placeholder-public-key-optional: Public key (optional)
+      label-audience: 'Audience:'
+      placeholder-audience-optional: Audience (optional)
+      title-parsed-saml-assertion: Parsed SAML Assertion
+      label-issuer: 'Issuer:'
+      label-assertion-id: 'Assertion Id:'
+      label-session-index: 'Session Index:'
+      label-notbefore: 'NotBefore:'
+      label-notonorafter: 'NotOnOrAfter:'
+      label-signature-validation-status: 'Signature Validation Status:'
+      title-claims: Claims
+      title-raw-assertion: Raw Assertion
+      tag-bypass-expiration: Bypass Expiration
+      tag-don-t-bypass-expiration: Don't Bypass Expiration
+      tag-detect-parse-and-validate: Detect, Parse and Validate
+  url-builder:
+    title: URL Builder
+    description: Allows to edit and build URLs with query parameters
+    externalAccess: 'null'
+    texts:
+      label-string: string
+      label-number: number
+      label-boolean: boolean
+      label-date: date
+      label-datetime: datetime
+      label-array: array
+      label-load-url: 'Load Url:'
+      placeholder-paste-url-to-parse: Paste URL to parse
+      label-base-url: 'Base URL:'
+      placeholder-base-url: Base URL
+      title-url-parameters: Url Parameters
+      placeholder-key: key
+      placeholder-value: value
+      title-generated-url: Generated Url
+      tag-parse: Parse
+  json-patch:
+    texts:
+      text-json-paths-copied-to-clipboard: JSON Paths copied to clipboard!
+      tab-paths: Paths
+      label-input-json: Input JSON
+      placeholder-paste-json: Paste JSON...
+      tab-generate-patch: Generate Patch
+      label-before-json: Before JSON
+      placeholder-before-json: Before JSON...
+      label-after-json: After JSON
+      placeholder-after-json: After JSON...
+      title-generate-json-patch: Generate JSON Patch
+      tab-apply-patch: Apply Patch
+      label-json-to-patch: JSON to patch
+      placeholder-json-to-patch: JSON to patch...
+      label-json-patch-array: JSON Patch array
+      placeholder-json-patch-array: JSON Patch array...
+      title-patched-json: Patched JSON
+      tag-generate-paths: Generate paths
+      tag-copy-json-paths: Copy JSON paths
+      tag-generate-patch: Generate patch
+      tag-apply-patch: Apply patch
 collapsibleToolMenu:
   text:
     expanding: Expanding...

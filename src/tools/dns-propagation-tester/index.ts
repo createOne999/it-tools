@@ -1,13 +1,14 @@
+import { translate as t } from '@/plugins/i18n.plugin';
 import { defineTool } from '../tool';
 
 export const tool = defineTool({
-  name: 'DNS Propagation Tester',
+  name: t('tools.dns-propagation-tester.title'),
   path: '/dns-propagation-tester',
-  description: 'A simple tool for testing DNS propagation across different servers.',
+  description: t('tools.dns-propagation-tester.description'),
   keywords: ['dns', 'propagation', 'tester'],
   component: () => import('./dns-propagation-tester.vue'),
   icon: defineAsyncComponent(() => import('@vicons/tabler/es/World')),
   createdAt: new Date('2026-05-11'),
   category: 'Forensic',
-  externAccessDescription: 'This tool calls your Self Host Network Utilities Service to perform DNS queries.',
+  externAccessDescription: t('tools.dns-propagation-tester.externalAccess'),
 });

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 interface Preset {
   label: string;
   value: string;
@@ -7,97 +9,97 @@ interface Preset {
 
 const presets: Preset[] = [
   {
-    label: 'Default Scan',
+    label: t('tools.nmap-command-builder.texts.label-default-scan'),
     value: 'default',
     flags: [],
   },
   {
-    label: 'Quick Scan',
+    label: t('tools.nmap-command-builder.texts.label-quick-scan'),
     value: 'quick',
     flags: ['-T4', '-F'],
   },
   {
-    label: 'Intense Scan',
+    label: t('tools.nmap-command-builder.texts.label-intense-scan'),
     value: 'intense',
     flags: ['-T4', '-A', '-v'],
   },
   {
-    label: 'Full TCP Scan',
+    label: t('tools.nmap-command-builder.texts.label-full-tcp-scan'),
     value: 'full-tcp',
     flags: ['-sS', '-p-', '-T4'],
   },
   {
-    label: 'UDP Scan',
+    label: t('tools.nmap-command-builder.texts.label-udp-scan'),
     value: 'udp',
     flags: ['-sU', '-T4'],
   },
   {
-    label: 'Ping Sweep',
+    label: t('tools.nmap-command-builder.texts.label-ping-sweep'),
     value: 'ping-sweep',
     flags: ['-sn'],
   },
   {
-    label: 'No Ping (Stealth Host Discovery)',
+    label: t('tools.nmap-command-builder.texts.label-no-ping-stealth-host-discovery'),
     value: 'no-ping',
     flags: ['-Pn'],
   },
   {
-    label: 'Top Ports (100)',
+    label: t('tools.nmap-command-builder.texts.label-top-ports-100'),
     value: 'top-100',
     flags: ['--top-ports', '100', '-T4'],
   },
   {
-    label: 'Top Ports (1000)',
+    label: t('tools.nmap-command-builder.texts.label-top-ports-1000'),
     value: 'top-1000',
     flags: ['--top-ports', '1000', '-T4'],
   },
   {
-    label: 'Firewall Evasion',
+    label: t('tools.nmap-command-builder.texts.label-firewall-evasion'),
     value: 'evasion',
     flags: ['-f', '-D', 'RND:10', '--data-length', '50'],
   },
   {
-    label: 'IPv6 Scan',
+    label: t('tools.nmap-command-builder.texts.label-ipv6-scan'),
     value: 'ipv6',
     flags: ['-6', '-sS'],
   },
   {
-    label: 'Service & Version Deep Scan',
+    label: t('tools.nmap-command-builder.texts.label-service-version-deep-scan'),
     value: 'deep-version',
     flags: ['-sV', '--version-intensity', '9'],
   },
   {
-    label: 'Vulnerability Scan (NSE vuln)',
+    label: t('tools.nmap-command-builder.texts.label-vulnerability-scan-nse-vuln'),
     value: 'vuln',
     flags: ['--script', 'vuln'],
   },
   {
-    label: 'HTTP Enumeration',
+    label: t('tools.nmap-command-builder.texts.label-http-enumeration'),
     value: 'http-enum',
     flags: ['-p', '80,443', '--script', 'http-enum'],
   },
   {
-    label: 'SMB Enumeration',
+    label: t('tools.nmap-command-builder.texts.label-smb-enumeration'),
     value: 'smb-enum',
     flags: ['--script', 'smb-enum*'],
   },
   {
-    label: 'DNS Brute Force',
+    label: t('tools.nmap-command-builder.texts.label-dns-brute-force'),
     value: 'dns-brute',
     flags: ['--script', 'dns-brute'],
   },
   {
-    label: 'FTP Audit',
+    label: t('tools.nmap-command-builder.texts.label-ftp-audit'),
     value: 'ftp-audit',
     flags: ['--script', 'ftp-*'],
   },
   {
-    label: 'SSH Audit',
+    label: t('tools.nmap-command-builder.texts.label-ssh-audit'),
     value: 'ssh-audit',
     flags: ['--script', 'ssh-*'],
   },
   {
-    label: 'Full Recon (OS + Version + Scripts)',
+    label: t('tools.nmap-command-builder.texts.label-full-recon-os-version-scripts'),
     value: 'full-recon',
     flags: ['-A', '-sC', '-sV', '-O', '-T4'],
   },
@@ -182,70 +184,70 @@ const computedCommand = computed(() => {
 <template>
   <div>
     <NForm label-placement="left">
-      <NFormItem label="Target:" mb-1>
-        <NInput v-model:value="target" placeholder="example.com or 192.168.1.1" />
+      <NFormItem :label="t('tools.nmap-command-builder.texts.label-target')" mb-1>
+        <NInput v-model:value="target" :placeholder="t('tools.nmap-command-builder.texts.placeholder-example-com-or-192-168-1-1')" />
       </NFormItem>
 
       <n-tabs type="line" size="large" mb-2>
-        <n-tab-pane name="presets" tab="Presets">
-          <NFormItem label="Preset:">
+        <n-tab-pane name="presets" :tab="t('tools.nmap-command-builder.texts.tab-presets')">
+          <NFormItem :label="t('tools.nmap-command-builder.texts.label-preset')">
             <NSelect
               v-model:value="preset"
               :options="presets.map((p) => ({ label: p.label, value: p.value }))"
-              placeholder="Choose a preset"
+              :placeholder="t('tools.nmap-command-builder.texts.placeholder-choose-a-preset')"
             />
           </NFormItem>
         </n-tab-pane>
-        <n-tab-pane name="custom" tab="Custom">
-          <n-card title="Scan Options">
+        <n-tab-pane name="custom" :tab="t('tools.nmap-command-builder.texts.tab-custom')">
+          <n-card :title="t('tools.nmap-command-builder.texts.title-scan-options')">
             <n-space justify="center">
-              <NFormItem label="OS Detection (-O)">
+              <NFormItem :label="t('tools.nmap-command-builder.texts.label-os-detection-o')">
                 <NSwitch v-model:value="osDetection" />
               </NFormItem>
 
-              <NFormItem label="Version Detection (-sV)">
+              <NFormItem :label="t('tools.nmap-command-builder.texts.label-version-detection-sv')">
                 <NSwitch v-model:value="versionDetection" />
               </NFormItem>
 
-              <NFormItem label="Default Scripts (-sC)">
+              <NFormItem :label="t('tools.nmap-command-builder.texts.label-default-scripts-sc')">
                 <NSwitch v-model:value="scriptScan" />
               </NFormItem>
 
-              <NFormItem label="Traceroute (--traceroute)">
+              <NFormItem :label="t('tools.nmap-command-builder.texts.label-traceroute-traceroute')">
                 <NSwitch v-model:value="traceroute" />
               </NFormItem>
 
-              <NFormItem label="Verbose (-v)">
+              <NFormItem :label="t('tools.nmap-command-builder.texts.label-verbose-v')">
                 <NSwitch v-model:value="verbose" />
               </NFormItem>
 
-              <NFormItem label="Aggressive (-A)">
+              <NFormItem :label="t('tools.nmap-command-builder.texts.label-aggressive-a')">
                 <NSwitch v-model:value="aggressive" />
               </NFormItem>
             </n-space>
           </n-card>
 
-          <n-card title="Advanced">
-            <NFormItem label="Custom Ports (-p)">
-              <NInput v-model:value="customPorts" placeholder="80,443 or 1-65535" />
+          <n-card :title="t('tools.nmap-command-builder.texts.title-advanced')">
+            <NFormItem :label="t('tools.nmap-command-builder.texts.label-custom-ports-p')">
+              <NInput v-model:value="customPorts" :placeholder="t('tools.nmap-command-builder.texts.placeholder-80-443-or-1-65535')" />
             </NFormItem>
 
-            <NFormItem label="Timing (-T)">
+            <NFormItem :label="t('tools.nmap-command-builder.texts.label-timing-t')">
               <NInputNumber v-model:value="timing" :min="0" :max="5" />
             </NFormItem>
 
-            <NFormItem label="NSE Scripts (--script)">
-              <NInput v-model:value="scripts" placeholder="vuln, http-title, ..." />
+            <NFormItem :label="t('tools.nmap-command-builder.texts.label-nse-scripts-script')">
+              <NInput v-model:value="scripts" :placeholder="t('tools.nmap-command-builder.texts.placeholder-vuln-http-title')" />
             </NFormItem>
 
-            <NFormItem label="Output File (-oN)">
-              <NInput v-model:value="outputFile" placeholder="scan.txt" />
+            <NFormItem :label="t('tools.nmap-command-builder.texts.label-output-file-on')">
+              <NInput v-model:value="outputFile" :placeholder="t('tools.nmap-command-builder.texts.placeholder-scan-txt')" />
             </NFormItem>
           </n-card>
         </n-tab-pane>
       </n-tabs>
 
-      <n-card title="Generated Command">
+      <n-card :title="t('tools.nmap-command-builder.texts.title-generated-command')">
         <textarea-copyable :value="computedCommand" language="bash" />
       </n-card>
     </NForm>

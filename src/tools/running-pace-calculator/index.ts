@@ -1,9 +1,10 @@
+import { translate as t } from '@/plugins/i18n.plugin';
 import { defineTool } from '../tool';
 
 export const tool = defineTool({
-  name: 'Running Pace Calculator',
+  name: t('tools.running-pace-calculator.title'),
   path: '/running-pace-calculator',
-  description: 'Calculate your running pace, estimate your finish times for popular races, break down splits, and find your training zones.',
+  description: t('tools.running-pace-calculator.description'),
   keywords: ['running', 'pace', 'calculator'],
   component: () => import('./running-pace-calculator.vue'),
   icon: defineAsyncComponent(() => import('@vicons/tabler/es/Run')),

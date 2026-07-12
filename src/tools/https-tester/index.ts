@@ -1,13 +1,14 @@
+import { translate as t } from '@/plugins/i18n.plugin';
 import { defineTool } from '../tool';
 
 export const tool = defineTool({
-  name: 'HTTPS Tester',
+  name: t('tools.https-tester.title'),
   path: '/https-tester',
-  description: 'Validate HTTPS certificate, HSTS and 302 redirection',
+  description: t('tools.https-tester.description'),
   keywords: ['https', 'hsts', 'redirection', 'certificate', 'tester'],
   component: () => import('./https-tester.vue'),
   icon: defineAsyncComponent(() => import('@vicons/tabler/es/ShieldCheck')),
   createdAt: new Date('2026-05-11'),
   category: 'Forensic',
-  externAccessDescription: 'This tool calls your Self Host Network Utilities Service to perform HTTPS/HSTS related tasks.',
+  externAccessDescription: t('tools.https-tester.externalAccess'),
 });

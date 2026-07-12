@@ -1,9 +1,10 @@
+import { translate as t } from '@/plugins/i18n.plugin';
 import { defineTool } from '../tool';
 
 export const tool = defineTool({
-  name: 'URL Builder',
+  name: t('tools.url-builder.title'),
   path: '/url-builder',
-  description: 'Allows to edit and build URLs with query parameters',
+  description: t('tools.url-builder.description'),
   keywords: ['url', 'builder'],
   component: () => import('./url-builder.vue'),
   icon: defineAsyncComponent(() => import('@vicons/tabler/es/WorldUpload')),

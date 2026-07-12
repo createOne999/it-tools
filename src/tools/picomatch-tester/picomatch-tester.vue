@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 import { useITStorage, useQueryParamOrStorage } from '@/composable/queryParams';
 import picomatch from 'picomatch';
 
@@ -78,44 +80,34 @@ const batchResults = computed(() =>
 <template>
   <div>
     <NForm label-placement="left">
-      <NFormItem label="Pattern:">
-        <NInput v-model:value="pattern" placeholder="Enter a glob pattern like *.js" />
+      <NFormItem :label="t('tools.picomatch-tester.texts.label-pattern')">
+        <NInput v-model:value="pattern" :placeholder="t('tools.picomatch-tester.texts.placeholder-enter-a-glob-pattern-like-js')" />
       </NFormItem>
 
-      <NFormItem label="Options:">
+      <NFormItem :label="t('tools.picomatch-tester.texts.label-options')">
         <n-space justify="center">
-          <NCheckbox v-model:checked="options.nocase">
-            Case insensitive
-          </NCheckbox>
-          <NCheckbox v-model:checked="options.dot">
-            Match dotfiles
-          </NCheckbox>
+          <NCheckbox v-model:checked="options.nocase">{{ t('tools.picomatch-tester.texts.tag-case-insensitive') }}</NCheckbox>
+          <NCheckbox v-model:checked="options.dot">{{ t('tools.picomatch-tester.texts.tag-match-dotfiles') }}</NCheckbox>
           <NCheckbox v-model:checked="options.noext">
             No Extglob (like +(a|b))
           </NCheckbox>
-          <NCheckbox v-model:checked="options.noglobstar">
-            No nested directories with globstars (**)
-          </NCheckbox>
-          <NCheckbox v-model:checked="options.contains">
-            Allows glob to match any part of the given string(s)
-          </NCheckbox>
-          <NCheckbox v-model:checked="options.strictSlashes">
-            Don't match trailing slashes with single stars
-          </NCheckbox>
+          <NCheckbox v-model:checked="options.noglobstar">{{ t('tools.picomatch-tester.texts.tag-no-nested-directories-with-globstars') }}</NCheckbox>
+          <NCheckbox v-model:checked="options.contains">{{ t('tools.picomatch-tester.texts.tag-allows-glob-to-match-any-part-of-the-given-string-s') }}</NCheckbox>
+          <NCheckbox v-model:checked="options.strictSlashes">{{ t('tools.picomatch-tester.texts.tag-don-t-match-trailing-slashes-with-single-stars') }}</NCheckbox>
         </n-space>
       </NFormItem>
 
-      <NFormItem label="Generated Regex:">
+      <NFormItem :label="t('tools.picomatch-tester.texts.label-generated-regex')">
         <input-copyable
           :value="regex ? regex.toString() : 'Invalid pattern'"
         />
       </NFormItem>
 
-      <NFormItem label="Test Lines (one per line):" label-placement="top">
+      <NFormItem :label="t('tools.picomatch-tester.texts.label-test-lines-one-per-line')" label-placement="top">
         <NInput
           v-model:value="batchInput"
           type="textarea"
-          placeholder="Enter one string per line"
+          :placeholder="t('tools.picomatch-tester.texts.placeholder-enter-one-string-per-line')"
           :autosize="{ minRows: 6 }"
         />
       </NFormItem>
