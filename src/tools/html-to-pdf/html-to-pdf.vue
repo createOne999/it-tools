@@ -2,6 +2,7 @@
 import { useI18n } from 'vue-i18n';
 import { useITStorage } from '@/composable/queryParams';
 import { Base64 } from 'js-base64';
+import { useNetworkUtilsConfig } from '../network-utils/network-utils-config';
 
 const { t } = useI18n();
 
@@ -10,8 +11,11 @@ const html = ref('');
 const error = ref('');
 const isRunning = ref(false);
 
-const serverHost = useITStorage('html-to-pdf:url', 'http://localhost:3000');
-const serverAuth = useITStorage('html-to-pdf:auth', '');
+const { serverHost, serverAuth, hasFixedConfig } = useNetworkUtilsConfig({
+  urlStorageKey: 'html-to-pdf:url',
+  authStorageKey: 'html-to-pdf:auth',
+  defaultUrl: 'http://localhost:3000',
+});
 
 const options = useITStorage('html-to-pdf:opts', {
   format: 'A4',
@@ -89,11 +93,14 @@ async function generateFromUrl() {
   error.value = '';
   isRunning.value = true;
   try {
+    const headers = {
+      'Content-Type': 'application/json',
+      ...(serverAuth.value ? { Authorization: `Basic ${Base64.encode(serverAuth.value)}` } : {}),
+    };
     const res = await fetch(`${serverHost.value}/pdf/url`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers,
       body: JSON.stringify(payload),
-      ...(serverAuth.value ? { headers: { Authorization: `Basic ${Base64.encode(serverAuth.value)}` } } : {}),
     });
 
     const blob = await res.blob();
@@ -178,8 +185,11 @@ async function generateBatch() {
 
 <template>
   <div>
-    <details mb-2>
-      <summary>{{ t('tools.html-to-pdf.texts.tag-html-to-pdf-service-configuration-self-hosted') }}</summary>
+    <details mb-2 v-if="!hasFixedConfig">
+      <summary>
+        ⚠ {{ t('tools.external-self-hosted-required') }} ⚠ -
+        {{ t('tools.html-to-pdf.texts.tag-html-to-pdf-service-configuration-self-hosted') }}
+      </summary>
       <n-card>
         <NFormItem :label="t('tools.html-to-pdf.texts.label-html-to-pdf-service-url')" label-placement="top">
           <NInput

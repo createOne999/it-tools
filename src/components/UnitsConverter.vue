@@ -4,7 +4,7 @@ import * as unitsconverter from 'units-converter';
 
 const props = withDefaults(
   defineProps<{
-    supportedUnits: { [key: string]: string };
+    supportedUnits: { [key: string]: { value: string; label: string } };
     defaultUnit: string;
     labelWidth?: string;
     unitMinWidth?: string;
@@ -47,10 +47,11 @@ const SI_PREFIX_NAMES = [
 
 const SI_PREFIX_NAMES_REGEX = new RegExp(`^(${SI_PREFIX_NAMES.join('|')})`);
 
-const units = reactive<Record<string, { title: string; unit: string; ref: number }>>(
+const units = reactive<Record<string, { local_title: string; eng_title: string; unit: string; ref: number }>>(
   Object.entries(supportedUnits.value)
-    .map(([key, label]) => ({
-      title: label,
+    .map(([key, { label, value }]) => ({
+      eng_title: value,
+      local_title: label,
       unit: key,
       ref: 1,
     }))
@@ -69,7 +70,7 @@ const filteredUnits = computed(() => {
     return Object.entries(units);
   }
 
-  return Object.entries(units).filter(([_, { title }]) => !SI_PREFIX_NAMES_REGEX.test(title));
+  return Object.entries(units).filter(([_, { eng_title }]) => !SI_PREFIX_NAMES_REGEX.test(eng_title));
 });
 
 function update(key: string) {
@@ -125,9 +126,9 @@ update(defaultUnit.value);
         {{ $t('tools.UnitsConverter.text.si-converter') }}
       </c-link>
     </n-space>
-    <n-input-group v-for="[key, { title, unit }] in filteredUnits" :key="key" mb-3 w-full>
-      <n-input-group-label :style="{ width: labelWidth }">
-        {{ title }}
+    <n-input-group v-for="[key, { local_title, unit }] in filteredUnits" :key="key" mb-3 w-full>
+      <n-input-group-label :style="{ minWidth: labelWidth }">
+        {{ local_title }}
       </n-input-group-label>
 
       <n-input-number v-model:value="units[key].ref" style="flex: 1" @update:value="() => update(key)" />

@@ -1023,6 +1023,11 @@ tools:
       placeholder-enter-an-iban-to-check-for-validity: Geben Sie eine IBAN ein, um die Gültigkeit zu prüfen...
       title-valid-iban-examples: Gültige IBAN-Beispiele
       placeholder-enter-ibans-to-check-for-validity: Geben Sie pro Zeile eine IBAN ein, um die Gültigkeit zu prüfen
+      bank-name: Name der Bank
+      account-number: Kontonummer
+      branch-identifier: Filialkennung
+      bank-identifier: Bankleitzahl
+      bic: BIC
     service:
       text:
         qr-iban-not-allowed: QR-IBAN nicht zulässig
@@ -2085,6 +2090,13 @@ tools:
   angle-converter:
     title: Winkeleinheiten-Umrechner
     description: Konvertieren Sie Werte zwischen Winkeleinheiten
+    texts:
+      label-degree: Grad (°)
+      label-radian: Radiant
+      label-turn: drehen
+      label-gradian: Gradian
+      label-grad: Grad
+      label-gon: gon
   ansible-vault-crypt-decrypt:
     title: Ansible Vault Crypt entschlüsseln
     description: Ansible Vault Secrets verschlüsseln und entschlüsseln
@@ -2130,6 +2142,32 @@ tools:
   area-converter:
     title: Flächeneinheiten-Umrechner
     description: Konvertieren Sie Werte zwischen Flächeneinheiten
+    texts:
+      label-square-meter: Quadratmeter
+      label-square-petameter: Quadratpetameter
+      label-square-terameter: Quadratterameter
+      label-square-gigameter: Quadrat-Gigameter
+      label-square-megameter: Quadratmegameter
+      label-square-kilometer: Quadratkilometer
+      label-square-hectometer: Quadrathektometer
+      label-square-decameter: Quadratdekameter
+      label-square-decimeter: Quadratdezimeter
+      label-square-centimeter: Quadratzentimeter
+      label-square-millimeter: Quadratmillimeter
+      label-square-micrometer: Quadratmikrometer
+      label-square-nanometer: Quadratnanometer
+      label-square-picometer: Quadrat-Pikometer
+      label-square-femtometer: Quadrat-Femtometer
+      label-acre: Acre
+      label-centiare: hundert
+      label-deciare: zu entscheiden
+      label-are: Sind
+      label-decare: decare
+      label-hectare: Hektar
+      label-square-foot-ft2-sq-ft: Quadratfuß (/ft²/sq ft)
+      label-square-inch-in2-sq-in: Quadratzoll (in²/Quadratzoll)
+      label-square-yard-yd2-sq-yd: Quadratyard (yd²/sq yd)
+      label-square-mile-mi2-sq-mi: Quadratmeile (mi2/sq mi)
   aspect-ratio-calculator:
     title: Seitenverhältnis-Rechner
     description: Verwenden Sie diesen Verhältnisrechner, um die Abmessungen beim
@@ -2797,6 +2835,37 @@ tools:
   energy-converter:
     title: Energieeinheiten-Umrechner
     description: Werte zwischen Energieeinheiten umrechnen
+    texts:
+      label-joule: Joule
+      label-petajoule: Petajoule
+      label-terajoule: Terajoule
+      label-gigajoule: Gigajoule
+      label-megajoule: Megajoule
+      label-kilojoule: Kilojoule
+      label-hectojoule: Hektojoule
+      label-decajoule: Dekajoule
+      label-decijoule: Dezijoule
+      label-centijoule: Centijoule
+      label-millijoule: Millijoule
+      label-microjoule: Mikrojoule
+      label-nanojoule: Nanojoule
+      label-picojoule: Picojoule
+      label-femtojoule: Femtojoule
+      label-watt-hour: Wattstunde
+      label-petawatt-hour: Petawattstunde
+      label-terawatt-hour: Terawattstunde
+      label-gigawatt-hour: gigawatt-hour
+      label-megawatt-hour: Megawattstunde
+      label-kilowatt-hour: Kilowattstunde
+      label-hectowatt-hour: Hektowattstunde
+      label-decawatt-hour: Dekawattstunde
+      label-deciwatt-hour: Deziwattstunde
+      label-centiwatt-hour: Centiwattstunde
+      label-milliwatt-hour: Milliwattstunde
+      label-microwatt-hour: Mikrowattstunde
+      label-nanowatt-hour: Nanowattstunde
+      label-picowatt-hour: Pikowattstunde
+      label-femtowatt-hour: Femtowattstunde
   file-hasher:
     title: Datei-Hasher
     description: Hash von Dateien berechnen
@@ -2853,6 +2922,35 @@ tools:
   force-converter:
     title: Krafteinheiten-Umrechner
     description: Konvertieren Sie Werte zwischen Krafteinheiten
+    texts:
+      label-newton: Newton
+      label-petanewton: Petanewton
+      label-teranewton: Teranewton
+      label-giganewton: Giganewton
+      label-meganewton: Meganewton
+      label-kilonewton: Kilonewton
+      label-hectonewton: Hektonewton
+      label-decanewton: Decanewton
+      label-decinewton: Decinewton
+      label-centinewton: Centinewton
+      label-millinewton: Millinewton
+      label-micronewton: Mikronewton
+      label-nanonewton: Nanonewton
+      label-piconewton: Piconewton
+      label-femtonewton: Femtonewton
+      label-dyne: Dyne
+      label-pound-of-force: Pfund Kraft
+      label-kip: pennen
+      label-klb: Verein
+      label-kipf: Kippe
+      label-klbf: klbf
+      label-poundal: Pfund
+      label-kilogram-force: Kilogramm-Kraft
+      label-kilopond: Kilopond
+      label-megapond: Megateich
+      label-tonne-force: Tonnenkraft
+      label-metric-ton-force: metrische Tonnenkraft
+      label-megagram-force: Megagrammkraft
   geo-distance-calculator:
     title: Geo-Entfernungsrechner
     description: Berechnen Sie die Entfernung zwischen zwei geografischen Standorten
@@ -3474,6 +3572,29 @@ tools:
   length-converter:
     title: Längeneinheiten-Umrechner
     description: Werte aus Längeneinheiten umrechnen
+    texts:
+      label-meter: Meter
+      label-petameter: Petameter
+      label-terameter: Terameter
+      label-gigameter: Gigameter
+      label-megameter: Megameter
+      label-kilometer: Kilometer
+      label-hectometer: Hektometer
+      label-decameter: Dekameter
+      label-decimeter: Dezimeter
+      label-centimeter: Zentimeter
+      label-millimeter: Millimeter
+      label-micrometer: Mikrometer
+      label-nanometer: Nanometer
+      label-picometer: Pikometer
+      label-femtometer: Femtometer
+      label-inch: Zoll (")
+      label-yard: Hof
+      label-mile: Meile
+      label-nautical-mile-m-nm: Seemeile (M/NM)
+      label-light-year: Lichtjahr
+      label-parsec: Parsec
+      label-pica: Pica
   list-comparer:
     title: Listen Vergleichen
     description: Vergleichen Sie zwei Listenelemente
@@ -3566,6 +3687,35 @@ tools:
   mass-converter:
     title: Masseneinheiten-Umrechner
     description: Werte zwischen Masseneinheiten umrechnen
+    texts:
+      label-gram: Gramm
+      label-petagram: Petagramm
+      label-teragram: Teragramm
+      label-gigagram: Gigagramm
+      label-megagram: Megagramm
+      label-kilogram: Kilogramm
+      label-hectogram: Hektogramm
+      label-decagram: Dekagramm
+      label-decigram: zehn Gramm
+      label-centigram: Zentigramm
+      label-milligram: Milligramm
+      label-microgram: Mikrogramm
+      label-nanogram: Nanogramm
+      label-picogram: Pikogramm
+      label-femtogram: Femtogramm
+      label-tonne: Tonne
+      label-metric-ton: metrische Tonne
+      label-kilotonne: Kilotonne
+      label-megatonne: Megatonne
+      label-gigatonne: Gigatonnen
+      label-pound: Pfund
+      label-stone: Stein
+      label-ounce: Unze
+      label-short-ton: kurze Tonne
+      label-us-ton: US-Tonne
+      label-long-ton: lange Tonne
+      label-imperial-ton: imperialer Ton
+      label-displacement-ton: Verdrängung Tonnen
   math-formats-converter:
     title: Konverter für mathematische Formate
     description: Konvertieren Sie mathematische Ausdrücke zwischen Formaten
@@ -3978,9 +4128,63 @@ tools:
   power-converter:
     title: Leistungswandler
     description: Werte zwischen Leistungseinheiten umrechnen
+    texts:
+      label-watt: Watt
+      label-petawatt: Petawatt
+      label-terawatt: Terawatt
+      label-gigawatt: gigawatt
+      label-megawatt: Megawatt
+      label-kilowatt: Kilowatt
+      label-hectowatt: Hektowatt
+      label-decawatt: Dekawatt
+      label-deciwatt: Deziwatt
+      label-centiwatt: Centiwatt
+      label-milliwatt: Milliwatt
+      label-microwatt: Mikrowatt
+      label-nanowatt: Nanowatt
+      label-picowatt: Pikowatt
+      label-femtowatt: Femtowatt
+      label-horsepower: PS
+      label-mechanical-horsepower: mechanische Leistung
   pressure-converter:
     title: Druckeinheiten-Umrechner
     description: Konvertieren Sie Werte zwischen Druckeinheiten
+    texts:
+      label-pascal: Pascal
+      label-pettapascal: Pettapascal
+      label-terapascal: terapascal
+      label-gigapascal: Gigapascal
+      label-megapascal: Megapascal
+      label-kilopascal: Kilopascal
+      label-hectopascal: Hektopascal
+      label-decapascal: decapascal
+      label-decipascal: decipascal
+      label-centipascal: Centipascal
+      label-millipascal: Millipascal
+      label-micropascal: Mikropascal
+      label-nanopascal: Nanopascal
+      label-picopascal: Picopascal
+      label-femtopascal: Femtopascal
+      label-bar: Bar
+      label-petabar: Petabar
+      label-terabar: ausbreiten
+      label-gigabar: Gigabar
+      label-megabar: Megabar
+      label-kilobar: Kilobar
+      label-hectobar: Hektobar
+      label-decabar: Ich wurde enthauptet.
+      label-decibar: entziffern
+      label-centibar: Centibar
+      label-millibar: Millibar
+      label-microbar: Mikrobar
+      label-nanobar: Nanobar
+      label-picobar: Picobar
+      label-femtobar: Femtobar
+      label-torr: Torr
+      label-millitorr: Millitorr
+      label-atmosphere: Atmosphäre
+      label-pound-per-square-inch: Pfund pro Quadratzoll
+      label-lbf-in2: lbf/in2
   properties-to-yaml:
     title: Eigenschaften zu YAML
     description: Konvertieren Sie Java .properties-Inhalte in Yaml
@@ -4363,6 +4567,65 @@ tools:
   volume-converter:
     title: Volumeneinheiten-Umrechner
     description: Werte aus Volumeneinheiten umrechnen
+    texts:
+      label-cubic-meter-stere: Kubikmeter/Stereo
+      label-cubic-petameter: Kubikpetameter
+      label-cubic-terameter: Kubikterameter
+      label-cubic-gigameter: Kubikgigameter
+      label-cubic-megameter: Kubikmegameter
+      label-cubic-kilometer: Kubikkilometer
+      label-cubic-hectometer: Kubikhektometer
+      label-cubic-decameter: Kubikdekameter
+      label-cubic-decimeter: Kubikdezimeter
+      label-cubic-centimeter: Kubikzentimeter
+      label-cubic-millimeter: Kubikmillimeter
+      label-cubic-micrometer: Kubikmikrometer
+      label-cubic-nanometer: Kubiknanometer
+      label-cubic-picometer: Kubikpikometer
+      label-cubic-femtometer: Kubikfemtometer
+      label-liter: Liter
+      label-petaliter: Petaliter
+      label-teraliter: Terraliter
+      label-gigaliter: Gigaliter
+      label-megaliter: Megaliter
+      label-kiloliter: Kiloliter
+      label-hectoliter: Hektoliter
+      label-decaliter: Dekaliter
+      label-deciliter: Deziliter
+      label-centiliter: Zentiliter
+      label-milliliter: Milliliter
+      label-microliter: Mikroliter
+      label-nanoliter: Nanoliter
+      label-picoliter: Pikoliter
+      label-femtoliter: Femtoliter
+      label-cubic-mile: Kubikmeile
+      label-acre-foot: Acre-Fuß
+      label-cubic-yard: Kubikyard
+      label-cubic-foot: Kubikfuß
+      label-board-feet: Brettfuß
+      label-cubic-inch: Kubikzoll
+      label-measurement-ton: Messung Tonne
+      label-imperial-barrel: Kaiserfass
+      label-imperial-bushel: imperialer Scheffel
+      label-imperial-peck: Kaiserpicke
+      label-imperial-gallon: imperiale Gallone
+      label-imperial-quart: Imperial Quart
+      label-imperial-pint: Imperial Pint
+      label-imperial-fluid-ounce: Imperiale Flüssigunze
+      label-teaspoon: Teelöffel
+      label-tablespoon: Esslöffel
+      label-us-fluid-ounce: US-Flüssigunze
+      label-cup: Tasse
+      label-us-legal-cup: US-amerikanischer Pokal
+      label-us-liquid-pint: US-Flüssigkeitspint
+      label-us-liquid-quart: US-Flüssigkeitsquart
+      label-us-liquid-gallon: US-Flüssigkeitsgallone
+      label-us-bushel: US-Scheffel
+      label-us-peck: US-Peck
+      label-us-dry-gallon: US-Trockengallone
+      label-us-dry-barrel: US-Trockenfass
+      label-us-dry-quart: US-Trockenquart
+      label-us-dry-pint: US-Trockenpint
   week-number-converter:
     title: Wochennummern-Konverter
     description: Konvertieren Sie zwischen ISO-Wochennummer, Wochennummer im Monat und Datum
@@ -6150,6 +6413,13 @@ tools:
       label-base64-64: Base64 (64)
       placeholder-base64-version-will-be-here: Die Base64-Version wird hier sein ...
       tag-custom: "Brauch:"
+      label-space-separation: Räumliche Trennung
+      label-binary-size: Binärgröße
+      label-octal-size: Oktalgröße
+      label-decimal-size: Dezimalgröße
+      label-hexadecimal-size: Sechskantgröße
+      label-base64-size: Base64-Größe
+      label-custom-size: Sondergröße
     model:
       text:
         invalid-digit-digit-for-base-finalfrombase: Ungültige Ziffer &quot;{0}&quot; für Basis {1}.
@@ -8285,6 +8555,9 @@ tools:
     title: Beschleunigungswandler
     description: Werte zwischen Beschleunigungseinheiten umrechnen
     externalAccess: "null"
+    texts:
+      label-g-force: g-Kraft
+      label-meter-per-second-squared: Meter pro Sekunde zum Quadrat
   docker-image-downloader:
     title: Docker Image Downloader
     description: Laden Sie ein Docker-Image anhand einer Docker-Registry, einer
@@ -8358,6 +8631,16 @@ tools:
     title: Frequenzumrichter
     description: Werte zwischen Frequenzeinheiten umrechnen
     externalAccess: "null"
+    texts:
+      label-hertz: Hertz
+      label-millihertz: Millihertz
+      label-kilohertz: Kilohertz
+      label-megahertz: Megahertz
+      label-gigahertz: gigahertz
+      label-terahertz: Terahertz
+      label-revolutions-per-minute: Umdrehungen pro Minute
+      label-degree-per-second: Grad pro Sekunde
+      label-radian-per-second: Radiant pro Sekunde
   markdown-to-text:
     title: Markdown zu Text
     description: Markdown in Klartext umwandeln
@@ -8431,6 +8714,12 @@ tools:
     title: Drehzahlwandler
     description: Werte zwischen Geschwindigkeitseinheiten umrechnen
     externalAccess: "null"
+    texts:
+      label-meter-per-second: Meter pro Sekunde
+      label-kilometer-per-hour: Kilometer pro Stunde
+      label-miles-per-hour: Meilen pro Stunde
+      label-knot: Knoten
+      label-feet-per-second: Fuß pro Sekunde
   tab-to-spaces:
     title: Tabulator zu Leerzeichen
     description: Tabulator in mehrere Leerzeichen umwandeln
@@ -8496,6 +8785,44 @@ tools:
     title: Volumenstrom-Umrechner
     description: Werte zwischen Volumenstromeinheiten umrechnen
     externalAccess: "null"
+    texts:
+      label-cubic-millimeters-per-second: Kubikmillimeter pro Sekunde
+      label-cubic-centimeters-per-second: Kubikzentimeter pro Sekunde
+      label-milliliters-per-second: Milliliter pro Sekunde
+      label-centiliters-per-second: Zentiliter pro Sekunde
+      label-deciliters-per-second: Deziliter pro Sekunde
+      label-liters-per-second: Liter pro Sekunde
+      label-liters-per-minute: Liter pro Minute
+      label-liters-per-hour: Liter pro Stunde
+      label-kiloliters-per-second: Kiloliter pro Sekunde
+      label-kiloliters-per-minute: Kiloliter pro Minute
+      label-kiloliters-per-hour: Kiloliter pro Stunde
+      label-cubic-meters-per-second: Kubikmeter pro Sekunde
+      label-cubic-meters-per-minute: Kubikmeter pro Minute
+      label-cubic-meters-per-hour: Kubikmeter pro Stunde
+      label-cubic-kilometers-per-second: Kubikkilometer pro Sekunde
+      label-teaspoons-per-second: Teelöffel pro Sekunde
+      label-tablespoons-per-second: Esslöffel pro Sekunde
+      label-cubic-inches-per-second: Kubikzoll pro Sekunde
+      label-cubic-inches-per-minute: Kubikzoll pro Minute
+      label-cubic-inches-per-hour: Kubikzoll pro Stunde
+      label-fluid-ounces-per-second: Flüssigunzen pro Sekunde
+      label-fluid-ounces-per-minute: Flüssigunzen pro Minute
+      label-fluid-ounces-per-hour: Flüssigunzen pro Stunde
+      label-cups-per-second: Tassen pro Sekunde
+      label-pints-per-second: Pints pro Sekunde
+      label-pints-per-minute: Pints pro Minute
+      label-pints-per-hour: Pints pro Stunde
+      label-quarts-per-second: Quarts pro Sekunde
+      label-gallons-per-second: Gallonen pro Sekunde
+      label-gallons-per-minute: Gallonen pro Minute
+      label-gallons-per-hour: Gallonen pro Stunde
+      label-cubic-feet-per-second: Kubikfuß pro Sekunde
+      label-cubic-feet-per-minute: Kubikfuß pro Minute
+      label-cubic-feet-per-hour: Kubikfuß pro Stunde
+      label-cubic-yards-per-second: Kubikyard pro Sekunde
+      label-cubic-yards-per-minute: Kubikyard pro Minute
+      label-cubic-yards-per-hour: Kubikyard pro Stunde
   tip-calculator:
     title: Trinkgeldrechner
     description: Berechnen Sie das Trinkgeld für die Rechnung und teilen Sie es
@@ -9187,6 +9514,22 @@ tools:
       label-to: "Zu:"
       label-start-at: "Beginnen Sie bei:"
       tag-cron-expression-is-invalid: Der Cron-Ausdruck ist ungültig.
+      paste-cron-expression: Cron-Ausdruck einfügen
+      e-g-5-0-12-1-2025: z.B. */5 0 12 * * 1 2025
+      0-6-sunday-0-monday-1-saturday-6: 0-6 (Sonntag=0, Montag=1, ..., Samstag=6)
+      label-select-at-least-one-value: "{0}: Wählen Sie mindestens einen Wert aus"
+      day-of-month-and-day-of-week-cannot-both-be-specific: Es können nicht beide Tage des Monats und Wochentage angegeben werden.
+      label-start-cannot-be-greater-than-end: "{0}: Der Startwert darf nicht größer als der Endwert sein."
+      label-start-must-be-within-allowed-range: "{0}: Der Startwert muss innerhalb des zulässigen Bereichs liegen."
+      label-step-must-be-greater-than-1: "{0}: Schrittweite muss >= 1 sein"
+      label-start-cannot-be-greater-than-end-0: "{0}: Der Startwert darf nicht größer als der Endwert sein."
+      seconds: Sekunden
+      minutes: Minuten
+      hours: Std
+      day-of-month: Tag des Monats
+      month: Monat
+      day-of-week: Wochentag
+      year: Jahr
   css-js-prettify-minify:
     title: CSS/JS-Formatierung und -Minifizierung
     description: Verschönern oder minimieren Sie Ihren CSS- und JavaScript-Code online.
@@ -9702,6 +10045,48 @@ tools:
       tag-copy-json-paths: JSON-Pfade kopieren
       tag-generate-patch: Patch generieren
       tag-apply-patch: Patch anwenden
+  ping:
+    title: Klingeln
+    description: Eine Gruppe von Hostnamen, IPs, CIDRs oder IP-Adressbereichen anpingen
+    externalAccess: Dieses Tool ruft Ihren Self Host Network Utilities Service auf,
+      um ICMP-Pings durchzuführen.
+    texts:
+      label-targets-ips-cidrs-hostnames-one-per-line-or-or: "Ziele (IPs/CIDRs/Hostnamen, eines pro Zeile oder , oder ;):"
+      placeholder-192-168-1-1-10-google-com-10-10-0-0-0-24: 192.168.1.1&#10;google.com&#10;10.0.0.0/24
+      label-count: "Zählen:"
+      label-timeout-seconds: "Zeitüberschreitung (Sekunden):"
+      tag-ping-all: Ping All
+      tag-target: Ziel
+      tag-ip: IP
+      tag-status: Status
+      tag-avg-rtt-ms: Durchschnittliche RTT (ms)
+      tag-packet-loss: Paketverlust
+      tag-error: Fehler
+      cidr-expands-to-hostcount-ips-exceeding-limit-of-max_cidr_ips:
+        CIDR erweitert sich auf {0} IPs und überschreitet damit das Limit von
+        {1}.
+      tag-reachable: Erreichbar
+      tag-unreachable: Nicht erreichbar
+  command-palette:
+    store:
+      texts:
+        pages: Seiten
+        learn-more-about-it-tools: Erfahren Sie mehr über IT-Tools.
+        actions-0: Aktionen
+        report-a-bug-or-an-issue-to-help-improve-it-tools: Melden Sie einen Fehler oder
+          ein Problem, um die IT-Tools zu verbessern.
+        report-a-bug-or-an-issue: Melden Sie einen Fehler oder ein Problem
+        view-the-source-code-of-it-tools-on-github: Den Quellcode von it-tools finden Sie auf GitHub.
+        external: Extern
+        github-repository: GitHub-Repository
+        actions: Aktionen
+        toggle-dark-mode-on-or-off: Dunkelmodus ein- oder ausschalten.
+        toggle-dark-mode: Dunkelmodus umschalten
+        tools-0: Werkzeuge
+        get-a-random-tool-from-the-list: Wähle ein zufälliges Werkzeug aus der Liste.
+        random-tool: Zufallswerkzeug
+        tools: Werkzeuge
+  external-self-hosted-required: Externes, selbst gehostetes Hosting erforderlich
 locale-selector:
   select-a-language: Wählen Sie eine Sprache
 collapsibleToolMenu:

@@ -30,9 +30,9 @@ const decimal = reactive({
 
 const sourceSystem = useQueryParamOrStorage({ name: 'type', storageName: 'geo-coord-conv:t', defaultValue: 'BD09' });
 const inputLatitude = useQueryParam({ tool: 'geo-coord-conv', name: 'lat', defaultValue: 48.8566 });
-watch(inputLatitude, v => decimal.lat = v);
+watch(inputLatitude, (v) => (decimal.lat = v));
 const inputLongitude = useQueryParam({ tool: 'geo-coord-conv', name: 'lng', defaultValue: 2.3522 });
-watch(inputLongitude, v => decimal.lng = v);
+watch(inputLongitude, (v) => (decimal.lng = v));
 const inputCSV = ref('');
 const batchRows = ref<string[][]>([]);
 const resultsData = ref<Record<string, { lat: number; lng: number }>[]>([]);
@@ -65,7 +65,15 @@ function convertSingle() {
 
 function convertBatch() {
   const delimiter = detectCSV(inputCSV.value)?.delimiter || ',';
-  batchRows.value = inputCSV.value.trim().split('\n').map(l => l.trim().split(delimiter).map(s => s.trim()));
+  batchRows.value = inputCSV.value
+    .trim()
+    .split('\n')
+    .map((l) =>
+      l
+        .trim()
+        .split(delimiter)
+        .map((s) => s.trim()),
+    );
 
   if (batchRows.value.length === 0) {
     return;
@@ -88,7 +96,10 @@ function convertBatch() {
 }
 
 function downloadCsv() {
-  const csv = objectArrayToData(resultsData.value.map(r => flatten(r)), 'csv');
+  const csv = objectArrayToData(
+    resultsData.value.map((r) => flatten(r)),
+    'csv',
+  );
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
   const url = URL.createObjectURL(blob);
 
@@ -230,6 +241,7 @@ function initMap() {
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       referrerPolicy: 'strict-origin-when-cross-origin',
+      crossOrigin: true,
     }).addTo(map);
 
     marker = L.marker([decimal.lat, decimal.lng], { draggable: true }).addTo(map);
@@ -250,8 +262,7 @@ function initMap() {
       decimal.lngDir = e.latlng.lng >= 0 ? 'E' : 'W';
       onDecimalChange();
     });
-  }
-  catch {}
+  } catch {}
 }
 
 onMounted(() => {
@@ -273,14 +284,24 @@ function updateMarker() {
             <n-form-item :label="t('tools.geo-coordinates-converter.texts.latitude-decimal')">
               <n-input-group gap-1>
                 <n-input-number v-model:value="decimal.lat" :precision="6" @update:value="onDecimalChange" />
-                <n-select v-model:value="decimal.latDir" :options="latDirOptions" style="width: 80px" @update:value="onDecimalChange" />
+                <n-select
+                  v-model:value="decimal.latDir"
+                  :options="latDirOptions"
+                  style="width: 80px"
+                  @update:value="onDecimalChange"
+                />
               </n-input-group>
             </n-form-item>
 
             <n-form-item :label="t('tools.geo-coordinates-converter.texts.longitude-decimal')">
               <n-input-group gap-1>
                 <n-input-number v-model:value="decimal.lng" :precision="6" @update:value="onDecimalChange" />
-                <n-select v-model:value="decimal.lngDir" :options="lngDirOptions" style="width: 80px" @update:value="onDecimalChange" />
+                <n-select
+                  v-model:value="decimal.lngDir"
+                  :options="lngDirOptions"
+                  style="width: 80px"
+                  @update:value="onDecimalChange"
+                />
               </n-input-group>
             </n-form-item>
           </n-form>
@@ -293,7 +314,12 @@ function updateMarker() {
                 <n-input-number v-model:value="degree.lat.d" placeholder="°" @update:value="onDegreeChange" />
                 <n-input-number v-model:value="degree.lat.m" placeholder="′" @update:value="onDegreeChange" />
                 <n-input-number v-model:value="degree.lat.s" placeholder="″" @update:value="onDegreeChange" />
-                <n-select v-model:value="degree.latDir" :options="latDirOptions" style="width: 80px" @update:value="onDegreeChange" />
+                <n-select
+                  v-model:value="degree.latDir"
+                  :options="latDirOptions"
+                  style="width: 80px"
+                  @update:value="onDegreeChange"
+                />
               </n-input-group>
             </n-form-item>
 
@@ -302,7 +328,12 @@ function updateMarker() {
                 <n-input-number v-model:value="degree.lng.d" placeholder="°" @update:value="onDegreeChange" />
                 <n-input-number v-model:value="degree.lng.m" placeholder="′" @update:value="onDegreeChange" />
                 <n-input-number v-model:value="degree.lng.s" placeholder="″" @update:value="onDegreeChange" />
-                <n-select v-model:value="degree.lngDir" :options="lngDirOptions" style="width: 80px" @update:value="onDegreeChange" />
+                <n-select
+                  v-model:value="degree.lngDir"
+                  :options="lngDirOptions"
+                  style="width: 80px"
+                  @update:value="onDegreeChange"
+                />
               </n-input-group>
             </n-form-item>
           </n-form>
@@ -374,39 +405,42 @@ function updateMarker() {
             <c-input-text
               v-model:value="inputCSV"
               :label="t('tools.geo-coordinates-converter.texts.label-csv-content-lng-lat')"
-              :placeholder="t('tools.geo-coordinates-converter.texts.placeholder-put-your-longitude-and-latitude-in-this-order-csv-to-convert')"
+              :placeholder="
+                t(
+                  'tools.geo-coordinates-converter.texts.placeholder-put-your-longitude-and-latitude-in-this-order-csv-to-convert',
+                )
+              "
               multiline
               rows="5"
               mb-2
             />
 
             <n-space justify="center">
-              <n-button
-                type="primary"
-                @click="convertBatch"
-              >
+              <n-button type="primary" @click="convertBatch">
                 {{ t('tools.geo-coordinates-converter.texts.tag-convert-batch') }}
               </n-button>
             </n-space>
           </n-tab-pane>
         </n-tabs>
 
-        <c-card v-if="resultsData?.length" :title="t('tools.geo-coordinates-converter.texts.title-conversion-results')" mb-2>
+        <c-card
+          v-if="resultsData?.length"
+          :title="t('tools.geo-coordinates-converter.texts.title-conversion-results')"
+          mb-2
+        >
           <n-data-table v-if="resultsDisplay?.length" :columns="columns" :data="resultsDisplay" bordered mb-2 />
 
           <n-space justify="center">
-            <n-button
-              type="success"
-              :disabled="resultsData.length === 0"
-              @click="downloadCsv"
-            >
+            <n-button type="success" :disabled="resultsData.length === 0" @click="downloadCsv">
               {{ $t('tools.geo-coordinates-converter.text.download-results-csv') }}
             </n-button>
           </n-space>
         </c-card>
 
         <n-alert type="info" :title="t('tools.geo-coordinates-converter.texts.title-notes')" mt-3>
-          {{ t('tools.geo-coordinates-converter.texts.tag-longitude-east-is-positive-west-is-negative') }}<br>{{ t('tools.geo-coordinates-converter.texts.tag-latitude-north-is-positive-south-is-negative') }}
+          {{ t('tools.geo-coordinates-converter.texts.tag-longitude-east-is-positive-west-is-negative') }}<br />{{
+            t('tools.geo-coordinates-converter.texts.tag-latitude-north-is-positive-south-is-negative')
+          }}
         </n-alert>
       </n-tab-pane>
     </n-tabs>

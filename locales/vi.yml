@@ -968,6 +968,11 @@ tools:
       placeholder-enter-an-iban-to-check-for-validity: Nhập IBAN để kiểm tra tính hợp lệ...
       title-valid-iban-examples: Ví dụ IBAN hợp lệ
       placeholder-enter-ibans-to-check-for-validity: Nhập IBAN theo từng dòng để kiểm tra tính hợp lệ
+      bank-name: Tên ngân hàng
+      account-number: Số tài khoản
+      branch-identifier: Mã định danh chi nhánh
+      bank-identifier: Mã định danh ngân hàng
+      bic: BIC
     service:
       text:
         qr-iban-not-allowed: Không được phép sử dụng QR-IBAN
@@ -1885,6 +1890,13 @@ tools:
   angle-converter:
     title: Bộ chuyển đổi đơn vị góc
     description: Chuyển đổi giá trị giữa các đơn vị góc
+    texts:
+      label-degree: độ (°)
+      label-radian: radian
+      label-turn: xoay
+      label-gradian: độ dốc
+      label-grad: bằng cấp
+      label-gon: gon
   ansible-vault-crypt-decrypt:
     title: Giải mã hầm chứa Ansible
     description: Mã hóa và giải mã Ansible Vault Secrets
@@ -1930,6 +1942,32 @@ tools:
   area-converter:
     title: Bộ chuyển đổi đơn vị diện tích
     description: Chuyển đổi giá trị giữa các đơn vị diện tích
+    texts:
+      label-square-meter: mét vuông
+      label-square-petameter: mét vuông
+      label-square-terameter: teramet vuông
+      label-square-gigameter: gigameter vuông
+      label-square-megameter: megamet vuông
+      label-square-kilometer: ki-lô-mét vuông
+      label-square-hectometer: hectomet vuông
+      label-square-decameter: diện tích một decamet vuông
+      label-square-decimeter: decimet vuông
+      label-square-centimeter: centimet vuông
+      label-square-millimeter: milimét vuông
+      label-square-micrometer: micromet vuông
+      label-square-nanometer: nanomet vuông
+      label-square-picometer: picomet vuông
+      label-square-femtometer: femtomet vuông
+      label-acre: mẫu Anh
+      label-centiare: là một xu
+      label-deciare: để quyết định
+      label-are: là
+      label-decare: decare
+      label-hectare: hecta
+      label-square-foot-ft2-sq-ft: feet vuông (/ft2/sq ft)
+      label-square-inch-in2-sq-in: inch vuông (/in2/sq in)
+      label-square-yard-yd2-sq-yd: yard vuông (yd2/sq yd)
+      label-square-mile-mi2-sq-mi: dặm vuông (mi2/sq mi)
   aspect-ratio-calculator:
     title: Máy tính tỷ lệ khung hình
     description: Sử dụng máy tính tỷ lệ này để kiểm tra kích thước khi thay đổi kích
@@ -2586,6 +2624,37 @@ tools:
   energy-converter:
     title: Bộ chuyển đổi đơn vị năng lượng
     description: Chuyển đổi giá trị giữa các đơn vị năng lượng
+    texts:
+      label-joule: joule
+      label-petajoule: petajoule
+      label-terajoule: terajoule
+      label-gigajoule: gigajoule
+      label-megajoule: megajoule
+      label-kilojoule: kilojoule
+      label-hectojoule: hectojoule
+      label-decajoule: decajoule
+      label-decijoule: decijoule
+      label-centijoule: centijoule
+      label-millijoule: milijoule
+      label-microjoule: microjoule
+      label-nanojoule: nanojoule
+      label-picojoule: picojoule
+      label-femtojoule: femtojoule
+      label-watt-hour: watt-giờ
+      label-petawatt-hour: petawatt-giờ
+      label-terawatt-hour: terawatt-giờ
+      label-gigawatt-hour: gigawatt-giờ
+      label-megawatt-hour: megawatt-giờ
+      label-kilowatt-hour: kilowatt-giờ
+      label-hectowatt-hour: hectowatt-giờ
+      label-decawatt-hour: decawatt-giờ
+      label-deciwatt-hour: deciwatt-giờ
+      label-centiwatt-hour: centiwatt-giờ
+      label-milliwatt-hour: miliwatt-giờ
+      label-microwatt-hour: microwatt-giờ
+      label-nanowatt-hour: nanowatt-giờ
+      label-picowatt-hour: picowatt-giờ
+      label-femtowatt-hour: femtowatt-giờ
   file-hasher:
     title: File Hasher
     description: Tính toán băm của các tập tin
@@ -2641,6 +2710,35 @@ tools:
   force-converter:
     title: Bộ chuyển đổi đơn vị lực
     description: Chuyển đổi giá trị giữa các đơn vị lực
+    texts:
+      label-newton: Newton
+      label-petanewton: Petanewton
+      label-teranewton: teranewton
+      label-giganewton: giganewton
+      label-meganewton: meganewton
+      label-kilonewton: kilonewton
+      label-hectonewton: hectonewton
+      label-decanewton: decanewton
+      label-decinewton: decinewton
+      label-centinewton: centinewton
+      label-millinewton: millinewton
+      label-micronewton: micronewton
+      label-nanonewton: nanonewton
+      label-piconewton: piconewton
+      label-femtonewton: femtonewton
+      label-dyne: dyne
+      label-pound-of-force: lực pound
+      label-kip: kip
+      label-klb: câu lạc bộ
+      label-kipf: kipf
+      label-klbf: klbf
+      label-poundal: pao
+      label-kilogram-force: lực kilogam
+      label-kilopond: kilô ao
+      label-megapond: ao lớn
+      label-tonne-force: lực tấn
+      label-metric-ton-force: tấn-lực
+      label-megagram-force: lực megagram
   geo-distance-calculator:
     title: Máy tính khoảng cách địa lý
     description: Tính toán khoảng cách giữa hai vị trí địa lý (và hiển thị thông tin
@@ -3238,6 +3336,29 @@ tools:
   length-converter:
     title: Bộ chuyển đổi đơn vị chiều dài
     description: Chuyển đổi giá trị từ đơn vị độ dài
+    texts:
+      label-meter: mét
+      label-petameter: petameter
+      label-terameter: teramet
+      label-gigameter: gigameter
+      label-megameter: megameter
+      label-kilometer: ki-lô-mét
+      label-hectometer: hectometer
+      label-decameter: mười mét
+      label-decimeter: decimet
+      label-centimeter: centimet
+      label-millimeter: milimét
+      label-micrometer: micromet
+      label-nanometer: nanomet
+      label-picometer: picometer
+      label-femtometer: femtometer
+      label-inch: inch ()
+      label-yard: sân
+      label-mile: dặm
+      label-nautical-mile-m-nm: hải lý (M/NM)
+      label-light-year: năm ánh sáng
+      label-parsec: parsec
+      label-pica: pica
   list-comparer:
     title: So sánh danh sách
     description: So sánh hai mục danh sách
@@ -3328,6 +3449,35 @@ tools:
   mass-converter:
     title: Bộ chuyển đổi đơn vị khối lượng
     description: Chuyển đổi giá trị giữa các đơn vị khối lượng
+    texts:
+      label-gram: gram
+      label-petagram: petagram
+      label-teragram: teragram
+      label-gigagram: gigagram
+      label-megagram: megagram
+      label-kilogram: kilogam
+      label-hectogram: hectogram
+      label-decagram: thập phân
+      label-decigram: mười gram
+      label-centigram: centigram
+      label-milligram: miligam
+      label-microgram: microgam
+      label-nanogram: nanogram
+      label-picogram: picogram
+      label-femtogram: femtogram
+      label-tonne: tấn
+      label-metric-ton: tấn mét
+      label-kilotonne: kiloton
+      label-megatonne: megaton
+      label-gigatonne: gigaton
+      label-pound: pao
+      label-stone: cục đá
+      label-ounce: ounce
+      label-short-ton: tấn ngắn
+      label-us-ton: tấn Mỹ
+      label-long-ton: tấn
+      label-imperial-ton: tấn Anh
+      label-displacement-ton: trọng lượng rẽ nước
   math-formats-converter:
     title: Bộ chuyển đổi định dạng toán học
     description: Chuyển đổi biểu thức toán học giữa các định dạng
@@ -3715,9 +3865,63 @@ tools:
   power-converter:
     title: Bộ chuyển đổi điện
     description: Chuyển đổi giá trị giữa các đơn vị lũy thừa
+    texts:
+      label-watt: công suất
+      label-petawatt: petawatt
+      label-terawatt: terawatt
+      label-gigawatt: gigawatt
+      label-megawatt: megawatt
+      label-kilowatt: kilowatt
+      label-hectowatt: hectowatt
+      label-decawatt: decawatt
+      label-deciwatt: deciwatt
+      label-centiwatt: centiwatt
+      label-milliwatt: miliwatt
+      label-microwatt: microwatt
+      label-nanowatt: nanowatt
+      label-picowatt: picowatt
+      label-femtowatt: femtowatt
+      label-horsepower: mã lực
+      label-mechanical-horsepower: công suất cơ học
   pressure-converter:
     title: Bộ chuyển đổi đơn vị áp suất
     description: Chuyển đổi giá trị giữa các đơn vị áp suất
+    texts:
+      label-pascal: Pascal
+      label-pettapascal: pettapascal
+      label-terapascal: terapascal
+      label-gigapascal: gigabyte
+      label-megapascal: megapascal
+      label-kilopascal: kilopascal
+      label-hectopascal: hectopascal
+      label-decapascal: thập lục phân
+      label-decipascal: decipascal
+      label-centipascal: centipascal
+      label-millipascal: milipascal
+      label-micropascal: micropascal
+      label-nanopascal: nanopascal
+      label-picopascal: picopascal
+      label-femtopascal: femtopascal
+      label-bar: thanh
+      label-petabar: petabar
+      label-terabar: trải rộng ra
+      label-gigabar: gigabar
+      label-megabar: thanh lớn
+      label-kilobar: kilôbar
+      label-hectobar: hectobar
+      label-decabar: Tôi bị chặt đầu.
+      label-decibar: giải mã
+      label-centibar: centibar
+      label-millibar: millibar
+      label-microbar: thanh vi mô
+      label-nanobar: thanh nano
+      label-picobar: picobar
+      label-femtobar: femtobar
+      label-torr: torr
+      label-millitorr: militorr
+      label-atmosphere: bầu không khí
+      label-pound-per-square-inch: pound trên inch vuông
+      label-lbf-in2: lbf/in2
   properties-to-yaml:
     title: Thuộc tính cho YAML
     description: Chuyển đổi nội dung Java .properties sang Yaml
@@ -4095,6 +4299,65 @@ tools:
   volume-converter:
     title: Bộ chuyển đổi đơn vị thể tích
     description: Chuyển đổi giá trị từ đơn vị thể tích
+    texts:
+      label-cubic-meter-stere: mét khối/stere
+      label-cubic-petameter: petamet khối
+      label-cubic-terameter: teramet khối
+      label-cubic-gigameter: gigameter khối
+      label-cubic-megameter: megamet khối
+      label-cubic-kilometer: ki-lô-mét khối
+      label-cubic-hectometer: hectometer khối
+      label-cubic-decameter: khối decamet
+      label-cubic-decimeter: decimet khối
+      label-cubic-centimeter: centimet khối
+      label-cubic-millimeter: milimét khối
+      label-cubic-micrometer: micromet khối
+      label-cubic-nanometer: nanomet khối
+      label-cubic-picometer: picomet khối
+      label-cubic-femtometer: femtomet khối
+      label-liter: lít
+      label-petaliter: ly tâm
+      label-teraliter: terraliter
+      label-gigaliter: gigaliter
+      label-megaliter: megalit
+      label-kiloliter: kilô lít
+      label-hectoliter: hectolit
+      label-decaliter: đềli lít
+      label-deciliter: decilit
+      label-centiliter: centilit
+      label-milliliter: mililit
+      label-microliter: microlit
+      label-nanoliter: nanolít
+      label-picoliter: picoliter
+      label-femtoliter: femtolit
+      label-cubic-mile: dặm khối
+      label-acre-foot: acre-foot
+      label-cubic-yard: mét khối
+      label-cubic-foot: feet khối
+      label-board-feet: feet ván
+      label-cubic-inch: inch khối
+      label-measurement-ton: đo tấn
+      label-imperial-barrel: thùng hoàng gia
+      label-imperial-bushel: giạ hoàng gia
+      label-imperial-peck: cú mổ hoàng gia
+      label-imperial-gallon: gallon Anh
+      label-imperial-quart: lít Anh
+      label-imperial-pint: pint Anh
+      label-imperial-fluid-ounce: ounce chất lỏng Anh
+      label-teaspoon: thìa cà phê
+      label-tablespoon: thìa canh
+      label-us-fluid-ounce: ounce chất lỏng của Mỹ
+      label-cup: tách
+      label-us-legal-cup: Cốc hợp pháp của Mỹ
+      label-us-liquid-pint: pint chất lỏng của Mỹ
+      label-us-liquid-quart: lít Mỹ
+      label-us-liquid-gallon: gallon chất lỏng của Mỹ
+      label-us-bushel: giạ Mỹ
+      label-us-peck: peck của Mỹ
+      label-us-dry-gallon: gallon khô của Mỹ
+      label-us-dry-barrel: Thùng dầu khô của Mỹ
+      label-us-dry-quart: lít khô của Mỹ
+      label-us-dry-pint: một pint khô của Mỹ
   week-number-converter:
     title: Bộ chuyển đổi số tuần
     description: Chuyển đổi giữa số Tuần ISO, số Tuần theo tháng và ngày
@@ -5940,6 +6203,13 @@ tools:
       label-base64-64: Cơ sở 64 (64)
       placeholder-base64-version-will-be-here: Phiên bản Base64 sẽ có ở đây...
       tag-custom: "Phong tục:"
+      label-space-separation: sự tách biệt không gian
+      label-binary-size: Kích thước nhị phân
+      label-octal-size: Kích thước bát phân
+      label-decimal-size: Kích thước thập phân
+      label-hexadecimal-size: Kích thước lục giác
+      label-base64-size: Kích thước Base64
+      label-custom-size: Kích thước tùy chỉnh
     model:
       text:
         invalid-digit-digit-for-base-finalfrombase: Chữ số &quot;{0}&quot; không hợp lệ cho cơ số {1}.
@@ -8044,6 +8314,9 @@ tools:
     title: Bộ chuyển đổi gia tốc
     description: Chuyển đổi giá trị giữa các đơn vị gia tốc.
     externalAccess: vô giá trị
+    texts:
+      label-g-force: lực g
+      label-meter-per-second-squared: mét trên giây bình phương
   docker-image-downloader:
     title: Trình tải xuống ảnh Docker
     description: Tải xuống ảnh Docker dựa trên tên registry Docker, kiến trúc và tên ảnh.
@@ -8114,6 +8387,16 @@ tools:
     title: Bộ chuyển đổi tần số
     description: Chuyển đổi giá trị giữa các đơn vị tần số
     externalAccess: vô giá trị
+    texts:
+      label-hertz: tần số
+      label-millihertz: milihertz
+      label-kilohertz: kilohertz
+      label-megahertz: megahertz
+      label-gigahertz: gigahertz
+      label-terahertz: terahertz
+      label-revolutions-per-minute: vòng quay mỗi phút
+      label-degree-per-second: độ trên giây
+      label-radian-per-second: radian trên giây
   markdown-to-text:
     title: Chuyển đổi Markdown thành văn bản
     description: Chuyển đổi Markdown sang văn bản thuần túy
@@ -8185,6 +8468,12 @@ tools:
     title: Bộ chuyển đổi tốc độ
     description: Chuyển đổi giá trị giữa các đơn vị tốc độ
     externalAccess: vô giá trị
+    texts:
+      label-meter-per-second: mét trên giây
+      label-kilometer-per-hour: ki-lô-mét trên giờ
+      label-miles-per-hour: dặm trên giờ
+      label-knot: nút thắt
+      label-feet-per-second: feet mỗi giây
   tab-to-spaces:
     title: Phím Tab để chuyển đến khoảng trắng
     description: Chuyển đổi tab thành nhiều dấu cách
@@ -8249,6 +8538,44 @@ tools:
     title: Bộ chuyển đổi lưu lượng thể tích
     description: Chuyển đổi giá trị giữa các đơn vị lưu lượng thể tích
     externalAccess: vô giá trị
+    texts:
+      label-cubic-millimeters-per-second: milimét khối trên giây
+      label-cubic-centimeters-per-second: centimet khối mỗi giây
+      label-milliliters-per-second: mililit trên giây
+      label-centiliters-per-second: centilit trên giây
+      label-deciliters-per-second: decilit trên giây
+      label-liters-per-second: lít mỗi giây
+      label-liters-per-minute: lít mỗi phút
+      label-liters-per-hour: lít mỗi giờ
+      label-kiloliters-per-second: kilolit trên giây
+      label-kiloliters-per-minute: kilolit mỗi phút
+      label-kiloliters-per-hour: kilôlit mỗi giờ
+      label-cubic-meters-per-second: mét khối mỗi giây
+      label-cubic-meters-per-minute: mét khối mỗi phút
+      label-cubic-meters-per-hour: mét khối mỗi giờ
+      label-cubic-kilometers-per-second: kilômét khối trên giây
+      label-teaspoons-per-second: thìa cà phê mỗi giây
+      label-tablespoons-per-second: thìa canh mỗi giây
+      label-cubic-inches-per-second: inch khối mỗi giây
+      label-cubic-inches-per-minute: inch khối mỗi phút
+      label-cubic-inches-per-hour: inch khối mỗi giờ
+      label-fluid-ounces-per-second: ounce chất lỏng mỗi giây
+      label-fluid-ounces-per-minute: lượng chất lỏng mỗi phút
+      label-fluid-ounces-per-hour: lượng chất lỏng mỗi giờ
+      label-cups-per-second: cốc mỗi giây
+      label-pints-per-second: pint mỗi giây
+      label-pints-per-minute: pint mỗi phút
+      label-pints-per-hour: pint mỗi giờ
+      label-quarts-per-second: lít mỗi giây
+      label-gallons-per-second: gallon mỗi giây
+      label-gallons-per-minute: gallon mỗi phút
+      label-gallons-per-hour: gallon mỗi giờ
+      label-cubic-feet-per-second: feet khối mỗi giây
+      label-cubic-feet-per-minute: feet khối mỗi phút
+      label-cubic-feet-per-hour: feet khối mỗi giờ
+      label-cubic-yards-per-second: mét khối mỗi giây
+      label-cubic-yards-per-minute: mét khối mỗi phút
+      label-cubic-yards-per-hour: mét khối mỗi giờ
   tip-calculator:
     title: Máy tính tiền boa
     description: Tính toán tiền boa cho hóa đơn và chia đều cho nhiều người.
@@ -8932,6 +9259,23 @@ tools:
       label-to: "ĐẾN:"
       label-start-at: "Bắt đầu từ:"
       tag-cron-expression-is-invalid: Biểu thức Cron không hợp lệ
+      paste-cron-expression: Dán biểu thức Cron
+      e-g-5-0-12-1-2025: "ví dụ: */5 0 12 * * 1 2025"
+      0-6-sunday-0-monday-1-saturday-6: 0-6 (Chủ nhật=0, Thứ hai=1, ..., Thứ bảy=6)
+      label-select-at-least-one-value: "{0}: chọn ít nhất một giá trị"
+      day-of-month-and-day-of-week-cannot-both-be-specific: Ngày trong tháng và ngày
+        trong tuần không thể cùng lúc được chỉ định cụ thể.
+      label-start-cannot-be-greater-than-end: "{0}: bắt đầu không thể lớn hơn kết thúc"
+      label-start-must-be-within-allowed-range: "{0}: điểm bắt đầu phải nằm trong phạm vi cho phép"
+      label-step-must-be-greater-than-1: "{0}: bước phải lớn hơn hoặc bằng 1"
+      label-start-cannot-be-greater-than-end-0: "{0}: bắt đầu không thể lớn hơn kết thúc"
+      seconds: Giây
+      minutes: Phút
+      hours: Giờ
+      day-of-month: Ngày trong tháng
+      month: Tháng
+      day-of-week: Ngày trong tuần
+      year: Năm
   css-js-prettify-minify:
     title: Làm đẹp và thu nhỏ CSS/JS
     description: Làm đẹp hoặc thu nhỏ mã CSS và JavaScript của bạn trực tuyến.
@@ -9445,6 +9789,46 @@ tools:
       tag-copy-json-paths: Sao chép đường dẫn JSON
       tag-generate-patch: Tạo bản vá
       tag-apply-patch: Áp dụng miếng vá
+  ping:
+    title: Ping
+    description: Ping một tập hợp các tên máy chủ, địa chỉ IP, CIDR hoặc dải địa chỉ IP.
+    externalAccess: Công cụ này gọi Dịch vụ Tiện ích Mạng Tự lưu trữ của bạn để thực
+      hiện các lệnh ping ICMP.
+    texts:
+      label-targets-ips-cidrs-hostnames-one-per-line-or-or: "Các mục tiêu (Địa chỉ
+        IP/CIDR/Tên máy chủ, mỗi dòng một mục hoặc , hoặc ;) :"
+      placeholder-192-168-1-1-10-google-com-10-10-0-0-0-24: 192.168.1.1&#10;google.com&#10;10.0.0.0/24
+      label-count: "Đếm:"
+      label-timeout-seconds: "Thời gian chờ (giây):"
+      tag-ping-all: Thông báo cho tất cả
+      tag-target: Mục tiêu
+      tag-ip: Địa chỉ IP
+      tag-status: Trạng thái
+      tag-avg-rtt-ms: Thời gian khứ hồi trung bình (ms)
+      tag-packet-loss: Mất gói tin
+      tag-error: Lỗi
+      cidr-expands-to-hostcount-ips-exceeding-limit-of-max_cidr_ips: CIDR mở rộng thành {0} địa chỉ IP, vượt quá giới hạn {1}
+      tag-reachable: Có thể liên lạc được
+      tag-unreachable: Không thể liên lạc được
+  command-palette:
+    store:
+      texts:
+        pages: Trang
+        learn-more-about-it-tools: Tìm hiểu thêm về các công cụ CNTT.
+        actions-0: Hành động
+        report-a-bug-or-an-issue-to-help-improve-it-tools: Hãy báo cáo lỗi hoặc sự cố để giúp cải thiện it-tools.
+        report-a-bug-or-an-issue: Báo cáo lỗi hoặc sự cố
+        view-the-source-code-of-it-tools-on-github: Xem mã nguồn của it-tools trên Github.
+        external: Bên ngoài
+        github-repository: Kho lưu trữ Github
+        actions: Hành động
+        toggle-dark-mode-on-or-off: Bật hoặc tắt chế độ tối.
+        toggle-dark-mode: Bật/tắt chế độ tối
+        tools-0: Công cụ
+        get-a-random-tool-from-the-list: Chọn ngẫu nhiên một công cụ từ danh sách.
+        random-tool: Công cụ ngẫu nhiên
+        tools: Công cụ
+  external-self-hosted-required: Yêu cầu máy chủ tự lưu trữ bên ngoài
 spanCopyable:
   copy: Sao chép vào bảng tạm
   copied: Đã sao chép!

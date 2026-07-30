@@ -5,14 +5,8 @@ import { useCopy } from '@/composable/copy';
 import { useDownloadFileFromBase64 } from '@/composable/downloadBase64';
 import { translate as t } from '@/plugins/i18n.plugin';
 
-import {
-  EditorView,
-  basicSetup,
-} from 'codemirror';
-import {
-  Compartment,
-  EditorState,
-} from '@codemirror/state';
+import { EditorView, basicSetup } from 'codemirror';
+import { Compartment, EditorState } from '@codemirror/state';
 
 import { javascript } from '@codemirror/lang-javascript';
 import { html } from '@codemirror/lang-html';
@@ -34,16 +28,15 @@ import { useStyleStore } from '@/stores/style.store';
 
 const props = withDefaults(
   defineProps<{
-    value: string
-    language?: string
-    copyPlacement?: 'top-right' | 'bottom-right' | 'outside' | 'none'
-    copyMessage?: string
-    wordWrap?: boolean
-    downloadFileName?: string
-    downloadButtonText?: string
-    maxHeight?: string
-    showLineNumbers?: boolean
-    showFoldGutter?: boolean
+    value: string;
+    language?: string;
+    copyPlacement?: 'top-right' | 'bottom-right' | 'outside' | 'none';
+    copyMessage?: string;
+    downloadFileName?: string;
+    downloadButtonText?: string;
+    maxHeight?: string;
+    showLineNumbers?: boolean;
+    showFoldGutter?: boolean;
   }>(),
   {
     language: 'txt',
@@ -55,7 +48,17 @@ const props = withDefaults(
   },
 );
 
-const { value, maxHeight, language, showLineNumbers, showFoldGutter, copyPlacement, copyMessage, downloadFileName, downloadButtonText } = toRefs(props);
+const {
+  value,
+  maxHeight,
+  language,
+  showLineNumbers,
+  showFoldGutter,
+  copyPlacement,
+  copyMessage,
+  downloadFileName,
+  downloadButtonText,
+} = toRefs(props);
 
 const styleStore = useStyleStore();
 const isDarkTheme = computed(() => styleStore.isDarkTheme);
@@ -68,11 +71,7 @@ const themeCompartment = new Compartment();
 const languageCompartment = new Compartment();
 
 const maxHeightStyle = computed(() =>
-  maxHeight.value
-    ? typeof maxHeight.value === 'number'
-      ? `${maxHeight.value}px`
-      : maxHeight.value
-    : '400px',
+  maxHeight.value ? (typeof maxHeight.value === 'number' ? `${maxHeight.value}px` : maxHeight.value) : '400px',
 );
 
 // ---------------------------
@@ -143,13 +142,12 @@ function createExtensions() {
     basicSetup,
     EditorView.editable.of(false),
     EditorState.readOnly.of(true),
+    EditorView.lineWrapping,
     keymap.of(foldKeymap),
     themeCompartment.of(themeExtension()),
     languageCompartment.of(resolveLanguage(language.value ?? 'plain')),
     (showLineNumbers.value ?? true) ? lineNumbers() : [],
-    (showFoldGutter.value ?? true)
-      ? foldGutter({ openText: '▾', closedText: '▸' })
-      : [],
+    (showFoldGutter.value ?? true) ? foldGutter({ openText: '▾', closedText: '▸' }) : [],
   ];
 }
 
@@ -191,52 +189,59 @@ watch(
   () => {
     if (view) {
       view.dispatch({
-        effects: languageCompartment.reconfigure(
-          resolveLanguage(props.language ?? 'plain'),
-        ),
+        effects: languageCompartment.reconfigure(resolveLanguage(props.language ?? 'plain')),
       });
     }
   },
 );
 
-watch(() => props.value, (newVal) => {
-  if (!view) {
-    return;
-  }
-  const current = view.state.doc.toString();
-  if (newVal !== current) {
-    view.dispatch({
-      changes: {
-        from: 0,
-        to: view.state.doc.length,
-        insert: newVal,
-      },
-    });
-  }
-});
+watch(
+  () => props.value,
+  (newVal) => {
+    if (!view) {
+      return;
+    }
+    const current = view.state.doc.toString();
+    if (newVal !== current) {
+      view.dispatch({
+        changes: {
+          from: 0,
+          to: view.state.doc.length,
+          insert: newVal,
+        },
+      });
+    }
+  },
+);
 
 const { copy, isJustCopied } = useCopy({ source: value, createToast: false });
-const tooltipText = computed(() => isJustCopied.value ? t('textareaCopyable.copied') : copyMessage.value);
+const tooltipText = computed(() => (isJustCopied.value ? t('textareaCopyable.copied') : copyMessage.value));
 
 const valueBase64 = computed(() => Base64.encode(value.value));
-const { download } = useDownloadFileFromBase64(
-  {
-    source: valueBase64,
-    filename: downloadFileName,
-  });
+const { download } = useDownloadFileFromBase64({
+  source: valueBase64,
+  filename: downloadFileName,
+});
 </script>
 
 <template>
   <div style="overflow-x: hidden; width: 100%">
     <c-card
       relative
-      :style="copyPlacement === 'top-right' ? 'padding-top: 50px' : (copyPlacement === 'bottom-right' ? 'padding-bottom: 50px' : '')"
+      :style="
+        copyPlacement === 'top-right'
+          ? 'padding-top: 50px'
+          : copyPlacement === 'bottom-right'
+            ? 'padding-bottom: 50px'
+            : ''
+      "
     >
       <div
         v-if="value && copyPlacement !== 'none'"
-        absolute right-10px
-        :class="copyPlacement === 'top-right' ? 'top-10px' : (copyPlacement === 'bottom-right' ? 'bottom-10px' : '')"
-        style="z-index: 10; background: var(--bg-color); border-radius: 50%; padding: 2px;"
+        absolute
+        right-10px
+        :class="copyPlacement === 'top-right' ? 'top-10px' : copyPlacement === 'bottom-right' ? 'bottom-10px' : ''"
+        style="z-index: 10; background: var(--bg-color); border-radius: 50%; padding: 2px"
       >
         <c-tooltip v-if="value && copyPlacement !== 'outside'" :tooltip="tooltipText" position="left">
           <c-button circle important:h-10 important:w-10 @click="copy()">

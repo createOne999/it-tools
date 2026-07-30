@@ -1048,6 +1048,11 @@ tools:
       placeholder-enter-an-iban-to-check-for-validity: Cuir isteach IBAN chun bailíocht a sheiceáil...
       title-valid-iban-examples: Samplaí bailí IBAN
       placeholder-enter-ibans-to-check-for-validity: Cuir isteach IBAN in aghaidh gach líne chun bailíocht a sheiceáil
+      bank-name: Ainm an Bhainc
+      account-number: Uimhir Chuntais
+      branch-identifier: Aitheantóir Brainse
+      bank-identifier: Aitheantóir Bainc
+      bic: BIC
     service:
       text:
         qr-iban-not-allowed: Ní cheadaítear QR-IBAN
@@ -1894,6 +1899,13 @@ tools:
   angle-converter:
     title: Tiontaire Aonaid Uillinne
     description: Tiontaigh luachanna idir aonaid uillinne
+    texts:
+      label-degree: céim (°)
+      label-radian: raidean
+      label-turn: casadh
+      label-gradian: grádán
+      label-grad: céim
+      label-gon: gon
   ansible-vault-crypt-decrypt:
     title: Criptithe cruinneachán Ansible a dhíchriptiú
     description: Rúin Ansible Vault a chriptiú agus a dhíchriptiú
@@ -1939,6 +1951,32 @@ tools:
   area-converter:
     title: Tiontaire Aonaid Achar
     description: Tiontaigh luachanna idir aonaid achair
+    texts:
+      label-square-meter: méadar cearnach
+      label-square-petameter: peiteaiméadar cearnach
+      label-square-terameter: teiriméadar cearnach
+      label-square-gigameter: gigaiméadar cearnach
+      label-square-megameter: meigeaiméadar cearnach
+      label-square-kilometer: ciliméadar cearnach
+      label-square-hectometer: heicteiméadar cearnach
+      label-square-decameter: deiciméadar cearnach
+      label-square-decimeter: deiciméadar cearnach
+      label-square-centimeter: ceintiméadar cearnach
+      label-square-millimeter: milliméadar cearnach
+      label-square-micrometer: micriméadar cearnach
+      label-square-nanometer: nanaiméadar cearnach
+      label-square-picometer: piciméadar cearnach
+      label-square-femtometer: femtóiméadar cearnach
+      label-acre: acra
+      label-centiare: a bheith céad
+      label-deciare: cinneadh a dhéanamh
+      label-are: tá
+      label-decare: decare
+      label-hectare: heicteár
+      label-square-foot-ft2-sq-ft: troigh chearnach (/ft2/ft chearnach)
+      label-square-inch-in2-sq-in: orlach cearnach (/orlach2/orlach cearnach)
+      label-square-yard-yd2-sq-yd: slat cearnach (slat2/slat cearnach)
+      label-square-mile-mi2-sq-mi: míle cearnach (mi2/mi cearnach)
   aspect-ratio-calculator:
     title: Áireamhán Cóimheas Gnéithe
     description: Bain úsáid as an áireamhán cóimheasa seo chun na toisí a sheiceáil
@@ -2725,6 +2763,37 @@ tools:
   energy-converter:
     title: Tiontaire Aonaid Fuinnimh
     description: Tiontaigh luachanna idir aonaid fuinnimh
+    texts:
+      label-joule: giúl
+      label-petajoule: petaigiúl
+      label-terajoule: teireagúl
+      label-gigajoule: gigijoule
+      label-megajoule: meigiúl
+      label-kilojoule: cileajúil
+      label-hectojoule: heicteajúl
+      label-decajoule: deiciúl
+      label-decijoule: deiciúl
+      label-centijoule: ceintigiúl
+      label-millijoule: milleagúl
+      label-microjoule: micreagiúl
+      label-nanojoule: nana-ghiúl
+      label-picojoule: picijoule
+      label-femtojoule: femtojoule
+      label-watt-hour: uair an chloig vata
+      label-petawatt-hour: petavatuair
+      label-terawatt-hour: teiravata-uair an chloig
+      label-gigawatt-hour: gigavatuair
+      label-megawatt-hour: meigeavata-uair an chloig
+      label-kilowatt-hour: cileavatuair
+      label-hectowatt-hour: heicteavata-uair an chloig
+      label-decawatt-hour: uair an chloig deicavata
+      label-deciwatt-hour: uair an chloig deicivata
+      label-centiwatt-hour: ceintivatuair
+      label-milliwatt-hour: milleavatuair
+      label-microwatt-hour: micreavatuair
+      label-nanowatt-hour: nana-vata-uair an chloig
+      label-picowatt-hour: picovatuair
+      label-femtowatt-hour: uair an chloig femtovata
   file-hasher:
     title: Hais Comhaid
     description: Ríomh Hais na gcomhad
@@ -2781,6 +2850,35 @@ tools:
   force-converter:
     title: Tiontaire Aonaid Fórsa
     description: Tiontaigh luachanna idir aonaid fórsa
+    texts:
+      label-newton: niútan
+      label-petanewton: petanewton
+      label-teranewton: tearnauton
+      label-giganewton: giganewton
+      label-meganewton: meganewton
+      label-kilonewton: cileanútóin
+      label-hectonewton: heicteanútóin
+      label-decanewton: deacánuton
+      label-decinewton: decinewton
+      label-centinewton: céadaineatán
+      label-millinewton: millinewton
+      label-micronewton: micriniútan
+      label-nanonewton: nananoithon
+      label-piconewton: piconewton
+      label-femtonewton: femtonewton
+      label-dyne: dín
+      label-pound-of-force: punt fórsa
+      label-kip: cíp
+      label-klb: club
+      label-kipf: cíp
+      label-klbf: klbf
+      label-poundal: punt
+      label-kilogram-force: fórsa cileagraim
+      label-kilopond: cileapon
+      label-megapond: megapond
+      label-tonne-force: fórsa tonna
+      label-metric-ton-force: fórsa tonna méadrach
+      label-megagram-force: fórsa meigeagram
   geo-distance-calculator:
     title: Áireamhán achair gheografaigh
     description: Ríomh an fad idir dhá shuíomh geo (agus taispeáin faisnéis  faoi
@@ -3629,6 +3727,29 @@ tools:
   length-converter:
     title: Tiontaire Aonaid Fad
     description: Tiontaigh luachanna ó aonaid faid
+    texts:
+      label-meter: méadar
+      label-petameter: peiteaiméadar
+      label-terameter: teiriméadar
+      label-gigameter: gigaiméadar
+      label-megameter: meigeaiméadar
+      label-kilometer: ciliméadar
+      label-hectometer: heicteiméadar
+      label-decameter: deiciméadar
+      label-decimeter: deiciméadar
+      label-centimeter: ceintiméadar
+      label-millimeter: milliméadar
+      label-micrometer: micriméadar
+      label-nanometer: nanaiméadar
+      label-picometer: piciméadar
+      label-femtometer: femtóiméadar
+      label-inch: orlach (")
+      label-yard: clós
+      label-mile: míle
+      label-nautical-mile-m-nm: míle farraige (M/NM)
+      label-light-year: bliain solais
+      label-parsec: parsec
+      label-pica: pica
   list-comparer:
     title: Comparadóir Liostaí
     description: Déan comparáid idir dhá mhír liosta
@@ -3720,6 +3841,35 @@ tools:
   mass-converter:
     title: Tiontaire Aonaid Mais
     description: Tiontaigh luachanna idir aonaid maise
+    texts:
+      label-gram: gram
+      label-petagram: peitagram
+      label-teragram: teireagram
+      label-gigagram: gígeagram
+      label-megagram: meigeagram
+      label-kilogram: cileagraim
+      label-hectogram: heicteagram
+      label-decagram: deicgram
+      label-decigram: deich ngram
+      label-centigram: ceintigram
+      label-milligram: milleagram
+      label-microgram: micreagram
+      label-nanogram: nanagram
+      label-picogram: piceagram
+      label-femtogram: femtogram
+      label-tonne: tonna
+      label-metric-ton: tonna méadrach
+      label-kilotonne: cileaton
+      label-megatonne: meigeatonna
+      label-gigatonne: gigaton
+      label-pound: punt
+      label-stone: cloch
+      label-ounce: unsa
+      label-short-ton: tonna gearr
+      label-us-ton: Ton SAM
+      label-long-ton: tonna fada
+      label-imperial-ton: tonna impiriúil
+      label-displacement-ton: tonna díláithrithe
   math-formats-converter:
     title: Tiontaire Formáidí Matamaitice
     description: Tiontaigh léiriú matamaiticiúil idir formáidí
@@ -4177,9 +4327,63 @@ tools:
   power-converter:
     title: Tiontaire Cumhachta
     description: Tiontaigh luachanna idir aonaid chumhachta
+    texts:
+      label-watt: vata
+      label-petawatt: petavat
+      label-terawatt: teiravata
+      label-gigawatt: gigavata
+      label-megawatt: meigeavata
+      label-kilowatt: cileavata
+      label-hectowatt: heicteavata
+      label-decawatt: decavat
+      label-deciwatt: deicivatta
+      label-centiwatt: ceintivat
+      label-milliwatt: milleavata
+      label-microwatt: micreavata
+      label-nanowatt: nanavata
+      label-picowatt: picovat
+      label-femtowatt: femtovat
+      label-horsepower: capall-chumhacht
+      label-mechanical-horsepower: each-chumhacht meicniúil
   pressure-converter:
     title: Tiontaire Aonaid Brú
     description: Tiontaigh luachanna idir aonaid brú
+    texts:
+      label-pascal: pascal
+      label-pettapascal: pettapascal
+      label-terapascal: teiripeascach
+      label-gigapascal: gigapascal
+      label-megapascal: meigeapaiscéal
+      label-kilopascal: cileapascal
+      label-hectopascal: heicteapaiscéal
+      label-decapascal: deicapascalach
+      label-decipascal: deicipascal
+      label-centipascal: céadpascal
+      label-millipascal: milleapaiscéal
+      label-micropascal: micreapascal
+      label-nanopascal: nanapascal
+      label-picopascal: picopascal
+      label-femtopascal: femtopascal
+      label-bar: barra
+      label-petabar: petabar
+      label-terabar: scaipthe amach
+      label-gigabar: gigabar
+      label-megabar: meigeabhar
+      label-kilobar: cileabhar
+      label-hectobar: heicteár
+      label-decabar: Dícheannadh mé.
+      label-decibar: díchódaigh
+      label-centibar: ceintibar
+      label-millibar: milleabar
+      label-microbar: micreabharra
+      label-nanobar: nanabharra
+      label-picobar: picobár
+      label-femtobar: femtobar
+      label-torr: torr
+      label-millitorr: millitor
+      label-atmosphere: atmaisféar
+      label-pound-per-square-inch: punt in aghaidh an orlaigh chearnaigh
+      label-lbf-in2: lbf/orlach²
   properties-to-yaml:
     title: Airíonna chuig YAML
     description: Tiontaigh ábhar Java .properties go Yaml
@@ -4748,6 +4952,65 @@ tools:
   volume-converter:
     title: Tiontaire Aonaid Toirte
     description: Tiontaigh luachanna ó aonaid toirte
+    texts:
+      label-cubic-meter-stere: méadar ciúbach/steir
+      label-cubic-petameter: peiteaiméadar ciúbach
+      label-cubic-terameter: teiriméadar ciúbach
+      label-cubic-gigameter: gigaiméadar ciúbach
+      label-cubic-megameter: meigeaiméadar ciúbach
+      label-cubic-kilometer: ciliméadar ciúbach
+      label-cubic-hectometer: heicteiméadar ciúbach
+      label-cubic-decameter: deiciméadar ciúbach
+      label-cubic-decimeter: deiciméadar ciúbach
+      label-cubic-centimeter: ceintiméadar ciúbach
+      label-cubic-millimeter: milliméadar ciúbach
+      label-cubic-micrometer: micriméadar ciúbach
+      label-cubic-nanometer: nanaiméadar ciúbach
+      label-cubic-picometer: piciméadar ciúbach
+      label-cubic-femtometer: femtóiméadar ciúbach
+      label-liter: lítear
+      label-petaliter: peitiléadar
+      label-teraliter: teirilítear
+      label-gigaliter: gigilítear
+      label-megaliter: meigilítir
+      label-kiloliter: cilealítar
+      label-hectoliter: heictilítir
+      label-decaliter: decalitar
+      label-deciliter: decilitar
+      label-centiliter: ceintilitir
+      label-milliliter: millilítear
+      label-microliter: micrilítear
+      label-nanoliter: nanailítir
+      label-picoliter: picilítear
+      label-femtoliter: femtoliter
+      label-cubic-mile: míle ciúbach
+      label-acre-foot: troigh acra
+      label-cubic-yard: slat ciúbach
+      label-cubic-foot: troigh chiúbach
+      label-board-feet: cosa boird
+      label-cubic-inch: orlach ciúbach
+      label-measurement-ton: tonna tomhais
+      label-imperial-barrel: bairille impiriúil
+      label-imperial-bushel: buiséal impiriúil
+      label-imperial-peck: peic impiriúil
+      label-imperial-gallon: galún impiriúil
+      label-imperial-quart: ceathrú impiriúil
+      label-imperial-pint: pionta impiriúil
+      label-imperial-fluid-ounce: unsa sreabhach impiriúil
+      label-teaspoon: taespúnóg
+      label-tablespoon: spúnóg bhoird
+      label-us-fluid-ounce: Unsa sreabhach SAM
+      label-cup: cupán
+      label-us-legal-cup: Corn dlíthiúil SAM
+      label-us-liquid-pint: Pionta leachtach SAM
+      label-us-liquid-quart: Ceathrú leachtach SAM
+      label-us-liquid-gallon: galún leachtach SAM
+      label-us-bushel: Buiseal SAM
+      label-us-peck: Péic SAM
+      label-us-dry-gallon: galún tirim SAM
+      label-us-dry-barrel: Bairille tirim SAM
+      label-us-dry-quart: Ceathrú tirim SAM
+      label-us-dry-pint: Pionta tirim SAM
   websocket-tester:
     title: Tástálaí soicéad gréasáin
     description: Ceadaíonn sé tástáil a dhéanamh ar naisc WebSocket
@@ -6298,6 +6561,13 @@ tools:
       label-base64-64: Bonn64 (64)
       placeholder-base64-version-will-be-here: Beidh leagan Base64 anseo...
       tag-custom: "Saincheaptha:"
+      label-space-separation: Scaradh spáis
+      label-binary-size: Méid dénártha
+      label-octal-size: Méid ochtach
+      label-decimal-size: Méid deachúil
+      label-hexadecimal-size: Méid heicsidheachúlach
+      label-base64-size: Méid Base64
+      label-custom-size: Méid saincheaptha
     model:
       text:
         invalid-digit-digit-for-base-finalfrombase: Digit neamhbhailí &quot;{0}&quot; don bhonn {1}.
@@ -8174,6 +8444,9 @@ tools:
     title: Tiontaire Luasghéaraithe
     description: Tiontaigh luachanna idir aonaid luasghéaraithe
     externalAccess: nialas
+    texts:
+      label-g-force: fórsa-g
+      label-meter-per-second-squared: méadar in aghaidh an tsoicind chearnaigh
   docker-image-downloader:
     title: Íoslódálaí Íomhánna Docker
     description: Íoslódáil íomhá docker agus clárlann docker, ailtireacht agus ainm
@@ -8244,6 +8517,16 @@ tools:
     title: Tiontaire Minicíochta
     description: Tiontaigh luachanna idir aonaid minicíochta
     externalAccess: nialas
+    texts:
+      label-hertz: heirts
+      label-millihertz: millieherts
+      label-kilohertz: cileaherts
+      label-megahertz: meigiheirts
+      label-gigahertz: gigiheirts
+      label-terahertz: teireheirts
+      label-revolutions-per-minute: réabhlóidí in aghaidh an nóiméid
+      label-degree-per-second: céim in aghaidh an tsoicind
+      label-radian-per-second: radian in aghaidh an tsoicind
   markdown-to-text:
     title: Marcáil síos go Téacs
     description: Tiontaigh marcáil síos go téacs simplí
@@ -8318,6 +8601,12 @@ tools:
     title: Tiontaire Luas
     description: Tiontaigh luachanna idir aonaid luais
     externalAccess: nialas
+    texts:
+      label-meter-per-second: méadar in aghaidh an tsoicind
+      label-kilometer-per-hour: ciliméadar san uair
+      label-miles-per-hour: míle san uair
+      label-knot: snaidhm
+      label-feet-per-second: troigh in aghaidh an tsoicind
   tab-to-spaces:
     title: Tabáil go Spásanna
     description: Tiontaigh cluaisín go spásanna iolracha
@@ -8383,6 +8672,44 @@ tools:
     title: Tiontaire Ráta Sreafa Toirte
     description: Tiontaigh luachanna idir aonaid ráta sreafa toirte
     externalAccess: nialas
+    texts:
+      label-cubic-millimeters-per-second: milliméadair chiúbacha in aghaidh an tsoicind
+      label-cubic-centimeters-per-second: ceintiméadar ciúbach in aghaidh an tsoicind
+      label-milliliters-per-second: millilítear in aghaidh an tsoicind
+      label-centiliters-per-second: ceintilitir in aghaidh an tsoicind
+      label-deciliters-per-second: decilitéirí in aghaidh an tsoicind
+      label-liters-per-second: lítear in aghaidh an tsoicind
+      label-liters-per-minute: lítear in aghaidh an nóiméid
+      label-liters-per-hour: lítear san uair
+      label-kiloliters-per-second: cilealítir in aghaidh an tsoicind
+      label-kiloliters-per-minute: cileagram sa nóiméad
+      label-kiloliters-per-hour: cileagram san uair
+      label-cubic-meters-per-second: méadar ciúbach in aghaidh an tsoicind
+      label-cubic-meters-per-minute: méadar ciúbach in aghaidh an nóiméid
+      label-cubic-meters-per-hour: méadair chiúbacha san uair
+      label-cubic-kilometers-per-second: ciliméadar ciúbach in aghaidh an tsoicind
+      label-teaspoons-per-second: taespúnóga in aghaidh an tsoicind
+      label-tablespoons-per-second: spúnóg bhoird in aghaidh an tsoicind
+      label-cubic-inches-per-second: orlach ciúbach in aghaidh an tsoicind
+      label-cubic-inches-per-minute: orlach ciúbach in aghaidh an nóiméid
+      label-cubic-inches-per-hour: orlach ciúbach san uair
+      label-fluid-ounces-per-second: unsa sreabhach in aghaidh an tsoicind
+      label-fluid-ounces-per-minute: unsa sreabhach in aghaidh an nóiméid
+      label-fluid-ounces-per-hour: unsa sreabhach san uair
+      label-cups-per-second: cupáin in aghaidh an tsoicind
+      label-pints-per-second: pionta in aghaidh an tsoicind
+      label-pints-per-minute: pionta in aghaidh an nóiméid
+      label-pints-per-hour: pionta san uair
+      label-quarts-per-second: ceathrúna in aghaidh an tsoicind
+      label-gallons-per-second: galún in aghaidh an tsoicind
+      label-gallons-per-minute: galún in aghaidh an nóiméid
+      label-gallons-per-hour: galún san uair
+      label-cubic-feet-per-second: troigh chiúbach in aghaidh an tsoicind
+      label-cubic-feet-per-minute: troigh chiúbach in aghaidh an nóiméid
+      label-cubic-feet-per-hour: troigh chiúbach san uair
+      label-cubic-yards-per-second: slat ciúbach in aghaidh an tsoicind
+      label-cubic-yards-per-minute: slat ciúbach in aghaidh an nóiméid
+      label-cubic-yards-per-hour: slat ciúbach san uair
   tip-calculator:
     title: Áireamhán leideanna
     description: Ríomh an leid le haghaidh bille agus roinn é i measc roinnt daoine.
@@ -9062,6 +9389,22 @@ tools:
       label-to: "Chuig:"
       label-start-at: "Tosaigh ag:"
       tag-cron-expression-is-invalid: Tá an abairt Cron neamhbhailí
+      paste-cron-expression: Greamaigh an Léiriú Cron
+      e-g-5-0-12-1-2025: m.sh. */5 0 12 * * 1 2025
+      0-6-sunday-0-monday-1-saturday-6: 0-6 (Dé Domhnaigh=0, Dé Luain=1, ..., Dé Sathairn=6)
+      label-select-at-least-one-value: "{0}: roghnaigh luach amháin ar a laghad"
+      day-of-month-and-day-of-week-cannot-both-be-specific: Ní féidir le Lá na Míosa agus Lá na Seachtaine a bheith sonrach araon
+      label-start-cannot-be-greater-than-end: "{0}: ní féidir leis an tús a bheith níos mó ná an deireadh"
+      label-start-must-be-within-allowed-range: "{0}: ní mór don tús a bheith laistigh den raon ceadaithe"
+      label-step-must-be-greater-than-1: "{0}: ní mór don chéim a bheith >= 1"
+      label-start-cannot-be-greater-than-end-0: "{0}: ní féidir leis an tús a bheith níos mó ná an deireadh"
+      seconds: Soicindí
+      minutes: Nóiméid
+      hours: Uaireanta
+      day-of-month: Lá na Míosa
+      month: Mí
+      day-of-week: Lá na Seachtaine
+      year: Bliain
   css-js-prettify-minify:
     title: CSS/JS Áilleachtú & Laghdaigh
     description: Déan do chód CSS agus JavaScript a mhaisiú nó a laghdú ar líne.
@@ -9578,6 +9921,47 @@ tools:
       tag-copy-json-paths: Cóipeáil cosáin JSON
       tag-generate-patch: Gin paiste
       tag-apply-patch: Cuir paiste i bhfeidhm
+  ping:
+    title: Ping
+    description: Ping sraith d'ainmneacha óstacha, IPanna, CIDR nó raon IP
+    externalAccess: Glaonn an uirlis seo ar do Sheirbhís Fóntais Líonra Féinóstach
+      chun pings ICMP a dhéanamh.
+    texts:
+      label-targets-ips-cidrs-hostnames-one-per-line-or-or: "Spriocanna
+        (IPanna/CIDRanna/Ainmneacha Óstacha, ceann amháin in aghaidh na líne nó
+        , nó ;)):"
+      placeholder-192-168-1-1-10-google-com-10-10-0-0-0-24: 192.168.1.1&google.com&10.0.0.0/24
+      label-count: "Líon:"
+      label-timeout-seconds: "Am críochnaithe (soicindí):"
+      tag-ping-all: Ping Uile
+      tag-target: Sprioc
+      tag-ip: IP
+      tag-status: Stádas
+      tag-avg-rtt-ms: Meán-RTT (ms)
+      tag-packet-loss: Caillteanas Pacáiste
+      tag-error: Earráid
+      cidr-expands-to-hostcount-ips-exceeding-limit-of-max_cidr_ips: Leathnaíonn CIDR go dtí {0} IPanna, ag sárú teorainn {1}
+      tag-reachable: Inrochtana
+      tag-unreachable: Do-shroichte
+  command-palette:
+    store:
+      texts:
+        pages: Leathanaigh
+        learn-more-about-it-tools: Foghlaim tuilleadh faoi Uirlisí TF.
+        actions-0: Gníomhartha
+        report-a-bug-or-an-issue-to-help-improve-it-tools: Tuairiscigh fabht nó fadhb chun cabhrú le huirlisí TF a fheabhsú.
+        report-a-bug-or-an-issue: Tuairiscigh fabht nó fadhb
+        view-the-source-code-of-it-tools-on-github: Féach ar chód foinse na n-uirlisí ar Github.
+        external: Seachtrach
+        github-repository: Stór Github
+        actions: Gníomhartha
+        toggle-dark-mode-on-or-off: Athraigh an mód dorcha ar siúl nó as.
+        toggle-dark-mode: Mód dorcha a scoránaigh
+        tools-0: Uirlisí
+        get-a-random-tool-from-the-list: Faigh uirlis randamach ón liosta.
+        random-tool: Uirlis randamach
+        tools: Uirlisí
+  external-self-hosted-required: Féinóstáil Sheachtrach Riachtanach
 locale-selector:
   select-a-language: Roghnaigh teanga
 collapsibleToolMenu:

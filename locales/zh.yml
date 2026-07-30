@@ -1253,6 +1253,13 @@ tools:
   angle-converter:
     title: 角度单位转换器
     description: 在角度单位之间转换值。
+    texts:
+      label-degree: 度数（°）
+      label-radian: 弧度
+      label-turn: 转动
+      label-gradian: 梯度
+      label-grad: 程度
+      label-gon: 贡
   ansible-vault-crypt-decrypt:
     title: Ansible Vault加密解密
     description: 加密和解密Ansible Vault密钥。
@@ -1297,6 +1304,32 @@ tools:
   area-converter:
     title: 面积单位转换器
     description: 在面积单位之间转换值。
+    texts:
+      label-square-meter: 平方米
+      label-square-petameter: 平方拍米
+      label-square-terameter: 平方太米
+      label-square-gigameter: 平方吉米
+      label-square-megameter: 平方兆米
+      label-square-kilometer: 平方公里
+      label-square-hectometer: 平方百米
+      label-square-decameter: 平方十米
+      label-square-decimeter: 平方分米
+      label-square-centimeter: 平方厘米
+      label-square-millimeter: 平方毫米
+      label-square-micrometer: 平方微米
+      label-square-nanometer: 平方纳米
+      label-square-picometer: 平方皮米
+      label-square-femtometer: 平方飞米
+      label-acre: 英亩
+      label-centiare: 成为一百
+      label-deciare: 决定
+      label-are: 是
+      label-decare: 德凯尔
+      label-hectare: 公顷
+      label-square-foot-ft2-sq-ft: 平方英尺（/ft2/平方英尺）
+      label-square-inch-in2-sq-in: 平方英寸（/in2/平方英寸）
+      label-square-yard-yd2-sq-yd: 平方码（yd2/平方码）
+      label-square-mile-mi2-sq-mi: 平方英里（mi2/平方英里）
   aspect-ratio-calculator:
     title: 纵横比计算器
     description: 使用此比例计算器检查调整图像大小时的尺寸。
@@ -1940,6 +1973,37 @@ tools:
   energy-converter:
     title: 能源单位转换器
     description: 在能源单位之间转换值。
+    texts:
+      label-joule: 焦耳
+      label-petajoule: 拍焦耳
+      label-terajoule: 太焦耳
+      label-gigajoule: 吉焦耳
+      label-megajoule: 兆焦耳
+      label-kilojoule: 千焦
+      label-hectojoule: 百焦耳
+      label-decajoule: 十焦耳
+      label-decijoule: 分焦耳
+      label-centijoule: 厘焦耳
+      label-millijoule: 毫焦耳
+      label-microjoule: 微焦耳
+      label-nanojoule: 纳焦耳
+      label-picojoule: 皮焦耳
+      label-femtojoule: 飞焦耳
+      label-watt-hour: 瓦时
+      label-petawatt-hour: 拍瓦时
+      label-terawatt-hour: 太瓦时
+      label-gigawatt-hour: 吉瓦时
+      label-megawatt-hour: 兆瓦时
+      label-kilowatt-hour: 千瓦时
+      label-hectowatt-hour: 百瓦时
+      label-decawatt-hour: 十瓦时
+      label-deciwatt-hour: 分瓦时
+      label-centiwatt-hour: 厘瓦时
+      label-milliwatt-hour: 毫瓦时
+      label-microwatt-hour: 微瓦时
+      label-nanowatt-hour: 纳瓦时
+      label-picowatt-hour: 皮瓦时
+      label-femtowatt-hour: 飞瓦时
   file-hasher:
     title: 文件哈希器
     description: 计算文件的哈希值。
@@ -1993,6 +2057,35 @@ tools:
   force-converter:
     title: 力单位转换器
     description: 在力单位之间转换值。
+    texts:
+      label-newton: 牛顿
+      label-petanewton: 佩塔牛顿
+      label-teranewton: 特拉牛顿
+      label-giganewton: 吉牛顿
+      label-meganewton: 兆牛顿
+      label-kilonewton: 千牛顿
+      label-hectonewton: 百牛顿
+      label-decanewton: 迪卡牛顿
+      label-decinewton: 迪西牛顿
+      label-centinewton: 森特纽顿
+      label-millinewton: 米利纽顿
+      label-micronewton: 微牛顿
+      label-nanonewton: 纳牛顿
+      label-piconewton: 皮牛顿
+      label-femtonewton: 飞牛顿
+      label-dyne: 达因
+      label-pound-of-force: 磅力
+      label-kip: 基普
+      label-klb: 俱乐部
+      label-kipf: 基普夫
+      label-klbf: klbf
+      label-poundal: 磅
+      label-kilogram-force: 千克力
+      label-kilopond: 千池
+      label-megapond: 巨型池塘
+      label-tonne-force: 吨力
+      label-metric-ton-force: 公吨力
+      label-megagram-force: 兆克力
   geo-distance-calculator:
     title: 地理距离计算器
     description: |
@@ -2571,6 +2664,29 @@ tools:
   length-converter:
     title: 长度单位转换器
     description: 转换长度单位的值
+    texts:
+      label-meter: 仪表
+      label-petameter: 拍米
+      label-terameter: 太米
+      label-gigameter: 吉米
+      label-megameter: 兆米
+      label-kilometer: 公里
+      label-hectometer: 公引
+      label-decameter: 十米
+      label-decimeter: 分米
+      label-centimeter: 厘米
+      label-millimeter: 毫米
+      label-micrometer: 千分尺
+      label-nanometer: 纳米
+      label-picometer: 皮米
+      label-femtometer: 飞米
+      label-inch: 英寸 （”）
+      label-yard: 院子
+      label-mile: 英里
+      label-nautical-mile-m-nm: 海里（M/NM）
+      label-light-year: 光年
+      label-parsec: 秒差距
+      label-pica: 异食癖
   list-comparer:
     title: 列表比较器
     description: 比较两个列表项
@@ -2658,6 +2774,35 @@ tools:
   mass-converter:
     title: 质量单位转换器
     description: 转换质量单位的值
+    texts:
+      label-gram: 克
+      label-petagram: 拍克
+      label-teragram: 太克拉姆
+      label-gigagram: 千兆克
+      label-megagram: 兆克
+      label-kilogram: 公斤
+      label-hectogram: 百克
+      label-decagram: 十克
+      label-decigram: 十克
+      label-centigram: 厘克
+      label-milligram: 毫克
+      label-microgram: 微克
+      label-nanogram: 纳克
+      label-picogram: 皮克
+      label-femtogram: 飞克
+      label-tonne: 公吨
+      label-metric-ton: 公吨
+      label-kilotonne: 千吨
+      label-megatonne: 百万吨
+      label-gigatonne: 十亿吨
+      label-pound: 磅
+      label-stone: 石头
+      label-ounce: 盎司
+      label-short-ton: 短吨
+      label-us-ton: 美国吨
+      label-long-ton: 长吨
+      label-imperial-ton: 英吨
+      label-displacement-ton: 位移吨
   math-formats-converter:
     title: 数学格式转换器
     description: 在格式之间转换数学表达式
@@ -3025,9 +3170,63 @@ tools:
   power-converter:
     title: 功率转换器
     description: 转换功率单位的值
+    texts:
+      label-watt: 瓦
+      label-petawatt: 拍瓦
+      label-terawatt: 太瓦
+      label-gigawatt: 吉瓦
+      label-megawatt: 兆瓦
+      label-kilowatt: 千瓦
+      label-hectowatt: 百瓦
+      label-decawatt: 十瓦
+      label-deciwatt: 分瓦
+      label-centiwatt: 厘瓦
+      label-milliwatt: 毫瓦
+      label-microwatt: 微瓦
+      label-nanowatt: 纳瓦
+      label-picowatt: 皮瓦
+      label-femtowatt: 飞瓦
+      label-horsepower: 马力
+      label-mechanical-horsepower: 机械马力
   pressure-converter:
     title: 压力单位转换器
     description: 转换压力单位的值
+    texts:
+      label-pascal: 帕斯卡
+      label-pettapascal: 佩塔帕斯卡
+      label-terapascal: 特拉帕斯卡
+      label-gigapascal: 千兆帕斯卡
+      label-megapascal: 兆帕
+      label-kilopascal: 千帕斯卡
+      label-hectopascal: 百帕斯卡
+      label-decapascal: 十帕斯卡
+      label-decipascal: 迪帕斯卡
+      label-centipascal: 厘帕斯卡
+      label-millipascal: 毫帕斯卡
+      label-micropascal: 微帕斯卡
+      label-nanopascal: 纳帕斯卡
+      label-picopascal: 皮帕斯卡
+      label-femtopascal: 飞帕斯卡
+      label-bar: 酒吧
+      label-petabar: 拍巴
+      label-terabar: 展开
+      label-gigabar: 千兆字节
+      label-megabar: 兆字节
+      label-kilobar: 千巴
+      label-hectobar: 百巴
+      label-decabar: 我被斩首了。
+      label-decibar: 解码
+      label-centibar: 厘巴
+      label-millibar: 毫巴
+      label-microbar: 微巴
+      label-nanobar: 纳米棒
+      label-picobar: 皮科巴
+      label-femtobar: 飞巴
+      label-torr: 托尔
+      label-millitorr: 百万托
+      label-atmosphere: 气氛
+      label-pound-per-square-inch: 每平方英寸磅
+      label-lbf-in2: 磅力/平方英寸
   properties-to-yaml:
     title: 属性转YAML
     description: 将Java .properties内容转换为YAML
@@ -3397,6 +3596,65 @@ tools:
   volume-converter:
     title: 体积单位转换器
     description: 转换体积单位值
+    texts:
+      label-cubic-meter-stere: 立方米/立体声
+      label-cubic-petameter: 立方拍米
+      label-cubic-terameter: 立方太米
+      label-cubic-gigameter: 立方吉米
+      label-cubic-megameter: 立方兆米
+      label-cubic-kilometer: 立方公里
+      label-cubic-hectometer: 立方百米
+      label-cubic-decameter: 立方十米
+      label-cubic-decimeter: 立方分米
+      label-cubic-centimeter: 立方厘米
+      label-cubic-millimeter: 立方毫米
+      label-cubic-micrometer: 立方微米
+      label-cubic-nanometer: 立方纳米
+      label-cubic-picometer: 立方皮米
+      label-cubic-femtometer: 立方飞米
+      label-liter: 升
+      label-petaliter: 花瓣
+      label-teraliter: 泰拉升
+      label-gigaliter: 千兆升
+      label-megaliter: 兆升
+      label-kiloliter: 千升
+      label-hectoliter: 公石
+      label-decaliter: 公斗
+      label-deciliter: 分升
+      label-centiliter: 厘升
+      label-milliliter: 毫升
+      label-microliter: 微升
+      label-nanoliter: 纳升
+      label-picoliter: 皮升
+      label-femtoliter: 飞升
+      label-cubic-mile: 立方英里
+      label-acre-foot: 英亩英尺
+      label-cubic-yard: 立方码
+      label-cubic-foot: 立方英尺
+      label-board-feet: 板英尺
+      label-cubic-inch: 立方英寸
+      label-measurement-ton: 吨
+      label-imperial-barrel: 帝国桶
+      label-imperial-bushel: 帝国蒲式耳
+      label-imperial-peck: 帝王啄
+      label-imperial-gallon: 英制加仑
+      label-imperial-quart: 英制夸脱
+      label-imperial-pint: 英制品脱
+      label-imperial-fluid-ounce: 英制液量盎司
+      label-teaspoon: 茶匙
+      label-tablespoon: 汤匙
+      label-us-fluid-ounce: 美制液盎司
+      label-cup: 杯子
+      label-us-legal-cup: 美国合法杯
+      label-us-liquid-pint: 美国液体品脱
+      label-us-liquid-quart: 美国液夸脱
+      label-us-liquid-gallon: 美国液体加仑
+      label-us-bushel: 美制蒲式耳
+      label-us-peck: 美国啄
+      label-us-dry-gallon: 美国干加仑
+      label-us-dry-barrel: 美国干桶
+      label-us-dry-quart: 美制干夸脱
+      label-us-dry-pint: 美国干品脱
   week-number-converter:
     title: 周数转换器
     description: 在ISO周数、月内周数和日期之间转换
@@ -5459,6 +5717,11 @@ tools:
       placeholder-enter-an-iban-to-check-for-validity: 输入要验证的IBAN...
       title-valid-iban-examples: 有效IBAN示例
       placeholder-enter-ibans-to-check-for-validity: 每行输入一个 IBAN 来检查有效性
+      bank-name: 银行名称
+      account-number: 帐号
+      branch-identifier: 分支标识符
+      bank-identifier: 银行识别码
+      bic: 百因
     service:
       text:
         qr-iban-not-allowed: 不允许QR-IBAN
@@ -5506,6 +5769,13 @@ tools:
       label-base64-64: Base64（64）
       placeholder-base64-version-will-be-here: Base64版本将显示在此...
       tag-custom: 自定义：
+      label-space-separation: 空间分离
+      label-binary-size: 二进制大小
+      label-octal-size: 八进制尺寸
+      label-decimal-size: 小数位数
+      label-hexadecimal-size: 十六进制尺寸
+      label-base64-size: Base64 大小
+      label-custom-size: 定制尺寸
     model:
       text:
         invalid-digit-digit-for-base-finalfrombase: 无效数字"{0}"（针对进制{1}）
@@ -7704,6 +7974,9 @@ tools:
     title: 加速转换器
     description: 加速度单位之间的数值转换
     externalAccess: 无效的
+    texts:
+      label-g-force: 重力加速度
+      label-meter-per-second-squared: 米每秒平方
   docker-image-downloader:
     title: Docker镜像下载器
     description: 根据 Docker 镜像仓库、架构和镜像名称下载 Docker 镜像
@@ -7769,6 +8042,16 @@ tools:
     title: 变频器
     description: 在频率单位之间转换值
     externalAccess: 无效的
+    texts:
+      label-hertz: 赫兹
+      label-millihertz: 毫赫兹
+      label-kilohertz: 千赫
+      label-megahertz: 兆赫
+      label-gigahertz: 吉赫兹
+      label-terahertz: 太赫兹
+      label-revolutions-per-minute: 每分钟转数
+      label-degree-per-second: 每秒度
+      label-radian-per-second: 弧度每秒
   markdown-to-text:
     title: Markdown 转文本
     description: 将 Markdown 转换为纯文本
@@ -7838,6 +8121,12 @@ tools:
     title: 速度转换器
     description: 速度单位之间的数值转换
     externalAccess: 无效的
+    texts:
+      label-meter-per-second: 米每秒
+      label-kilometer-per-hour: 公里/小时
+      label-miles-per-hour: 英里/小时
+      label-knot: 结
+      label-feet-per-second: 英尺每秒
   tab-to-spaces:
     title: Tab 键转空格
     description: 将制表符转换为多个空格
@@ -7899,6 +8188,44 @@ tools:
     title: 体积流量转换器
     description: 在体积流量单位之间转换数值
     externalAccess: 无效的
+    texts:
+      label-cubic-millimeters-per-second: 立方毫米每秒
+      label-cubic-centimeters-per-second: 立方厘米每秒
+      label-milliliters-per-second: 毫升每秒
+      label-centiliters-per-second: 每秒厘升
+      label-deciliters-per-second: 分升每秒
+      label-liters-per-second: 升/秒
+      label-liters-per-minute: 升/分钟
+      label-liters-per-hour: 升/小时
+      label-kiloliters-per-second: 千升每秒
+      label-kiloliters-per-minute: 千升/分钟
+      label-kiloliters-per-hour: 千升/小时
+      label-cubic-meters-per-second: 立方米每秒
+      label-cubic-meters-per-minute: 每分钟立方米
+      label-cubic-meters-per-hour: 立方米/小时
+      label-cubic-kilometers-per-second: 立方公里每秒
+      label-teaspoons-per-second: 每秒茶匙
+      label-tablespoons-per-second: 每秒汤匙
+      label-cubic-inches-per-second: 立方英寸每秒
+      label-cubic-inches-per-minute: 每分钟立方英寸
+      label-cubic-inches-per-hour: 立方英寸/小时
+      label-fluid-ounces-per-second: 每秒液盎司
+      label-fluid-ounces-per-minute: 每分钟液盎司
+      label-fluid-ounces-per-hour: 每小时液体盎司
+      label-cups-per-second: 每秒杯
+      label-pints-per-second: 每秒品脱
+      label-pints-per-minute: 每分钟品脱
+      label-pints-per-hour: 每小时品脱
+      label-quarts-per-second: 每秒夸脱
+      label-gallons-per-second: 每秒加仑数
+      label-gallons-per-minute: 每分钟加仑数
+      label-gallons-per-hour: 每小时加仑数
+      label-cubic-feet-per-second: 立方英尺每秒
+      label-cubic-feet-per-minute: 每分钟立方英尺
+      label-cubic-feet-per-hour: 立方英尺/小时
+      label-cubic-yards-per-second: 立方码每秒
+      label-cubic-yards-per-minute: 每分钟立方码
+      label-cubic-yards-per-hour: 立方码/小时
   tip-calculator:
     title: 小费计算器
     description: 计算账单上的小费金额，并将其分摊给多人。
@@ -8482,6 +8809,8 @@ tools:
       tag-refresh: 刷新
       text-picked-lines-copied-to-clipboard: 已选择的行已复制到剪贴板！
   keyboard-tester:
+    title: 键盘测试器
+    description: 测试你的键盘按键，检查是否所有按键都能正常工作。每次按键都有视觉反馈，并支持不同的键盘布局。
     instructions:
       highlight: 按下的按键将会高亮显示。
       press: 按下键盘上的任意键进行测试
@@ -8563,6 +8892,22 @@ tools:
       label-to: 到：
       label-start-at: 从这里开始：
       tag-cron-expression-is-invalid: 定时任务表达式无效
+      paste-cron-expression: 粘贴 Cron 表达式
+      e-g-5-0-12-1-2025: 例如：*/5 0 12 * * 1 2025
+      0-6-sunday-0-monday-1-saturday-6: 0-6（星期日=0，星期一=1，……，星期六=6）
+      label-select-at-least-one-value: "{0}：至少选择一个值"
+      day-of-month-and-day-of-week-cannot-both-be-specific: 月份中的日期和星期几不能同时是具体的。
+      label-start-cannot-be-greater-than-end: "{0}：起始点不能大于结束点"
+      label-start-must-be-within-allowed-range: "{0}：起始位置必须在允许的范围内"
+      label-step-must-be-greater-than-1: "{0}：步长必须大于等于 1"
+      label-start-cannot-be-greater-than-end-0: "{0}：起始点不能大于结束点"
+      seconds: 秒
+      minutes: 分钟
+      hours: 小时
+      day-of-month: 月份中的某一天
+      month: 月
+      day-of-week: 星期几
+      year: 年
   css-js-prettify-minify:
     title: CSS/JS 美化和压缩
     description: 在线美化或压缩您的 CSS 和 JavaScript 代码。
@@ -9026,12 +9371,12 @@ tools:
     description: 允许编辑和构建带有查询参数的 URL
     externalAccess: 无效的
     texts:
-      label-string: 细绳
+      label-string: 字符串
       label-number: 数字
       label-boolean: 布尔值
       label-date: 日期
       label-datetime: 日期时间
-      label-array: 大批
+      label-array: 数组
       label-load-url: 加载网址：
       placeholder-paste-url-to-parse: 粘贴 URL 进行解析
       label-base-url: 基本网址：
@@ -9063,6 +9408,44 @@ tools:
       tag-copy-json-paths: 复制 JSON 路径
       tag-generate-patch: 生成补丁
       tag-apply-patch: 贴片
+  ping:
+    title: ping
+    description: ping 一组主机名、IP 地址、CIDR 或 IP 地址范围
+    externalAccess: 该工具会调用您的自托管网络实用程序服务来执行 ICMP ping 操作。
+    texts:
+      label-targets-ips-cidrs-hostnames-one-per-line-or-or: 目标地址（IP/CIDR/主机名，每行一个，或使用逗号、分号或分号）：
+      placeholder-192-168-1-1-10-google-com-10-10-0-0-0-24: 192.168.1.1&#10;google.com&#10;10.0.0.0/24
+      label-count: 数数：
+      label-timeout-seconds: 超时时间（秒）：
+      tag-ping-all: 全部
+      tag-target: 目标
+      tag-ip: IP
+      tag-status: 地位
+      tag-avg-rtt-ms: 平均往返时间（毫秒）
+      tag-packet-loss: 丢包
+      tag-error: 错误
+      cidr-expands-to-hostcount-ips-exceeding-limit-of-max_cidr_ips: CIDR 扩展到 {0} 个 IP 地址，超过了 {1} 个 IP 地址的限制。
+      tag-reachable: 可达
+      tag-unreachable: 无法连接
+  command-palette:
+    store:
+      texts:
+        pages: 页
+        learn-more-about-it-tools: 了解更多关于IT工具的信息。
+        actions-0: 行动
+        report-a-bug-or-an-issue-to-help-improve-it-tools: 报告错误或问题，以帮助改进 it-tools。
+        report-a-bug-or-an-issue: 报告错误或问题
+        view-the-source-code-of-it-tools-on-github: 在Github上查看it-tools的源代码。
+        external: 外部的
+        github-repository: GitHub 仓库
+        actions: 行动
+        toggle-dark-mode-on-or-off: 开启或关闭深色模式。
+        toggle-dark-mode: 切换深色模式
+        tools-0: 工具
+        get-a-random-tool-from-the-list: 从列表中随机选择一件工具。
+        random-tool: 随机工具
+        tools: 工具
+  external-self-hosted-required: 需要外部自托管
 collapsibleToolMenu:
   text:
     expanding: 正在扩展……

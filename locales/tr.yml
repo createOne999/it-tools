@@ -1558,6 +1558,13 @@ tools:
   angle-converter:
     title: Açı Birimleri Dönüştürücü
     description: Açı birimleri arasında değerleri dönüştürün
+    texts:
+      label-degree: derece (°)
+      label-radian: radyan
+      label-turn: dönüş
+      label-gradian: gradyan
+      label-grad: derece
+      label-gon: gon
   ansible-vault-crypt-decrypt:
     title: Ansible Vault şifreleme şifresini çözme
     description: Ansible Vault Sırlarını Şifreleyin ve Şifresini Çözün
@@ -1602,6 +1609,32 @@ tools:
   area-converter:
     title: Alan Birimleri Dönüştürücü
     description: Alan birimleri arasındaki değerleri dönüştürün
+    texts:
+      label-square-meter: metrekare
+      label-square-petameter: kare petametre
+      label-square-terameter: kare terametre
+      label-square-gigameter: kare gigametre
+      label-square-megameter: kare megametre
+      label-square-kilometer: kilometrekare
+      label-square-hectometer: kare hektometre
+      label-square-decameter: kare dekametre
+      label-square-decimeter: kare desimetre
+      label-square-centimeter: kare santimetre
+      label-square-millimeter: kare milimetre
+      label-square-micrometer: kare mikrometre
+      label-square-nanometer: kare nanometre
+      label-square-picometer: kare pikometre
+      label-square-femtometer: kare femtometre
+      label-acre: dönüm
+      label-centiare: yüz olmak
+      label-deciare: karar vermek
+      label-are: "'dır'"
+      label-decare: bakım
+      label-hectare: hektar
+      label-square-foot-ft2-sq-ft: kare ayak (/ft2/sq ft)
+      label-square-inch-in2-sq-in: kare inç (/in2/sq in)
+      label-square-yard-yd2-sq-yd: metrekare (yd2/sq yd)
+      label-square-mile-mi2-sq-mi: kare mil (mi2/sq mi)
   aspect-ratio-calculator:
     title: En Boy Oranı Hesaplayıcısı
     description: Görüntüleri yeniden boyutlandırırken boyutları kontrol etmek için
@@ -2263,6 +2296,37 @@ tools:
   energy-converter:
     title: Enerji Birimleri Dönüştürücü
     description: Enerji birimleri arasındaki değerleri dönüştürün
+    texts:
+      label-joule: joule
+      label-petajoule: petajoule
+      label-terajoule: terajoule
+      label-gigajoule: gigajoule
+      label-megajoule: megajoule
+      label-kilojoule: kilojoule
+      label-hectojoule: hektojoule
+      label-decajoule: dekajoule
+      label-decijoule: desijoule
+      label-centijoule: santigrol
+      label-millijoule: milijoule
+      label-microjoule: mikrojoule
+      label-nanojoule: nanojoule
+      label-picojoule: pikojoule
+      label-femtojoule: femtojoule
+      label-watt-hour: watt-saat
+      label-petawatt-hour: petawatt-saat
+      label-terawatt-hour: terawatt-saat
+      label-gigawatt-hour: gigawatt-saat
+      label-megawatt-hour: megavat-saat
+      label-kilowatt-hour: kilovat-saat
+      label-hectowatt-hour: hektovat-saat
+      label-decawatt-hour: dekavat-saat
+      label-deciwatt-hour: desivat-saat
+      label-centiwatt-hour: santivat-saat
+      label-milliwatt-hour: milivat-saat
+      label-microwatt-hour: mikrovat-saat
+      label-nanowatt-hour: nanovat-saat
+      label-picowatt-hour: pikowatt-saat
+      label-femtowatt-hour: femtowatt-saat
   file-hasher:
     title: Dosya Karıştırıcı
     description: Dosyaların Hash'ini Hesapla
@@ -2321,6 +2385,35 @@ tools:
   force-converter:
     title: Kuvvet Birimleri Dönüştürücü
     description: Kuvvet birimleri arasındaki değerleri dönüştürün
+    texts:
+      label-newton: Newton
+      label-petanewton: petanewton
+      label-teranewton: teranewton
+      label-giganewton: giganewton
+      label-meganewton: meganewton
+      label-kilonewton: kilonewton
+      label-hectonewton: hektonewton
+      label-decanewton: dekanewton
+      label-decinewton: decinewton
+      label-centinewton: centinewton
+      label-millinewton: millinewton
+      label-micronewton: mikronewton
+      label-nanonewton: nanonewton
+      label-piconewton: pikonewton
+      label-femtonewton: femtonewton
+      label-dyne: din
+      label-pound-of-force: kuvvet poundu
+      label-kip: kip
+      label-klb: kulüp
+      label-kipf: kipf
+      label-klbf: klbf
+      label-poundal: pound
+      label-kilogram-force: kilogram-kuvvet
+      label-kilopond: kilopond
+      label-megapond: mega gölet
+      label-tonne-force: ton-kuvvet
+      label-metric-ton-force: metrik ton-kuvvet
+      label-megagram-force: megagram kuvveti
   geo-distance-calculator:
     title: Coğrafi mesafe hesaplayıcısı
     description: İki coğrafi konum arasındaki mesafeyi hesaplayın (ve geçerli
@@ -2932,6 +3025,29 @@ tools:
   length-converter:
     title: Uzunluk Birimleri Dönüştürücü
     description: Uzunluk birimlerinden değerleri dönüştürün
+    texts:
+      label-meter: metre
+      label-petameter: petametre
+      label-terameter: terametre
+      label-gigameter: gigametre
+      label-megameter: megametre
+      label-kilometer: kilometre
+      label-hectometer: hektometre
+      label-decameter: dekametre
+      label-decimeter: desimetre
+      label-centimeter: santimetre
+      label-millimeter: milimetre
+      label-micrometer: mikrometre
+      label-nanometer: nanometre
+      label-picometer: pikometre
+      label-femtometer: femtometre
+      label-inch: inç (")
+      label-yard: bahçe
+      label-mile: mil
+      label-nautical-mile-m-nm: deniz mili (M/NM)
+      label-light-year: ışık yılı
+      label-parsec: parsek
+      label-pica: pika
   list-comparer:
     title: Listeleri Karşılaştır
     description: İki liste öğesini karşılaştırın
@@ -3023,6 +3139,35 @@ tools:
   mass-converter:
     title: Kütle Birimleri Dönüştürücü
     description: Kütle birimleri arasındaki değerleri dönüştürün
+    texts:
+      label-gram: gram
+      label-petagram: petagram
+      label-teragram: teragram
+      label-gigagram: gigagram
+      label-megagram: megagram
+      label-kilogram: kilogram
+      label-hectogram: hektogram
+      label-decagram: dekagram
+      label-decigram: on gram
+      label-centigram: santigram
+      label-milligram: miligram
+      label-microgram: mikrogram
+      label-nanogram: nanogram
+      label-picogram: pikogram
+      label-femtogram: femtogram
+      label-tonne: ton
+      label-metric-ton: metrik ton
+      label-kilotonne: kiloton
+      label-megatonne: megaton
+      label-gigatonne: gigaton
+      label-pound: pound
+      label-stone: taş
+      label-ounce: ons
+      label-short-ton: kısa ton
+      label-us-ton: ABD tonu
+      label-long-ton: uzun ton
+      label-imperial-ton: imparatorluk tonu
+      label-displacement-ton: deplasman tonu
   math-formats-converter:
     title: Matematik Formatları Dönüştürücü
     description: Matematiksel ifadeleri formatlar arasında dönüştürün
@@ -3427,9 +3572,63 @@ tools:
   power-converter:
     title: Güç Dönüştürücü
     description: Güç birimleri arasında değerleri dönüştürün
+    texts:
+      label-watt: watt
+      label-petawatt: petawatt
+      label-terawatt: terawatt
+      label-gigawatt: gigawatt
+      label-megawatt: megavat
+      label-kilowatt: kilovat
+      label-hectowatt: hektovat
+      label-decawatt: dekawatt
+      label-deciwatt: desivatt
+      label-centiwatt: santivat
+      label-milliwatt: milivat
+      label-microwatt: mikrovat
+      label-nanowatt: nanovat
+      label-picowatt: pikowatt
+      label-femtowatt: femtowatt
+      label-horsepower: beygir gücü
+      label-mechanical-horsepower: mekanik beygir gücü
   pressure-converter:
     title: Basınç Birimleri Dönüştürücü
     description: Basınç birimleri arasındaki değerleri dönüştürün
+    texts:
+      label-pascal: paskal
+      label-pettapascal: pettapascal
+      label-terapascal: terapaskal
+      label-gigapascal: gigapaskal
+      label-megapascal: megapaskal
+      label-kilopascal: kilopaskal
+      label-hectopascal: hektopaskal
+      label-decapascal: dekapaskal
+      label-decipascal: decipascal
+      label-centipascal: santipaskal
+      label-millipascal: milipaskal
+      label-micropascal: mikropaskal
+      label-nanopascal: nanopaskal
+      label-picopascal: pikopaskal
+      label-femtopascal: femtopaskal
+      label-bar: çubuk
+      label-petabar: petabar
+      label-terabar: yayılmış
+      label-gigabar: gigabar
+      label-megabar: megabar
+      label-kilobar: kilobar
+      label-hectobar: hektobar
+      label-decabar: Kafam kesildi.
+      label-decibar: şifresini çözmek
+      label-centibar: santibar
+      label-millibar: milibar
+      label-microbar: mikrobar
+      label-nanobar: nanobar
+      label-picobar: pikobar
+      label-femtobar: femtobar
+      label-torr: torr
+      label-millitorr: millitorr
+      label-atmosphere: atmosfer
+      label-pound-per-square-inch: inç kare başına pound
+      label-lbf-in2: lbf/in2
   properties-to-yaml:
     title: Özellikler YAML'ye
     description: Java .properties içeriğini Yaml'ye dönüştürün
@@ -3811,6 +4010,65 @@ tools:
   volume-converter:
     title: Hacim Birimleri Dönüştürücü
     description: Hacim birimlerinden değerleri dönüştürün
+    texts:
+      label-cubic-meter-stere: metreküp/ster
+      label-cubic-petameter: kübik petametre
+      label-cubic-terameter: kübik terametre
+      label-cubic-gigameter: kübik gigametre
+      label-cubic-megameter: kübik megametre
+      label-cubic-kilometer: kübik kilometre
+      label-cubic-hectometer: kübik hektometre
+      label-cubic-decameter: kübik dekametre
+      label-cubic-decimeter: kübik desimetre
+      label-cubic-centimeter: kübik santimetre
+      label-cubic-millimeter: kübik milimetre
+      label-cubic-micrometer: kübik mikrometre
+      label-cubic-nanometer: kübik nanometre
+      label-cubic-picometer: kübik pikometre
+      label-cubic-femtometer: kübik femtometre
+      label-liter: litre
+      label-petaliter: petaliter
+      label-teraliter: teraliter
+      label-gigaliter: gigalitre
+      label-megaliter: megalitre
+      label-kiloliter: kilolitre
+      label-hectoliter: hektolitre
+      label-decaliter: dekalitre
+      label-deciliter: desilitre
+      label-centiliter: santilitre
+      label-milliliter: mililitre
+      label-microliter: mikrolitre
+      label-nanoliter: nanolitre
+      label-picoliter: pikolitre
+      label-femtoliter: femtolitre
+      label-cubic-mile: kübik mil
+      label-acre-foot: dönüm-ayak
+      label-cubic-yard: metreküp
+      label-cubic-foot: kübik ayak
+      label-board-feet: tahta ayak
+      label-cubic-inch: kübik inç
+      label-measurement-ton: ölçüm tonu
+      label-imperial-barrel: imparatorluk varili
+      label-imperial-bushel: İngiliz kile
+      label-imperial-peck: imparatorluk gagası
+      label-imperial-gallon: İngiliz galonu
+      label-imperial-quart: imparatorluk quart
+      label-imperial-pint: İngiliz pinti
+      label-imperial-fluid-ounce: İngiliz sıvı ons
+      label-teaspoon: çay kaşığı
+      label-tablespoon: çorba kaşığı
+      label-us-fluid-ounce: ABD sıvı ons
+      label-cup: bardak
+      label-us-legal-cup: ABD yasal kupası
+      label-us-liquid-pint: ABD sıvı pint
+      label-us-liquid-quart: ABD sıvı çeyrek litre
+      label-us-liquid-gallon: ABD sıvı galonu
+      label-us-bushel: ABD kile
+      label-us-peck: ABD gagası
+      label-us-dry-gallon: ABD kuru galonu
+      label-us-dry-barrel: ABD kuru varil
+      label-us-dry-quart: ABD kuru çeyrek litre
+      label-us-dry-pint: ABD kuru pint
   week-number-converter:
     title: Hafta Sayıları Dönüştürücü
     description: ISO Hafta numarası, ay ve tarihteki Hafta numarası arasında dönüştürme
@@ -5900,6 +6158,11 @@ tools:
       placeholder-enter-an-iban-to-check-for-validity: Geçerliliğini kontrol etmek için bir IBAN girin...
       title-valid-iban-examples: Geçerli IBAN örnekleri
       placeholder-enter-ibans-to-check-for-validity: Geçerliliğini kontrol etmek için satır başına bir IBAN girin
+      bank-name: Banka Adı
+      account-number: Hesap Numarası
+      branch-identifier: Şube Tanımlayıcısı
+      bank-identifier: Banka Tanımlayıcısı
+      bic: BIC
     service:
       text:
         qr-iban-not-allowed: QR-IBAN'a izin verilmiyor
@@ -5949,6 +6212,13 @@ tools:
       label-base64-64: Base64 (64)
       placeholder-base64-version-will-be-here: Base64 versiyonu da gelecek...
       tag-custom: "Gelenek:"
+      label-space-separation: Uzay ayrımı
+      label-binary-size: İkili boyut
+      label-octal-size: Sekizli boyut
+      label-decimal-size: Ondalık boyut
+      label-hexadecimal-size: Altıgen boyutu
+      label-base64-size: Base64 boyutu
+      label-custom-size: Özel boyut
     model:
       text:
         invalid-digit-digit-for-base-finalfrombase: '{1} tabanı için geçersiz "{0}" rakamı.'
@@ -8065,6 +8335,9 @@ tools:
     title: Hızlanma Dönüştürücü
     description: Hızlanma birimleri arasında değer dönüştürme
     externalAccess: hükümsüz
+    texts:
+      label-g-force: g-kuvveti
+      label-meter-per-second-squared: metre bölü saniye kare
   docker-image-downloader:
     title: Docker Görüntü İndirici
     description: Belirtilen Docker kayıt defteri, mimari ve imaj adına göre bir
@@ -8138,6 +8411,16 @@ tools:
     title: Frekans Dönüştürücü
     description: Frekans birimleri arasında değer dönüştürme
     externalAccess: hükümsüz
+    texts:
+      label-hertz: hertz
+      label-millihertz: milihertz
+      label-kilohertz: kilohertz
+      label-megahertz: megahertz
+      label-gigahertz: gigahertz
+      label-terahertz: terahertz
+      label-revolutions-per-minute: dakikadaki devir sayısı
+      label-degree-per-second: saniyede derece
+      label-radian-per-second: radyan/saniye
   markdown-to-text:
     title: Markdown'dan Metne
     description: Markdown'ı düz metne dönüştür
@@ -8211,6 +8494,12 @@ tools:
     title: Hız Dönüştürücü
     description: Hız birimleri arasında değer dönüştürme
     externalAccess: hükümsüz
+    texts:
+      label-meter-per-second: metre/saniye
+      label-kilometer-per-hour: kilometre/saat
+      label-miles-per-hour: mil saatte
+      label-knot: düğüm
+      label-feet-per-second: saniyede fit
   tab-to-spaces:
     title: Sekme tuşuyla boşluklara geçin
     description: Sekmeyi birden fazla boşluğa dönüştür
@@ -8276,6 +8565,44 @@ tools:
     title: Hacim Akış Hızı Dönüştürücü
     description: Hacimsel akış hızı birimleri arasında değerleri dönüştürün.
     externalAccess: hükümsüz
+    texts:
+      label-cubic-millimeters-per-second: saniyede kübik milimetre
+      label-cubic-centimeters-per-second: saniyede kübik santimetre
+      label-milliliters-per-second: mililitre/saniye
+      label-centiliters-per-second: santilitre/saniye
+      label-deciliters-per-second: desilitre/saniye
+      label-liters-per-second: litre/saniye
+      label-liters-per-minute: litre/dakika
+      label-liters-per-hour: litre/saat
+      label-kiloliters-per-second: saniyede kilolitre
+      label-kiloliters-per-minute: kilolitre/dakika
+      label-kiloliters-per-hour: kilolitre/saat
+      label-cubic-meters-per-second: saniyede metreküp
+      label-cubic-meters-per-minute: metreküp/dakika
+      label-cubic-meters-per-hour: saatte metreküp
+      label-cubic-kilometers-per-second: saniyede kübik kilometre
+      label-teaspoons-per-second: saniyede çay kaşığı
+      label-tablespoons-per-second: saniyede yemek kaşığı
+      label-cubic-inches-per-second: saniyede kübik inç
+      label-cubic-inches-per-minute: dakikada kübik inç
+      label-cubic-inches-per-hour: saatte kübik inç
+      label-fluid-ounces-per-second: saniyede sıvı ons
+      label-fluid-ounces-per-minute: dakikada sıvı ons
+      label-fluid-ounces-per-hour: saatte sıvı ons
+      label-cups-per-second: saniyede fincan
+      label-pints-per-second: saniyede pint
+      label-pints-per-minute: dakikada pint
+      label-pints-per-hour: saatte pint
+      label-quarts-per-second: saniyede litre
+      label-gallons-per-second: saniyede galon
+      label-gallons-per-minute: galon/dakika
+      label-gallons-per-hour: galon/saat
+      label-cubic-feet-per-second: saniyede kübik fit
+      label-cubic-feet-per-minute: dakikada metreküp
+      label-cubic-feet-per-hour: saatte metreküp
+      label-cubic-yards-per-second: saniyede metreküp
+      label-cubic-yards-per-minute: dakikada metreküp
+      label-cubic-yards-per-hour: saatte metreküp
   tip-calculator:
     title: Bahşiş hesaplayıcı
     description: Bir hesap için bahşişi hesaplayın ve birden fazla kişi arasında
@@ -8960,6 +9287,22 @@ tools:
       label-to: "İle:"
       label-start-at: "Başlangıç noktası:"
       tag-cron-expression-is-invalid: Cron ifadesi geçersiz.
+      paste-cron-expression: Cron İfadesini Yapıştır
+      e-g-5-0-12-1-2025: örneğin */5 0 12 * * 1 2025
+      0-6-sunday-0-monday-1-saturday-6: 0-6 (Pazar=0, Pazartesi=1, ..., Cumartesi=6)
+      label-select-at-least-one-value: "{0}: en az bir değer seçin"
+      day-of-month-and-day-of-week-cannot-both-be-specific: Ayın günü ve haftanın günü aynı anda belirli olamaz.
+      label-start-cannot-be-greater-than-end: "{0}: başlangıç bitişten büyük olamaz"
+      label-start-must-be-within-allowed-range: "{0}: başlangıç izin verilen aralıkta olmalıdır"
+      label-step-must-be-greater-than-1: "{0}: adım 1'den büyük veya eşit olmalıdır"
+      label-start-cannot-be-greater-than-end-0: "{0}: başlangıç bitişten büyük olamaz"
+      seconds: Saniyeler
+      minutes: Dakikalar
+      hours: Saat
+      day-of-month: Ayın Günü
+      month: Ay
+      day-of-week: Haftanın Günü
+      year: Yıl
   css-js-prettify-minify:
     title: CSS/JS Güzelleştirme ve Küçültme
     description: CSS ve JavaScript kodunuzu çevrimiçi olarak daha şık hale getirin
@@ -9477,6 +9820,49 @@ tools:
       tag-copy-json-paths: JSON yollarını kopyala
       tag-generate-patch: Yama oluştur
       tag-apply-patch: Yama uygulayın
+  ping:
+    title: Ping
+    description: Bir dizi ana bilgisayar adını, IP adresini, CIDR'yi veya IP
+      aralığını pingleyin.
+    externalAccess: Bu araç, ICMP ping'leri gerçekleştirmek için Self Host Network
+      Utilities Service'inizi çağırır.
+    texts:
+      label-targets-ips-cidrs-hostnames-one-per-line-or-or: "Hedefler (IP
+        adresleri/CIDR'ler/Ana bilgisayar adları, her satırda bir tane veya ,
+        veya ;) ):"
+      placeholder-192-168-1-1-10-google-com-10-10-0-0-0-24: 192.168.1.1&#10;google.com&#10;10.0.0.0/24
+      label-count: "Saymak:"
+      label-timeout-seconds: "Zaman aşımı (saniye):"
+      tag-ping-all: Tümünü pingle
+      tag-target: Hedef
+      tag-ip: IP
+      tag-status: Durum
+      tag-avg-rtt-ms: Ortalama RTT (ms)
+      tag-packet-loss: Paket Kaybı
+      tag-error: Hata
+      cidr-expands-to-hostcount-ips-exceeding-limit-of-max_cidr_ips: CIDR, {1} sınırını aşarak {0} IP adresine genişliyor.
+      tag-reachable: Ulaşılabilir
+      tag-unreachable: Ulaşılamaz
+  command-palette:
+    store:
+      texts:
+        pages: Sayfalar
+        learn-more-about-it-tools: BT araçları hakkında daha fazla bilgi edinin.
+        actions-0: Eylemler
+        report-a-bug-or-an-issue-to-help-improve-it-tools: it-tools'u geliştirmemize
+          yardımcı olmak için bir hata veya sorun bildirin.
+        report-a-bug-or-an-issue: Bir hata veya sorun bildirin.
+        view-the-source-code-of-it-tools-on-github: it-tools'un kaynak kodunu Github'da görüntüleyin.
+        external: Harici
+        github-repository: Github deposu
+        actions: Eylemler
+        toggle-dark-mode-on-or-off: Karanlık modu açıp kapatın.
+        toggle-dark-mode: Karanlık modu aç/kapat
+        tools-0: Aletler
+        get-a-random-tool-from-the-list: Listeden rastgele bir alet seçin.
+        random-tool: Rastgele araç
+        tools: Aletler
+  external-self-hosted-required: Harici Kendi Sunucunuzda Barındırma Gereklidir
 about:
   alltools-title: Tüm {toolsCount} Araç
   tools:

@@ -943,6 +943,11 @@ tools:
       placeholder-enter-an-iban-to-check-for-validity: Inserisci un IBAN per verificarne la validità...
       title-valid-iban-examples: Esempi di IBAN validi
       placeholder-enter-ibans-to-check-for-validity: Inserisci un IBAN per riga per verificarne la validità
+      bank-name: Nome della banca
+      account-number: Numero di conto
+      branch-identifier: Identificatore della filiale
+      bank-identifier: Identificativo bancario
+      bic: BIC
     service:
       text:
         qr-iban-not-allowed: QR-IBAN non consentito
@@ -1849,6 +1854,13 @@ tools:
   angle-converter:
     title: Convertitore di unità angolari
     description: Convertire i valori tra unità angolari
+    texts:
+      label-degree: grado (°)
+      label-radian: radiante
+      label-turn: giro
+      label-gradian: graiano
+      label-grad: grado
+      label-gon: gon
   ansible-vault-crypt-decrypt:
     title: Cripta e decifratura del vault Ansible
     description: Crittografa e decrittografa i segreti di Ansible Vault
@@ -1893,6 +1905,32 @@ tools:
   area-converter:
     title: Convertitore di unità di area
     description: Convertire i valori tra unità di area
+    texts:
+      label-square-meter: metro quadrato
+      label-square-petameter: petametro quadrato
+      label-square-terameter: metro quadrato
+      label-square-gigameter: gigametro quadrato
+      label-square-megameter: megametro quadrato
+      label-square-kilometer: chilometro quadrato
+      label-square-hectometer: ettometro quadrato
+      label-square-decameter: decametro quadrato
+      label-square-decimeter: decimetro quadrato
+      label-square-centimeter: centimetro quadrato
+      label-square-millimeter: millimetro quadrato
+      label-square-micrometer: micrometro quadrato
+      label-square-nanometer: nanometro quadrato
+      label-square-picometer: picometro quadrato
+      label-square-femtometer: femtometro quadrato
+      label-acre: acro
+      label-centiare: essere cento
+      label-deciare: deciare
+      label-are: Sono
+      label-decare: decare
+      label-hectare: ettaro
+      label-square-foot-ft2-sq-ft: piede quadrato (/ft2/sq ft)
+      label-square-inch-in2-sq-in: pollice quadrato (/in2/pollice quadrato)
+      label-square-yard-yd2-sq-yd: iarda quadrata (yd²/iarda quadrata)
+      label-square-mile-mi2-sq-mi: miglio quadrato (mi2/sq mi)
   aspect-ratio-calculator:
     title: Calcolatrice del rapporto d'aspetto
     description: Utilizza questo calcolatore di proporzioni per controllare le
@@ -2559,6 +2597,37 @@ tools:
   energy-converter:
     title: Convertitore di unità di energia
     description: Convertire i valori tra unità di energia
+    texts:
+      label-joule: joule
+      label-petajoule: petajoule
+      label-terajoule: terajoule
+      label-gigajoule: gigajoule
+      label-megajoule: megajoule
+      label-kilojoule: chilojoule
+      label-hectojoule: ettogiornale
+      label-decajoule: decajoule
+      label-decijoule: decijoule
+      label-centijoule: centijoule
+      label-millijoule: millijoule
+      label-microjoule: microjoule
+      label-nanojoule: nanojoule
+      label-picojoule: picojoule
+      label-femtojoule: femtojoule
+      label-watt-hour: wattora
+      label-petawatt-hour: petawattora
+      label-terawatt-hour: terawattora
+      label-gigawatt-hour: gigawattora
+      label-megawatt-hour: megawattora
+      label-kilowatt-hour: kilowattora
+      label-hectowatt-hour: ettowattora
+      label-decawatt-hour: decawatto-ora
+      label-deciwatt-hour: deciwattora
+      label-centiwatt-hour: centiwattora
+      label-milliwatt-hour: milliwattora
+      label-microwatt-hour: microwattora
+      label-nanowatt-hour: nanowattora
+      label-picowatt-hour: picowattora
+      label-femtowatt-hour: femtowattora
   file-hasher:
     title: Hasher di file
     description: Calcola l'hash dei file
@@ -2615,6 +2684,35 @@ tools:
   force-converter:
     title: Convertitore di unità di forza
     description: Convertire i valori tra unità di forza
+    texts:
+      label-newton: Newton
+      label-petanewton: Petanewton
+      label-teranewton: teranewton
+      label-giganewton: giganewton
+      label-meganewton: meganewton
+      label-kilonewton: kilonewton
+      label-hectonewton: ettonewton
+      label-decanewton: decanewton
+      label-decinewton: Ciswton
+      label-centinewton: centinewton
+      label-millinewton: millinewton
+      label-micronewton: micronewton
+      label-nanonewton: nanonewton
+      label-piconewton: piconewton
+      label-femtonewton: femtonewton
+      label-dyne: dina
+      label-pound-of-force: libbra di forza
+      label-kip: kip
+      label-klb: club
+      label-kipf: kipf
+      label-klbf: klbf
+      label-poundal: libbra
+      label-kilogram-force: chilogrammo-forza
+      label-kilopond: chilopond
+      label-megapond: megalago
+      label-tonne-force: forza tonnellata
+      label-metric-ton-force: tonnellata-forza metrica
+      label-megagram-force: forza megagrammo
   geo-distance-calculator:
     title: Calcolatrice della distanza geografica
     description: Calcola la distanza tra due posizioni geografiche (e visualizza le
@@ -3233,6 +3331,29 @@ tools:
   length-converter:
     title: Convertitore di unità di lunghezza
     description: Convertire i valori dalle unità di lunghezza
+    texts:
+      label-meter: contatore
+      label-petameter: petametro
+      label-terameter: metro
+      label-gigameter: gigametro
+      label-megameter: megametro
+      label-kilometer: chilometro
+      label-hectometer: ettometro
+      label-decameter: decametro
+      label-decimeter: decimetro
+      label-centimeter: centimetro
+      label-millimeter: millimetro
+      label-micrometer: micrometro
+      label-nanometer: nanometro
+      label-picometer: picometro
+      label-femtometer: femtometro
+      label-inch: pollice (")
+      label-yard: cortile
+      label-mile: miglio
+      label-nautical-mile-m-nm: miglio nautico (M/NM)
+      label-light-year: anno luce
+      label-parsec: parco
+      label-pica: lica
   list-comparer:
     title: Elenchi Confronta
     description: Confronta due elementi dell'elenco
@@ -3324,6 +3445,35 @@ tools:
   mass-converter:
     title: Convertitore di unità di massa
     description: Convertire i valori tra unità di massa
+    texts:
+      label-gram: grammo
+      label-petagram: petigramma
+      label-teragram: teragramma
+      label-gigagram: gigagram
+      label-megagram: megagram
+      label-kilogram: chilogrammo
+      label-hectogram: etto
+      label-decagram: decagrammo
+      label-decigram: dieci grammi
+      label-centigram: centigrammo
+      label-milligram: milligrammo
+      label-microgram: microgram
+      label-nanogram: nanogram
+      label-picogram: picogramma
+      label-femtogram: femtogramma
+      label-tonne: tonnellata
+      label-metric-ton: tonnellata metrica
+      label-kilotonne: chilotonnellata
+      label-megatonne: megatonnellata
+      label-gigatonne: gigantessa
+      label-pound: libbra
+      label-stone: calcolo
+      label-ounce: oncia
+      label-short-ton: tonnellata corta
+      label-us-ton: tonnellata statunitense
+      label-long-ton: lunga tonnellata
+      label-imperial-ton: tonnellata imperiale
+      label-displacement-ton: tonnellate di spostamento
   math-formats-converter:
     title: Convertitore di formati matematici
     description: Convertire l'espressione matematica tra i formati
@@ -3734,9 +3884,63 @@ tools:
   power-converter:
     title: Convertitore di potenza
     description: Convertire i valori tra le unità di potenza
+    texts:
+      label-watt: watt
+      label-petawatt: petawatt
+      label-terawatt: terawatt
+      label-gigawatt: gigawatt
+      label-megawatt: megawatt
+      label-kilowatt: chilowatt
+      label-hectowatt: ettowatto
+      label-decawatt: decawatt
+      label-deciwatt: deciwatt
+      label-centiwatt: centiwatt
+      label-milliwatt: milliwatt
+      label-microwatt: microonde
+      label-nanowatt: nanowatt
+      label-picowatt: picowatt
+      label-femtowatt: femtowatt
+      label-horsepower: cavalli vapore
+      label-mechanical-horsepower: potenza meccanica
   pressure-converter:
     title: Convertitore di unità di pressione
     description: Convertire i valori tra le unità di pressione
+    texts:
+      label-pascal: Pascal
+      label-pettapascal: pettapascal
+      label-terapascal: terapascal
+      label-gigapascal: gigapascal
+      label-megapascal: megapascal
+      label-kilopascal: kilopascal
+      label-hectopascal: ettopascal
+      label-decapascal: decapacale
+      label-decipascal: decipasco
+      label-centipascal: centipascal
+      label-millipascal: millipascal
+      label-micropascal: micropascal
+      label-nanopascal: nanopascal
+      label-picopascal: picopascal
+      label-femtopascal: femtopascal
+      label-bar: sbarra
+      label-petabar: petabar
+      label-terabar: sparsi
+      label-gigabar: gigabar
+      label-megabar: megabar
+      label-kilobar: chilobar
+      label-hectobar: ettobar
+      label-decabar: Sono stato decapitato.
+      label-decibar: decifrare
+      label-centibar: centibar
+      label-millibar: millibar
+      label-microbar: microbar
+      label-nanobar: nanobar
+      label-picobar: picobar
+      label-femtobar: femtobar
+      label-torr: autorr
+      label-millitorr: millitorre
+      label-atmosphere: atmosfera
+      label-pound-per-square-inch: libbre per pollice quadrato
+      label-lbf-in2: libbre/pollice quadrato
   properties-to-yaml:
     title: Proprietà di YAML
     description: Convertire il contenuto Java .properties in Yaml
@@ -4120,6 +4324,65 @@ tools:
   volume-converter:
     title: Convertitore di unità di volume
     description: Convertire i valori dalle unità di volume
+    texts:
+      label-cubic-meter-stere: metro cubo/stere
+      label-cubic-petameter: petametro cubo
+      label-cubic-terameter: metro cubo
+      label-cubic-gigameter: gigatollo cubo
+      label-cubic-megameter: metro cubo megametro
+      label-cubic-kilometer: chilometro cubo
+      label-cubic-hectometer: ettometro cubo
+      label-cubic-decameter: decametro cubico
+      label-cubic-decimeter: decimetro cubo
+      label-cubic-centimeter: centimetro cubo
+      label-cubic-millimeter: millimetro cubo
+      label-cubic-micrometer: micrometro cubico
+      label-cubic-nanometer: nanometro cubico
+      label-cubic-picometer: picometro cubico
+      label-cubic-femtometer: femtometro cubico
+      label-liter: litro
+      label-petaliter: petaliter
+      label-teraliter: terralitro
+      label-gigaliter: gigalitro
+      label-megaliter: megalitro
+      label-kiloliter: chilolitro
+      label-hectoliter: ettolitro
+      label-decaliter: decalitro
+      label-deciliter: decilitro
+      label-centiliter: centilitro
+      label-milliliter: millilitro
+      label-microliter: microlitro
+      label-nanoliter: nanolitro
+      label-picoliter: picolitro
+      label-femtoliter: femtolitro
+      label-cubic-mile: miglio cubo
+      label-acre-foot: acro-piede
+      label-cubic-yard: iarda cubica
+      label-cubic-foot: piede cubo
+      label-board-feet: piedi di tavola
+      label-cubic-inch: pollice cubo
+      label-measurement-ton: tonnellata di misura
+      label-imperial-barrel: botte imperiale
+      label-imperial-bushel: moggio imperiale
+      label-imperial-peck: beccata imperiale
+      label-imperial-gallon: gallone imperiale
+      label-imperial-quart: quarto imperiale
+      label-imperial-pint: pinta imperiale
+      label-imperial-fluid-ounce: oncia fluida imperiale
+      label-teaspoon: cucchiaino
+      label-tablespoon: cucchiaio
+      label-us-fluid-ounce: oncia liquida statunitense
+      label-cup: tazza
+      label-us-legal-cup: Coppa legale statunitense
+      label-us-liquid-pint: pinta liquida statunitense
+      label-us-liquid-quart: quarto liquido statunitense
+      label-us-liquid-gallon: gallone liquido statunitense
+      label-us-bushel: bushel statunitense
+      label-us-peck: Peck americano
+      label-us-dry-gallon: gallone secco statunitense
+      label-us-dry-barrel: barile a secco statunitense
+      label-us-dry-quart: quarto secco americano
+      label-us-dry-pint: pinta secca americana
   week-number-converter:
     title: Convertitore dei numeri delle settimane
     description: Convertire tra numero della settimana ISO, numero della settimana
@@ -6030,6 +6293,13 @@ tools:
       label-base64-64: Base64 (64)
       placeholder-base64-version-will-be-here: La versione Base64 sarà disponibile...
       tag-custom: "Costume:"
+      label-space-separation: Separazione dello spazio
+      label-binary-size: Dimensione binaria
+      label-octal-size: Dimensione ottale
+      label-decimal-size: Dimensione decimale
+      label-hexadecimal-size: dimensione esagonale
+      label-base64-size: dimensione Base64
+      label-custom-size: Dimensioni personalizzate
     model:
       text:
         invalid-digit-digit-for-base-finalfrombase: Cifra "{0}" non valida per la base {1}.
@@ -8153,6 +8423,9 @@ tools:
     title: Convertitore di accelerazione
     description: Convertire i valori tra unità di accelerazione
     externalAccess: "null"
+    texts:
+      label-g-force: forza g
+      label-meter-per-second-squared: metro al secondo quadrato
   docker-image-downloader:
     title: Scaricatore di immagini Docker
     description: Scarica un'immagine Docker dato un registro Docker, un'architettura
@@ -8227,6 +8500,16 @@ tools:
     title: Convertitore di frequenza
     description: Convertire i valori tra unità di frequenza
     externalAccess: "null"
+    texts:
+      label-hertz: hertz
+      label-millihertz: millihertz
+      label-kilohertz: kilohertz
+      label-megahertz: megahertz
+      label-gigahertz: gigahertz
+      label-terahertz: terahertz
+      label-revolutions-per-minute: giri al minuto
+      label-degree-per-second: grado al secondo
+      label-radian-per-second: radianti al secondo
   markdown-to-text:
     title: Conversione da Markdown a Testo
     description: Convertire il markdown in testo normale
@@ -8300,6 +8583,12 @@ tools:
     title: Convertitore di velocità
     description: Convertire i valori tra le unità di velocità
     externalAccess: "null"
+    texts:
+      label-meter-per-second: metro al secondo
+      label-kilometer-per-hour: chilometro all'ora
+      label-miles-per-hour: miglia all'ora
+      label-knot: nodo
+      label-feet-per-second: piedi al secondo
   tab-to-spaces:
     title: Tab per passare agli spazi
     description: Convertire la tabulazione in più spazi
@@ -8365,6 +8654,44 @@ tools:
     title: Convertitore di portata volumetrica
     description: Convertire i valori tra le unità di portata volumetrica
     externalAccess: "null"
+    texts:
+      label-cubic-millimeters-per-second: millimetri cubi al secondo
+      label-cubic-centimeters-per-second: centimetri cubi al secondo
+      label-milliliters-per-second: millilitri al secondo
+      label-centiliters-per-second: centilitri al secondo
+      label-deciliters-per-second: decilitri al secondo
+      label-liters-per-second: litri al secondo
+      label-liters-per-minute: litri al minuto
+      label-liters-per-hour: litri all'ora
+      label-kiloliters-per-second: chilolitri al secondo
+      label-kiloliters-per-minute: chilolitri al minuto
+      label-kiloliters-per-hour: chilolitri all'ora
+      label-cubic-meters-per-second: metri cubi al secondo
+      label-cubic-meters-per-minute: metri cubi al minuto
+      label-cubic-meters-per-hour: metri cubi all'ora
+      label-cubic-kilometers-per-second: chilometri cubi al secondo
+      label-teaspoons-per-second: cucchiaini al secondo
+      label-tablespoons-per-second: cucchiai al secondo
+      label-cubic-inches-per-second: pollici cubi al secondo
+      label-cubic-inches-per-minute: pollici cubi al minuto
+      label-cubic-inches-per-hour: pollici cubi all'ora
+      label-fluid-ounces-per-second: once fluide al secondo
+      label-fluid-ounces-per-minute: once fluide al minuto
+      label-fluid-ounces-per-hour: once fluide all'ora
+      label-cups-per-second: tazze al secondo
+      label-pints-per-second: pinte al secondo
+      label-pints-per-minute: pinte al minuto
+      label-pints-per-hour: pinte all'ora
+      label-quarts-per-second: quarti al secondo
+      label-gallons-per-second: galloni al secondo
+      label-gallons-per-minute: galloni al minuto
+      label-gallons-per-hour: galloni all'ora
+      label-cubic-feet-per-second: piedi cubi al secondo
+      label-cubic-feet-per-minute: piedi cubi al minuto
+      label-cubic-feet-per-hour: piedi cubi all'ora
+      label-cubic-yards-per-second: metri cubi al secondo
+      label-cubic-yards-per-minute: metri cubi al minuto
+      label-cubic-yards-per-hour: metri cubi all'ora
   tip-calculator:
     title: Calcolatore di mance
     description: Calcola la mancia da aggiungere al conto e dividila tra più persone.
@@ -9051,6 +9378,24 @@ tools:
       label-to: "A:"
       label-start-at: "Inizia da:"
       tag-cron-expression-is-invalid: L'espressione Cron non è valida.
+      paste-cron-expression: Incolla l'espressione Cron
+      e-g-5-0-12-1-2025: ad esempio */5 0 12 * * 1 2025
+      0-6-sunday-0-monday-1-saturday-6: 0-6 (domenica=0, lunedì=1, ..., sabato=6)
+      label-select-at-least-one-value: "{0}: seleziona almeno un valore"
+      day-of-month-and-day-of-week-cannot-both-be-specific: Non è possibile
+        specificare contemporaneamente il giorno del mese e il giorno della
+        settimana.
+      label-start-cannot-be-greater-than-end: "{0}: l'inizio non può essere maggiore della fine"
+      label-start-must-be-within-allowed-range: "{0}: l'inizio deve essere entro l'intervallo consentito"
+      label-step-must-be-greater-than-1: "{0}: il passo deve essere >= 1"
+      label-start-cannot-be-greater-than-end-0: "{0}: l'inizio non può essere maggiore della fine"
+      seconds: secondi
+      minutes: Minuti
+      hours: Ore
+      day-of-month: Giorno del mese
+      month: Mese
+      day-of-week: Giorno della settimana
+      year: Anno
   css-js-prettify-minify:
     title: CSS/JS Abbellisci e minimizza
     description: Formatta o minimizza il tuo codice CSS e JavaScript online.
@@ -9568,6 +9913,46 @@ tools:
       tag-copy-json-paths: Copia i percorsi JSON
       tag-generate-patch: Genera patch
       tag-apply-patch: Applicare la patch
+  ping:
+    title: Ping
+    description: Eseguire un ping su un insieme di nomi host, indirizzi IP, CIDR o
+      intervalli IP.
+    externalAccess: Questo strumento richiama il servizio Utilità di rete Self Host
+      per eseguire ping ICMP.
+    texts:
+      label-targets-ips-cidrs-hostnames-one-per-line-or-or: "Destinazioni (IP/CIDR/Nomi host, uno per riga o , o ;):"
+      placeholder-192-168-1-1-10-google-com-10-10-0-0-0-24: 192.168.1.1&#10;google.com&#10;10.0.0.0/24
+      label-count: "Contare:"
+      label-timeout-seconds: "Timeout (secondi):"
+      tag-ping-all: Ping All
+      tag-target: Bersaglio
+      tag-ip: IP
+      tag-status: Stato
+      tag-avg-rtt-ms: Tempo di raddoppio medio (ms)
+      tag-packet-loss: Perdita di pacchetti
+      tag-error: Errore
+      cidr-expands-to-hostcount-ips-exceeding-limit-of-max_cidr_ips: CIDR si espande a {0} IP, superando il limite di {1}
+      tag-reachable: Raggiungibile
+      tag-unreachable: Irraggiungibile
+  command-palette:
+    store:
+      texts:
+        pages: Pagine
+        learn-more-about-it-tools: Scopri di più su IT-Tools.
+        actions-0: Azioni
+        report-a-bug-or-an-issue-to-help-improve-it-tools: Segnala un bug o un problema per aiutarci a migliorare it-tools.
+        report-a-bug-or-an-issue: Segnala un bug o un problema
+        view-the-source-code-of-it-tools-on-github: Visualizza il codice sorgente di it-tools su GitHub.
+        external: Esterno
+        github-repository: Repository GitHub
+        actions: Azioni
+        toggle-dark-mode-on-or-off: Attiva o disattiva la modalità scura.
+        toggle-dark-mode: Attiva/disattiva la modalità scura
+        tools-0: Utensili
+        get-a-random-tool-from-the-list: Scegli uno strumento a caso dall'elenco.
+        random-tool: Strumento casuale
+        tools: Utensili
+  external-self-hosted-required: È richiesto un server esterno self-hosted.
 about:
   alltools-title: Tutti gli strumenti {toolsCount}
   tools:

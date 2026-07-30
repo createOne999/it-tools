@@ -952,6 +952,11 @@ tools:
       placeholder-enter-an-iban-to-check-for-validity: أدخل رقم IBAN للتحقق من صحته...
       title-valid-iban-examples: أمثلة على رقم IBAN صالح
       placeholder-enter-ibans-to-check-for-validity: أدخل رقم IBAN لكل سطر للتحقق من صحته
+      bank-name: اسم البنك
+      account-number: رقم الحساب
+      branch-identifier: معرّف الفرع
+      bank-identifier: معرّف البنك
+      bic: BIC
     service:
       text:
         qr-iban-not-allowed: لا يُسمح بـ QR-IBAN
@@ -1885,6 +1890,13 @@ tools:
   angle-converter:
     title: محول وحدات الزاوية
     description: تحويل القيم بين وحدات الزاوية
+    texts:
+      label-degree: درجة (°)
+      label-radian: راديان
+      label-turn: دور
+      label-gradian: جراديان
+      label-grad: درجة
+      label-gon: غون
   ansible-vault-crypt-decrypt:
     title: فك تشفير Ansible Vault Crypt
     description: تشفير وفك تشفير أسرار Ansible Vault
@@ -1930,6 +1942,32 @@ tools:
   area-converter:
     title: محول وحدات المساحة
     description: تحويل القيم بين وحدات المساحة
+    texts:
+      label-square-meter: متر مربع
+      label-square-petameter: بيتمتر مربع
+      label-square-terameter: تيرامتر مربع
+      label-square-gigameter: جيجامتر مربع
+      label-square-megameter: ميغامتر مربع
+      label-square-kilometer: كيلومتر مربع
+      label-square-hectometer: الهكتومتر المربع
+      label-square-decameter: ديكامتر مربع
+      label-square-decimeter: ديسيمتر مربع
+      label-square-centimeter: سنتيمتر مربع
+      label-square-millimeter: مليمتر مربع
+      label-square-micrometer: ميكرومتر مربع
+      label-square-nanometer: نانومتر مربع
+      label-square-picometer: بيكومتر مربع
+      label-square-femtometer: فيمتومتر مربع
+      label-acre: فدان
+      label-centiare: أن تكون سنتًا
+      label-deciare: للقرار
+      label-are: نكون
+      label-decare: ديكير
+      label-hectare: هكتار
+      label-square-foot-ft2-sq-ft: قدم مربع (قدم مربع)
+      label-square-inch-in2-sq-in: بوصة مربعة (بوصة مربعة /in2/sq in)
+      label-square-yard-yd2-sq-yd: ياردة مربعة (ياردة مربعة/ياردة مربعة)
+      label-square-mile-mi2-sq-mi: ميل مربع (ميل مربع/ميل مربع)
   aspect-ratio-calculator:
     title: حاسبة نسبة العرض إلى الارتفاع
     description: استخدم حاسبة النسبة هذه للتحقق من الأبعاد عند تغيير حجم الصور.
@@ -2579,6 +2617,37 @@ tools:
   energy-converter:
     title: محول وحدات الطاقة
     description: تحويل القيم بين وحدات الطاقة
+    texts:
+      label-joule: جول
+      label-petajoule: بيتاجول
+      label-terajoule: تيراجول
+      label-gigajoule: جيجا جول
+      label-megajoule: ميغا جول
+      label-kilojoule: كيلوجول
+      label-hectojoule: هيكتوجول
+      label-decajoule: ديكاجول
+      label-decijoule: ديسيجول
+      label-centijoule: سنتيجول
+      label-millijoule: ملي جول
+      label-microjoule: ميكرو جول
+      label-nanojoule: نانو جول
+      label-picojoule: بيكوجول
+      label-femtojoule: فيمتوجول
+      label-watt-hour: واط ساعة
+      label-petawatt-hour: بيتاواط ساعة
+      label-terawatt-hour: تيراواط ساعة
+      label-gigawatt-hour: جيجاوات ساعة
+      label-megawatt-hour: ميغاواط ساعة
+      label-kilowatt-hour: كيلوواط ساعة
+      label-hectowatt-hour: هيكتواط ساعة
+      label-decawatt-hour: ديكاواط ساعة
+      label-deciwatt-hour: ديسي واط ساعة
+      label-centiwatt-hour: سنتي واط ساعة
+      label-milliwatt-hour: milliwatt-hour
+      label-microwatt-hour: ميكروواط ساعة
+      label-nanowatt-hour: نانوواط ساعة
+      label-picowatt-hour: بيكوواط ساعة
+      label-femtowatt-hour: فيمتوات ساعة
   file-hasher:
     title: هاشر الملفات
     description: حساب تجزئة الملفات
@@ -2634,6 +2703,35 @@ tools:
   force-converter:
     title: محول وحدات القوة
     description: تحويل القيم بين وحدات القوة
+    texts:
+      label-newton: نيوتن
+      label-petanewton: بيتانيوتن
+      label-teranewton: تيرا نيوتن
+      label-giganewton: جيجانيوتن
+      label-meganewton: ميغانيوتن
+      label-kilonewton: كيلونيوتن
+      label-hectonewton: هيكتونيوتن
+      label-decanewton: ديكانويتون
+      label-decinewton: ديسينيوتن
+      label-centinewton: سينتينيوتون
+      label-millinewton: ميلينيوتون
+      label-micronewton: ميكرونيوتن
+      label-nanonewton: نانونيوتن
+      label-piconewton: بيكونيوتن
+      label-femtonewton: فيمتون نيوتن
+      label-dyne: داين
+      label-pound-of-force: رطل من القوة
+      label-kip: كيب
+      label-klb: نادي
+      label-kipf: كيبف
+      label-klbf: klbf
+      label-poundal: جنيه
+      label-kilogram-force: قوة كيلوغرام
+      label-kilopond: كيلوبوند
+      label-megapond: ميغابوند
+      label-tonne-force: طن-قوة
+      label-metric-ton-force: طن متري-قوة
+      label-megagram-force: قوة ميغاغرام
   geo-distance-calculator:
     title: حاسبة المسافة الجغرافية
     description: حساب المسافة بين موقعين جغرافيين (وعرض معلومات موقع المستخدم الحالي)
@@ -3230,6 +3328,29 @@ tools:
   length-converter:
     title: محول وحدات الطول
     description: تحويل القيم من وحدات الطول
+    texts:
+      label-meter: متر
+      label-petameter: بيتامتر
+      label-terameter: تيرامتر
+      label-gigameter: جيجامتر
+      label-megameter: ميغامتر
+      label-kilometer: كيلومتر
+      label-hectometer: الهكتومتر
+      label-decameter: ديكامتر
+      label-decimeter: ديسيمتر
+      label-centimeter: سنتيمتر
+      label-millimeter: مليمتر
+      label-micrometer: ميكرومتر
+      label-nanometer: نانومتر
+      label-picometer: البيكومتر
+      label-femtometer: مقياس الفيمتومتر
+      label-inch: بوصة (")
+      label-yard: ساحة
+      label-mile: ميل
+      label-nautical-mile-m-nm: الميل البحري (M/NM)
+      label-light-year: سنة ضوئية
+      label-parsec: فرسخ فلكي
+      label-pica: بيكا
   list-comparer:
     title: مقارنة القوائم
     description: مقارنة عنصرين من القائمة
@@ -3321,6 +3442,35 @@ tools:
   mass-converter:
     title: محول وحدات الكتلة
     description: تحويل القيم بين وحدات الكتلة
+    texts:
+      label-gram: غرام
+      label-petagram: بيتاجرام
+      label-teragram: تيراغرام
+      label-gigagram: جيجاجرام
+      label-megagram: ميغاغرام
+      label-kilogram: كيلوغرام
+      label-hectogram: الهكتوغرافيا
+      label-decagram: ديكاغرام
+      label-decigram: عشرة غرامات
+      label-centigram: سنتيغرام
+      label-milligram: مليغرام
+      label-microgram: ميكروغرام
+      label-nanogram: نانوجرام
+      label-picogram: البيكوغرام
+      label-femtogram: الفيمتوغرام
+      label-tonne: طن
+      label-metric-ton: طن متري
+      label-kilotonne: كيلوطن
+      label-megatonne: ميغاطن
+      label-gigatonne: جيجاتون
+      label-pound: جنيه
+      label-stone: حجر
+      label-ounce: أونصة
+      label-short-ton: شورت طن
+      label-us-ton: طن أمريكي
+      label-long-ton: طن طويل
+      label-imperial-ton: طن إمبراطوري
+      label-displacement-ton: طن الإزاحة
   math-formats-converter:
     title: محول صيغ الرياضيات
     description: تحويل التعبيرات الرياضية بين الصيغ
@@ -3701,9 +3851,63 @@ tools:
   power-converter:
     title: محول الطاقة
     description: تحويل القيم بين وحدات القدرة
+    texts:
+      label-watt: واط
+      label-petawatt: بيتاواط
+      label-terawatt: تيراواط
+      label-gigawatt: جيجاوات
+      label-megawatt: ميغاواط
+      label-kilowatt: كيلوواط
+      label-hectowatt: هيكتاوات
+      label-decawatt: ديكاواط
+      label-deciwatt: ديسي واط
+      label-centiwatt: سنتيواط
+      label-milliwatt: ميلي واط
+      label-microwatt: ميكروواط
+      label-nanowatt: نانوواط
+      label-picowatt: بيكوواط
+      label-femtowatt: فيمتوواط
+      label-horsepower: قوة حصانية
+      label-mechanical-horsepower: قوة حصانية ميكانيكية
   pressure-converter:
     title: محول وحدات الضغط
     description: تحويل القيم بين وحدات الضغط
+    texts:
+      label-pascal: باسكال
+      label-pettapascal: بيتاباسكال
+      label-terapascal: تيرا باسكال
+      label-gigapascal: جيجاباسكال
+      label-megapascal: ميجاباسكال
+      label-kilopascal: كيلوباسكال
+      label-hectopascal: ناضح
+      label-decapascal: ديكاباسكال
+      label-decipascal: ديباسكال
+      label-centipascal: سنتيباسكال
+      label-millipascal: ميلي باسكال
+      label-micropascal: ميكروباسكال
+      label-nanopascal: نانوباسكال
+      label-picopascal: بيكوباسكال
+      label-femtopascal: فيمتوباسكال
+      label-bar: حاجِز
+      label-petabar: بيتابار
+      label-terabar: انتشروا
+      label-gigabar: جيجابار
+      label-megabar: ميغابار
+      label-kilobar: كيلوبار
+      label-hectobar: هيكتوبار
+      label-decabar: لقد قُطِع رأسي.
+      label-decibar: فك الشفرة
+      label-centibar: سنتيبار
+      label-millibar: مليبار
+      label-microbar: ميكروبار
+      label-nanobar: نانوبار
+      label-picobar: بيكوبار
+      label-femtobar: فيمتوبار
+      label-torr: تور
+      label-millitorr: ميليتور
+      label-atmosphere: أَجواء
+      label-pound-per-square-inch: رطل لكل بوصة مربعة
+      label-lbf-in2: رطل/بوصة مربعة
   properties-to-yaml:
     title: خصائص YAML
     description: تحويل محتوى Java .propries إلى Yaml
@@ -4075,6 +4279,65 @@ tools:
   volume-converter:
     title: محول وحدات الحجم
     description: تحويل القيم من وحدات الحجم
+    texts:
+      label-cubic-meter-stere: متر مكعب/ستير
+      label-cubic-petameter: بيتامتر مكعب
+      label-cubic-terameter: تيرامتر مكعب
+      label-cubic-gigameter: جيجامتر مكعب
+      label-cubic-megameter: ميغامتر مكعب
+      label-cubic-kilometer: كيلومتر مكعب
+      label-cubic-hectometer: الهكتومتر المكعب
+      label-cubic-decameter: ديكامتر مكعب
+      label-cubic-decimeter: ديسيمتر مكعب
+      label-cubic-centimeter: سنتيمتر مكعب
+      label-cubic-millimeter: مليمتر مكعب
+      label-cubic-micrometer: ميكرومتر مكعب
+      label-cubic-nanometer: نانومتر مكعب
+      label-cubic-picometer: بيكومتر مكعب
+      label-cubic-femtometer: الفيمتومتر المكعب
+      label-liter: لتر
+      label-petaliter: بيتالتر
+      label-teraliter: تيرا لتر
+      label-gigaliter: جيجالتر
+      label-megaliter: ميجا لتر
+      label-kiloliter: كيلولتر
+      label-hectoliter: هيكتولتر
+      label-decaliter: عشرة لترات
+      label-deciliter: ديسيلتر
+      label-centiliter: سنتيلتر
+      label-milliliter: ملليلتر
+      label-microliter: ميكرولتر
+      label-nanoliter: نانولتر
+      label-picoliter: بيكولتر
+      label-femtoliter: فيمتولتر
+      label-cubic-mile: ميل مكعب
+      label-acre-foot: فدان-قدم
+      label-cubic-yard: ياردة مكعبة
+      label-cubic-foot: قدم مكعب
+      label-board-feet: أقدام لوحية
+      label-cubic-inch: بوصة مكعبة
+      label-measurement-ton: قياس طن
+      label-imperial-barrel: برميل إمبراطوري
+      label-imperial-bushel: بوشل إمبراطوري
+      label-imperial-peck: بيك إمبراطوري
+      label-imperial-gallon: غالون إمبراطوري
+      label-imperial-quart: ربع جالون إمبراطوري
+      label-imperial-pint: باينت إمبراطوري
+      label-imperial-fluid-ounce: أونصة سائلة إمبراطورية
+      label-teaspoon: ملعقة صغيرة
+      label-tablespoon: ملعقة طعام
+      label-us-fluid-ounce: أونصة سائلة أمريكية
+      label-cup: كوب
+      label-us-legal-cup: كأس الولايات المتحدة القانوني
+      label-us-liquid-pint: باينت سائل أمريكي
+      label-us-liquid-quart: ربع جالون سائل أمريكي
+      label-us-liquid-gallon: جالون سائل أمريكي
+      label-us-bushel: بوشل أمريكي
+      label-us-peck: رقبة أمريكية
+      label-us-dry-gallon: جالون جاف أمريكي
+      label-us-dry-barrel: برميل جاف أمريكي
+      label-us-dry-quart: ربع جالون جاف أمريكي
+      label-us-dry-pint: باينت أمريكي جاف
   week-number-converter:
     title: محول أرقام الأسبوع
     description: التحويل بين رقم أسبوع ISO ورقم الأسبوع في الشهر والتاريخ
@@ -5849,6 +6112,13 @@ tools:
       label-base64-64: قاعدة 64 (64)
       placeholder-base64-version-will-be-here: سيكون إصدار Base64 هنا...
       tag-custom: "مخصص:"
+      label-space-separation: الفصل المكاني
+      label-binary-size: الحجم الثنائي
+      label-octal-size: حجم ثماني
+      label-decimal-size: الحجم العشري
+      label-hexadecimal-size: حجم سداسي
+      label-base64-size: حجم Base64
+      label-custom-size: مقاس مخصص
     model:
       text:
         invalid-digit-digit-for-base-finalfrombase: رقم غير صالح &quot;{0}&quot; للقاعدة {1}.
@@ -7929,6 +8199,9 @@ tools:
     title: محول التسارع
     description: تحويل القيم بين وحدات التسارع
     externalAccess: باطل
+    texts:
+      label-g-force: قوة الجاذبية
+      label-meter-per-second-squared: متر في الثانية المربعة
   docker-image-downloader:
     title: برنامج تنزيل صور Docker
     description: قم بتنزيل صورة Docker باستخدام سجل Docker، وبنية النظام، واسم الصورة.
@@ -7996,6 +8269,16 @@ tools:
     title: محول التردد
     description: تحويل القيم بين وحدات التردد
     externalAccess: باطل
+    texts:
+      label-hertz: هرتز
+      label-millihertz: ميلي هرتز
+      label-kilohertz: كيلوهرتز
+      label-megahertz: ميغاهرتز
+      label-gigahertz: جيجاهرتز
+      label-terahertz: تيراهيرتز
+      label-revolutions-per-minute: عدد الدورات في الدقيقة
+      label-degree-per-second: درجة في الثانية
+      label-radian-per-second: راديان في الثانية
   markdown-to-text:
     title: تحويل Markdown إلى نص
     description: تحويل Markdown إلى نص عادي
@@ -8066,6 +8349,12 @@ tools:
     title: محول السرعة
     description: تحويل القيم بين وحدات السرعة
     externalAccess: باطل
+    texts:
+      label-meter-per-second: متر في الثانية
+      label-kilometer-per-hour: كيلومتر في الساعة
+      label-miles-per-hour: ميل في الساعة
+      label-knot: عقدة
+      label-feet-per-second: قدم في الثانية
   tab-to-spaces:
     title: انتقل إلى المسافات باستخدام زر Tab
     description: تحويل علامة الجدولة إلى مسافات متعددة
@@ -8128,6 +8417,44 @@ tools:
     title: محول معدل التدفق الحجمي
     description: تحويل القيم بين وحدات معدل التدفق الحجمي
     externalAccess: باطل
+    texts:
+      label-cubic-millimeters-per-second: ملليمترات مكعبة في الثانية
+      label-cubic-centimeters-per-second: سنتيمترات مكعبة في الثانية
+      label-milliliters-per-second: ملليلتر في الثانية
+      label-centiliters-per-second: سنتيلتر في الثانية
+      label-deciliters-per-second: ديسيلتر في الثانية
+      label-liters-per-second: لترات في الثانية
+      label-liters-per-minute: لترات في الدقيقة
+      label-liters-per-hour: لترات في الساعة
+      label-kiloliters-per-second: كيلولتر في الثانية
+      label-kiloliters-per-minute: كيلولتر في الدقيقة
+      label-kiloliters-per-hour: كيلولتر في الساعة
+      label-cubic-meters-per-second: متر مكعب في الثانية
+      label-cubic-meters-per-minute: متر مكعب في الدقيقة
+      label-cubic-meters-per-hour: متر مكعب في الساعة
+      label-cubic-kilometers-per-second: كيلومترات مكعبة في الثانية
+      label-teaspoons-per-second: ملاعق شاي في الثانية
+      label-tablespoons-per-second: ملاعق طعام في الثانية
+      label-cubic-inches-per-second: بوصة مكعبة في الثانية
+      label-cubic-inches-per-minute: بوصة مكعبة في الدقيقة
+      label-cubic-inches-per-hour: بوصة مكعبة في الساعة
+      label-fluid-ounces-per-second: أونصة سائلة في الثانية
+      label-fluid-ounces-per-minute: أونصات سائلة في الدقيقة
+      label-fluid-ounces-per-hour: أونصات سائلة في الساعة
+      label-cups-per-second: أكواب في الثانية
+      label-pints-per-second: باينت في الثانية
+      label-pints-per-minute: لترات في الدقيقة
+      label-pints-per-hour: لترات في الساعة
+      label-quarts-per-second: كوارت في الثانية
+      label-gallons-per-second: غالونات في الثانية
+      label-gallons-per-minute: جالون في الدقيقة
+      label-gallons-per-hour: غالونات في الساعة
+      label-cubic-feet-per-second: قدم مكعب في الثانية
+      label-cubic-feet-per-minute: قدم مكعب في الدقيقة
+      label-cubic-feet-per-hour: قدم مكعب في الساعة
+      label-cubic-yards-per-second: ياردات مكعبة في الثانية
+      label-cubic-yards-per-minute: ياردات مكعبة في الدقيقة
+      label-cubic-yards-per-hour: ياردات مكعبة في الساعة
   tip-calculator:
     title: حاسبة الإكراميات
     description: احسب الإكرامية للفاتورة وقم بتقسيمها بين عدة أشخاص.
@@ -8807,6 +9134,22 @@ tools:
       label-to: "ل:"
       label-start-at: "ابدأ من:"
       tag-cron-expression-is-invalid: تعبير Cron غير صالح
+      paste-cron-expression: لصق تعبير Cron
+      e-g-5-0-12-1-2025: "مثال: */5 0 12 * * 1 2025"
+      0-6-sunday-0-monday-1-saturday-6: 0-6 (الأحد=0، الاثنين=1، ...، السبت=6)
+      label-select-at-least-one-value: "{0}: حدد قيمة واحدة على الأقل"
+      day-of-month-and-day-of-week-cannot-both-be-specific: لا يمكن تحديد كل من يوم الشهر ويوم الأسبوع بشكل دقيق
+      label-start-cannot-be-greater-than-end: "{0}: لا يمكن أن تكون قيمة البداية أكبر من قيمة النهاية"
+      label-start-must-be-within-allowed-range: "{0}: يجب أن تكون نقطة البداية ضمن النطاق المسموح به"
+      label-step-must-be-greater-than-1: "{0}: يجب أن تكون الخطوة أكبر من أو تساوي 1"
+      label-start-cannot-be-greater-than-end-0: "{0}: لا يمكن أن تكون قيمة البداية أكبر من قيمة النهاية"
+      seconds: ثوانٍ
+      minutes: دقائق
+      hours: ساعات
+      day-of-month: يوم من الشهر
+      month: شهر
+      day-of-week: يوم من أيام الأسبوع
+      year: سنة
   css-js-prettify-minify:
     title: تنسيق وتصغير ملفات CSS/JS
     description: قم بتنسيق أو تصغير كود CSS و JavaScript الخاص بك عبر الإنترنت.
@@ -9316,6 +9659,46 @@ tools:
       tag-copy-json-paths: انسخ مسارات JSON
       tag-generate-patch: إنشاء رقعة
       tag-apply-patch: قم بتطبيق التصحيح
+  ping:
+    title: بينغ
+    description: قم بإجراء اختبار اتصال (ping) لمجموعة من أسماء المضيفين أو عناوين
+      IP أو نطاقات عناوين IP (CIDR)
+    externalAccess: تستدعي هذه الأداة خدمة أدوات الشبكة ذاتية الاستضافة الخاصة بك
+      لإجراء اختبارات ICMP ping.
+    texts:
+      label-targets-ips-cidrs-hostnames-one-per-line-or-or: "الأهداف (عناوين IP/CIDRs/أسماء المضيفين، واحد لكل سطر أو ، أو ؛):"
+      placeholder-192-168-1-1-10-google-com-10-10-0-0-0-24: 192.168.1.1&#10;google.com&#10;10.0.0.0/24
+      label-count: "عدد:"
+      label-timeout-seconds: "المهلة الزمنية (بالثواني):"
+      tag-ping-all: إرسال إشارة للجميع
+      tag-target: هدف
+      tag-ip: الملكية الفكرية
+      tag-status: حالة
+      tag-avg-rtt-ms: متوسط زمن الاستجابة (بالمللي ثانية)
+      tag-packet-loss: فقدان الحزم
+      tag-error: خطأ
+      cidr-expands-to-hostcount-ips-exceeding-limit-of-max_cidr_ips: يتوسع نطاق CIDR إلى {0} عنوان IP، متجاوزًا الحد الأقصى البالغ {1}
+      tag-reachable: يمكن الوصول إليه
+      tag-unreachable: غير قابل للوصول
+  command-palette:
+    store:
+      texts:
+        pages: الصفحات
+        learn-more-about-it-tools: تعرف على المزيد حول أدوات تكنولوجيا المعلومات.
+        actions-0: الإجراءات
+        report-a-bug-or-an-issue-to-help-improve-it-tools: أبلغ عن أي خلل أو مشكلة للمساعدة في تحسين أدوات تكنولوجيا المعلومات.
+        report-a-bug-or-an-issue: أبلغ عن خطأ أو مشكلة
+        view-the-source-code-of-it-tools-on-github: يمكنك الاطلاع على الكود المصدري لـ it-tools على موقع Github.
+        external: خارجي
+        github-repository: مستودع جيت هاب
+        actions: الإجراءات
+        toggle-dark-mode-on-or-off: قم بتشغيل أو إيقاف الوضع الداكن.
+        toggle-dark-mode: تفعيل الوضع الداكن
+        tools-0: أدوات
+        get-a-random-tool-from-the-list: اختر أداة عشوائية من القائمة.
+        random-tool: أداة عشوائية
+        tools: أدوات
+  external-self-hosted-required: مطلوب استضافة خارجية ذاتية
 spanCopyable:
   copy: نسخ إلى الحافظة
   copied: تم النسخ!

@@ -18,10 +18,15 @@ import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import VueI18n from '@intlify/unplugin-vue-i18n/vite';
 
+import fs from 'node:fs';
+import fg from 'fast-glob';
+import Sitemap from 'vite-plugin-sitemap';
+
 import { visualizer } from 'rollup-plugin-visualizer';
 import { itToolsLocalesPlugin } from './vite.config.locales.js';
 
 const baseUrl = process.env.BASE_URL || '/';
+const hostname = process.env.HOSTNAME;
 
 const VITE_AVAILABLE_LOCALES = process.env.VITE_AVAILABLE_LOCALES;
 console.log(`Building for locales: ${VITE_AVAILABLE_LOCALES}`);
@@ -158,6 +163,29 @@ export default defineConfig({
     nodePolyfills(),
     wasm(),
     visualizer(),
+    hostname
+      ? Sitemap({
+          hostname,
+          generateRobotsTxt: true,
+          robots: [{ userAgent: '*', allow: '/' }],
+          dynamicRoutes: (() => {
+            const paths = ['/', '/about'];
+            fg.sync('src/tools/*/index.ts').forEach((file) => {
+              const content = fs.readFileSync(file, 'utf-8');
+              const pathMatch = content.match(/path:\s*['"`]([^'"`]+)['"`]/);
+              if (pathMatch) {
+                paths.push(pathMatch[1]);
+              }
+              const redirectMatch = content.match(/redirectFrom:\s*\[([^\]]+)\]/);
+              if (redirectMatch?.[1]) {
+                const redirectPaths = redirectMatch[1].match(/['"`]([^'"`]+)['"`]/g);
+                redirectPaths?.forEach((p) => paths.push(p.replace(/['"`]/g, '')));
+              }
+            });
+            return paths;
+          })(),
+        })
+      : undefined,
   ],
   base: baseUrl,
   resolve: {
@@ -226,11 +254,11 @@ export default defineConfig({
       ...(process.env.VERCEL ? ['webcrypto-liner-shim'] : []),
     ], // optionally specify dependency name
   },
-  // server: {
-  // headers: {
-  //   'Cross-Origin-Resource-Policy': 'same-site',
-  //   'Cross-Origin-Opener-Policy': 'same-origin',
-  //   'Cross-Origin-Embedder-Policy': 'require-corp',
-  // },
-  // },
+  server: {
+    headers: {
+      //   'Cross-Origin-Resource-Policy': 'same-site',
+      'Cross-Origin-Opener-Policy': 'same-origin',
+      'Cross-Origin-Embedder-Policy': 'require-corp',
+    },
+  },
 });

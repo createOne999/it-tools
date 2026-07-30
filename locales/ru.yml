@@ -970,6 +970,11 @@ tools:
       placeholder-enter-an-iban-to-check-for-validity: Введите IBAN для проверки действительности...
       title-valid-iban-examples: Действительные примеры IBAN
       placeholder-enter-ibans-to-check-for-validity: Введите IBAN в каждой строке для проверки действительности.
+      bank-name: Название банка
+      account-number: Номер счета
+      branch-identifier: Идентификатор филиала
+      bank-identifier: Банковский идентификатор
+      bic: БИК
     service:
       text:
         qr-iban-not-allowed: QR-IBAN не допускается
@@ -1941,6 +1946,13 @@ tools:
   angle-converter:
     title: Конвертер углов
     description: Конвертируйте значения между единицами измерения углов
+    texts:
+      label-degree: градус (°)
+      label-radian: радиан
+      label-turn: повернуть
+      label-gradian: градиан
+      label-grad: степень
+      label-gon: гон
   ansible-vault-crypt-decrypt:
     title: Шифрование/дешифрование Ansible Vault
     description: Шифруйте и дешифруйте секреты Ansible Vault
@@ -1985,6 +1997,32 @@ tools:
   area-converter:
     title: Конвертер единиц площади
     description: Конвертируйте значения между единицами измерения площади
+    texts:
+      label-square-meter: квадратный метр
+      label-square-petameter: квадратный петаметр
+      label-square-terameter: квадратный терметр
+      label-square-gigameter: квадратный гигаметр
+      label-square-megameter: квадратный мегаметр
+      label-square-kilometer: квадратный километр
+      label-square-hectometer: квадратный гектометр
+      label-square-decameter: квадратный декаметр
+      label-square-decimeter: квадратный дециметр
+      label-square-centimeter: квадратный сантиметр
+      label-square-millimeter: квадратный миллиметр
+      label-square-micrometer: квадратный микрометр
+      label-square-nanometer: квадратный нанометр
+      label-square-picometer: квадратный пикометр
+      label-square-femtometer: квадратный фемтометр
+      label-acre: акр
+      label-centiare: быть сто
+      label-deciare: решить
+      label-are: являются
+      label-decare: дека
+      label-hectare: га
+      label-square-foot-ft2-sq-ft: квадратный фут (/фут²/кв. фут)
+      label-square-inch-in2-sq-in: квадратный дюйм (/дюйм²/кв. дюйм)
+      label-square-yard-yd2-sq-yd: квадратный ярд (кв. ярд)
+      label-square-mile-mi2-sq-mi: квадратная миля (миллионы ²/кв. миля)
   ascii-text-drawer:
     title: Рисователь ASCII текста
     description: Создавайте ASCII-арт текст с различными шрифтами и стилями
@@ -2792,6 +2830,37 @@ tools:
   energy-converter:
     title: Конвертер единиц энергии
     description: Конвертируйте значения между единицами энергии
+    texts:
+      label-joule: джоуль
+      label-petajoule: петаджоуль
+      label-terajoule: тераджоуль
+      label-gigajoule: гигаджоуль
+      label-megajoule: мегаджоуль
+      label-kilojoule: килоджоуль
+      label-hectojoule: гектожоуль
+      label-decajoule: декаджоуль
+      label-decijoule: дециджоуль
+      label-centijoule: сантиджоуль
+      label-millijoule: миллиджоуль
+      label-microjoule: микроджоуль
+      label-nanojoule: наноджоуль
+      label-picojoule: пикоджоуль
+      label-femtojoule: фемтоджоуль
+      label-watt-hour: ватт-час
+      label-petawatt-hour: петаватт-час
+      label-terawatt-hour: тераватт-час
+      label-gigawatt-hour: гигаватт-час
+      label-megawatt-hour: мегаватт-час
+      label-kilowatt-hour: киловатт-час
+      label-hectowatt-hour: гектоватт-час
+      label-decawatt-hour: декаватт-час
+      label-deciwatt-hour: дециватт-час
+      label-centiwatt-hour: сантиватт-час
+      label-milliwatt-hour: милливатт-час
+      label-microwatt-hour: микроватт-час
+      label-nanowatt-hour: нановатт-час
+      label-picowatt-hour: пиковатт-час
+      label-femtowatt-hour: фемтоватт-час
   file-hasher:
     title: Хеширование файлов
     description: Вычисляйте хеш файлов
@@ -2847,6 +2916,35 @@ tools:
   force-converter:
     title: Конвертер единиц силы
     description: Конвертируйте значения между единицами силы
+    texts:
+      label-newton: Ньютон
+      label-petanewton: петаньютон
+      label-teranewton: тераньютон
+      label-giganewton: гиганьютон
+      label-meganewton: меганьютон
+      label-kilonewton: килоньютон
+      label-hectonewton: гектоновтон
+      label-decanewton: деканьютон
+      label-decinewton: дециньютон
+      label-centinewton: сентиньвтон
+      label-millinewton: миллиньютон
+      label-micronewton: микроньютон
+      label-nanonewton: наноньютон
+      label-piconewton: пиконьютон
+      label-femtonewton: фемтоньютон
+      label-dyne: дина
+      label-pound-of-force: фунт силы
+      label-kip: кип
+      label-klb: клуб
+      label-kipf: кипф
+      label-klbf: клбф
+      label-poundal: фунт
+      label-kilogram-force: килограмм-сила
+      label-kilopond: килопонд
+      label-megapond: мегапруд
+      label-tonne-force: тон-сила
+      label-metric-ton-force: метрическая тонно-сила
+      label-megagram-force: мегаграмм силы
   geo-distance-calculator:
     title: Калькулятор географического расстояния
     description: Рассчитывайте расстояние между двумя географическими точками (и
@@ -3590,6 +3688,29 @@ tools:
   length-converter:
     title: Конвертер единиц длины
     description: Конвертируйте значения между единицами длины
+    texts:
+      label-meter: метр
+      label-petameter: петаметр
+      label-terameter: тереметр
+      label-gigameter: гигаметр
+      label-megameter: мегаметр
+      label-kilometer: километр
+      label-hectometer: гектометр
+      label-decameter: декаметр
+      label-decimeter: дециметр
+      label-centimeter: сантиметр
+      label-millimeter: миллиметр
+      label-micrometer: микрометр
+      label-nanometer: нанометр
+      label-picometer: пикометр
+      label-femtometer: фемтометр
+      label-inch: дюйм (")
+      label-yard: площадка
+      label-mile: миля
+      label-nautical-mile-m-nm: морская миля (М/ММ)
+      label-light-year: световой год
+      label-parsec: парсек
+      label-pica: пика
   list-comparer:
     title: Сравнение списков
     description: Сравнивайте элементы двух списков
@@ -3697,6 +3818,35 @@ tools:
   mass-converter:
     title: Конвертер единиц массы
     description: Конвертируйте значения между единицами массы
+    texts:
+      label-gram: грамм
+      label-petagram: петаграмма
+      label-teragram: тераграмма
+      label-gigagram: гигаграмм
+      label-megagram: мегаграмма
+      label-kilogram: килограмм
+      label-hectogram: гектограмм
+      label-decagram: декаграмма
+      label-decigram: десять граммов
+      label-centigram: сантиграмм
+      label-milligram: миллиграмм
+      label-microgram: микрограмм
+      label-nanogram: нанограмм
+      label-picogram: пикограмма
+      label-femtogram: фемтограмма
+      label-tonne: тонна
+      label-metric-ton: метрическая тонна
+      label-kilotonne: килотонна
+      label-megatonne: мегатонна
+      label-gigatonne: гигатонне
+      label-pound: фунт
+      label-stone: камень
+      label-ounce: унция
+      label-short-ton: короткий тонн
+      label-us-ton: тонн США
+      label-long-ton: длинная тонна
+      label-imperial-ton: имперский тонн
+      label-displacement-ton: перемещение тонн
   math-formats-converter:
     title: Конвертер математических форматов
     description: Конвертируйте математические выражения между форматами
@@ -4153,9 +4303,63 @@ tools:
   power-converter:
     title: Конвертер мощности
     description: Конвертируйте значения между единицами мощности
+    texts:
+      label-watt: ватт
+      label-petawatt: петаватт
+      label-terawatt: тераватт
+      label-gigawatt: гигаватт
+      label-megawatt: мегаватт
+      label-kilowatt: киловатт
+      label-hectowatt: гектоватт
+      label-decawatt: декаватт
+      label-deciwatt: дециватт
+      label-centiwatt: центиватт
+      label-milliwatt: милливатт
+      label-microwatt: микроватт
+      label-nanowatt: нановатт
+      label-picowatt: пиковатт
+      label-femtowatt: фемтоватт
+      label-horsepower: лошадиные силы
+      label-mechanical-horsepower: механическая лошадиная сила
   pressure-converter:
     title: Конвертер давления
     description: Конвертируйте значения между единицами давления
+    texts:
+      label-pascal: паскаль
+      label-pettapascal: петтапаскаль
+      label-terapascal: терапаскаль
+      label-gigapascal: гигапаскаль
+      label-megapascal: мегапаскаль
+      label-kilopascal: килопаскаль
+      label-hectopascal: гектопаскаль
+      label-decapascal: декапаскал
+      label-decipascal: деципаскал
+      label-centipascal: сантипаскаль
+      label-millipascal: миллипаскаль
+      label-micropascal: микропаскаль
+      label-nanopascal: нанопаскаль
+      label-picopascal: пикопаскаль
+      label-femtopascal: фемтопаскаль
+      label-bar: бар
+      label-petabar: петабар
+      label-terabar: рассредоточенные
+      label-gigabar: гигабар
+      label-megabar: мегабар
+      label-kilobar: килобар
+      label-hectobar: гектобар
+      label-decabar: Меня обезглавили.
+      label-decibar: расшифровать
+      label-centibar: сентибар
+      label-millibar: миллибар
+      label-microbar: микробар
+      label-nanobar: нанобар
+      label-picobar: пикобар
+      label-femtobar: фемтобар
+      label-torr: торр
+      label-millitorr: миллиторр
+      label-atmosphere: атмосфера
+      label-pound-per-square-inch: фунт на квадратный дюйм
+      label-lbf-in2: фунт/дюйм²
   properties-to-yaml:
     title: Properties в YAML
     description: Конвертируйте содержимое Java .properties в YAML
@@ -4768,6 +4972,65 @@ tools:
   volume-converter:
     title: Конвертер объема
     description: Конвертируйте значения между единицами объема
+    texts:
+      label-cubic-meter-stere: кубический метр/стерео
+      label-cubic-petameter: кубический петаметр
+      label-cubic-terameter: кубический тереметр
+      label-cubic-gigameter: кубический гигаметр
+      label-cubic-megameter: кубический мегаметр
+      label-cubic-kilometer: кубический километр
+      label-cubic-hectometer: кубический гектометр
+      label-cubic-decameter: кубический декаметр
+      label-cubic-decimeter: кубический дециметр
+      label-cubic-centimeter: кубический сантиметр
+      label-cubic-millimeter: кубический миллиметр
+      label-cubic-micrometer: кубический микрометр
+      label-cubic-nanometer: кубический нанометр
+      label-cubic-picometer: кубический пикометр
+      label-cubic-femtometer: кубический фемтометр
+      label-liter: литр
+      label-petaliter: петалитер
+      label-teraliter: терралитер
+      label-gigaliter: гигалитр
+      label-megaliter: мегалитр
+      label-kiloliter: килолитр
+      label-hectoliter: гектолитр
+      label-decaliter: декалитр
+      label-deciliter: децилитр
+      label-centiliter: сантилитр
+      label-milliliter: миллилитр
+      label-microliter: микролитр
+      label-nanoliter: нанолитр
+      label-picoliter: пиколитр
+      label-femtoliter: фемтолитр
+      label-cubic-mile: кубическая миля
+      label-acre-foot: акр-фут
+      label-cubic-yard: кубический ярд
+      label-cubic-foot: кубический фут
+      label-board-feet: досок ног
+      label-cubic-inch: кубический дюйм
+      label-measurement-ton: тонна измерения
+      label-imperial-barrel: имперская бочка
+      label-imperial-bushel: имперский бушель
+      label-imperial-peck: имперский пек
+      label-imperial-gallon: имперский галлон
+      label-imperial-quart: имперская кварта
+      label-imperial-pint: имперская пинта
+      label-imperial-fluid-ounce: имперская жидкая унция
+      label-teaspoon: чайная ложка
+      label-tablespoon: столовая ложка
+      label-us-fluid-ounce: Американская жидкая унция
+      label-cup: чашка
+      label-us-legal-cup: Кубок США, разрешенный законом
+      label-us-liquid-pint: жидкая пинта США
+      label-us-liquid-quart: жидкая кварта США
+      label-us-liquid-gallon: жидкий галлон США
+      label-us-bushel: американский бушель
+      label-us-peck: США пек
+      label-us-dry-gallon: американский сухой галлон
+      label-us-dry-barrel: США сухой бочковой
+      label-us-dry-quart: американская сухая кварта
+      label-us-dry-pint: сухая пинта США
   websocket-tester:
     title: Тестер WebSocket
     description: Тестируйте соединения WebSocket
@@ -6208,6 +6471,13 @@ tools:
       label-base64-64: Base64 (64)
       placeholder-base64-version-will-be-here: Версия Base64 будет здесь...
       tag-custom: "Обычай:"
+      label-space-separation: Пространственное разделение
+      label-binary-size: Двоичный размер
+      label-octal-size: Восьмизначный размер
+      label-decimal-size: Десятичный размер
+      label-hexadecimal-size: Размер шестигранника
+      label-base64-size: Размер Base64
+      label-custom-size: Индивидуальный размер
     model:
       text:
         invalid-digit-digit-for-base-finalfrombase: Недопустимая цифра &quot;{0}&quot; для базы {1}.
@@ -8108,6 +8378,9 @@ tools:
     title: Ускорительный преобразователь
     description: Преобразование значений между единицами измерения ускорения.
     externalAccess: нулевой
+    texts:
+      label-g-force: перегрузка
+      label-meter-per-second-squared: метр в секунду в квадрате
   docker-image-downloader:
     title: Загрузчик образов Docker
     description: Загрузите образ Docker, указав реестр Docker, архитектуру и имя образа.
@@ -8182,6 +8455,16 @@ tools:
     title: Частотный преобразователь
     description: Преобразование значений между единицами частоты.
     externalAccess: нулевой
+    texts:
+      label-hertz: герц
+      label-millihertz: миллигерц
+      label-kilohertz: килогерц
+      label-megahertz: мегагерц
+      label-gigahertz: гигагерц
+      label-terahertz: терагерц
+      label-revolutions-per-minute: оборотов в минуту
+      label-degree-per-second: градус в секунду
+      label-radian-per-second: радиан в секунду
   markdown-to-text:
     title: Преобразование Markdown в текст
     description: Преобразовать Markdown в обычный текст.
@@ -8255,6 +8538,12 @@ tools:
     title: Преобразователь скорости
     description: Преобразование значений между единицами измерения скорости.
     externalAccess: нулевой
+    texts:
+      label-meter-per-second: метр в секунду
+      label-kilometer-per-hour: километр в час
+      label-miles-per-hour: миль в час
+      label-knot: узел
+      label-feet-per-second: футы в секунду
   tab-to-spaces:
     title: Переход к пробелам с помощью клавиши Tab
     description: Преобразовать табуляцию в несколько пробелов
@@ -8320,6 +8609,44 @@ tools:
     title: Преобразователь объемного расхода
     description: Преобразование значений между единицами измерения объемного расхода
     externalAccess: нулевой
+    texts:
+      label-cubic-millimeters-per-second: кубических миллиметров в секунду
+      label-cubic-centimeters-per-second: кубических сантиметров в секунду
+      label-milliliters-per-second: миллилитры в секунду
+      label-centiliters-per-second: сантилитры в секунду
+      label-deciliters-per-second: децилитры в секунду
+      label-liters-per-second: литров в секунду
+      label-liters-per-minute: литров в минуту
+      label-liters-per-hour: литры в час
+      label-kiloliters-per-second: килолитров в секунду
+      label-kiloliters-per-minute: килолитров в минуту
+      label-kiloliters-per-hour: килолитров в час
+      label-cubic-meters-per-second: кубических метров в секунду
+      label-cubic-meters-per-minute: кубических метров в минуту
+      label-cubic-meters-per-hour: кубических метров в час
+      label-cubic-kilometers-per-second: кубических километров в секунду
+      label-teaspoons-per-second: чайных ложек в секунду
+      label-tablespoons-per-second: столовых ложек в секунду
+      label-cubic-inches-per-second: кубических дюймов в секунду
+      label-cubic-inches-per-minute: кубических дюймов в минуту
+      label-cubic-inches-per-hour: кубических дюймов в час
+      label-fluid-ounces-per-second: жидких унций в секунду
+      label-fluid-ounces-per-minute: жидких унций в минуту
+      label-fluid-ounces-per-hour: жидких унций в час
+      label-cups-per-second: чашки в секунду
+      label-pints-per-second: пинты в секунду
+      label-pints-per-minute: пинты в минуту
+      label-pints-per-hour: пинты в час
+      label-quarts-per-second: кварт в секунду
+      label-gallons-per-second: галлонов в секунду
+      label-gallons-per-minute: галлонов в минуту
+      label-gallons-per-hour: галлонов в час
+      label-cubic-feet-per-second: кубических футов в секунду
+      label-cubic-feet-per-minute: кубических футов в минуту
+      label-cubic-feet-per-hour: кубических футов в час
+      label-cubic-yards-per-second: кубических ярдов в секунду
+      label-cubic-yards-per-minute: кубических ярдов в минуту
+      label-cubic-yards-per-hour: кубических ярдов в час
   tip-calculator:
     title: калькулятор чаевых
     description: Рассчитайте сумму чаевых и разделите ее между несколькими людьми.
@@ -9007,6 +9334,22 @@ tools:
       label-to: "К:"
       label-start-at: "Начните с:"
       tag-cron-expression-is-invalid: Выражение Cron недействительно.
+      paste-cron-expression: Вставить выражение Cron
+      e-g-5-0-12-1-2025: например, */5 0 12 * * 1 2025
+      0-6-sunday-0-monday-1-saturday-6: 0-6 (воскресенье = 0, понедельник = 1, ..., суббота = 6)
+      label-select-at-least-one-value: "{0}: выберите хотя бы одно значение"
+      day-of-month-and-day-of-week-cannot-both-be-specific: День месяца и день недели не могут быть одновременно и конкретными.
+      label-start-cannot-be-greater-than-end: "{0}: начало не может быть больше конца"
+      label-start-must-be-within-allowed-range: "{0}: начало должно находиться в допустимом диапазоне"
+      label-step-must-be-greater-than-1: "{0}: шаг должен быть >= 1"
+      label-start-cannot-be-greater-than-end-0: "{0}: начало не может быть больше конца"
+      seconds: Секунды
+      minutes: Протокол
+      hours: Часы
+      day-of-month: День месяца
+      month: Месяц
+      day-of-week: День недели
+      year: Год
   css-js-prettify-minify:
     title: Улучшение и минимизация CSS/JS
     description: Улучшайте или минимизируйте свой CSS и JavaScript код онлайн.
@@ -9527,6 +9870,47 @@ tools:
       tag-copy-json-paths: Скопировать пути JSON
       tag-generate-patch: Сгенерировать патч
       tag-apply-patch: Применить патч
+  ping:
+    title: Пинг
+    description: Проверьте доступность набора имен хостов, IP-адресов, CIDR или
+      диапазона IP-адресов, отправив ping-запрос.
+    externalAccess: Этот инструмент вызывает службу сетевых утилит вашего локального
+      сервера для выполнения ICMP-пингов.
+    texts:
+      label-targets-ips-cidrs-hostnames-one-per-line-or-or: "Целевые адреса
+        (IP-адреса/CIDR-адреса/имена хостов, по одному на строку или , или ;):"
+      placeholder-192-168-1-1-10-google-com-10-10-0-0-0-24: 192.168.1.1&#10;google.com&#10;10.0.0.0/24
+      label-count: "Считать:"
+      label-timeout-seconds: "Время ожидания (секунды):"
+      tag-ping-all: Пинг всех
+      tag-target: Цель
+      tag-ip: IP
+      tag-status: Статус
+      tag-avg-rtt-ms: Среднее время отклика (мс)
+      tag-packet-loss: Потеря пакетов
+      tag-error: Ошибка
+      cidr-expands-to-hostcount-ips-exceeding-limit-of-max_cidr_ips: CIDR расширяется до {0} IP-адресов, превышая лимит {1}.
+      tag-reachable: Доступный
+      tag-unreachable: Недостижимый
+  command-palette:
+    store:
+      texts:
+        pages: Страницы
+        learn-more-about-it-tools: Узнайте больше об IT-инструментах.
+        actions-0: Действия
+        report-a-bug-or-an-issue-to-help-improve-it-tools: Сообщите об ошибке или проблеме, чтобы помочь улучшить IT-инструменты.
+        report-a-bug-or-an-issue: Сообщить об ошибке или проблеме
+        view-the-source-code-of-it-tools-on-github: Исходный код it-tools можно посмотреть на Github.
+        external: Внешний
+        github-repository: Репозиторий на GitHub
+        actions: Действия
+        toggle-dark-mode-on-or-off: Включать или выключать темный режим.
+        toggle-dark-mode: Включить/выключить темный режим
+        tools-0: Инструменты
+        get-a-random-tool-from-the-list: Выберите случайный инструмент из списка.
+        random-tool: Случайный инструмент
+        tools: Инструменты
+  external-self-hosted-required: Требуется внешнее размещение на собственном сервере.
 spanCopyable:
   copy: Копировать в буфер обмена
   copied: Скопировано!

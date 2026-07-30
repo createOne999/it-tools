@@ -11,6 +11,9 @@ import { plausible } from './plugins/plausible.plugin';
 import '@/utils/json5-bigint';
 import '@/utils/json5-bignum';
 
+import Vue3Katex from 'vue3-katex';
+import 'katex/dist/katex.min.css';
+
 import 'virtual:uno.css';
 
 import { naive } from './plugins/naive.plugin';
@@ -77,5 +80,6 @@ app.use(naive);
 app.use(plausible);
 app.use(shadow);
 app.use(store, 'pomodoro-store');
+app.use(Vue3Katex);
 
 app.mount('#app');

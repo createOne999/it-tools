@@ -1373,6 +1373,13 @@ tools:
   angle-converter:
     title: Μετατροπέας μονάδων γωνίας
     description: Μετατροπή τιμών μεταξύ μονάδων γωνίας
+    texts:
+      label-degree: βαθμός (°)
+      label-radian: ακτίνιο
+      label-turn: σειρά
+      label-gradian: βαθμιδωτός
+      label-grad: βαθμός
+      label-gon: γον
   ansible-vault-crypt-decrypt:
     title: Αποκρυπτογράφηση κρυπτογράφησης θησαυροφυλάκιου Ansible
     description: Κρυπτογράφηση και αποκρυπτογράφηση μυστικών του Ansible Vault
@@ -1418,6 +1425,32 @@ tools:
   area-converter:
     title: Μετατροπέας Μονάδων Εμβαδού
     description: Μετατροπή τιμών μεταξύ μονάδων επιφάνειας
+    texts:
+      label-square-meter: τετραγωνικό μέτρο
+      label-square-petameter: τετραγωνικό πεταμέτρο
+      label-square-terameter: τετραγωνικό τετραγωνικό μέτρο
+      label-square-gigameter: τετραγωνικό γιγάντιο
+      label-square-megameter: τετραγωνικό μεγάμετρο
+      label-square-kilometer: τετραγωνικό χιλιόμετρο
+      label-square-hectometer: τετραγωνικό εκατόμετρο
+      label-square-decameter: τετραγωνικό δεκαδικό μέτρο
+      label-square-decimeter: τετραγωνικό δεκατόμετρο
+      label-square-centimeter: τετραγωνικό εκατοστό
+      label-square-millimeter: τετραγωνικό χιλιοστό
+      label-square-micrometer: τετραγωνικό μικρόμετρο
+      label-square-nanometer: τετραγωνικό νανόμετρο
+      label-square-picometer: τετραγωνικό πικόμετρο
+      label-square-femtometer: τετραγωνικό φεμτόμετρο
+      label-acre: στρέμμα
+      label-centiare: να είναι εκατό
+      label-deciare: να αποφασίσω
+      label-are: εκτάριο
+      label-decare: δεκαήμερο
+      label-hectare: εκτάριο
+      label-square-foot-ft2-sq-ft: τετραγωνικό πόδι (/ft2/τετρ. πόδι)
+      label-square-inch-in2-sq-in: τετραγωνική ίντσα (/in2/τετρ. ίντσα)
+      label-square-yard-yd2-sq-yd: τετραγωνική γιάρδα (yd2/sq yd)
+      label-square-mile-mi2-sq-mi: τετραγωνικό μίλι (mi2/sq mi)
   aspect-ratio-calculator:
     title: Υπολογιστής αναλογίας διαστάσεων
     description: Χρησιμοποιήστε αυτήν την αριθμομηχανή αναλογίας για να ελέγξετε τις
@@ -2084,6 +2117,37 @@ tools:
   energy-converter:
     title: Μετατροπέας Μονάδων Ενέργειας
     description: Μετατροπή τιμών μεταξύ μονάδων ενέργειας
+    texts:
+      label-joule: μονάδα ενέργειας ή έργου
+      label-petajoule: πετατζάουλ
+      label-terajoule: τερατζάουλ
+      label-gigajoule: γιγατζάουλ
+      label-megajoule: μεγατζάουλ
+      label-kilojoule: κιλοτζάουλ
+      label-hectojoule: εκατοτζάουλ
+      label-decajoule: δεκατζάουλ
+      label-decijoule: ντεσιτζάουλ
+      label-centijoule: εκατοντάτζαουλ
+      label-millijoule: χιλιοτζάουλ
+      label-microjoule: μικροτζάουλ
+      label-nanojoule: νανοτζάουλ
+      label-picojoule: πικοτζάουλ
+      label-femtojoule: φεμτοτζάουλ
+      label-watt-hour: βατώρα
+      label-petawatt-hour: πεταβατώρα
+      label-terawatt-hour: τεραβατώρα
+      label-gigawatt-hour: γιγαβατώρα
+      label-megawatt-hour: μεγαβατώρα
+      label-kilowatt-hour: κιλοβατώρα
+      label-hectowatt-hour: εκατοβατώρα
+      label-decawatt-hour: δεκαβατώρα
+      label-deciwatt-hour: δεκαβατώρες
+      label-centiwatt-hour: εκατοντάβατ ώρα
+      label-milliwatt-hour: χιλιοβατώρα
+      label-microwatt-hour: μικροβατώρα
+      label-nanowatt-hour: νανοβατώρα
+      label-picowatt-hour: πικοβατώρα
+      label-femtowatt-hour: φεμτοβατωρό
   file-hasher:
     title: Αρχείο Hasher
     description: Υπολογισμός κατακερματισμού αρχείων
@@ -2142,6 +2206,35 @@ tools:
   force-converter:
     title: Μετατροπέας Μονάδων Δύναμης
     description: Μετατροπή τιμών μεταξύ μονάδων δύναμης
+    texts:
+      label-newton: νεύτο
+      label-petanewton: petanewton
+      label-teranewton: τερανιούτον
+      label-giganewton: γιγανιούτον
+      label-meganewton: μεγανιούτον
+      label-kilonewton: κιλονιούτον
+      label-hectonewton: εκτονιούτον
+      label-decanewton: δεκανιούτον
+      label-decinewton: δεκανιούτον
+      label-centinewton: σεντινιούτον
+      label-millinewton: μιλινιούτον
+      label-micronewton: μικρονιούτον
+      label-nanonewton: νανονιούτον
+      label-piconewton: πικονιούτον
+      label-femtonewton: φεμτονιούτον
+      label-dyne: δύνη
+      label-pound-of-force: λίβρα δύναμης
+      label-kip: δέρμα μόσχου ακατέργαστου
+      label-klb: λέσχη
+      label-kipf: κιπφ
+      label-klbf: klbf
+      label-poundal: λίβρα
+      label-kilogram-force: χιλιόγραμμο-δύναμη
+      label-kilopond: κιλοπόντιου
+      label-megapond: μεγαλίμνη
+      label-tonne-force: δύναμη τόνου
+      label-metric-ton-force: μετρική δύναμη τόνου
+      label-megagram-force: δύναμη μεγαγράμμου
   geo-distance-calculator:
     title: Υπολογιστής γεωγραφικής απόστασης
     description: Υπολογισμός απόστασης μεταξύ δύο γεωγραφικών τοποθεσιών (και
@@ -2761,6 +2854,29 @@ tools:
   length-converter:
     title: Μετατροπέας μονάδων μήκους
     description: Μετατροπή τιμών από μονάδες μήκους
+    texts:
+      label-meter: μέτρο
+      label-petameter: πεταμέτρο
+      label-terameter: τετραμέτρημα
+      label-gigameter: γιγαμέτρης
+      label-megameter: megameter
+      label-kilometer: χιλιόμετρο
+      label-hectometer: εκατόμετρο
+      label-decameter: δεκάμετρο
+      label-decimeter: δέκατο μέτρου
+      label-centimeter: εκατοστόμετρο
+      label-millimeter: χιλιοστόμετρο
+      label-micrometer: μικρόμετρο
+      label-nanometer: νανόμετρο
+      label-picometer: πικόμετρο
+      label-femtometer: φεμτόμετρο
+      label-inch: ίντσα (")
+      label-yard: αυλή
+      label-mile: μίλι
+      label-nautical-mile-m-nm: ναυτικό μίλι (Μ/ΝΜ)
+      label-light-year: έτος φωτός
+      label-parsec: παρσέκ
+      label-pica: τυπογραφική σειρά 12 στιγμές
   list-comparer:
     title: Σύγκριση λιστών
     description: Σύγκριση δύο στοιχείων λίστας
@@ -2853,6 +2969,35 @@ tools:
   mass-converter:
     title: Μετατροπέας Μονάδων Μάζας
     description: Μετατροπή τιμών μεταξύ μονάδων μάζας
+    texts:
+      label-gram: γραμμάριο
+      label-petagram: πεταγράμματος
+      label-teragram: τεραγράμμα
+      label-gigagram: γιγαγραμμάριο
+      label-megagram: μεγαγράμμα
+      label-kilogram: χιλιόγραμμο
+      label-hectogram: εκατόγραμμο
+      label-decagram: δέκα γραμμάρια
+      label-decigram: δέκα γραμμάρια
+      label-centigram: εκατοστόγραμμο
+      label-milligram: χιλιοστόγραμμο
+      label-microgram: μικρογραμμάριο
+      label-nanogram: νανογραμμάριο
+      label-picogram: πικογράμμα
+      label-femtogram: φεμτογράφημα
+      label-tonne: τόνος
+      label-metric-ton: μετρικός τόνος
+      label-kilotonne: κιλοτόνος
+      label-megatonne: μεγατόνος
+      label-gigatonne: γιγατόνε
+      label-pound: λίβρα
+      label-stone: πέτρα
+      label-ounce: ουγκιά
+      label-short-ton: κοντός τόνος
+      label-us-ton: τόνος ΗΠΑ
+      label-long-ton: μακρύς τόνος
+      label-imperial-ton: αυτοκρατορικός τόνος
+      label-displacement-ton: εκτόπισμα τόνος
   math-formats-converter:
     title: Μετατροπέας Μαθηματικών Μορφών
     description: Μετατροπή μαθηματικής έκφρασης μεταξύ μορφών
@@ -3268,9 +3413,63 @@ tools:
   power-converter:
     title: Μετατροπέας ισχύος
     description: Μετατροπή τιμών μεταξύ μονάδων ισχύος
+    texts:
+      label-watt: βάτ
+      label-petawatt: πεταβάτ
+      label-terawatt: τεραβάτ
+      label-gigawatt: γιγαβάτ
+      label-megawatt: μεγαβάτ
+      label-kilowatt: κιλοβάτ
+      label-hectowatt: εκατό βάτ
+      label-decawatt: δεκαβάτ
+      label-deciwatt: δεκαβάτ
+      label-centiwatt: εκατοντάβατ
+      label-milliwatt: μιλιβάτ
+      label-microwatt: μικροβάτ
+      label-nanowatt: νανοβάτ
+      label-picowatt: πικοβάτ
+      label-femtowatt: φεμτοβάτ
+      label-horsepower: ιπποδύναμη
+      label-mechanical-horsepower: μηχανική ιπποδύναμη
   pressure-converter:
     title: Μετατροπέας μονάδων πίεσης
     description: Μετατροπή τιμών μεταξύ μονάδων πίεσης
+    texts:
+      label-pascal: Πασκάλ
+      label-pettapascal: πεταπασκάλ
+      label-terapascal: τεραπασκάλ
+      label-gigapascal: γιγαπασκάλ
+      label-megapascal: μεγαπασκάλ
+      label-kilopascal: κιλοπασκάλ
+      label-hectopascal: εκτοπασκάλ
+      label-decapascal: δεκαπασκάλ
+      label-decipascal: δεκαπασκάλ
+      label-centipascal: εκατονταπασκάλ
+      label-millipascal: χιλιοστοπασκάλ
+      label-micropascal: μικροπασκάλ
+      label-nanopascal: νανοπασκάλ
+      label-picopascal: πικοπασκάλ
+      label-femtopascal: φεμτοπασκάλ
+      label-bar: μπαρ
+      label-petabar: πεταμπάρ
+      label-terabar: απλωμένος
+      label-gigabar: γιγαμπάρα
+      label-megabar: μεγαμπάρ
+      label-kilobar: κιλομπάρ
+      label-hectobar: εκτόβαρο
+      label-decabar: Αποκεφαλίστηκα.
+      label-decibar: αποκρυπτογραφώ
+      label-centibar: εκατοστό του μέτρου
+      label-millibar: χιλιοστόβαρο
+      label-microbar: μικρομπάρα
+      label-nanobar: νανομπάρα
+      label-picobar: πικομπάρ
+      label-femtobar: φεμτομπάρ
+      label-torr: τόρρ
+      label-millitorr: μιλιτόρ
+      label-atmosphere: ατμόσφαιρα
+      label-pound-per-square-inch: λίβρα ανά τετραγωνική ίντσα
+      label-lbf-in2: lbf/in2
   properties-to-yaml:
     title: Ιδιότητες σε YAML
     description: Μετατροπή περιεχομένου Java .properties σε Yaml
@@ -3656,6 +3855,65 @@ tools:
   volume-converter:
     title: Μετατροπέας μονάδων όγκου
     description: Μετατροπή τιμών από μονάδες όγκου
+    texts:
+      label-cubic-meter-stere: κυβικό μέτρο/στερεομετρικό
+      label-cubic-petameter: κυβικό πεταμέτρο
+      label-cubic-terameter: κυβικό τετραμετρικό
+      label-cubic-gigameter: κυβικό γιγαντόμετρο
+      label-cubic-megameter: κυβικό μεγάμετρο
+      label-cubic-kilometer: κυβικό χιλιόμετρο
+      label-cubic-hectometer: κυβικό εκατόμετρο
+      label-cubic-decameter: κυβικό δεκατόμετρο
+      label-cubic-decimeter: κυβικό δεκατόμετρο
+      label-cubic-centimeter: κυβικό εκατοστό
+      label-cubic-millimeter: κυβικό χιλιοστό
+      label-cubic-micrometer: κυβικό μικρόμετρο
+      label-cubic-nanometer: κυβικό νανόμετρο
+      label-cubic-picometer: κυβικό πικόμετρο
+      label-cubic-femtometer: κυβικό φεμτόμετρο
+      label-liter: λίτρο
+      label-petaliter: πεταλοειδής
+      label-teraliter: τερλαλίτερ
+      label-gigaliter: γιγαλίτρι
+      label-megaliter: μεγαλίτρο
+      label-kiloliter: χιλιόλιτρο
+      label-hectoliter: εκατόλιτρο
+      label-decaliter: δεκαλίτρο
+      label-deciliter: δέκατο λίτρου
+      label-centiliter: εκατοστόλιτρο
+      label-milliliter: χιλιοστόλιτρο
+      label-microliter: μικρολίτρο
+      label-nanoliter: νανολίτρο
+      label-picoliter: πικολίτρο
+      label-femtoliter: φεμτολίτρο
+      label-cubic-mile: κυβικό μίλι
+      label-acre-foot: στρέμμα-πόδι
+      label-cubic-yard: κυβική γιάρδα
+      label-cubic-foot: κυβικό πόδι
+      label-board-feet: πόδια σανίδας
+      label-cubic-inch: κυβική ίντσα
+      label-measurement-ton: μέτρηση τόνου
+      label-imperial-barrel: αυτοκρατορικό βαρέλι
+      label-imperial-bushel: αυτοκρατορικό μπούσελ
+      label-imperial-peck: αυτοκρατορικό πεκ
+      label-imperial-gallon: αυτοκρατορικό γαλόνι
+      label-imperial-quart: αυτοκρατορικό κουάρτ
+      label-imperial-pint: αυτοκρατορική πίντα
+      label-imperial-fluid-ounce: αυτοκρατορική ρευστή ουγγιά
+      label-teaspoon: κουταλάκι του γλυκού
+      label-tablespoon: κουτάλι της σούπας
+      label-us-fluid-ounce: ουγγιά υγρών ΗΠΑ
+      label-cup: φλιτζάνι
+      label-us-legal-cup: Νόμιμο κύπελλο ΗΠΑ
+      label-us-liquid-pint: υγρή πίντα ΗΠΑ
+      label-us-liquid-quart: Αμερικανικό υγρό λίτρο
+      label-us-liquid-gallon: γαλόνι υγρών ΗΠΑ
+      label-us-bushel: Αμερικανικό μπούσελ
+      label-us-peck: ΗΠΑ peck
+      label-us-dry-gallon: γαλόνι ΗΠΑ σε ξηρή κατάσταση
+      label-us-dry-barrel: ΗΠΑ ξηρό βαρέλι
+      label-us-dry-quart: ξηρό λίτρο ΗΠΑ
+      label-us-dry-pint: Αμερικανική ξηρή πίντα
   week-number-converter:
     title: Μετατροπέας αριθμών εβδομάδων
     description: Μετατροπή μεταξύ αριθμού εβδομάδας ISO, αριθμού εβδομάδας σε μήνα
@@ -5905,6 +6163,11 @@ tools:
       placeholder-enter-an-iban-to-check-for-validity: Εισαγάγετε ένα IBAN για να ελέγξετε την εγκυρότητα...
       title-valid-iban-examples: Έγκυρα παραδείγματα IBAN
       placeholder-enter-ibans-to-check-for-validity: Εισαγάγετε ένα IBAN ανά γραμμή για να ελέγξετε την εγκυρότητα
+      bank-name: Όνομα Τράπεζας
+      account-number: Αριθμός Λογαριασμού
+      branch-identifier: Αναγνωριστικό υποκαταστήματος
+      bank-identifier: Αναγνωριστικό Τράπεζας
+      bic: BIC
     service:
       text:
         qr-iban-not-allowed: Δεν επιτρέπεται το QR-IBAN
@@ -5954,6 +6217,13 @@ tools:
       label-base64-64: Βάση64 (64)
       placeholder-base64-version-will-be-here: Η έκδοση Base64 θα είναι εδώ...
       tag-custom: "Εθιμο:"
+      label-space-separation: Διαχωρισμός χώρου
+      label-binary-size: Δυαδικό μέγεθος
+      label-octal-size: Οκταδικό μέγεθος
+      label-decimal-size: Δεκαδικό μέγεθος
+      label-hexadecimal-size: Εξαγωνικό μέγεθος
+      label-base64-size: Μέγεθος βάσης 64
+      label-custom-size: Προσαρμοσμένο μέγεθος
     model:
       text:
         invalid-digit-digit-for-base-finalfrombase: Μη έγκυρο ψηφίο "{0}" για τη βάση {1}.
@@ -8328,6 +8598,9 @@ tools:
     title: Μετατροπέας επιτάχυνσης
     description: Μετατροπή τιμών μεταξύ μονάδων επιτάχυνσης
     externalAccess: άκυρος
+    texts:
+      label-g-force: δύναμη g
+      label-meter-per-second-squared: μέτρο ανά δευτερόλεπτο στο τετράγωνο
   docker-image-downloader:
     title: Λήψη εικόνων Docker
     description: Λήψη μιας εικόνας docker με βάση ένα μητρώο docker, μια
@@ -8400,6 +8673,16 @@ tools:
     title: Μετατροπέας συχνότητας
     description: Μετατροπή τιμών μεταξύ μονάδων συχνότητας
     externalAccess: άκυρος
+    texts:
+      label-hertz: χέρτζ
+      label-millihertz: χιλιοστόχερτζ
+      label-kilohertz: κιλοχέρτζ
+      label-megahertz: μεγαχέρτζ
+      label-gigahertz: γιγαχέρτζ
+      label-terahertz: τεραχέρτζ
+      label-revolutions-per-minute: στροφές ανά λεπτό
+      label-degree-per-second: βαθμός ανά δευτερόλεπτο
+      label-radian-per-second: ακτίνιο ανά δευτερόλεπτο
   markdown-to-text:
     title: Μείωση σε κείμενο
     description: Μετατροπή markdown σε απλό κείμενο
@@ -8474,6 +8757,12 @@ tools:
     title: Μετατροπέας ταχύτητας
     description: Μετατροπή τιμών μεταξύ μονάδων ταχύτητας
     externalAccess: άκυρος
+    texts:
+      label-meter-per-second: μέτρο ανά δευτερόλεπτο
+      label-kilometer-per-hour: χιλιόμετρο ανά ώρα
+      label-miles-per-hour: μίλια ανά ώρα
+      label-knot: κόμπος
+      label-feet-per-second: πόδια ανά δευτερόλεπτο
   tab-to-spaces:
     title: Tab σε κενά διαστήματα
     description: Μετατροπή tab σε πολλαπλά κενά διαστήματα
@@ -8539,6 +8828,44 @@ tools:
     title: Μετατροπέας ρυθμού ροής όγκου
     description: Μετατροπή τιμών μεταξύ μονάδων ογκομετρικής ροής
     externalAccess: άκυρος
+    texts:
+      label-cubic-millimeters-per-second: κυβικά χιλιοστά ανά δευτερόλεπτο
+      label-cubic-centimeters-per-second: κυβικά εκατοστά ανά δευτερόλεπτο
+      label-milliliters-per-second: χιλιοστόλιτρα ανά δευτερόλεπτο
+      label-centiliters-per-second: εκατοστόλιτρα ανά δευτερόλεπτο
+      label-deciliters-per-second: δεκαλίτρα ανά δευτερόλεπτο
+      label-liters-per-second: λίτρα ανά δευτερόλεπτο
+      label-liters-per-minute: λίτρα ανά λεπτό
+      label-liters-per-hour: λίτρα ανά ώρα
+      label-kiloliters-per-second: χιλιόλιτρα ανά δευτερόλεπτο
+      label-kiloliters-per-minute: χιλιόλιτρα ανά λεπτό
+      label-kiloliters-per-hour: χιλιόλιτρα ανά ώρα
+      label-cubic-meters-per-second: κυβικά μέτρα ανά δευτερόλεπτο
+      label-cubic-meters-per-minute: κυβικά μέτρα ανά λεπτό
+      label-cubic-meters-per-hour: κυβικά μέτρα ανά ώρα
+      label-cubic-kilometers-per-second: κυβικά χιλιόμετρα ανά δευτερόλεπτο
+      label-teaspoons-per-second: κουταλάκια του γλυκού ανά δευτερόλεπτο
+      label-tablespoons-per-second: κουταλιές της σούπας ανά δευτερόλεπτο
+      label-cubic-inches-per-second: κυβικές ίντσες ανά δευτερόλεπτο
+      label-cubic-inches-per-minute: κυβικές ίντσες ανά λεπτό
+      label-cubic-inches-per-hour: κυβικές ίντσες ανά ώρα
+      label-fluid-ounces-per-second: υγρές ουγγιές ανά δευτερόλεπτο
+      label-fluid-ounces-per-minute: υγρές ουγγιές ανά λεπτό
+      label-fluid-ounces-per-hour: υγρές ουγγιές ανά ώρα
+      label-cups-per-second: φλιτζάνια ανά δευτερόλεπτο
+      label-pints-per-second: πίντες ανά δευτερόλεπτο
+      label-pints-per-minute: πίντες ανά λεπτό
+      label-pints-per-hour: πίντες ανά ώρα
+      label-quarts-per-second: λίτρα ανά δευτερόλεπτο
+      label-gallons-per-second: γαλόνια ανά δευτερόλεπτο
+      label-gallons-per-minute: γαλόνια ανά λεπτό
+      label-gallons-per-hour: γαλόνια ανά ώρα
+      label-cubic-feet-per-second: κυβικά πόδια ανά δευτερόλεπτο
+      label-cubic-feet-per-minute: κυβικά πόδια ανά λεπτό
+      label-cubic-feet-per-hour: κυβικά πόδια ανά ώρα
+      label-cubic-yards-per-second: κυβικά μέτρα ανά δευτερόλεπτο
+      label-cubic-yards-per-minute: κυβικά μέτρα ανά λεπτό
+      label-cubic-yards-per-hour: κυβικά μέτρα ανά ώρα
   tip-calculator:
     title: Υπολογιστής φιλοδωρήματος
     description: Υπολογίστε το φιλοδώρημα για έναν λογαριασμό και μοιράστε το σε
@@ -9224,6 +9551,23 @@ tools:
       label-to: "Να:"
       label-start-at: "Έναρξη από:"
       tag-cron-expression-is-invalid: Η έκφραση Cron δεν είναι έγκυρη
+      paste-cron-expression: Επικόλληση έκφρασης Cron
+      e-g-5-0-12-1-2025: π.χ. */5 0 12 * * 1 2025
+      0-6-sunday-0-monday-1-saturday-6: 0-6 (Κυριακή=0, Δευτέρα=1, ..., Σάββατο=6)
+      label-select-at-least-one-value: "{0}: επιλέξτε τουλάχιστον μία τιμή"
+      day-of-month-and-day-of-week-cannot-both-be-specific: Η ημέρα του μήνα και η
+        ημέρα της εβδομάδας δεν μπορούν να είναι και οι δύο συγκεκριμένες
+      label-start-cannot-be-greater-than-end: "{0}: η αρχή δεν μπορεί να είναι μεγαλύτερη από το τέλος"
+      label-start-must-be-within-allowed-range: "{0}: η έναρξη πρέπει να βρίσκεται εντός του επιτρεπόμενου εύρους"
+      label-step-must-be-greater-than-1: "{0}: το βήμα πρέπει να είναι >= 1"
+      label-start-cannot-be-greater-than-end-0: "{0}: η αρχή δεν μπορεί να είναι μεγαλύτερη από το τέλος"
+      seconds: Δευτερόλεπτα
+      minutes: Πρακτικά
+      hours: Ώρες
+      day-of-month: Ημέρα του μήνα
+      month: Μήνας
+      day-of-week: Ημέρα της εβδομάδας
+      year: Ετος
   css-js-prettify-minify:
     title: CSS/JS Prettify & Minify
     description: Ομορφύνετε ή ελαχιστοποιήστε τον κώδικα CSS και JavaScript σας στο
@@ -9746,6 +10090,46 @@ tools:
       tag-copy-json-paths: Αντιγραφή διαδρομών JSON
       tag-generate-patch: Δημιουργία ενημέρωσης κώδικα
       tag-apply-patch: Εφαρμογή έμπλαστρου
+  ping:
+    title: Πινγκ
+    description: Ping σε ένα σύνολο ονομάτων κεντρικού υπολογιστή, IP, CIDR ή εύρους IP
+    externalAccess: Αυτό το εργαλείο καλεί την υπηρεσία Self Host Network Utilities
+      για να εκτελέσει ping ICMP.
+    texts:
+      label-targets-ips-cidrs-hostnames-one-per-line-or-or: "Στόχοι (IP/CIDR/Ονόματα κεντρικού υπολογιστή, ένα ανά γραμμή ή , ή ;):"
+      placeholder-192-168-1-1-10-google-com-10-10-0-0-0-24: 192.168.1.1&#10;google.com&#10;10.0.0.0/24
+      label-count: "Κόμης:"
+      label-timeout-seconds: "Χρονικό όριο (δευτερόλεπτα):"
+      tag-ping-all: Ping σε όλα
+      tag-target: Στόχος
+      tag-ip: Πνευματική Ιδιοκτησία
+      tag-status: Κατάσταση
+      tag-avg-rtt-ms: Μέσος χρόνος RTT (ms)
+      tag-packet-loss: Απώλεια πακέτων
+      tag-error: Σφάλμα
+      cidr-expands-to-hostcount-ips-exceeding-limit-of-max_cidr_ips: Το CIDR επεκτείνεται σε {0} IP, υπερβαίνοντας το όριο των {1}
+      tag-reachable: Προσβάσιμο
+      tag-unreachable: Απρόσιτος
+  command-palette:
+    store:
+      texts:
+        pages: Σελίδες
+        learn-more-about-it-tools: Μάθετε περισσότερα για τα εργαλεία πληροφορικής.
+        actions-0: Ενέργειες
+        report-a-bug-or-an-issue-to-help-improve-it-tools: Αναφέρετε ένα σφάλμα ή ένα
+          πρόβλημα για να βελτιώσετε τα εργαλεία πληροφορικής.
+        report-a-bug-or-an-issue: Αναφορά σφάλματος ή προβλήματος
+        view-the-source-code-of-it-tools-on-github: Δείτε τον πηγαίο κώδικα του it-tools στο Github.
+        external: Εξωτερικός
+        github-repository: Αποθετήριο Github
+        actions: Ενέργειες
+        toggle-dark-mode-on-or-off: Ενεργοποίηση ή απενεργοποίηση της σκοτεινής λειτουργίας.
+        toggle-dark-mode: Εναλλαγή σκοτεινής λειτουργίας
+        tools-0: Εργαλεία
+        get-a-random-tool-from-the-list: Πάρτε ένα τυχαίο εργαλείο από τη λίστα.
+        random-tool: Τυχαίο εργαλείο
+        tools: Εργαλεία
+  external-self-hosted-required: Απαιτείται εξωτερική αυτοφιλοξενία
 collapsibleToolMenu:
   text:
     expanding: Επέκταση...

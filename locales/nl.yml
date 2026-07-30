@@ -913,6 +913,11 @@ tools:
       placeholder-enter-an-iban-to-check-for-validity: Voer een IBAN in om de geldigheid ervan te controleren...
       title-valid-iban-examples: Geldige IBAN-voorbeelden
       placeholder-enter-ibans-to-check-for-validity: Voer per regel een IBAN in om de geldigheid te controleren
+      bank-name: Banknaam
+      account-number: Rekeningnummer
+      branch-identifier: Vestigingsidentificatie
+      bank-identifier: Bankidentificatie
+      bic: BIC
     service:
       text:
         qr-iban-not-allowed: QR-IBAN niet toegestaan
@@ -1834,6 +1839,13 @@ tools:
   angle-converter:
     title: Hoekeenheden converter
     description: Waarden tussen hoekeenheden converteren
+    texts:
+      label-degree: graden (°)
+      label-radian: radialen
+      label-turn: draai
+      label-gradian: gradian
+      label-grad: rang
+      label-gon: gon
   ansible-vault-crypt-decrypt:
     title: Ansible kluis crypt decoderen
     description: Ansible Vault-geheimen versleutelen en ontsleutelen
@@ -1878,6 +1890,32 @@ tools:
   area-converter:
     title: Oppervlakte-eenheden converter
     description: Waarden tussen oppervlakte-eenheden omzetten
+    texts:
+      label-square-meter: vierkante meter
+      label-square-petameter: vierkante petameter
+      label-square-terameter: vierkante terameter
+      label-square-gigameter: vierkante gigameter
+      label-square-megameter: vierkante megameter
+      label-square-kilometer: vierkante kilometer
+      label-square-hectometer: vierkante hectometer
+      label-square-decameter: vierkante decameter
+      label-square-decimeter: vierkante decimeter
+      label-square-centimeter: vierkante centimeter
+      label-square-millimeter: vierkante millimeter
+      label-square-micrometer: vierkante micrometer
+      label-square-nanometer: vierkante nanometer
+      label-square-picometer: vierkante picometer
+      label-square-femtometer: vierkante femtometer
+      label-acre: acre
+      label-centiare: een cent zijn
+      label-deciare: beslissen
+      label-are: Zijn
+      label-decare: decare
+      label-hectare: hectare
+      label-square-foot-ft2-sq-ft: vierkante voet (/ft²/sq ft)
+      label-square-inch-in2-sq-in: vierkante inch (/in2/sq in)
+      label-square-yard-yd2-sq-yd: vierkante yard (yd2/sq yd)
+      label-square-mile-mi2-sq-mi: vierkante mijl (mi2/sq mi)
   aspect-ratio-calculator:
     title: Beeldverhoudingcalculator
     description: Gebruik deze verhoudingscalculator om de afmetingen te controleren
@@ -2538,6 +2576,37 @@ tools:
   energy-converter:
     title: Energie-eenheden converter
     description: Waarden omzetten tussen energie-eenheden
+    texts:
+      label-joule: joule
+      label-petajoule: petajoule
+      label-terajoule: terajoule
+      label-gigajoule: gigajoule
+      label-megajoule: megajoule
+      label-kilojoule: kilojoule
+      label-hectojoule: hectojoule
+      label-decajoule: decajoule
+      label-decijoule: decijoule
+      label-centijoule: centijoule
+      label-millijoule: millijoule
+      label-microjoule: microjoule
+      label-nanojoule: nanojoule
+      label-picojoule: picojoule
+      label-femtojoule: femtojoule
+      label-watt-hour: wattuur
+      label-petawatt-hour: petawattuur
+      label-terawatt-hour: terawattuur
+      label-gigawatt-hour: gigawattuur
+      label-megawatt-hour: megawattuur
+      label-kilowatt-hour: kilowattuur
+      label-hectowatt-hour: hectowattuur
+      label-decawatt-hour: decawattuur
+      label-deciwatt-hour: deciwattuur
+      label-centiwatt-hour: centiwattuur
+      label-milliwatt-hour: milliwattuur
+      label-microwatt-hour: microwattuur
+      label-nanowatt-hour: nanowattuur
+      label-picowatt-hour: picowattuur
+      label-femtowatt-hour: femtowattuur
   file-hasher:
     title: Bestand Hasher
     description: Bereken de hash van bestanden
@@ -2594,6 +2663,35 @@ tools:
   force-converter:
     title: Kracht-eenheden converter
     description: Waarden tussen krachteenheden omzetten
+    texts:
+      label-newton: Newton
+      label-petanewton: petanewton
+      label-teranewton: teranewton
+      label-giganewton: giganewton
+      label-meganewton: meganewton
+      label-kilonewton: kilonewton
+      label-hectonewton: hectonewton
+      label-decanewton: decanewton
+      label-decinewton: decinewton
+      label-centinewton: centinewton
+      label-millinewton: millinewton
+      label-micronewton: micronewton
+      label-nanonewton: nanonewton
+      label-piconewton: piconewton
+      label-femtonewton: femtonewton
+      label-dyne: dyne
+      label-pound-of-force: pond kracht
+      label-kip: kip
+      label-klb: club
+      label-kipf: kipf
+      label-klbf: klbf
+      label-poundal: pond
+      label-kilogram-force: kilogramkracht
+      label-kilopond: kilopond
+      label-megapond: megavijver
+      label-tonne-force: ton-kracht
+      label-metric-ton-force: metrische ton-kracht
+      label-megagram-force: megagram-force
   geo-distance-calculator:
     title: Geo-afstandscalculator
     description: Bereken de afstand tussen twee geografische locaties (en geef
@@ -3200,6 +3298,29 @@ tools:
   length-converter:
     title: Lengte-eenheden converter
     description: Waarden omzetten van lengte-eenheden
+    texts:
+      label-meter: meter
+      label-petameter: petameter
+      label-terameter: terameter
+      label-gigameter: gigameter
+      label-megameter: megameter
+      label-kilometer: kilometer
+      label-hectometer: hectometer
+      label-decameter: decameter
+      label-decimeter: decimeter
+      label-centimeter: centimeter
+      label-millimeter: millimeter
+      label-micrometer: micrometer
+      label-nanometer: nanometer
+      label-picometer: picometer
+      label-femtometer: femtometer
+      label-inch: inch (")
+      label-yard: tuin
+      label-mile: mijl
+      label-nautical-mile-m-nm: zeemijl (M/NM)
+      label-light-year: lichtjaar
+      label-parsec: parsec
+      label-pica: pica
   list-comparer:
     title: Lijsten vergelijken
     description: Vergelijk twee lijstitems
@@ -3291,6 +3412,35 @@ tools:
   mass-converter:
     title: Massa-eenheden converter
     description: Waarden omzetten tussen massa-eenheden
+    texts:
+      label-gram: gram
+      label-petagram: petagram
+      label-teragram: teragram
+      label-gigagram: gigagram
+      label-megagram: megagram
+      label-kilogram: kilogram
+      label-hectogram: hectogram
+      label-decagram: dekagram
+      label-decigram: tien gram
+      label-centigram: centigram
+      label-milligram: milligram
+      label-microgram: microgram
+      label-nanogram: nanogram
+      label-picogram: picogram
+      label-femtogram: femtogram
+      label-tonne: ton
+      label-metric-ton: metrische ton
+      label-kilotonne: kiloton
+      label-megatonne: megaton
+      label-gigatonne: gigaton
+      label-pound: pond
+      label-stone: steen
+      label-ounce: ounce
+      label-short-ton: korte ton
+      label-us-ton: Amerikaanse ton
+      label-long-ton: lange ton
+      label-imperial-ton: imperiale ton
+      label-displacement-ton: verplaatsing ton
   math-formats-converter:
     title: Converter voor wiskundige formaten
     description: Wiskundige uitdrukkingen tussen formaten converteren
@@ -3686,9 +3836,63 @@ tools:
   power-converter:
     title: Vermogenomvormer
     description: Waarden tussen vermogenseenheden omzetten
+    texts:
+      label-watt: watt
+      label-petawatt: petawatt
+      label-terawatt: terawatt
+      label-gigawatt: gigawatt
+      label-megawatt: megawatt
+      label-kilowatt: kilowatt
+      label-hectowatt: hectowatt
+      label-decawatt: decawatt
+      label-deciwatt: deciwatt
+      label-centiwatt: centiwatt
+      label-milliwatt: milliwatt
+      label-microwatt: microwatt
+      label-nanowatt: nanowatt
+      label-picowatt: picowatt
+      label-femtowatt: femtowatt
+      label-horsepower: paardenkracht
+      label-mechanical-horsepower: mechanisch vermogen
   pressure-converter:
     title: Drukeenheden converter
     description: Waarden tussen drukeenheden omzetten
+    texts:
+      label-pascal: pascal
+      label-pettapascal: pettapascal
+      label-terapascal: terapascal
+      label-gigapascal: gigapascal
+      label-megapascal: megapascal
+      label-kilopascal: kilopascal
+      label-hectopascal: hectopascal
+      label-decapascal: decapascal
+      label-decipascal: decipascal
+      label-centipascal: centipascal
+      label-millipascal: millipascal
+      label-micropascal: micropascal
+      label-nanopascal: nanopascal
+      label-picopascal: picopascal
+      label-femtopascal: femtopascal
+      label-bar: bar
+      label-petabar: petabar
+      label-terabar: verspreid
+      label-gigabar: gigabar
+      label-megabar: megabar
+      label-kilobar: kilobar
+      label-hectobar: hectobar
+      label-decabar: Ik werd onthoofd.
+      label-decibar: ontcijferen
+      label-centibar: centibar
+      label-millibar: millibar
+      label-microbar: microbar
+      label-nanobar: nanobar
+      label-picobar: picobar
+      label-femtobar: femtobar
+      label-torr: torr
+      label-millitorr: millitorr
+      label-atmosphere: sfeer
+      label-pound-per-square-inch: pond per vierkante inch
+      label-lbf-in2: lbf/in2
   properties-to-yaml:
     title: Eigenschappen naar YAML
     description: Java .properties-inhoud converteren naar Yaml
@@ -4069,6 +4273,65 @@ tools:
   volume-converter:
     title: Volume-eenheden converter
     description: Waarden omzetten van volume-eenheden
+    texts:
+      label-cubic-meter-stere: kubieke meter/stere
+      label-cubic-petameter: kubieke petameter
+      label-cubic-terameter: kubieke terameter
+      label-cubic-gigameter: kubieke gigameter
+      label-cubic-megameter: kubieke megameter
+      label-cubic-kilometer: kubieke kilometer
+      label-cubic-hectometer: kubieke hectometer
+      label-cubic-decameter: kubieke decameter
+      label-cubic-decimeter: kubieke decimeter
+      label-cubic-centimeter: kubieke centimeter
+      label-cubic-millimeter: kubieke millimeter
+      label-cubic-micrometer: kubieke micrometer
+      label-cubic-nanometer: kubieke nanometer
+      label-cubic-picometer: kubieke picometer
+      label-cubic-femtometer: kubieke femtometer
+      label-liter: liter
+      label-petaliter: bloemblaadjes
+      label-teraliter: terriër
+      label-gigaliter: gigaliter
+      label-megaliter: megaliter
+      label-kiloliter: kiloliter
+      label-hectoliter: hectoliter
+      label-decaliter: decaliter
+      label-deciliter: deciliter
+      label-centiliter: centiliter
+      label-milliliter: milliliter
+      label-microliter: microliter
+      label-nanoliter: nanoliter
+      label-picoliter: picoliter
+      label-femtoliter: femtoliter
+      label-cubic-mile: kubieke mijl
+      label-acre-foot: acre-voet
+      label-cubic-yard: kubieke meter
+      label-cubic-foot: kubieke voet
+      label-board-feet: plankvoeten
+      label-cubic-inch: kubieke inch
+      label-measurement-ton: meetton
+      label-imperial-barrel: keizerlijk vat
+      label-imperial-bushel: keizerlijke bushel
+      label-imperial-peck: keizerlijke pik
+      label-imperial-gallon: imperiale gallon
+      label-imperial-quart: imperiale kwart
+      label-imperial-pint: imperiale pint
+      label-imperial-fluid-ounce: imperiale vloeibare ounce
+      label-teaspoon: theelepel
+      label-tablespoon: eetlepel
+      label-us-fluid-ounce: Amerikaanse vloeibare ounce
+      label-cup: beker
+      label-us-legal-cup: Amerikaanse juridische beker
+      label-us-liquid-pint: Amerikaanse vloeibare pint
+      label-us-liquid-quart: Amerikaanse vloeibare kwart
+      label-us-liquid-gallon: Amerikaanse vloeibare gallon
+      label-us-bushel: Amerikaanse bushel
+      label-us-peck: Amerikaanse pik
+      label-us-dry-gallon: Amerikaanse droge gallon
+      label-us-dry-barrel: Amerikaanse droge vaten
+      label-us-dry-quart: Amerikaanse droge kwart
+      label-us-dry-pint: Amerikaanse droge pint
   week-number-converter:
     title: Weeknummers converter
     description: Converteren tussen ISO-weeknummer, weeknummer in maand en datum
@@ -5966,6 +6229,13 @@ tools:
       label-base64-64: Basis64 (64)
       placeholder-base64-version-will-be-here: Base64-versie is hier te vinden...
       tag-custom: "Aangepast:"
+      label-space-separation: Ruimtelijke scheiding
+      label-binary-size: Binaire grootte
+      label-octal-size: Octale grootte
+      label-decimal-size: Decimale grootte
+      label-hexadecimal-size: Hex-formaat
+      label-base64-size: Basis64-grootte
+      label-custom-size: Maatwerk
     model:
       text:
         invalid-digit-digit-for-base-finalfrombase: Ongeldig cijfer "{0}" voor basis {1}.
@@ -8079,6 +8349,9 @@ tools:
     title: Acceleratieomvormer
     description: Waarden omrekenen tussen versnellingseenheden
     externalAccess: "null"
+    texts:
+      label-g-force: g-kracht
+      label-meter-per-second-squared: meter per seconde kwadraat
   docker-image-downloader:
     title: Docker-image-downloader
     description: Download een Docker-image op basis van een Docker-registry, een
@@ -8148,6 +8421,16 @@ tools:
     title: Frequentieomzetter
     description: Waarden tussen frequentie-eenheden omrekenen
     externalAccess: "null"
+    texts:
+      label-hertz: hertz
+      label-millihertz: millihertz
+      label-kilohertz: kilohertz
+      label-megahertz: megahertz
+      label-gigahertz: gigahertz
+      label-terahertz: terahertz
+      label-revolutions-per-minute: omwentelingen per minuut
+      label-degree-per-second: graad per seconde
+      label-radian-per-second: radialen per seconde
   markdown-to-text:
     title: Markdown naar tekst
     description: Markdown converteren naar platte tekst
@@ -8221,6 +8504,12 @@ tools:
     title: Snelheidsomzetter
     description: Waarden tussen snelheidseenheden omrekenen
     externalAccess: "null"
+    texts:
+      label-meter-per-second: meter per seconde
+      label-kilometer-per-hour: kilometer per uur
+      label-miles-per-hour: mijlen per uur
+      label-knot: knoop
+      label-feet-per-second: voet per seconde
   tab-to-spaces:
     title: Tab naar Spaces
     description: Zet tab om in meerdere spaties
@@ -8286,6 +8575,44 @@ tools:
     title: Volumestroomomzetter
     description: Waarden omrekenen tussen eenheden voor volumestroom.
     externalAccess: "null"
+    texts:
+      label-cubic-millimeters-per-second: kubieke millimeter per seconde
+      label-cubic-centimeters-per-second: kubieke centimeters per seconde
+      label-milliliters-per-second: milliliter per seconde
+      label-centiliters-per-second: centiliter per seconde
+      label-deciliters-per-second: deciliter per seconde
+      label-liters-per-second: liters per seconde
+      label-liters-per-minute: liters per minuut
+      label-liters-per-hour: liters per uur
+      label-kiloliters-per-second: kiloliter per seconde
+      label-kiloliters-per-minute: kiloliter per minuut
+      label-kiloliters-per-hour: kiloliter per uur
+      label-cubic-meters-per-second: kubieke meter per seconde
+      label-cubic-meters-per-minute: kubieke meter per minuut
+      label-cubic-meters-per-hour: kubieke meter per uur
+      label-cubic-kilometers-per-second: kubieke kilometer per seconde
+      label-teaspoons-per-second: theelepels per seconde
+      label-tablespoons-per-second: eetlepels per seconde
+      label-cubic-inches-per-second: kubieke inch per seconde
+      label-cubic-inches-per-minute: kubieke inch per minuut
+      label-cubic-inches-per-hour: kubieke inch per uur
+      label-fluid-ounces-per-second: vloeibare ounces per seconde
+      label-fluid-ounces-per-minute: vloeibare ounces per minuut
+      label-fluid-ounces-per-hour: vloeibare ounces per uur
+      label-cups-per-second: kopjes per seconde
+      label-pints-per-second: pinten per seconde
+      label-pints-per-minute: pinten per minuut
+      label-pints-per-hour: pinten per uur
+      label-quarts-per-second: kwart per seconde
+      label-gallons-per-second: gallons per seconde
+      label-gallons-per-minute: gallons per minuut
+      label-gallons-per-hour: gallons per uur
+      label-cubic-feet-per-second: kubieke voet per seconde
+      label-cubic-feet-per-minute: kubieke voet per minuut
+      label-cubic-feet-per-hour: kubieke voet per uur
+      label-cubic-yards-per-second: kubieke yards per seconde
+      label-cubic-yards-per-minute: kubieke yards per minuut
+      label-cubic-yards-per-hour: kubieke yards per uur
   tip-calculator:
     title: Fooiencalculator
     description: Bereken de fooi voor een rekening en verdeel deze over meerdere personen.
@@ -8970,6 +9297,23 @@ tools:
       label-to: "Naar:"
       label-start-at: "Begin bij:"
       tag-cron-expression-is-invalid: De Cron-expressie is ongeldig.
+      paste-cron-expression: Plak de Cron-expressie
+      e-g-5-0-12-1-2025: bijv. */5 0 12 * * 1 2025
+      0-6-sunday-0-monday-1-saturday-6: 0-6 (zondag=0, maandag=1, ..., zaterdag=6)
+      label-select-at-least-one-value: "{0}: selecteer ten minste één waarde"
+      day-of-month-and-day-of-week-cannot-both-be-specific: De dag van de maand en de
+        dag van de week kunnen niet allebei specifiek zijn.
+      label-start-cannot-be-greater-than-end: "{0}: start mag niet groter zijn dan end"
+      label-start-must-be-within-allowed-range: "{0}: start moet binnen het toegestane bereik liggen"
+      label-step-must-be-greater-than-1: "{0}: stap moet >= 1 zijn"
+      label-start-cannot-be-greater-than-end-0: "{0}: start mag niet groter zijn dan end"
+      seconds: Seconden
+      minutes: Notulen
+      hours: Uren
+      day-of-month: Dag van de maand
+      month: Maand
+      day-of-week: Dag van de week
+      year: Jaar
   css-js-prettify-minify:
     title: CSS/JS Opmaak & Minimalisatie
     description: Verklein of minimaliseer je CSS- en JavaScript-code online.
@@ -9483,6 +9827,47 @@ tools:
       tag-copy-json-paths: Kopieer JSON-paden
       tag-generate-patch: Patch genereren
       tag-apply-patch: Plak de patch
+  ping:
+    title: Ping
+    description: Ping een set hostnamen, IP-adressen, CIDR-waarden of een IP-bereik.
+    externalAccess: Deze tool roept uw Self Host Network Utilities Service aan om
+      ICMP-pings uit te voeren.
+    texts:
+      label-targets-ips-cidrs-hostnames-one-per-line-or-or: "Doelwitten (IP-adressen/CIDR's/hostnamen, één per regel of , of ;):"
+      placeholder-192-168-1-1-10-google-com-10-10-0-0-0-24: 192.168.1.1&#10;google.com&#10;10.0.0.0/24
+      label-count: "Graaf:"
+      label-timeout-seconds: "Time-out (seconden):"
+      tag-ping-all: Ping alles
+      tag-target: Doel
+      tag-ip: IP
+      tag-status: Status
+      tag-avg-rtt-ms: Gemiddelde RTT (ms)
+      tag-packet-loss: Pakketverlies
+      tag-error: Fout
+      cidr-expands-to-hostcount-ips-exceeding-limit-of-max_cidr_ips:
+        CIDR wordt uitgebreid naar {0} IP-adressen, waarmee de limiet van {1}
+        wordt overschreden.
+      tag-reachable: Bereikbaar
+      tag-unreachable: Niet bereikbaar
+  command-palette:
+    store:
+      texts:
+        pages: Pagina's
+        learn-more-about-it-tools: Leer meer over IT-tools.
+        actions-0: Acties
+        report-a-bug-or-an-issue-to-help-improve-it-tools: Meld een bug of een probleem om it-tools te helpen verbeteren.
+        report-a-bug-or-an-issue: Meld een bug of een probleem.
+        view-the-source-code-of-it-tools-on-github: Bekijk de broncode van it-tools op Github.
+        external: Extern
+        github-repository: Github-repository
+        actions: Acties
+        toggle-dark-mode-on-or-off: Schakel de donkere modus in of uit.
+        toggle-dark-mode: Donkere modus in-/uitschakelen
+        tools-0: Hulpmiddelen
+        get-a-random-tool-from-the-list: Kies een willekeurig gereedschap uit de lijst.
+        random-tool: Willekeurig gereedschap
+        tools: Hulpmiddelen
+  external-self-hosted-required: Externe, zelf gehoste installatie vereist.
 about:
   alltools-title: Alle {toolsCount}-hulpmiddelen
   tools:

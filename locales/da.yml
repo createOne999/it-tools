@@ -921,6 +921,11 @@ tools:
       placeholder-enter-an-iban-to-check-for-validity: Indtast et IBAN for at kontrollere gyldigheden...
       title-valid-iban-examples: Eksempler på gyldige IBAN-nummer
       placeholder-enter-ibans-to-check-for-validity: Indtast et IBAN-nummer pr. linje for at kontrollere gyldigheden
+      bank-name: Bankens navn
+      account-number: Kontonummer
+      branch-identifier: Filialidentifikator
+      bank-identifier: Bankidentifikator
+      bic: BIC
     service:
       text:
         qr-iban-not-allowed: QR-IBAN ikke tilladt
@@ -1808,6 +1813,13 @@ tools:
   angle-converter:
     title: Vinkelenhedskonverter
     description: Konverter værdier mellem vinkelenheder
+    texts:
+      label-degree: grad (°)
+      label-radian: radian
+      label-turn: tur
+      label-gradian: gradian
+      label-grad: grad
+      label-gon: gon
   ansible-vault-crypt-decrypt:
     title: Dekryptering af Ansible Vault-kryptering
     description: Krypter og dekrypter Ansible Vault Secrets
@@ -1852,6 +1864,32 @@ tools:
   area-converter:
     title: Arealenhedsomregner
     description: Konverter værdier mellem arealenheder
+    texts:
+      label-square-meter: kvadratmeter
+      label-square-petameter: kvadratpetameter
+      label-square-terameter: kvadratterameter
+      label-square-gigameter: kvadratgigameter
+      label-square-megameter: kvadratmegameter
+      label-square-kilometer: kvadratkilometer
+      label-square-hectometer: kvadrathektometer
+      label-square-decameter: kvadratdecameter
+      label-square-decimeter: kvadratdecimeter
+      label-square-centimeter: kvadratcentimeter
+      label-square-millimeter: kvadratmillimeter
+      label-square-micrometer: kvadratmikrometer
+      label-square-nanometer: kvadratnanometer
+      label-square-picometer: kvadratisk picometer
+      label-square-femtometer: firkantet femtometer
+      label-acre: acre
+      label-centiare: at være en cent
+      label-deciare: at beslutte
+      label-are: er
+      label-decare: dekar
+      label-hectare: hektar
+      label-square-foot-ft2-sq-ft: kvadratfod (/ft2/kvadratfod)
+      label-square-inch-in2-sq-in: kvadrattomme (/in²/kvadrattomme)
+      label-square-yard-yd2-sq-yd: kvadratyard (yd²/kvadratyard)
+      label-square-mile-mi2-sq-mi: kvadratmil (mi2/kvadratmil)
   aspect-ratio-calculator:
     title: Billedformatberegner
     description: Brug denne forholdsberegner til at kontrollere dimensionerne, når
@@ -2508,6 +2546,37 @@ tools:
   energy-converter:
     title: Energienhedsomregner
     description: Konverter værdier mellem energienheder
+    texts:
+      label-joule: joule
+      label-petajoule: petajoule
+      label-terajoule: terajoule
+      label-gigajoule: gigajoule
+      label-megajoule: megajoule
+      label-kilojoule: kilojoule
+      label-hectojoule: hektojoule
+      label-decajoule: dekajoule
+      label-decijoule: decijoule
+      label-centijoule: centijoule
+      label-millijoule: millijoule
+      label-microjoule: mikrojoule
+      label-nanojoule: nanojoule
+      label-picojoule: picojoule
+      label-femtojoule: femtojoule
+      label-watt-hour: watt-time
+      label-petawatt-hour: petawatt-time
+      label-terawatt-hour: terawatt-time
+      label-gigawatt-hour: gigawatt-time
+      label-megawatt-hour: megawatt-time
+      label-kilowatt-hour: kilowatt-time
+      label-hectowatt-hour: hektowatt-time
+      label-decawatt-hour: decawatt-time
+      label-deciwatt-hour: deciwatt-time
+      label-centiwatt-hour: centiwatt-time
+      label-milliwatt-hour: milliwatt-time
+      label-microwatt-hour: mikrowatt-time
+      label-nanowatt-hour: nanowatt-time
+      label-picowatt-hour: picowatt-time
+      label-femtowatt-hour: femtowatt-time
   file-hasher:
     title: Filhasher
     description: Beregn hash af filer
@@ -2563,6 +2632,35 @@ tools:
   force-converter:
     title: Kraftenhedskonverter
     description: Konverter værdier mellem kraftenheder
+    texts:
+      label-newton: Newton
+      label-petanewton: petanewton
+      label-teranewton: teranewton
+      label-giganewton: giganewton
+      label-meganewton: meganewton
+      label-kilonewton: kilonewton
+      label-hectonewton: hektonewton
+      label-decanewton: decanewton
+      label-decinewton: decinewton
+      label-centinewton: centinewton
+      label-millinewton: millinewton
+      label-micronewton: mikronewton
+      label-nanonewton: nanonewton
+      label-piconewton: piconewton
+      label-femtonewton: femtonewton
+      label-dyne: dyn
+      label-pound-of-force: pund kraft
+      label-kip: kip
+      label-klb: klub
+      label-kipf: kipf
+      label-klbf: klbf
+      label-poundal: pund
+      label-kilogram-force: kilogramkraft
+      label-kilopond: kilopond
+      label-megapond: megadam
+      label-tonne-force: tonkraft
+      label-metric-ton-force: metrisk tonkraft
+      label-megagram-force: megagram kraft
   geo-distance-calculator:
     title: Geografisk afstandsberegner
     description: Beregn afstanden mellem to geografiske placeringer (og vis
@@ -3161,6 +3259,29 @@ tools:
   length-converter:
     title: Længdeenhedskonverter
     description: Konverter værdier fra længdeenheder
+    texts:
+      label-meter: måler
+      label-petameter: petameter
+      label-terameter: terameter
+      label-gigameter: gigameter
+      label-megameter: megameter
+      label-kilometer: kilometer
+      label-hectometer: hektometer
+      label-decameter: dekameter
+      label-decimeter: decimeter
+      label-centimeter: centimeter
+      label-millimeter: millimeter
+      label-micrometer: mikrometer
+      label-nanometer: nanometer
+      label-picometer: pikometer
+      label-femtometer: femtometer
+      label-inch: tomme (")
+      label-yard: gård
+      label-mile: mil
+      label-nautical-mile-m-nm: sømil (M/NM)
+      label-light-year: lysår
+      label-parsec: parsek
+      label-pica: pica
   list-comparer:
     title: Lister Sammenlign
     description: Sammenlign to listeelementer
@@ -3252,6 +3373,35 @@ tools:
   mass-converter:
     title: Masseenhedsomregner
     description: Konverter værdier mellem masseenheder
+    texts:
+      label-gram: gram
+      label-petagram: petagram
+      label-teragram: teragram
+      label-gigagram: gigagram
+      label-megagram: megagram
+      label-kilogram: kilogram
+      label-hectogram: hektogram
+      label-decagram: dekagram
+      label-decigram: ti gram
+      label-centigram: centigram
+      label-milligram: milligram
+      label-microgram: mikrogram
+      label-nanogram: nanogram
+      label-picogram: pikogram
+      label-femtogram: femtogram
+      label-tonne: ton
+      label-metric-ton: metrisk ton
+      label-kilotonne: kiloton
+      label-megatonne: megaton
+      label-gigatonne: gigaton
+      label-pound: pund
+      label-stone: sten
+      label-ounce: ounce
+      label-short-ton: kort ton
+      label-us-ton: Amerikansk ton
+      label-long-ton: langt ton
+      label-imperial-ton: imperial ton
+      label-displacement-ton: forskydning ton
   math-formats-converter:
     title: Matematikformatkonverter
     description: Konverter matematiske udtryk mellem formater
@@ -3641,9 +3791,63 @@ tools:
   power-converter:
     title: Strømomformer
     description: Konverter værdier mellem effektenheder
+    texts:
+      label-watt: watt
+      label-petawatt: petawatt
+      label-terawatt: terawatt
+      label-gigawatt: gigawatt
+      label-megawatt: megawatt
+      label-kilowatt: kilowatt
+      label-hectowatt: hektowatt
+      label-decawatt: decawatt
+      label-deciwatt: deciwatt
+      label-centiwatt: centiwatt
+      label-milliwatt: milliwatt
+      label-microwatt: mikrowatt
+      label-nanowatt: nanowatt
+      label-picowatt: picowatt
+      label-femtowatt: femtowatt
+      label-horsepower: hestekræfter
+      label-mechanical-horsepower: mekanisk hestekræfter
   pressure-converter:
     title: Trykenhedskonverter
     description: Konverter værdier mellem trykenheder
+    texts:
+      label-pascal: pascal
+      label-pettapascal: pettapascal
+      label-terapascal: terapascal
+      label-gigapascal: gigapascal
+      label-megapascal: megapascal
+      label-kilopascal: kilopascal
+      label-hectopascal: hektopascal
+      label-decapascal: dekapascal
+      label-decipascal: decipascal
+      label-centipascal: centpascal
+      label-millipascal: millipascal
+      label-micropascal: mikropascal
+      label-nanopascal: nanopascal
+      label-picopascal: pikopascal
+      label-femtopascal: femtopascal
+      label-bar: bar
+      label-petabar: petabar
+      label-terabar: sprede sig ud
+      label-gigabar: gigabar
+      label-megabar: megabar
+      label-kilobar: kilobar
+      label-hectobar: hektobar
+      label-decabar: Jeg blev halshugget.
+      label-decibar: dechifrere
+      label-centibar: centibar
+      label-millibar: millibar
+      label-microbar: mikrobar
+      label-nanobar: nanobar
+      label-picobar: picobar
+      label-femtobar: femtobar
+      label-torr: torr
+      label-millitorr: millitorr
+      label-atmosphere: atmosfære
+      label-pound-per-square-inch: pund pr. kvadrattomme
+      label-lbf-in2: lbf/in²
   properties-to-yaml:
     title: Egenskaber til YAML
     description: Konverter Java .properties-indhold til Yaml
@@ -4020,6 +4224,65 @@ tools:
   volume-converter:
     title: Volumenenhedskonverter
     description: Konverter værdier fra volumenheder
+    texts:
+      label-cubic-meter-stere: kubikmeter/stere
+      label-cubic-petameter: kubikpetameter
+      label-cubic-terameter: kubikterameter
+      label-cubic-gigameter: kubikgigameter
+      label-cubic-megameter: kubikmegameter
+      label-cubic-kilometer: kubikkilometer
+      label-cubic-hectometer: kubikhektometer
+      label-cubic-decameter: kubikdecameter
+      label-cubic-decimeter: kubikdecimeter
+      label-cubic-centimeter: kubikcentimeter
+      label-cubic-millimeter: kubikmillimeter
+      label-cubic-micrometer: kubikmikrometer
+      label-cubic-nanometer: kubisk nanometer
+      label-cubic-picometer: kubisk picometer
+      label-cubic-femtometer: kubisk femtometer
+      label-liter: liter
+      label-petaliter: petaliter
+      label-teraliter: terraliter
+      label-gigaliter: gigaliter
+      label-megaliter: megaliter
+      label-kiloliter: kiloliter
+      label-hectoliter: hektoliter
+      label-decaliter: decaliter
+      label-deciliter: deciliter
+      label-centiliter: centiliter
+      label-milliliter: milliliter
+      label-microliter: mikroliter
+      label-nanoliter: nanoliter
+      label-picoliter: pikoliter
+      label-femtoliter: femtoliter
+      label-cubic-mile: kubikmil
+      label-acre-foot: acre-fod
+      label-cubic-yard: kubikmeter
+      label-cubic-foot: kubikfod
+      label-board-feet: brætfødder
+      label-cubic-inch: kubiktomme
+      label-measurement-ton: måling ton
+      label-imperial-barrel: kejserlig tønde
+      label-imperial-bushel: imperial skæppe
+      label-imperial-peck: kejserlig hakke
+      label-imperial-gallon: imperial gallon
+      label-imperial-quart: imperial kvart
+      label-imperial-pint: kejserlig pint
+      label-imperial-fluid-ounce: imperial flydende ounce
+      label-teaspoon: teskefuld
+      label-tablespoon: spiseskefuld
+      label-us-fluid-ounce: Amerikansk flydende ounce
+      label-cup: kop
+      label-us-legal-cup: Amerikansk lovlig kop
+      label-us-liquid-pint: Amerikansk flydende pint
+      label-us-liquid-quart: Amerikansk flydende kvart
+      label-us-liquid-gallon: Amerikansk flydende gallon
+      label-us-bushel: Amerikansk skæppel
+      label-us-peck: Amerikansk peck
+      label-us-dry-gallon: Amerikansk tør gallon
+      label-us-dry-barrel: Amerikansk tørt tønde
+      label-us-dry-quart: Amerikansk tør kvart
+      label-us-dry-pint: Amerikansk tør pint
   week-number-converter:
     title: Ugetalkonverter
     description: Konverter mellem ISO-ugenummer, ugenummer i måned og dato
@@ -5897,6 +6160,13 @@ tools:
       label-base64-64: Base64 (64)
       placeholder-base64-version-will-be-here: Base64-versionen kommer her...
       tag-custom: "Skik:"
+      label-space-separation: Rumseparation
+      label-binary-size: Binær størrelse
+      label-octal-size: Oktal størrelse
+      label-decimal-size: Decimalstørrelse
+      label-hexadecimal-size: Sekskantstørrelse
+      label-base64-size: Base64 størrelse
+      label-custom-size: Brugerdefineret størrelse
     model:
       text:
         invalid-digit-digit-for-base-finalfrombase: Ugyldigt ciffer "{0}" for base {1}.
@@ -7995,6 +8265,9 @@ tools:
     title: Accelerationskonverter
     description: Konverter værdier mellem accelerationsenheder
     externalAccess: nul
+    texts:
+      label-g-force: g-kraft
+      label-meter-per-second-squared: meter pr. sekund i anden kvadrat
   docker-image-downloader:
     title: Docker-billeddownloader
     description: Download et docker-billede givet et docker-register, en arkitektur
@@ -8065,6 +8338,16 @@ tools:
     title: Frekvensomformer
     description: Konverter værdier mellem frekvensenheder
     externalAccess: nul
+    texts:
+      label-hertz: hertz
+      label-millihertz: millihertz
+      label-kilohertz: kilohertz
+      label-megahertz: megahertz
+      label-gigahertz: gigahertz
+      label-terahertz: terahertz
+      label-revolutions-per-minute: omdrejninger i minuttet
+      label-degree-per-second: grad per sekund
+      label-radian-per-second: radianer per sekund
   markdown-to-text:
     title: Markdown til tekst
     description: Konverter markdown til almindelig tekst
@@ -8136,6 +8419,12 @@ tools:
     title: Hastighedskonverter
     description: Konverter værdier mellem hastighedsenheder
     externalAccess: nul
+    texts:
+      label-meter-per-second: meter pr. sekund
+      label-kilometer-per-hour: kilometer i timen
+      label-miles-per-hour: miles i timen
+      label-knot: knude
+      label-feet-per-second: fod per sekund
   tab-to-spaces:
     title: Tabulator til mellemrum
     description: Konverter tabulator til flere mellemrum
@@ -8200,6 +8489,44 @@ tools:
     title: Volumenstrømningshastighedskonverter
     description: Konverter værdier mellem volumenstrømningsenheder
     externalAccess: nul
+    texts:
+      label-cubic-millimeters-per-second: kubikmillimeter per sekund
+      label-cubic-centimeters-per-second: kubikcentimeter per sekund
+      label-milliliters-per-second: milliliter per sekund
+      label-centiliters-per-second: centiliter per sekund
+      label-deciliters-per-second: deciliter per sekund
+      label-liters-per-second: liter pr. sekund
+      label-liters-per-minute: liter i minuttet
+      label-liters-per-hour: liter i timen
+      label-kiloliters-per-second: kiloliter per sekund
+      label-kiloliters-per-minute: kiloliter pr. minut
+      label-kiloliters-per-hour: kiloliter i timen
+      label-cubic-meters-per-second: kubikmeter per sekund
+      label-cubic-meters-per-minute: kubikmeter per minut
+      label-cubic-meters-per-hour: kubikmeter i timen
+      label-cubic-kilometers-per-second: kubikkilometer per sekund
+      label-teaspoons-per-second: teskefulde pr. sekund
+      label-tablespoons-per-second: spiseskefulde per sekund
+      label-cubic-inches-per-second: kubiktommer per sekund
+      label-cubic-inches-per-minute: kubiktommer per minut
+      label-cubic-inches-per-hour: kubiktommer i timen
+      label-fluid-ounces-per-second: flydende ounces per sekund
+      label-fluid-ounces-per-minute: flydende ounces pr. minut
+      label-fluid-ounces-per-hour: flydende ounces i timen
+      label-cups-per-second: kopper per sekund
+      label-pints-per-second: pints per sekund
+      label-pints-per-minute: pints per minut
+      label-pints-per-hour: pints i timen
+      label-quarts-per-second: kvart per sekund
+      label-gallons-per-second: gallon per sekund
+      label-gallons-per-minute: gallon i minuttet
+      label-gallons-per-hour: gallon i timen
+      label-cubic-feet-per-second: kubikfod per sekund
+      label-cubic-feet-per-minute: kubikfod per minut
+      label-cubic-feet-per-hour: kubikfod i timen
+      label-cubic-yards-per-second: kubikmeter per sekund
+      label-cubic-yards-per-minute: kubikmeter per minut
+      label-cubic-yards-per-hour: kubikmeter i timen
   tip-calculator:
     title: Drikkepengeberegner
     description: Beregn drikkepenge for en regning og fordel den mellem flere personer.
@@ -8878,6 +9205,22 @@ tools:
       label-to: "Til:"
       label-start-at: "Start ved:"
       tag-cron-expression-is-invalid: Cron-udtrykket er ugyldigt
+      paste-cron-expression: Indsæt Cron-udtryk
+      e-g-5-0-12-1-2025: f.eks. */5 0 12 * * 1 2025
+      0-6-sunday-0-monday-1-saturday-6: 0-6 (søndag=0, mandag=1, ..., lørdag=6)
+      label-select-at-least-one-value: "{0}: vælg mindst én værdi"
+      day-of-month-and-day-of-week-cannot-both-be-specific: Månedens dag og ugedag kan ikke begge være specifikke
+      label-start-cannot-be-greater-than-end: "{0}: start må ikke være større end slut"
+      label-start-must-be-within-allowed-range: "{0}: Start skal være inden for det tilladte område"
+      label-step-must-be-greater-than-1: "{0}: trin skal være >= 1"
+      label-start-cannot-be-greater-than-end-0: "{0}: start må ikke være større end slut"
+      seconds: Sekunder
+      minutes: Minutter
+      hours: Timer
+      day-of-month: Månedens dag
+      month: Måned
+      day-of-week: Ugedag
+      year: År
   css-js-prettify-minify:
     title: CSS/JS Forskøn og minimer
     description: Forskøn eller minimer din CSS- og JavaScript-kode online.
@@ -9390,6 +9733,45 @@ tools:
       tag-copy-json-paths: Kopiér JSON-stier
       tag-generate-patch: Generer programrettelse
       tag-apply-patch: Påfør programrettelse
+  ping:
+    title: Ping
+    description: Ping et sæt værtsnavne, IP'er, CIDR eller IP-interval
+    externalAccess: Dette værktøj kalder din Self Host Network Utilities Service for
+      at udføre ICMP-pings.
+    texts:
+      label-targets-ips-cidrs-hostnames-one-per-line-or-or: "Mål (IP'er/CIDR'er/værtsnavne, én pr. linje eller , eller ;)):"
+      placeholder-192-168-1-1-10-google-com-10-10-0-0-0-24: 192.168.1.1&#10;google.com&#10;10.0.0.0/24
+      label-count: "Tælle:"
+      label-timeout-seconds: "Timeout (sekunder):"
+      tag-ping-all: Ping alle
+      tag-target: Mål
+      tag-ip: IP-adresse
+      tag-status: Status
+      tag-avg-rtt-ms: Gennemsnitlig RTT (ms)
+      tag-packet-loss: Pakketab
+      tag-error: Fejl
+      cidr-expands-to-hostcount-ips-exceeding-limit-of-max_cidr_ips: CIDR udvides til {0} IP-adresser og overskrider dermed grænsen på {1}
+      tag-reachable: Tilgængelig
+      tag-unreachable: Uopnåelig
+  command-palette:
+    store:
+      texts:
+        pages: Sider
+        learn-more-about-it-tools: Lær mere om IT-værktøjer.
+        actions-0: Handlinger
+        report-a-bug-or-an-issue-to-help-improve-it-tools: Rapportér en fejl eller et problem for at forbedre it-værktøjerne.
+        report-a-bug-or-an-issue: Rapportér en fejl eller et problem
+        view-the-source-code-of-it-tools-on-github: Se kildekoden til it-tools på Github.
+        external: Ekstern
+        github-repository: Github-arkiv
+        actions: Handlinger
+        toggle-dark-mode-on-or-off: Slå mørk tilstand til eller fra.
+        toggle-dark-mode: Slå mørk tilstand til/fra
+        tools-0: Værktøjer
+        get-a-random-tool-from-the-list: Vælg et tilfældigt værktøj fra listen.
+        random-tool: Tilfældigt værktøj
+        tools: Værktøjer
+  external-self-hosted-required: Ekstern selvhostet påkrævet
 about:
   alltools-title: Alle {toolsCount} værktøjer
   tools:

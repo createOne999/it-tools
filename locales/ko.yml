@@ -805,6 +805,11 @@ tools:
       placeholder-enter-an-iban-to-check-for-validity: 유효성을 확인하려면 IBAN을 입력하세요...
       title-valid-iban-examples: 유효한 IBAN 예시
       placeholder-enter-ibans-to-check-for-validity: 유효성을 확인하려면 줄마다 IBAN을 입력하세요.
+      bank-name: 은행명
+      account-number: 계좌번호
+      branch-identifier: 지점 식별자
+      bank-identifier: 은행 식별자
+      bic: 비크
     service:
       text:
         qr-iban-not-allowed: QR-IBAN은 허용되지 않습니다.
@@ -1673,6 +1678,13 @@ tools:
   angle-converter:
     title: 각도 단위 변환기
     description: 각도 단위 간 값 변환
+    texts:
+      label-degree: 도(°)
+      label-radian: 라디안
+      label-turn: 회전하다
+      label-gradian: 그라디안
+      label-grad: 도
+      label-gon: 곤
   ansible-vault-crypt-decrypt:
     title: Ansible 볼트 암호 해독
     description: Ansible Vault Secrets 암호화 및 복호화
@@ -1717,6 +1729,32 @@ tools:
   area-converter:
     title: 면적 단위 변환기
     description: 면적 단위 간 값 변환
+    texts:
+      label-square-meter: 제곱미터
+      label-square-petameter: 정사각형 페타미터
+      label-square-terameter: 제곱 테라미터
+      label-square-gigameter: 제곱 기가미터
+      label-square-megameter: 제곱 메가미터
+      label-square-kilometer: 제곱킬로미터
+      label-square-hectometer: 정사각형 헥토미터
+      label-square-decameter: 정사각형 데카미터
+      label-square-decimeter: 제곱 데시미터
+      label-square-centimeter: 제곱센티미터
+      label-square-millimeter: 제곱밀리미터
+      label-square-micrometer: 제곱 마이크로미터
+      label-square-nanometer: 제곱 나노미터
+      label-square-picometer: 정사각형 피코미터
+      label-square-femtometer: 정사각형 펨토미터
+      label-acre: 에이커
+      label-centiare: 백이 되기 위해
+      label-deciare: 결정하다
+      label-are: ~이다
+      label-decare: 데케어
+      label-hectare: 헥타르
+      label-square-foot-ft2-sq-ft: 제곱피트 (/ft2/제곱피트)
+      label-square-inch-in2-sq-in: 제곱인치 (/in2/제곱인치)
+      label-square-yard-yd2-sq-yd: 제곱야드(yd2/제곱야드)
+      label-square-mile-mi2-sq-mi: 제곱마일(제곱마일/sq mi)
   aspect-ratio-calculator:
     title: 종횡비 계산기
     description: 이 비율 계산기를 사용하면 이미지 크기를 조정할 때 치수를 확인할 수 있습니다.
@@ -2356,6 +2394,37 @@ tools:
   energy-converter:
     title: 에너지 단위 변환기
     description: 에너지 단위 간 값 변환
+    texts:
+      label-joule: 줄
+      label-petajoule: 페타줄
+      label-terajoule: 테라줄
+      label-gigajoule: 기가줄
+      label-megajoule: 메가줄
+      label-kilojoule: 킬로줄
+      label-hectojoule: 헥토줄
+      label-decajoule: 데카줄
+      label-decijoule: 데시줄
+      label-centijoule: 센티줄
+      label-millijoule: 밀리줄
+      label-microjoule: 마이크로줄
+      label-nanojoule: 나노줄
+      label-picojoule: 피코줄
+      label-femtojoule: 펨토줄
+      label-watt-hour: 와트시
+      label-petawatt-hour: 페타와트시
+      label-terawatt-hour: 테라와트시
+      label-gigawatt-hour: 기가와트시
+      label-megawatt-hour: 메가와트시
+      label-kilowatt-hour: 킬로와트시
+      label-hectowatt-hour: 헥토와트시
+      label-decawatt-hour: 데카와트시
+      label-deciwatt-hour: 데시와트시
+      label-centiwatt-hour: 센티와트시
+      label-milliwatt-hour: 밀리와트시
+      label-microwatt-hour: 마이크로와트시
+      label-nanowatt-hour: 나노와트시
+      label-picowatt-hour: 피코와트시
+      label-femtowatt-hour: 펨토와트시
   file-hasher:
     title: 파일 해셔
     description: 파일 해시 계산
@@ -2409,6 +2478,35 @@ tools:
   force-converter:
     title: 힘 단위 변환기
     description: 힘 단위 간 값 변환
+    texts:
+      label-newton: 뉴턴
+      label-petanewton: 페타뉴턴
+      label-teranewton: 테라뉴턴
+      label-giganewton: 기가뉴턴
+      label-meganewton: 메가뉴턴
+      label-kilonewton: 킬로뉴턴
+      label-hectonewton: 헥토뉴턴
+      label-decanewton: 데카뉴턴
+      label-decinewton: 데시뉴턴
+      label-centinewton: 센티뉴턴
+      label-millinewton: 밀리뉴턴
+      label-micronewton: 마이크로뉴턴
+      label-nanonewton: 나노뉴턴
+      label-piconewton: 피코뉴턴
+      label-femtonewton: 펨토뉴턴
+      label-dyne: 다인
+      label-pound-of-force: 파운드의 힘
+      label-kip: 자다
+      label-klb: 클럽
+      label-kipf: 킵프
+      label-klbf: 클브프
+      label-poundal: 파운드
+      label-kilogram-force: 킬로그램힘
+      label-kilopond: 킬로폰드
+      label-megapond: 메가폰드
+      label-tonne-force: 톤력
+      label-metric-ton-force: 미터톤력
+      label-megagram-force: 메가그램 포스
   geo-distance-calculator:
     title: 지리적 거리 계산기
     description: 두 지리적 위치 사이의 거리를 계산하고(현재 사용자 위치 정보를 표시)
@@ -2992,6 +3090,29 @@ tools:
   length-converter:
     title: 길이 단위 변환기
     description: 길이 단위에서 값 변환
+    texts:
+      label-meter: 미터
+      label-petameter: 페타미터
+      label-terameter: 테라미터
+      label-gigameter: 기가미터
+      label-megameter: 메가미터
+      label-kilometer: 킬로미터
+      label-hectometer: 헥토미터
+      label-decameter: 데카미터
+      label-decimeter: 데시미터
+      label-centimeter: 센티미터
+      label-millimeter: 밀리미터
+      label-micrometer: 마이크로미터
+      label-nanometer: 나노미터
+      label-picometer: 피코미터
+      label-femtometer: 펨토미터
+      label-inch: 인치(")
+      label-yard: 마당
+      label-mile: 마일
+      label-nautical-mile-m-nm: 해리(M/NM)
+      label-light-year: 광년
+      label-parsec: 파섹
+      label-pica: 법규집
   list-comparer:
     title: 목록 비교
     description: 두 개의 목록 항목 비교
@@ -3079,6 +3200,35 @@ tools:
   mass-converter:
     title: 질량 단위 변환기
     description: 질량 단위 간 값 변환
+    texts:
+      label-gram: 그램
+      label-petagram: 페타그램
+      label-teragram: 테라그램
+      label-gigagram: 기가그램
+      label-megagram: 메가그램
+      label-kilogram: 킬로그램
+      label-hectogram: 헥토그램
+      label-decagram: 데카그램
+      label-decigram: 10그램
+      label-centigram: 센티그램
+      label-milligram: 밀리그램
+      label-microgram: 마이크로그램
+      label-nanogram: 나노그램
+      label-picogram: 피코그램
+      label-femtogram: 펨토그램
+      label-tonne: 톤
+      label-metric-ton: 미터톤
+      label-kilotonne: 킬로톤
+      label-megatonne: 메가톤
+      label-gigatonne: 기가톤
+      label-pound: 파운드
+      label-stone: 결석
+      label-ounce: 온스
+      label-short-ton: 쇼트톤
+      label-us-ton: 미국 톤
+      label-long-ton: 영국 톤
+      label-imperial-ton: 임페리얼 톤
+      label-displacement-ton: 변위톤
   math-formats-converter:
     title: 수학 형식 변환기
     description: 수학 표현식을 형식 간에 변환
@@ -3447,9 +3597,63 @@ tools:
   power-converter:
     title: 전력 변환기
     description: 전력 단위 간 값 변환
+    texts:
+      label-watt: 와트
+      label-petawatt: 페타와트
+      label-terawatt: 테라와트
+      label-gigawatt: 기가와트
+      label-megawatt: 메가와트
+      label-kilowatt: 킬로와트
+      label-hectowatt: 헥토와트
+      label-decawatt: 데카와트
+      label-deciwatt: 데시와트
+      label-centiwatt: 센티와트
+      label-milliwatt: 밀리와트
+      label-microwatt: 마이크로와트
+      label-nanowatt: 나노와트
+      label-picowatt: 피코와트
+      label-femtowatt: 펨토와트
+      label-horsepower: 마력
+      label-mechanical-horsepower: 기계식 마력
   pressure-converter:
     title: 압력 단위 변환기
     description: 압력 단위 간 값 변환
+    texts:
+      label-pascal: 파스칼
+      label-pettapascal: 페타파스칼
+      label-terapascal: 테라파스칼
+      label-gigapascal: 기가파스칼
+      label-megapascal: 메가파스칼
+      label-kilopascal: 킬로파스칼
+      label-hectopascal: 헥토파스칼
+      label-decapascal: 데카파스칼
+      label-decipascal: 데시파스칼
+      label-centipascal: 센티파스칼
+      label-millipascal: 밀리파스칼
+      label-micropascal: 마이크로파스칼
+      label-nanopascal: 나노파스칼
+      label-picopascal: 피코파스칼
+      label-femtopascal: 펨토파스칼
+      label-bar: 술집
+      label-petabar: 페타바르
+      label-terabar: 펼쳐지다
+      label-gigabar: 기가바
+      label-megabar: 메가바
+      label-kilobar: 킬로바
+      label-hectobar: 헥토바
+      label-decabar: 나는 참수당했다.
+      label-decibar: 풀다
+      label-centibar: 센티바
+      label-millibar: 밀리바
+      label-microbar: 마이크로바
+      label-nanobar: 나노바
+      label-picobar: 피코바
+      label-femtobar: 펨토바
+      label-torr: 토르
+      label-millitorr: 밀리토르
+      label-atmosphere: 대기
+      label-pound-per-square-inch: 파운드/제곱인치
+      label-lbf-in2: 파운드/인치2
   properties-to-yaml:
     title: YAML에 대한 속성
     description: Java .properties 콘텐츠를 Yaml로 변환
@@ -3813,6 +4017,65 @@ tools:
   volume-converter:
     title: 부피 단위 변환기
     description: 볼륨 단위에서 값 변환
+    texts:
+      label-cubic-meter-stere: 세제곱미터/스테레오
+      label-cubic-petameter: 세제곱 페타미터
+      label-cubic-terameter: 세제곱 테라미터
+      label-cubic-gigameter: 세제곱 기가미터
+      label-cubic-megameter: 세제곱 메가미터
+      label-cubic-kilometer: 세제곱킬로미터
+      label-cubic-hectometer: 세제곱 헥토미터
+      label-cubic-decameter: 세제곱 데카미터
+      label-cubic-decimeter: 세제곱 데시미터
+      label-cubic-centimeter: 세제곱센티미터
+      label-cubic-millimeter: 세제곱 밀리미터
+      label-cubic-micrometer: 세제곱 마이크로미터
+      label-cubic-nanometer: 세제곱 나노미터
+      label-cubic-picometer: 세제곱 피코미터
+      label-cubic-femtometer: 입방 펨토미터
+      label-liter: 리터
+      label-petaliter: 페탈리터
+      label-teraliter: 테라리터
+      label-gigaliter: 기가리터
+      label-megaliter: 메가리터
+      label-kiloliter: 킬로리터
+      label-hectoliter: 헥토리터
+      label-decaliter: 데칼리터
+      label-deciliter: 데시리터
+      label-centiliter: 센티리터
+      label-milliliter: 밀리리터
+      label-microliter: 마이크로리터
+      label-nanoliter: 나노리터
+      label-picoliter: 피코리터
+      label-femtoliter: 펨토리터
+      label-cubic-mile: 입방마일
+      label-acre-foot: 에이커피트
+      label-cubic-yard: 입방야드
+      label-cubic-foot: 입방 피트
+      label-board-feet: 보드 피트
+      label-cubic-inch: 세제곱인치
+      label-measurement-ton: 측정 톤
+      label-imperial-barrel: 임페리얼 배럴
+      label-imperial-bushel: 임페리얼 부셸
+      label-imperial-peck: 제국의 펙
+      label-imperial-gallon: 임페리얼 갤런
+      label-imperial-quart: 임페리얼 쿼트
+      label-imperial-pint: 임페리얼 파인트
+      label-imperial-fluid-ounce: 임페리얼 액량 온스
+      label-teaspoon: 티스푼
+      label-tablespoon: 큰술
+      label-us-fluid-ounce: 미국 액량 온스
+      label-cup: 컵
+      label-us-legal-cup: 미국 법정 컵
+      label-us-liquid-pint: 미국 액체 파인트
+      label-us-liquid-quart: 미국 액체 쿼트
+      label-us-liquid-gallon: 미국 액체 갤런
+      label-us-bushel: 미국 부셸
+      label-us-peck: 미국 펙
+      label-us-dry-gallon: 미국 드라이 갤런
+      label-us-dry-barrel: 미국 드라이 배럴
+      label-us-dry-quart: 미국 드라이 쿼트
+      label-us-dry-pint: 미국 드라이 파인트
   week-number-converter:
     title: 주 번호 변환기
     description: ISO 주 번호, 월 및 일 주 번호 간 변환
@@ -5605,6 +5868,13 @@ tools:
       label-base64-64: 베이스64(64)
       placeholder-base64-version-will-be-here: Base64 버전이 출시될 예정입니다.
       tag-custom: "관습:"
+      label-space-separation: 공간 분리
+      label-binary-size: 이진 크기
+      label-octal-size: 8진수 크기
+      label-decimal-size: 소수 크기
+      label-hexadecimal-size: 육각형 크기
+      label-base64-size: Base64 크기
+      label-custom-size: 맞춤 사이즈
     model:
       text:
         invalid-digit-digit-for-base-finalfrombase: '{1} 기준에 대한 숫자 "{0}"이(가) 잘못되었습니다.'
@@ -7635,6 +7905,9 @@ tools:
     title: 가속 변환기
     description: 가속도 단위 간 값 변환
     externalAccess: 널
+    texts:
+      label-g-force: g-포스
+      label-meter-per-second-squared: 미터/초 제곱
   docker-image-downloader:
     title: 도커 이미지 다운로더
     description: Docker 레지스트리, 아키텍처 및 이미지 이름을 사용하여 Docker 이미지를 다운로드합니다.
@@ -7700,6 +7973,16 @@ tools:
     title: 주파수 변환기
     description: 주파수 단위 간 값 변환
     externalAccess: 널
+    texts:
+      label-hertz: 헤르츠
+      label-millihertz: 밀리헤르츠
+      label-kilohertz: 킬로헤르츠
+      label-megahertz: 메가헤르츠
+      label-gigahertz: 기가헤르츠
+      label-terahertz: 테라헤르츠
+      label-revolutions-per-minute: 분당 회전수
+      label-degree-per-second: 초당 도
+      label-radian-per-second: 초당 라디안
   markdown-to-text:
     title: 마크다운을 텍스트로 변환
     description: 마크다운 파일을 일반 텍스트로 변환
@@ -7770,6 +8053,12 @@ tools:
     title: 속도 변환기
     description: 속도 단위 간 값 변환
     externalAccess: 널
+    texts:
+      label-meter-per-second: 초당 미터
+      label-kilometer-per-hour: 시속 킬로미터
+      label-miles-per-hour: 시속 마일
+      label-knot: 매듭
+      label-feet-per-second: 초당 피트
   tab-to-spaces:
     title: 탭 키를 눌러 공백으로 이동
     description: 탭을 여러 공백으로 변환
@@ -7832,6 +8121,44 @@ tools:
     title: 체적 유량 변환기
     description: 체적 유량 단위 간 값 변환
     externalAccess: 널
+    texts:
+      label-cubic-millimeters-per-second: 세제곱 밀리미터/초
+      label-cubic-centimeters-per-second: 세제곱센티미터/초
+      label-milliliters-per-second: 초당 밀리리터
+      label-centiliters-per-second: 초당 센티리터
+      label-deciliters-per-second: 초당 데시리터
+      label-liters-per-second: 초당 리터
+      label-liters-per-minute: 분당 리터
+      label-liters-per-hour: 시간당 리터
+      label-kiloliters-per-second: 초당 킬로리터
+      label-kiloliters-per-minute: 킬로리터/분
+      label-kiloliters-per-hour: 시간당 킬로리터
+      label-cubic-meters-per-second: 초당 세제곱미터
+      label-cubic-meters-per-minute: 분당 세제곱미터
+      label-cubic-meters-per-hour: 시간당 세제곱미터
+      label-cubic-kilometers-per-second: 초당 세제곱킬로미터
+      label-teaspoons-per-second: 초당 티스푼
+      label-tablespoons-per-second: 초당 테이블스푼
+      label-cubic-inches-per-second: 초당 입방인치
+      label-cubic-inches-per-minute: 분당 입방인치
+      label-cubic-inches-per-hour: 시간당 입방인치
+      label-fluid-ounces-per-second: 초당 액량 온스
+      label-fluid-ounces-per-minute: 분당 액량 온스
+      label-fluid-ounces-per-hour: 시간당 액량 온스
+      label-cups-per-second: 초당 컵
+      label-pints-per-second: 초당 파인트
+      label-pints-per-minute: 분당 파인트
+      label-pints-per-hour: 시간당 파인트
+      label-quarts-per-second: 초당 쿼트
+      label-gallons-per-second: 초당 갤런
+      label-gallons-per-minute: 분당 갤런
+      label-gallons-per-hour: 시간당 갤런
+      label-cubic-feet-per-second: 초당 입방피트
+      label-cubic-feet-per-minute: 분당 입방피트
+      label-cubic-feet-per-hour: 시간당 입방피트
+      label-cubic-yards-per-second: 초당 입방야드
+      label-cubic-yards-per-minute: 분당 입방야드
+      label-cubic-yards-per-hour: 시간당 입방야드
   tip-calculator:
     title: 팁 계산기
     description: 계산서에 대한 팁을 계산하고 여러 사람에게 나눠주세요.
@@ -8499,6 +8826,22 @@ tools:
       label-to: "에게:"
       label-start-at: "시작 지점:"
       tag-cron-expression-is-invalid: Cron 표현식이 잘못되었습니다.
+      paste-cron-expression: 크론 표현식 붙여넣기
+      e-g-5-0-12-1-2025: "예: */5 0 12 * * 1 2025"
+      0-6-sunday-0-monday-1-saturday-6: 0-6 (일요일=0, 월요일=1, ..., 토요일=6)
+      label-select-at-least-one-value: "{0}: 하나 이상의 값을 선택하세요"
+      day-of-month-and-day-of-week-cannot-both-be-specific: 월일과 요일을 동시에 특정할 수는 없습니다.
+      label-start-cannot-be-greater-than-end: "{0}: 시작 크기는 끝 크기보다 클 수 없습니다."
+      label-start-must-be-within-allowed-range: "{0}: 시작 값은 허용 범위 내에 있어야 합니다."
+      label-step-must-be-greater-than-1: "{0}: 단계는 1 이상이어야 합니다."
+      label-start-cannot-be-greater-than-end-0: "{0}: 시작 값은 끝 값보다 클 수 없습니다."
+      seconds: 초
+      minutes: 분
+      hours: 영업시간
+      day-of-month: 월일
+      month: 월
+      day-of-week: 요일
+      year: 년도
   css-js-prettify-minify:
     title: CSS/JS 보기 좋게 정리하고 최소화하기
     description: CSS 및 JavaScript 코드를 온라인에서 보기 좋게 정리하거나 최소화하세요.
@@ -8999,6 +9342,44 @@ tools:
       tag-copy-json-paths: JSON 경로를 복사하세요
       tag-generate-patch: 패치를 생성합니다
       tag-apply-patch: 패치를 붙이세요
+  ping:
+    title: 핑
+    description: 호스트 이름, IP 주소, CIDR 또는 IP 범위에 대해 ping을 실행합니다.
+    externalAccess: 이 도구는 ICMP 핑을 수행하기 위해 자체 호스트 네트워크 유틸리티 서비스를 호출합니다.
+    texts:
+      label-targets-ips-cidrs-hostnames-one-per-line-or-or: "대상(IP 주소/CIDR/호스트 이름, 한 줄에 하나씩 또는 세미콜론(;) 또는 쉼표(;)):"
+      placeholder-192-168-1-1-10-google-com-10-10-0-0-0-24: 192.168.1.1&#10;google.com&#10;10.0.0.0/24
+      label-count: "세다:"
+      label-timeout-seconds: "타임아웃(초):"
+      tag-ping-all: 모두 핑
+      tag-target: 목표
+      tag-ip: IP
+      tag-status: 상태
+      tag-avg-rtt-ms: 평균 RTT(밀리초)
+      tag-packet-loss: 패킷 손실
+      tag-error: 오류
+      cidr-expands-to-hostcount-ips-exceeding-limit-of-max_cidr_ips: CIDR이 {0}개의 IP로 확장되어 {1}개의 제한을 초과했습니다.
+      tag-reachable: 도달 가능
+      tag-unreachable: 접근할 수 없음
+  command-palette:
+    store:
+      texts:
+        pages: 페이지
+        learn-more-about-it-tools: IT-Tools에 대해 자세히 알아보세요.
+        actions-0: 행위
+        report-a-bug-or-an-issue-to-help-improve-it-tools: it-tools 개선에 도움이 되도록 버그나 문제를 신고해 주세요.
+        report-a-bug-or-an-issue: 버그 또는 문제를 신고하세요
+        view-the-source-code-of-it-tools-on-github: it-tools의 소스 코드는 GitHub에서 확인할 수 있습니다.
+        external: 외부
+        github-repository: GitHub 저장소
+        actions: 행위
+        toggle-dark-mode-on-or-off: 다크 모드를 켜거나 끄세요.
+        toggle-dark-mode: 다크 모드 전환
+        tools-0: 도구
+        get-a-random-tool-from-the-list: 목록에서 임의의 도구를 하나 가져오세요.
+        random-tool: 랜덤 도구
+        tools: 도구
+  external-self-hosted-required: 외부 자체 호스팅 필요
 about:
   alltools-title: 모든 {toolsCount}개 도구
   tools:
