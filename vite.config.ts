@@ -24,6 +24,7 @@ import fg from 'fast-glob';
 import Sitemap from 'vite-plugin-sitemap';
 
 import { visualizer } from 'rollup-plugin-visualizer';
+import { itToolsLocalesPlugin } from './vite.config.locales.js';
 
 // Where the app will be served from. The build itself is path-agnostic -- `base` below is
 // relative, so every asset URL is resolved against the file that references it -- and this
@@ -84,14 +85,22 @@ function baseHref(base: string): Plugin {
   };
 }
 
-// Locales are code-split: only en is bundled eagerly, the rest become lazy chunks fetched on
-// first use (see src/plugins/i18n.plugin.ts). VITE_AVAILABLE_LOCALES filters the locales
-// offered at runtime instead of trimming the build.
+const VITE_AVAILABLE_LOCALES = process.env.VITE_AVAILABLE_LOCALES;
+console.log(`Building for locales: ${VITE_AVAILABLE_LOCALES}`);
+
+// Every locale yaml gets the VueI18n transform; which locale chunks are actually emitted is
+// decided by itToolsLocalesPlugin (dynamic-import loaders per locale, trimmed at build time
+// by VITE_AVAILABLE_LOCALES) and consumed lazily by src/plugins/i18n.plugin.ts.
 const includeLocales = [resolve(__dirname, 'src/tools/*/locales/**'), resolve(__dirname, 'locales/**')];
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    itToolsLocalesPlugin({
+      root: __dirname,
+      availableLocales: VITE_AVAILABLE_LOCALES,
+      isVitest: Boolean(process.env.VITEST),
+    }),
     baseHref(baseUrl),
     VueI18n({
       runtimeOnly: true,
