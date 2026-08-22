@@ -2338,6 +2338,17 @@ tools:
       label-asterisk: Asterisk (*)
       label-underscore: Underscore (_)
       label-tilde: Tilde (~)
+  markdown-format-converter:
+    title: Format Converter
+    description: Convert between standard Markdown, Obsidian, Logseq, Slack, Jira, and other formats.
+    texts:
+      label-source-format: Source Format
+      label-target-format: Target Format
+      placeholder-input-markdown: Paste or type your standard, Obsidian, or Logseq Markdown here...
+      label-input-markdown: Input Markdown
+      label-converted-output: Converted Output
+      label-text: Text
+      label-preview: Preview
   ical-parser:
     title: ICAL File Parser
     description: Parse ICAL/ICS file to event display
@@ -2964,6 +2975,16 @@ tools:
       label-your-mermaid-to-convert: "Your Mermaid to convert:"
       title-preview: Preview
       tag-invalid-mermaid-syntax: Invalid Mermaid syntax
+      tag-showing-last-valid-diagram: Showing the last valid diagram
+      tag-hint-ctrl-scroll-to-zoom: Hold Ctrl (or ⌘) and scroll to zoom
+      label-diagram-preview: Diagram preview — drag or use the arrow keys to pan, + and - to zoom
+      label-zoom-level-reset: "Zoom {zoom}%, click to reset to 100%"
+      title-zoom-in: Zoom in
+      title-zoom-out: Zoom out
+      title-reset-zoom: Reset zoom to 100%
+      title-fit-view: Fit diagram to view
+      title-fullscreen: Fullscreen
+      title-exit-fullscreen: Exit fullscreen
       tag-export-as-png: Export as PNG
       tag-export-as-jpg: Export as JPG
       tag-export-as-svg: Export as SVG

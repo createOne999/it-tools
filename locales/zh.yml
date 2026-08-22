@@ -65,7 +65,7 @@ formatTransformer:
   input-placeholder: 输入...
   output: 输出
   download: 下载
-  viewer: 观众
+  viewer: 预览
 textareaCopyable:
   copy: 复制到剪贴板
   copied: 已复制！
@@ -1256,10 +1256,10 @@ tools:
     texts:
       label-degree: 度数（°）
       label-radian: 弧度
-      label-turn: 转动
-      label-gradian: 梯度
-      label-grad: 程度
-      label-gon: 贡
+      label-turn: 转
+      label-gradian: 百分度
+      label-grad: 百分度
+      label-gon: 百分度
   ansible-vault-crypt-decrypt:
     title: Ansible Vault加密解密
     description: 加密和解密Ansible Vault密钥。
@@ -1321,10 +1321,10 @@ tools:
       label-square-picometer: 平方皮米
       label-square-femtometer: 平方飞米
       label-acre: 英亩
-      label-centiare: 成为一百
-      label-deciare: 决定
-      label-are: 是
-      label-decare: 德凯尔
+      label-centiare: 平方米
+      label-deciare: 十分之一公亩
+      label-are: 公亩
+      label-decare: 十公亩
       label-hectare: 公顷
       label-square-foot-ft2-sq-ft: 平方英尺（/ft2/平方英尺）
       label-square-inch-in2-sq-in: 平方英寸（/in2/平方英寸）
@@ -1624,28 +1624,28 @@ tools:
       label-bibytes-ib: Bibytes（iB）
       label-kilobytes-kb: 千字节（KB）
       label-kilobits-kbit: 千比特（Kbit）
-      label-kibibytes-kib: KiB（Kibibytes）
+      label-kibibytes-kib: 千比字节（Kibibytes）
       label-megabytes-mb: 兆字节（MB）
       label-megabits-mbit: 兆比特（Mbit）
-      label-mebibytes-mib: MiB（Mebibytes）
+      label-mebibytes-mib: 兆比字节（Mebibytes）
       label-gigabytes-gb: 吉字节（GB）
       label-gigabits-gbit: 吉比特（Gbit）
-      label-gibibytes-gib: GiB（Gibibytes）
+      label-gibibytes-gib: 吉比字节（Gibibytes）
       label-terabytes-tb: 太字节（TB）
       label-terabits-tbit: 太比特（Tbit）
-      label-tebibytes-tib: TiB（Tebibytes）
+      label-tebibytes-tib: 太比字节（Tebibytes）
       label-petabytes-pb: 拍字节（PB）
       label-petabits-pbit: 拍比特（Pbit）
-      label-pebibytes-pib: PiB（Pebibytes）
+      label-pebibytes-pib: 拍比字节（Pebibytes）
       label-exabytes-eb: 艾字节（EB）
       label-exabits-ebit: 艾比特（Ebit）
-      label-exbibytes-eib: EiB（Exbibytes）
+      label-exbibytes-eib: 艾比字节（Exbibytes）
       label-zettabytes-zb: 泽字节（ZB）
       label-zettabits-zbit: 泽比特（Zbit）
-      label-zebibytes-zib: ZiB（Zebibytes）
+      label-zebibytes-zib: 泽比字节（Zebibytes）
       label-yottabytes-yb: 尧字节（YB）
       label-yottabits-ybit: 尧比特（Ybit）
-      label-yobibytes-yib: YiB（Yobibytes）
+      label-yobibytes-yib: 尧比字节（Yobibytes）
       label-input-size: 输入大小：
       placeholder-put-your-number-here-ex-1024: 在此输入数字（示例：1024）
       placeholder-select-input-unit: 选择输入单位
@@ -1665,23 +1665,23 @@ tools:
       label-bytes-b: 字节（B）
       label-bibytes-ib: Bibytes（iB）
       label-kilobytes-kb: 千字节（KB）
-      label-kibibytes-kib: KiB（Kibibytes）
+      label-kibibytes-kib: 千比字节（Kibibytes）
       label-megabytes-mb: 兆字节（MB）
-      label-mebibytes-mib: MiB（Mebibytes）
+      label-mebibytes-mib: 兆比字节（Mebibytes）
       label-gigabytes-gb: 吉字节（GB）
       label-gigabits-gbit: 吉比特（Gbit）
-      label-gibibytes-gib: GiB（Gibibytes）
+      label-gibibytes-gib: 吉比字节（Gibibytes）
       label-terabytes-tb: 太字节（TB）
       label-terabits-tbit: 太比特（Tbit）
       label-petabytes-pb: 拍字节（PB）
       label-petabits-pbit: 拍比特（Pbit）
       label-exabytes-eb: 艾字节（EB）
       label-exabits-ebit: 艾比特（Ebit）
-      label-exbibytes-eib: EiB（Exbibytes）
+      label-exbibytes-eib: 艾比字节（Exbibytes）
       label-zettabytes-zb: 泽字节（ZB）
       label-zettabits-zbit: 泽比特（Zbit）
       label-yottabytes-yb: 尧字节（YB）
-      label-yobibytes-yib: YiB（Yobibytes）
+      label-yobibytes-yib: 尧比字节（Yobibytes）
       label-bits-bit: 比特（bit）
       label-kilobits-kbit: 千比特（Kbit）
       label-megabits-mbit: 兆比特（Mbit）
@@ -1979,7 +1979,7 @@ tools:
       label-terajoule: 太焦耳
       label-gigajoule: 吉焦耳
       label-megajoule: 兆焦耳
-      label-kilojoule: 千焦
+      label-kilojoule: 千焦耳
       label-hectojoule: 百焦耳
       label-decajoule: 十焦耳
       label-decijoule: 分焦耳
@@ -2059,30 +2059,30 @@ tools:
     description: 在力单位之间转换值。
     texts:
       label-newton: 牛顿
-      label-petanewton: 佩塔牛顿
-      label-teranewton: 特拉牛顿
+      label-petanewton: 拍牛顿
+      label-teranewton: 太牛顿
       label-giganewton: 吉牛顿
       label-meganewton: 兆牛顿
       label-kilonewton: 千牛顿
       label-hectonewton: 百牛顿
-      label-decanewton: 迪卡牛顿
-      label-decinewton: 迪西牛顿
-      label-centinewton: 森特纽顿
-      label-millinewton: 米利纽顿
+      label-decanewton: 十牛顿
+      label-decinewton: 分牛顿
+      label-centinewton: 厘纽顿
+      label-millinewton: 毫纽顿
       label-micronewton: 微牛顿
       label-nanonewton: 纳牛顿
       label-piconewton: 皮牛顿
       label-femtonewton: 飞牛顿
       label-dyne: 达因
       label-pound-of-force: 磅力
-      label-kip: 基普
-      label-klb: 俱乐部
-      label-kipf: 基普夫
-      label-klbf: klbf
-      label-poundal: 磅
+      label-kip: 千磅力
+      label-klb: 千磅力
+      label-kipf: 千磅力
+      label-klbf: 千磅力
+      label-poundal: 磅达
       label-kilogram-force: 千克力
-      label-kilopond: 千池
-      label-megapond: 巨型池塘
+      label-kilopond: 千克力
+      label-megapond: 吨力
       label-tonne-force: 吨力
       label-metric-ton-force: 公吨力
       label-megagram-force: 兆克力
@@ -2665,28 +2665,28 @@ tools:
     title: 长度单位转换器
     description: 转换长度单位的值
     texts:
-      label-meter: 仪表
+      label-meter: 米
       label-petameter: 拍米
       label-terameter: 太米
       label-gigameter: 吉米
       label-megameter: 兆米
       label-kilometer: 公里
-      label-hectometer: 公引
+      label-hectometer: 百米
       label-decameter: 十米
       label-decimeter: 分米
       label-centimeter: 厘米
       label-millimeter: 毫米
-      label-micrometer: 千分尺
+      label-micrometer: 微米
       label-nanometer: 纳米
       label-picometer: 皮米
       label-femtometer: 飞米
       label-inch: 英寸 （”）
-      label-yard: 院子
+      label-yard: 码
       label-mile: 英里
       label-nautical-mile-m-nm: 海里（M/NM）
       label-light-year: 光年
       label-parsec: 秒差距
-      label-pica: 异食癖
+      label-pica: 派卡
   list-comparer:
     title: 列表比较器
     description: 比较两个列表项
@@ -2777,13 +2777,13 @@ tools:
     texts:
       label-gram: 克
       label-petagram: 拍克
-      label-teragram: 太克拉姆
-      label-gigagram: 千兆克
+      label-teragram: 太克
+      label-gigagram: 吉克
       label-megagram: 兆克
       label-kilogram: 公斤
       label-hectogram: 百克
       label-decagram: 十克
-      label-decigram: 十克
+      label-decigram: 分克
       label-centigram: 厘克
       label-milligram: 毫克
       label-microgram: 微克
@@ -2796,13 +2796,13 @@ tools:
       label-megatonne: 百万吨
       label-gigatonne: 十亿吨
       label-pound: 磅
-      label-stone: 石头
+      label-stone: 英石
       label-ounce: 盎司
       label-short-ton: 短吨
-      label-us-ton: 美国吨
+      label-us-ton: 美制短吨
       label-long-ton: 长吨
       label-imperial-ton: 英吨
-      label-displacement-ton: 位移吨
+      label-displacement-ton: 排水量吨
   math-formats-converter:
     title: 数学格式转换器
     description: 在格式之间转换数学表达式
@@ -3193,39 +3193,39 @@ tools:
     description: 转换压力单位的值
     texts:
       label-pascal: 帕斯卡
-      label-pettapascal: 佩塔帕斯卡
-      label-terapascal: 特拉帕斯卡
-      label-gigapascal: 千兆帕斯卡
+      label-pettapascal: 拍帕斯卡
+      label-terapascal: 太帕斯卡
+      label-gigapascal: 吉帕斯卡
       label-megapascal: 兆帕
       label-kilopascal: 千帕斯卡
       label-hectopascal: 百帕斯卡
       label-decapascal: 十帕斯卡
-      label-decipascal: 迪帕斯卡
+      label-decipascal: 分帕斯卡
       label-centipascal: 厘帕斯卡
       label-millipascal: 毫帕斯卡
       label-micropascal: 微帕斯卡
       label-nanopascal: 纳帕斯卡
       label-picopascal: 皮帕斯卡
       label-femtopascal: 飞帕斯卡
-      label-bar: 酒吧
+      label-bar: 巴
       label-petabar: 拍巴
-      label-terabar: 展开
-      label-gigabar: 千兆字节
-      label-megabar: 兆字节
+      label-terabar: 太巴
+      label-gigabar: 吉巴
+      label-megabar: 兆巴
       label-kilobar: 千巴
       label-hectobar: 百巴
-      label-decabar: 我被斩首了。
-      label-decibar: 解码
+      label-decabar: 十巴
+      label-decibar: 分巴
       label-centibar: 厘巴
       label-millibar: 毫巴
       label-microbar: 微巴
-      label-nanobar: 纳米棒
-      label-picobar: 皮科巴
+      label-nanobar: 纳巴
+      label-picobar: 皮巴
       label-femtobar: 飞巴
-      label-torr: 托尔
-      label-millitorr: 百万托
-      label-atmosphere: 气氛
-      label-pound-per-square-inch: 每平方英寸磅
+      label-torr: 托
+      label-millitorr: 毫托
+      label-atmosphere: 标准大气压
+      label-pound-per-square-inch: 磅力/平方英寸
       label-lbf-in2: 磅力/平方英寸
   properties-to-yaml:
     title: 属性转YAML
@@ -3597,7 +3597,7 @@ tools:
     title: 体积单位转换器
     description: 转换体积单位值
     texts:
-      label-cubic-meter-stere: 立方米/立体声
+      label-cubic-meter-stere: 立方米
       label-cubic-petameter: 立方拍米
       label-cubic-terameter: 立方太米
       label-cubic-gigameter: 立方吉米
@@ -3613,13 +3613,13 @@ tools:
       label-cubic-picometer: 立方皮米
       label-cubic-femtometer: 立方飞米
       label-liter: 升
-      label-petaliter: 花瓣
-      label-teraliter: 泰拉升
-      label-gigaliter: 千兆升
+      label-petaliter: 拍升
+      label-teraliter: 太升
+      label-gigaliter: 吉升
       label-megaliter: 兆升
       label-kiloliter: 千升
-      label-hectoliter: 公石
-      label-decaliter: 公斗
+      label-hectoliter: 百升
+      label-decaliter: 十升
       label-deciliter: 分升
       label-centiliter: 厘升
       label-milliliter: 毫升
@@ -3633,10 +3633,10 @@ tools:
       label-cubic-foot: 立方英尺
       label-board-feet: 板英尺
       label-cubic-inch: 立方英寸
-      label-measurement-ton: 吨
-      label-imperial-barrel: 帝国桶
-      label-imperial-bushel: 帝国蒲式耳
-      label-imperial-peck: 帝王啄
+      label-measurement-ton: 容积吨
+      label-imperial-barrel: 英制桶
+      label-imperial-bushel: 英制蒲式耳
+      label-imperial-peck: 英制配克
       label-imperial-gallon: 英制加仑
       label-imperial-quart: 英制夸脱
       label-imperial-pint: 英制品脱
@@ -3644,17 +3644,17 @@ tools:
       label-teaspoon: 茶匙
       label-tablespoon: 汤匙
       label-us-fluid-ounce: 美制液盎司
-      label-cup: 杯子
-      label-us-legal-cup: 美国合法杯
-      label-us-liquid-pint: 美国液体品脱
-      label-us-liquid-quart: 美国液夸脱
-      label-us-liquid-gallon: 美国液体加仑
+      label-cup: 杯
+      label-us-legal-cup: 美制法定杯
+      label-us-liquid-pint: 美制液量品脱
+      label-us-liquid-quart: 美制液量夸脱
+      label-us-liquid-gallon: 美制液量加仑
       label-us-bushel: 美制蒲式耳
-      label-us-peck: 美国啄
-      label-us-dry-gallon: 美国干加仑
-      label-us-dry-barrel: 美国干桶
-      label-us-dry-quart: 美制干夸脱
-      label-us-dry-pint: 美国干品脱
+      label-us-peck: 美制配克
+      label-us-dry-gallon: 美制干量加仑
+      label-us-dry-barrel: 美制干量桶
+      label-us-dry-quart: 美制干量夸脱
+      label-us-dry-pint: 美国干量品脱
   week-number-converter:
     title: 周数转换器
     description: 在ISO周数、月内周数和日期之间转换
@@ -5430,7 +5430,7 @@ tools:
         player: 播放器
         summary-with-large-image: 带大图的摘要
         summary: 摘要
-        twitter: 叽叽喳喳
+        twitter: 推特
         the-name-of-the-twitter-account-of-the-creator-ex-cthmsst: 创建者的 Twitter 账号名称（例如：{'@'}cthmsst）……
     videoEpisode:
       text:
@@ -5984,7 +5984,7 @@ tools:
       title-the-following-errors-occured: 发生以下错误
       label-prettified-version-of-your-yaml: YAML美化版本
       label-no-validation: 无需验证
-      label-custom: 风俗
+      label-custom: 自定义
       label-json-schema: JSON 模式：
       placeholder-paste-your-json-schema-here: 将您的 JSON 模式粘贴到这里...
       title-schema-validation-errors: 架构验证错误
@@ -6033,7 +6033,7 @@ tools:
       placeholder-paste-your-json-schema-here: 将您的 JSON 模式粘贴到这里...
       title-schema-validation-errors: 架构验证错误
       label-unescape-json-string: 转义 JSON 字符串：
-      label-viewer: 观众
+      label-viewer: 预览
     text:
       provided-json-is-not-valid: 提供的JSON无效
       try-again-with-repairjsonlabel: 尝试使用"{0}"重新输入
@@ -6906,10 +6906,10 @@ tools:
       tag-axial: 轴向
       tag-radial: 径向
     text:
-      bands-notation: 乐队 → 符号
-      notation-bands: 符号 → 乐队
-      number-notation: 数字 → 符号
-      notation-number: 符号 → 数字
+      bands-notation: 色环 → 数值标识
+      notation-bands: 数值标识 → 色环
+      number-notation: 数字 → 数值标识
+      notation-number: 数值标识 → 数字
   sed-command-generator:
     title: Sed 命令生成器
     description: 生成 unix sed 命令
@@ -7666,8 +7666,8 @@ tools:
       tag-disconnect: 断开
       tag-send: 发送
   shamirs-secret-sharing:
-    title: 沙米尔的秘密分享
-    description: 允许使用 Shamir 分享和重新组合秘密\
+    title: Shamir秘密共享
+    description: 允许使用 Shamir 分享和重新组合秘密
     texts:
       label-text: 文本
       label-hexadecimal: 十六进制
@@ -7676,14 +7676,14 @@ tools:
       title-share-a-secret-split: 分享一个秘密（拆分）
       label-secret: 秘密：
       placeholder-enter-secret-text: 输入秘密文本
-      label-threshold-minimum-shares-to-recover: 阈值（恢复所需的最低股份数）：
-      label-number-of-shares: 股份数量：
-      title-generated-shares: 生成的股份
+      label-threshold-minimum-shares-to-recover: 阈值（恢复所需的最低份额数）：
+      label-number-of-shares: 份额数量：
+      title-generated-shares: 生成的份额
       title-recombine-a-secret: 重组一个秘密
-      label-your-shares: 您的股份：
+      label-your-shares: 您的份额：
       placeholder-paste-your-shares-here: 把你的分享内容粘贴到这里……
       title-recombined-secret: 重组秘密
-      tag-split-secret: 秘密
+      tag-split-secret: 拆分秘密
       tag-recombine: 重组
   short-urls-expander:
     title: 短链接扩展器
@@ -7933,30 +7933,30 @@ tools:
     texts:
       label-quetta-q: 奎达（Q）
       label-ronna-r: 罗娜（R）
-      label-yotta-y: 约塔 (Y)
-      label-zetta-z: zetta (Z)
-      label-exa-e: exa (E)
-      label-peta-p: 地图（P）
+      label-yotta-y: 尧它 (Y)
+      label-zetta-z: 泽它 (Z)
+      label-exa-e: 艾可萨 (E)
+      label-peta-p: 拍它（P）
       label-tera-t: 太拉（T）
       label-giga-g: 吉（G）
       label-mega-m: 兆（M）
       label-kilo-k: 千克
       label-hecto-h: 百（h）
-      label-deca-da: 十（来自）
-      label-unit: 单元
-      label-deci-d: 所以（d）
+      label-deca-da: 十（da）
+      label-unit: 单位
+      label-deci-d: 分（d）
       label-centi-c: 厘（c）
-      label-milli-m: 国民（m）
-      label-micro-µ: 微米 (µ)
-      label-nano-n: 纳米（n）
-      label-pico-p: 皮克（p）
-      label-femto-f: 飞秒 (f)
-      label-atto-a: （a）
-      label-zepto-z: zepto (z)
-      label-yocto-y: yocto (y)
-      label-ronto-r: ronto (r)
-      label-quecto-q: 我饿了。
-      label-auto: 汽车
+      label-milli-m: 毫（m）
+      label-micro-µ: 微 (µ)
+      label-nano-n: 纳（n）
+      label-pico-p: 皮（p）
+      label-femto-f: 飞 (f)
+      label-atto-a: 阿（a）
+      label-zepto-z: 仄 (z)
+      label-yocto-y: 幺 (y)
+      label-ronto-r: 柔 (r)
+      label-quecto-q: 亏
+      label-auto: 自动
       label-fixed: 固定的
       label-exponential: 指数
       label-convert: 转变：
@@ -8125,7 +8125,7 @@ tools:
       label-meter-per-second: 米每秒
       label-kilometer-per-hour: 公里/小时
       label-miles-per-hour: 英里/小时
-      label-knot: 结
+      label-knot: 节
       label-feet-per-second: 英尺每秒
   tab-to-spaces:
     title: Tab 键转空格
@@ -9352,16 +9352,16 @@ tools:
       placeholder-thumbprint-optional: 指纹（可选）
       label-public-key: 公钥：
       placeholder-public-key-optional: 公钥（可选）
-      label-audience: 观众：
-      placeholder-audience-optional: 观众（可选）
+      label-audience: 受众：
+      placeholder-audience-optional: 受众（可选）
       title-parsed-saml-assertion: 已解析的 SAML 断言
-      label-issuer: 发行人：
+      label-issuer: 颁发者：
       label-assertion-id: 断言 ID：
       label-session-index: 会话索引：
       label-notbefore: NotBefore：
       label-notonorafter: NotOnOrAfter：
       label-signature-validation-status: 签名验证状态：
-      title-claims: 索赔
+      title-claims: 声明
       title-raw-assertion: 原始断言
       tag-bypass-expiration: 绕过过期
       tag-don-t-bypass-expiration: 不要绕过过期期限

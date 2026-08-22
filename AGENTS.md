@@ -3,12 +3,12 @@
 ## Setup
 - Use the pinned `pnpm@11.10.0` from `packageManager`; `pnpm-lock.yaml` and `pnpm-workspace.yaml` are authoritative, not `package-lock.json`.
 - Install with `pnpm install --ignore-scripts`; pnpm 11 build-script decisions and dependency overrides live in `pnpm-workspace.yaml`.
-- Prefer WSL/Linux shell on Windows: `build`, `test:unit`, `test:e2e`, and `test:e2e:dev` use `TZ=UTC` and source `./set_node_mem.sh`.
-- Local Node is `.nvmrc` `22.19.0`; Docker builds with Node 24. Native deps may require `python3 make g++`.
+- Prefer WSL/Linux shell on Windows; unit tests pin `TZ=UTC` via `vite.config.ts`.
+- Local Node is `.nvmrc` `24.19.0`. Native deps may require `python3 make g++`.
 
 ## Commands
 - Dev server: `pnpm dev`.
-- Production build: `pnpm build` runs `vue-tsc --noEmit`, then sets `NODE_OPTIONS` from system RAM, then `vite build`; README warns this can need about 16 GB RAM.
+- Production build: `pnpm build` runs plain `vite build`; typecheck separately with `pnpm typecheck`. On Windows, `pnpm build:win` additionally typechecks and sizes `NODE_OPTIONS` from system RAM (README warns ~16 GB RAM may be needed).
 - Typecheck/lint/format: `pnpm typecheck`, `pnpm lint`, `pnpm lint:fix`, `pnpm fmt:check`, `pnpm fmt`.
 - PR/precommit verification from the PR template: `pnpm install --ignore-scripts && pnpm lint:fix && pnpm typecheck`.
 - Unit tests are Vitest/jsdom/UTC: `pnpm test:unit --run`; focus one file with `pnpm test:unit --run src/utils/base64.test.ts`.

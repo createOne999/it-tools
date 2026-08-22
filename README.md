@@ -4,11 +4,18 @@ Since the _base image_ is now `nginx-unpriviledged` the container will now liste
 
 You can override listening port using environment variable `PORT` (docker option `-e PORT=8888`).
 
+You can serve the app from a subfolder using environment variable `BASE_URL` (docker option
+`-e BASE_URL=/it-tools/`), without rebuilding the image -- see
+[Host in a subfolder](#host-in-a-subfolder-it-tools).
+
 If the container needs to listen to IPv6, it needs to be enabled: https://serverfault.com/questions/1147296/how-to-enable-ipv6-on-ubuntu-20-04. Alternatively, you can mount your own `nginx.conf` own using docker option `-v "./nginx.conf:/etc/nginx/templates/default.conf.template"` (with `listen [::]:8080;` removed)
 
 ## Build requirements
 
-**To build this project**, you need around **16GB** (as it builds on Github workers). Below, you will get some `out of memory` or `node allocation failed`.
+**To build this project**, around **8GB** of RAM is enough. Measured on a 4-core
+machine, `pnpm build` peaks at roughly 6.5GB of system memory and completes on
+Node's default heap — most of the work happens inside rolldown, in Rust, rather
+than on the JavaScript heap.
 
 > [!WARNING]
 > Some maintenance changes in this fork were AI-assisted, then reviewed and validated with lint, typecheck, and production builds.
@@ -224,29 +231,39 @@ docker build -t it-tools-fr --build-arg VITE_LANGUAGE=fr .
 docker run -d --name it-tools-fr --restart unless-stopped -p 8080:8080 it-tools-fr
 ```
 
-## Build container image for a custom subfolder
+## Host in a subfolder (`/it-tools/`)
 
-According to https://github.com/sharevb/it-tools/pull/461#issuecomment-1602506049 and https://github.com/CorentinTh/it-tools/pull/461:
+The container serves the app from whatever path you point `BASE_URL` at. Nothing is baked
+into the image, so the regular `latest` image works for any subfolder -- no rebuild, no
+subfolder-specific tag:
 
+```yaml
+services:
+  it-tools:
+    image: ghcr.io/sharevb/it-tools:latest
+    restart: unless-stopped
+    environment:
+      BASE_URL: /it-tools/
+    ports:
+      - 8080:8080
 ```
-docker build -t it-tools  --build-arg BASE_URL="/my-folder/" .
-docker run -d --name it-tools --restart unless-stopped -p 8080:8080 it-tools
-```
 
-Then if you go to `http://localhost:8080` you'll get a blank page, but opening the DevTools (& refreshing) you'll notice in the Network tab that the app is trying to fetch assets from `/my-folder/...`
+or `docker run -d --name it-tools -e BASE_URL=/it-tools/ -p 8080:8080 ghcr.io/sharevb/it-tools:latest`.
 
-So you would need to put another server in front of it, like [Nginx Proxy Manager](https://nginxproxymanager.com/), [Traefik](https://traefik.io/traefik/), [caddy](https://caddyserver.com/) etc. Then setup a reverse proxy pass using `/my-folder`
+`BASE_URL` accepts `it-tools`, `/it-tools` and `/it-tools/` alike; the default is `/`.
 
-## Docker compose for hosting in a `/it-tools/` subfolder
+You still want a reverse proxy in front -- [Nginx Proxy Manager](https://nginxproxymanager.com/),
+[Traefik](https://traefik.io/traefik/), [caddy](https://caddyserver.com/) etc. -- passing
+`/it-tools/` through to the container. It does not matter whether the proxy strips the
+prefix before forwarding (`proxy_pass http://it-tools:8080/;`) or passes it on as-is
+(`proxy_pass http://it-tools:8080;`): the container handles both.
 
-For `/it-tools/` subfolder, you can use `baseurl-it-tools` tag.
+One thing only the proxy can do, in the stripping setup: `/it-tools` without the trailing
+slash never reaches the container, so redirect it there -- the sample's
+`location /it-tools { return 301 /it-tools/; }`. When the prefix is forwarded instead, the
+container does that redirect itself.
 
-See [sample of docker-compose.yml and nginx.conf](https://github.com/sharevb/it-tools/tree/chore/all-my-stuffs/docker-subfolder-sample), this docker image needs to have another reverse proxy in front of it, like [Nginx Proxy Manager](https://nginxproxymanager.com/), [Traefik](https://traefik.io/traefik/), [caddy](https://caddyserver.com/) etc.
-
-Setup a reverse proxy pass using `/it-tools/`. And you should be able to access it-tools in `/it-tools/` of your server.
-
-An example of nginx reverse proxy configuration is available at: https://github.com/sharevb/it-tools/tree/chore/all-my-stuffs/docker-subfolder-sample
-
+See the [sample docker-compose.yml and nginx.conf](https://github.com/sharevb/it-tools/tree/chore/all-my-stuffs/docker-subfolder-sample).
 To run the sample:
 
 ```bash
@@ -255,7 +272,15 @@ cd it-tools/docker-subfolder-sample/
 docker compose up
 ```
 
-Then navigate to http://localhost:8080/it-tools/
+Then navigate to http://localhost/it-tools/
+
+Two things worth knowing:
+
+- Building with `--build-arg BASE_URL=/it-tools/` still works, but it now only changes the
+  image's *default* -- the environment variable still wins at run time.
+- On a read-only root filesystem the config template cannot be re-rendered at startup, so
+  `BASE_URL` (like `PORT`) has no effect unless `/etc/nginx/conf.d` is writable -- mount a
+  tmpfs or an emptyDir there. The container says so in its log.
 
 ## To build using a custom folder:
 
@@ -351,8 +376,27 @@ Static release archives are built by `.github/workflows/createone-static-release
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
-pnpm test
+pnpm test:unit
 ```
+
+### Run End-to-End Tests with [Playwright](https://playwright.dev/)
+
+Playwright starts `pnpm preview` itself, so build first:
+
+```sh
+pnpm build
+pnpm test:e2e
+```
+
+To iterate against the dev server instead, leave `pnpm dev` running and point
+the tests at it. Playwright then leaves the server alone:
+
+```sh
+E2E_BASE_URL=http://localhost:5173 pnpm test:e2e
+```
+
+The dev server compiles routes on demand, so a first run against a cold one can
+blow past the assertion timeouts. Open the pages once, or just run it again.
 
 ### Lint with [Oxlint](https://oxc.rs/docs/guide/usage/linter)
 
