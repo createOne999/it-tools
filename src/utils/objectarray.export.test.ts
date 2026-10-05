@@ -9,8 +9,8 @@ describe('objectArrayToData', () => {
     { id: 2, name: 'Bob', age: 30 },
   ];
   const sampleNestedData = [
-    { 'id': 1, 'info.name': 'Alice', 'info.age': 25 },
-    { 'id': 2, 'info.name': 'Bob', 'info.age': 30 },
+    { id: 1, 'info.name': 'Alice', 'info.age': 25 },
+    { id: 2, 'info.name': 'Bob', 'info.age': 30 },
   ];
   const tableName = 'users';
 
@@ -32,7 +32,9 @@ INSERT INTO users (id, name, age) VALUES (2, 'Bob', 30);`);
 
   it('should export XML format correctly', () => {
     const result = objectArrayToData(sampleData, 'xml', { tableName });
-    expect(result).toBe('<root><id>1</id><name>Alice</name><age>25</age></root><root><id>2</id><name>Bob</name><age>30</age></root>');
+    expect(result).toBe(
+      '<root><id>1</id><name>Alice</name><age>25</age></root><root><id>2</id><name>Bob</name><age>30</age></root>',
+    );
   });
 
   it('should export CSV format correctly', () => {
@@ -48,6 +50,11 @@ INSERT INTO users (id, name, age) VALUES (2, 'Bob', 30);`);
     expect(result).toContain('| --- | --- | --- |');
     expect(result).toContain('| 1 | Alice | 25 |');
     expect(result).toContain('| 2 | Bob | 30 |');
+  });
+
+  it('should escape Markdown table cells', () => {
+    const result = objectArrayToData([{ path: 'C:\\dir\\', note: 'a|`b`\nc' }], 'markdown');
+    expect(result).toContain('| C:\\\\dir\\\\ | a\\|\\`b\\`<br>c |');
   });
 
   it('should export nested JSON format correctly', () => {

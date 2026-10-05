@@ -1210,6 +1210,8 @@ tools:
       tag-refresh-key-pair: Làm mới cặp khóa
       tag-public-key: Khóa công khai
       tag-private-key: Khóa riêng tư
+      tag-fingerprint: Dấu vân tay
+      tag-md5-fingerprint: Dấu vân tay (MD5)
     text:
       bits-should-be-256-less-than-bits-less-than-16384-and-be-a-multiple-of-8: Số bit phải nằm trong khoảng 256 <= bit <= 16384 và phải là bội số của 8.
   html-wysiwyg-editor:
@@ -2594,6 +2596,8 @@ tools:
       tag-refresh-key-pair: Làm mới cặp khóa
       tag-public-key: Khóa công khai
       tag-private-key: Khóa riêng tư
+      tag-fingerprint: Dấu vân tay
+      tag-md5-fingerprint: Dấu vân tay (MD5)
   ed25519-key-pair-generator:
     title: Trình tạo cặp khóa Ed25519
     description: Tạo khóa riêng tư và khóa công khai Ed25519 ngẫu nhiên mới (có hoặc
@@ -2613,6 +2617,8 @@ tools:
       tag-refresh-key-pair: Làm mới cặp khóa
       tag-public-key: Khóa công khai
       tag-private-key: Khóa riêng tư
+      tag-md5-fingerprint: Dấu vân tay (MD5)
+      tag-fingerprint: Dấu vân tay
   energy-computer:
     title: Tiêu thụ năng lượng và chi phí máy tính
     description: Tính toán mức tiêu thụ năng lượng và chi phí
@@ -3182,6 +3188,7 @@ tools:
       title-schema-validation-errors: Lỗi xác thực lược đồ
       label-indent-size-0-compact: "Kích thước thụt lề (0 = Thu gọn):"
       repair-json: Sửa chữa JSON
+      label-auto-height: Chiều cao tự động
     externalAccess: Công cụ này có thể tải xuống lược đồ JSON từ
       https://www.schemastore.org khi yêu cầu xác thực được gửi đi. Không có dữ
       liệu nào được gửi ra bên ngoài.
@@ -3521,6 +3528,17 @@ tools:
       tag-export-as-png: Xuất dưới dạng PNG
       tag-export-as-jpg: Xuất dưới dạng JPG
       tag-export-as-svg: Xuất dưới dạng SVG
+      tag-showing-last-valid-diagram: Hiển thị sơ đồ hợp lệ cuối cùng
+      tag-hint-ctrl-scroll-to-zoom: Giữ phím Ctrl (hoặc ⌘) và cuộn chuột để phóng to/thu nhỏ.
+      label-diagram-preview: Xem trước sơ đồ — kéo hoặc sử dụng các phím mũi tên để di
+        chuyển, phím + và - để phóng to/thu nhỏ.
+      label-zoom-level-reset: Phóng to {zoom}%, nhấp chuột để đặt lại về 100%
+      title-zoom-in: Phóng to
+      title-zoom-out: Thu nhỏ
+      title-reset-zoom: Đặt lại độ phóng to về 100%.
+      title-fit-view: Phù hợp với sơ đồ để xem
+      title-fullscreen: Toàn màn hình
+      title-exit-fullscreen: Thoát chế độ toàn màn hình
   mime-converter:
     title: Bộ chuyển đổi mã hóa MIME
     description: Chuyển đổi từ/sang định dạng MIME Encoded-Word (Chủ đề thư)
@@ -4166,6 +4184,11 @@ tools:
       title-country-to-timezones: Quốc gia thành Múi giờ
       label-country: Quốc gia
       title-timezones-to-countries: Múi giờ đến các quốc gia
+      title-posix-timezones: Chuỗi POSIX múi giờ
+      search-posix-timezones: Nhập múi giờ hoặc chuỗi POSIX để tìm kiếm
+      tag-no-results: Không có kết quả
+      tag-timezone: Múi giờ
+      tag-posix: Chuỗi POSIX
   torrent-to-magnet:
     title: Torrent đến Nam châm
     description: Chuyển đổi tệp torrent thành url Magnet
@@ -4955,7 +4978,7 @@ tools:
       label-source-port: "Cổng nguồn:"
       label-destination-port: "Cảng đích:"
       label-chain: "Xích:"
-      label-rule-order: "Thứ tự quy tắc:"
+      label-rule-order: "Vị trí chèn (để trống = thêm vào cuối):"
       title-generated-iptables-command: Đã tạo lệnh iptables
       tag-expression: Sự biểu lộ
       tag-meaning: Nghĩa
@@ -5902,6 +5925,9 @@ tools:
       tag-corners-square-options: Tùy chọn góc vuông
       tag-small-terminal: Nhà ga nhỏ
       title-image: Hình ảnh
+      label-qr-code-embeddable-dataurl: "Dữ liệu URL hình ảnh mã QR:"
+      link-qr-code-open-embeddable-link: Mở liên kết nhúng
+      label-qr-code-image-viewer: Mã QR có thể nhúng
   ies-lighting-guidelines:
     title: Hướng dẫn chiếu sáng IES
     description: Tìm kiếm trong các khuyến nghị về độ rọi hiện tại của Hiệp hội Kỹ
@@ -9829,6 +9855,262 @@ tools:
         random-tool: Công cụ ngẫu nhiên
         tools: Công cụ
   external-self-hosted-required: Yêu cầu máy chủ tự lưu trữ bên ngoài
+  markdown-format-converter:
+    title: Bộ chuyển đổi định dạng
+    description: Chuyển đổi giữa các định dạng chuẩn như Markdown, Obsidian, Logseq,
+      Slack, Jira và các định dạng khác.
+    texts:
+      label-source-format: Định dạng nguồn
+      label-target-format: Định dạng mục tiêu
+      placeholder-input-markdown: Sao chép hoặc nhập mã Markdown tiêu chuẩn, Obsidian
+        hoặc Logseq của bạn vào đây...
+      label-input-markdown: Nhập Markdown
+      label-converted-output: Đầu ra đã chuyển đổi
+      label-text: Chữ
+      label-preview: Xem trước
+  restic-command-generator:
+    title: Máy phát lệnh Restic
+    description: "Tạo các lệnh CLI của restic để khôi phục kho lưu trữ Backrest hoặc
+      restic thông thường: toàn bộ ảnh chụp nhanh, chỉ một số tệp hoặc một điểm
+      gắn kết có thể duyệt được."
+    texts:
+      intro: "Chỉ là công cụ tạo mã: không có gì chạy ở đây và không có gì bạn gõ sẽ
+        rời khỏi trình duyệt của bạn. Mô tả kho lưu trữ của bạn, chọn những gì
+        bạn cần khôi phục và sao chép đoạn mã shell."
+      title-repository: Kho lưu trữ
+      label-backend: Phần phụ trợ
+      backend-s3: Tương thích S3 (Backblaze B2, MinIO, Wasabi, AWS...)
+      backend-b2: Backblaze B2 (phiên bản gốc)
+      backend-local: Đường dẫn cục bộ hoặc ổ đĩa được gắn kết
+      backend-sftp: SFTP
+      backend-rest: máy chủ REST restic
+      backend-rclone: Rclone
+      backend-azure: Lưu trữ Blob Azure
+      backend-gs: Lưu trữ đám mây Google
+      backend-raw: Khác (URI kho lưu trữ thô)
+      label-local-path: Đường dẫn kho lưu trữ
+      label-endpoint: Điểm cuối
+      label-bucket: Xô
+      label-prefix: Đường đi trong xô
+      label-region: Khu vực (tùy chọn)
+      label-user: Người dùng
+      label-host: Chủ nhà
+      label-port: Cổng (tùy chọn)
+      label-path: Đường dẫn kho lưu trữ
+      label-url: URL máy chủ
+      label-remote: Rclone từ xa và đường dẫn
+      label-container: Thùng chứa
+      label-raw-repository: URI kho lưu trữ
+      label-repository-mode: Kho lưu trữ được truyền dưới dạng
+      repository-flag: -r flag trên mọi lệnh
+      repository-env: Biến môi trường RESTIC_REPOSITORY
+      label-repository-uri: URI kho lưu trữ
+      label-password: Mật khẩu kho lưu trữ
+      password-prompt: Yêu cầu thực hiện trong cửa sổ dòng lệnh (đọc là -rs, lệnh này
+        sẽ không được lưu vào lịch sử).
+      password-file: --password-file
+      password-command: --password-command
+      password-placeholder: Xuất RESTIC_PASSWORD với một chỗ giữ chỗ
+      password-none: Đã được thiết lập trong môi trường của tôi
+      label-password-file: Tệp mật khẩu
+      label-password-command: Lệnh mật khẩu
+      label-credentials: Thông tin xác thực máy chủ
+      credentials-prompt: Gợi ý về bí mật ẩn trong vỏ sò
+      credentials-placeholder: Xuất chúng kèm theo các ký tự giữ chỗ.
+      credentials-none: Đã được thiết lập trong môi trường của tôi
+      label-account-id: Mã khóa / Tên tài khoản
+      hint-secrets: 'Không có thông tin bí mật nào được lưu trữ trong lệnh được tạo
+        ra: các tùy chọn nhắc lệnh sẽ đọc chúng vào shell của bạn bằng lệnh
+        "read -rs" để chúng không bị lưu vào lịch sử lệnh.'
+      title-operation: Bạn muốn làm gì?
+      operation-restore: khôi phục — ghi các tập tin từ ảnh chụp nhanh trở lại đĩa
+      operation-dump: dump — xuất một tập tin hoặc thư mục từ ảnh chụp nhanh
+      operation-mount: gắn kết — duyệt kho lưu trữ như một hệ thống tệp
+      operation-snapshots: ảnh chụp nhanh — liệt kê các ảnh chụp nhanh của kho lưu trữ
+      operation-ls: ls — liệt kê các tệp bên trong một ảnh chụp nhanh
+      operation-find: tìm kiếm — định vị một tệp trong nhiều ảnh chụp nhanh
+      operation-diff: diff — so sánh hai ảnh chụp nhanh
+      operation-check: kiểm tra — xác minh tính toàn vẹn của kho lưu trữ
+      operation-stats: stats — kích thước của ảnh chụp nhanh hoặc của kho lưu trữ
+      operation-unlock: mở khóa — loại bỏ các khóa cũ
+      title-snapshot: Lựa chọn ảnh chụp nhanh
+      label-snapshot-id: ID ảnh chụp nhanh
+      label-subfolder: Chỉ thư mục con này của ảnh chụp nhanh
+      label-plan: ID sơ đồ tựa lưng
+      label-instance: ID phiên bản tựa lưng
+      label-filter-host: Chủ nhà
+      label-tags: Thẻ bổ sung
+      placeholder-tag: thủ công
+      label-filter-paths: Đường đi
+      placeholder-path: /home/me/documents
+      hint-tags: Backrest gắn thẻ cho các ảnh chụp nhanh mà nó tạo ra bằng "plan:" và
+        "created-by:" theo sau là ID của kế hoạch và ID của phiên bản. Các thẻ
+        bên trong một cờ --tag duy nhất được kết hợp bằng toán tử AND, trong khi
+        các cờ --tag lặp lại được kết hợp bằng toán tử OR, do đó kế hoạch và ID
+        của phiên bản vẫn nằm trong một cờ duy nhất và mỗi thẻ bổ sung sẽ có thẻ
+        riêng.
+      title-restore-options: Khôi phục tùy chọn
+      label-target: Thư mục đích
+      label-include: Chỉ khôi phục những đường dẫn hoặc mẫu này.
+      placeholder-include: /home/me/documents/**/*.pdf
+      label-exclude: Loại bỏ các đường dẫn hoặc mẫu này.
+      placeholder-exclude: "**/node_modules"
+      label-overwrite: Ghi đè lên các tệp hiện có
+      overwrite-default: restic mặc định (luôn luôn)
+      overwrite-always: luôn luôn
+      overwrite-if-changed: nếu thay đổi
+      overwrite-if-newer: nếu mới hơn
+      overwrite-never: không bao giờ
+      label-case-insensitive: các mẫu không phân biệt chữ hoa chữ thường
+      label-dry-run: Chạy thử
+      label-verify: Xác minh các tệp đã khôi phục
+      label-sparse: Ghi các tệp thưa
+      label-delete: Xóa các tệp bị thiếu trong ảnh chụp nhanh
+      title-dump-options: Tùy chọn đổ rác
+      label-dump-path: Tệp hoặc thư mục bên trong ảnh chụp nhanh
+      label-archive: Định dạng lưu trữ
+      archive-none: Tệp thô
+      archive-tar: lấy
+      archive-zip: khóa kéo
+      label-output-file: Chuyển hướng đến tệp cục bộ (tùy chọn)
+      hint-dump: Công cụ dump stream chỉ sao chép một tệp hoặc thư mục duy nhất từ kho
+        lưu trữ, vì vậy bạn không cần phải khôi phục toàn bộ ảnh chụp nhanh để
+        lấy lại một tệp cấu hình.
+      title-mount-options: Tùy chọn lắp đặt
+      label-mount-point: Điểm gắn kết
+      label-allow-other: Cho phép người dùng khác truy cập vào giá đỡ.
+      title-ls-options: Danh sách tùy chọn
+      label-ls-directory: Thư mục để liệt kê (tùy chọn)
+      label-long: Danh sách dài
+      label-recursive: Đệ quy
+      title-find-options: Tìm các tùy chọn
+      label-find-pattern: Mẫu
+      label-restrict-snapshot: Chỉ tìm kiếm ảnh chụp màn hình đã chọn.
+      title-diff-options: Các tùy chọn khác nhau
+      label-diff-snapshot: So sánh với ảnh chụp
+      label-metadata: Báo cáo cả những thay đổi siêu dữ liệu nữa.
+      title-snapshots-options: Tùy chọn ảnh chụp nhanh
+      label-compact: Đầu ra nhỏ gọn
+      title-check-options: Kiểm tra các tùy chọn
+      label-read-data-subset: Đọc tập dữ liệu con
+      label-read-data: Đọc và xác minh từng tập tin gói.
+      label-check-unused: Báo cáo các khối dữ liệu không sử dụng
+      label-with-cache: Sử dụng bộ nhớ đệm hiện có
+      title-stats-options: Tùy chọn thống kê
+      label-stats-mode: Chế độ đếm
+      stats-restore-size: restore-size — kích thước của một lần khôi phục
+      stats-files-by-contents: tập tin theo nội dung — các tập tin duy nhất
+      stats-raw-data: dữ liệu thô — kích thước trước khi loại bỏ dữ liệu trùng lặp
+      stats-blobs-per-file: số lượng blob trên mỗi tệp
+      label-stats-all: Tất cả ảnh chụp nhanh
+      title-unlock-options: Mở khóa tùy chọn
+      label-remove-all: Tháo tất cả các ổ khóa, kể cả những ổ khóa đang sử dụng.
+      title-global-options: Tùy chọn toàn cầu
+      label-cache-dir: Thư mục bộ nhớ đệm
+      label-limit-download: Giới hạn tải xuống (KiB/s)
+      label-retry-lock: Thử lại kho lưu trữ bị khóa để
+      label-extra-options: Tùy chọn phần phụ trợ (-o)
+      placeholder-extra-option: s3.connections=4
+      label-extra-arguments: Các đối số bổ sung (được đính kèm nguyên trạng)
+      label-no-lock: --không khóa
+      label-no-cache: --không bộ nhớ đệm
+      label-insecure-tls: --insecure-tls
+      label-json: --json
+      label-quiet: --im lặng
+      label-verbose: --chi tiết
+      title-output: Lệnh được tạo
+      label-include-environment: Bao gồm cả thiết lập môi trường.
+      label-multiline: Mỗi dòng chứa một đối số.
+      button-reset: Khôi phục về cài đặt mặc định
+      warning-history: "Các mẫu xuất khẩu sẽ được lưu lại trong lịch sử lệnh shell sau
+        khi bạn điền đầy đủ thông tin: bạn có thể chọn tùy chọn nhắc nhở hoặc
+        xóa lịch sử sau đó."
+      warning-target: Lệnh restore tạo lại toàn bộ đường dẫn của mọi tập tin trong thư
+        mục đích, vì vậy /etc/hosts sẽ nằm trong thư mục con etc/hosts của thư
+        mục đích.
+      warning-delete: Tùy chọn --delete xóa các tệp trong thư mục đích không có trong
+        ảnh chụp nhanh. Hãy thử với tùy chọn --dry-run trước.
+      warning-restic-version: Các lệnh --dry-run, --delete và --overwrite yêu cầu
+        restic phiên bản 0.17 trở lên.
+      warning-mount: Lệnh mount cần FUSE, cho phép xem ảnh chụp nhanh ở chế độ chỉ đọc
+        và tiếp tục chạy cho đến khi bạn dừng nó bằng Ctrl-C.
+      title-walkthrough: Hướng dẫn phục hồi
+      hint-walkthrough: Trình tự thông thường khi chỉ còn lại kho lưu trữ, được xây
+        dựng từ các thiết lập ở trên.
+      walkthrough-snapshots: Liệt kê các bản chụp nhanh của kho lưu trữ.
+      walkthrough-find: Tìm ảnh chụp màn hình nào chứa tệp bạn cần.
+      walkthrough-ls: Liệt kê các tệp của ảnh chụp nhanh đã chọn.
+      walkthrough-restore: Chỉ khôi phục những tập tin bạn cần
+      walkthrough-mount: Hoặc duyệt qua kho lưu trữ và sao chép các tệp tin bằng tay.
+      title-backrest: bảng hướng dẫn sử dụng tựa lưng
+      table-item: Mục
+      table-value: Đường dẫn hoặc định dạng mặc định (hình ảnh Docker nằm trong ngoặc đơn)
+      backrest-config: Tệp cấu hình, chứa URI của kho lưu trữ, mật khẩu và các biến
+        môi trường của máy chủ phụ trợ.
+      backrest-data: Thư mục dữ liệu
+      backrest-binary: Tệp nhị phân Restic được tải xuống bởi Backrest
+      backrest-plan-tag: Thẻ xác định kế hoạch
+      backrest-instance-tag: Thẻ xác định trường hợp
+      hint-backrest: "Kho lưu trữ Backrest về cơ bản là một kho lưu trữ restic thông
+        thường: nếu giao diện web không hoạt động, hãy đọc URI và mật khẩu từ
+        tệp config.json và sử dụng tệp nhị phân restic Backrest đã được tải
+        xuống để vận hành nó."
+  epc-qrcode-generator:
+    title: Công cụ tạo mã QR EPC
+    description: Tạo mã QR của Hội đồng Thanh toán Châu Âu (EPC) để bắt đầu chuyển
+      khoản tín dụng SEPA.
+    externalAccess: vô giá trị
+    texts:
+      text-copied-to-clipboard: Đã sao chép vào clipboard
+      label-v1: V1
+      label-v2: V2
+      label-beneficiary-name: "Tên người thụ hưởng:"
+      placeholder-beneficiary-name: Tên người thụ hưởng
+      label-account-iban: "Tài khoản (IBAN):"
+      placeholder-fr76: FR76...
+      label-bic: "BIC:"
+      placeholder-bank-bic-optional: Mã BIC ngân hàng (tùy chọn)
+      label-amount-eur: "Số tiền (EUR):"
+      label-payment-reference: "Mã tham chiếu thanh toán:"
+      placeholder-optional: Không bắt buộc
+      label-purpose: "Mục đích:"
+      label-version: "Phiên bản:"
+      label-foreground-color: "Màu nền trước:"
+      label-background-color: "Màu nền:"
+      label-qr-size: "Kích thước mã QR:"
+      tag-generate-qr: Tạo mã QR
+      tag-download-qrcode: Tải xuống mã QR
+      tag-copy-qrcode-text: Sao chép văn bản mã QR
+  url-redirection-checker:
+    title: Công cụ kiểm tra chuyển hướng URL
+    description: Kiểm tra xem URL có chuyển hướng đến URL khác hay không.
+    externalAccess: vô giá trị
+    texts:
+      label-get: LẤY
+      label-head: CÁI ĐẦU
+      label-url: "URL:"
+      placeholder-https-example-com: https://example.com
+      label-method: "Phương pháp:"
+      label-user-agent: "Tác nhân người dùng:"
+      label-max-hops: "Max Hops:"
+      label-include-body-preview: Bao gồm bản xem trước thân máy
+      label-preview-bytes: "Xem trước byte:"
+      title-warnings: Cảnh báo
+      title-summary: Bản tóm tắt
+      label-input-url: "URL đầu vào:"
+      label-final-url: "URL cuối cùng:"
+      label-hop-count: "Số lượng hoa bia:"
+      title-redirect-chain: Chuỗi chuyển hướng
+      tag-inspect-redirect-chain: Kiểm tra chuỗi chuyển hướng
+      tag-: "-"
+      tag-url: URL
+      tag-status: Trạng thái
+      tag-duration: Khoảng thời gian
+      tag-redirect: Chuyển hướng
+      tag-location: Vị trí
+      tag-300-hop-status-code: = 300 && hop.status_code
+      tag-headers-body-preview: Xem trước tiêu đề và nội dung
+      tag-truncated: bị cắt ngắn
 spanCopyable:
   copy: Sao chép vào bảng tạm
   copied: Đã sao chép!

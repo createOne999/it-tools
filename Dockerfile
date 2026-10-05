@@ -1,5 +1,5 @@
 # build stage
-FROM --platform=$BUILDPLATFORM node:24-alpine AS build-stage
+FROM --platform=$BUILDPLATFORM node:24-alpine@sha256:ebfe2f90462722a7a4de65e91990e97fe0d401c70e0e762c5b53302f905ec1c1 AS build-stage
 # Set environment variables for non-interactive npm installs
 ENV NPM_CONFIG_LOGLEVEL=warn
 ENV CI=true
@@ -11,7 +11,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY patches patches
 COPY stubs stubs
-RUN npm install -g pnpm@11 && pnpm i --ignore-scripts --frozen-lockfile
+RUN npm install -g pnpm@12.6.0 && pnpm i --ignore-scripts --frozen-lockfile
 COPY . .
 # Deliberately no BASE_URL here: the bundle is built path-agnostic (relative asset URLs
 # plus a `<base href="/">` in index.html) so that one image can be served from any
@@ -20,10 +20,13 @@ COPY . .
 ARG VITE_AVAILABLE_LOCALES
 ENV VITE_AVAILABLE_LOCALES=${VITE_AVAILABLE_LOCALES}
 ENV VITE_VERCEL_ENV=production
-RUN pnpm build
+# Precompress hashed assets once instead of compressing each response at runtime.
+RUN pnpm build \
+    && find dist/assets -type f \( -name '*.js' -o -name '*.mjs' -o -name '*.css' -o -name '*.wasm' \) \
+        -exec gzip -9 -n -k {} +
 
 # production stage
-FROM nginxinc/nginx-unprivileged:stable-alpine AS production-stage
+FROM nginxinc/nginx-unprivileged:stable-alpine@sha256:4714e0b1b2577eaa1a6131d07c958b67f0eb68e6d0521e90c6e5287db8cf0bc5 AS production-stage
 
 LABEL maintainer="ShareVB <sharevb@gmail.com>" \
       org.opencontainers.image.authors="ShareVB <sharevb@gmail.com>"

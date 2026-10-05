@@ -1150,6 +1150,8 @@ tools:
       tag-refresh-key-pair: Opdater nøglepar
       tag-public-key: Offentlig nøgle
       tag-private-key: Privat nøgle
+      tag-fingerprint: Fingeraftryk
+      tag-md5-fingerprint: Fingeraftryk (MD5)
     text:
       bits-should-be-256-less-than-bits-less-than-16384-and-be-a-multiple-of-8: Bits skal være 256 <= bits <= 16384 og være et multiplum af 8
   html-wysiwyg-editor:
@@ -2516,6 +2518,8 @@ tools:
       tag-refresh-key-pair: Opdater nøglepar
       tag-public-key: Offentlig nøgle
       tag-private-key: Privat nøgle
+      tag-fingerprint: Fingeraftryk
+      tag-md5-fingerprint: Fingeraftryk (MD5)
   ed25519-key-pair-generator:
     title: Ed25519 nøglepargenerator
     description: Generer nye tilfældige Ed25519 private og offentlige nøgler (med
@@ -2535,6 +2539,8 @@ tools:
       tag-refresh-key-pair: Opdater nøglepar
       tag-public-key: Offentlig nøgle
       tag-private-key: Privat nøgle
+      tag-md5-fingerprint: Fingeraftryk (MD5)
+      tag-fingerprint: Fingeraftryk
   energy-computer:
     title: Energiforbrugs- og udgiftscomputer
     description: Beregn energiforbrug og -udgifter
@@ -3105,6 +3111,7 @@ tools:
       title-schema-validation-errors: Fejl ved skemavalidering
       label-indent-size-0-compact: "Indrykningsstørrelse (0 = Kompakt):"
       repair-json: Reparer JSON
+      label-auto-height: Automatisk højde
     externalAccess: Dette værktøj kan downloade et JSON-skema fra
       https://www.schemastore.org, når der anmodes om validering. Der sendes
       ingen data eksternt.
@@ -3445,6 +3452,17 @@ tools:
       tag-export-as-png: Eksporter som PNG
       tag-export-as-jpg: Eksporter som JPG
       tag-export-as-svg: Eksporter som SVG
+      tag-showing-last-valid-diagram: Viser det sidste gyldige diagram
+      tag-hint-ctrl-scroll-to-zoom: Hold Ctrl (eller ⌘) nede og rul for at zoome
+      label-diagram-preview: Diagramforhåndsvisning — træk eller brug piletasterne til
+        at panorere, + og - for at zoome
+      label-zoom-level-reset: Zoom {zoom}%, klik for at nulstille til 100%
+      title-zoom-in: Zoom ind
+      title-zoom-out: Zoom ud
+      title-reset-zoom: Nulstil zoom til 100%
+      title-fit-view: Tilpas diagrammet for at se det
+      title-fullscreen: Fuldskærm
+      title-exit-fullscreen: Afslut fuldskærm
   mime-converter:
     title: MIME-kodningskonverter
     description: Konverter fra/til MIME Encoded-Word-format (emne for mail)
@@ -4093,6 +4111,11 @@ tools:
       title-country-to-timezones: Land til tidszoner
       label-country: Land
       title-timezones-to-countries: Tidszoner til lande
+      title-posix-timezones: Tidszoner POSIX-strenge
+      search-posix-timezones: Indtast en tidszone eller POSIX-streng for at søge
+      tag-no-results: Ingen resultater
+      tag-timezone: Tidszone
+      tag-posix: POSIX-streng
   torrent-to-magnet:
     title: Torrent til magnet
     description: Konverter en torrent-fil til en Magnet-url
@@ -4889,7 +4912,7 @@ tools:
       label-source-port: "Kildeport:"
       label-destination-port: "Destinationshavn:"
       label-chain: "Kæde:"
-      label-rule-order: "Regelrækkefølge:"
+      label-rule-order: "Indsættelsesposition (tom = tilføj sidst):"
       title-generated-iptables-command: Genereret iptables-kommando
       tag-expression: Udtryk
       tag-meaning: Mening
@@ -5860,6 +5883,9 @@ tools:
       tag-corners-square-options: Corners Square-muligheder
       tag-small-terminal: Lille terminal
       title-image: Billede
+      label-qr-code-embeddable-dataurl: "QRCode-billeddata-URL:"
+      link-qr-code-open-embeddable-link: Åbn integreret link
+      label-qr-code-image-viewer: Integrerbar QR-kode
   ies-lighting-guidelines:
     title: IES belysningsretningslinjer
     description: Søg i Illuminating Engineering Societys (IES) aktuelle anbefalinger
@@ -9772,6 +9798,256 @@ tools:
         random-tool: Tilfældigt værktøj
         tools: Værktøjer
   external-self-hosted-required: Ekstern selvhostet påkrævet
+  markdown-format-converter:
+    title: Formatkonverter
+    description: Konverter mellem standard Markdown, Obsidian, Logseq, Slack, Jira
+      og andre formater.
+    texts:
+      label-source-format: Kildeformat
+      label-target-format: Målformat
+      placeholder-input-markdown: Indsæt eller skriv din standard-, Obsidian- eller Logseq-markdown her...
+      label-input-markdown: Input Markdown
+      label-converted-output: Konverteret output
+      label-text: Tekst
+      label-preview: Forhåndsvisning
+  restic-command-generator:
+    title: Restic-kommandogenerator
+    description: "Generer restic CLI-kommandoer for at gendanne et Backrest- eller
+      et almindeligt restic-arkiv: et helt snapshot, kun nogle filer eller en
+      gennemsebar montering."
+    texts:
+      intro: "Kun generator: Intet kører her, og intet af det, du skriver, forlader
+        din browser. Beskriv dit repository, vælg det, du skal gendanne, og
+        kopier shell-kodestykket."
+      title-repository: Arkiv
+      label-backend: Bagenden
+      backend-s3: S3-kompatibel (Backblaze B2, MinIO, Wasabi, AWS...)
+      backend-b2: Backblaze B2 (indbygget)
+      backend-local: Lokal sti eller monteret disk
+      backend-sftp: SFTP
+      backend-rest: restic REST-server
+      backend-rclone: Rclone
+      backend-azure: Azure Blob Storage
+      backend-gs: Google Cloud Storage
+      backend-raw: Andet (rå arkiv-URI)
+      label-local-path: Lagersti
+      label-endpoint: Endepunkt
+      label-bucket: Spand
+      label-prefix: Sti i spanden
+      label-region: Region (valgfrit)
+      label-user: Bruger
+      label-host: Vært
+      label-port: Port (valgfri)
+      label-path: Lagersti
+      label-url: Server-URL
+      label-remote: Rclone fjernbetjening og sti
+      label-container: Beholder
+      label-raw-repository: Lagringssteds-URI
+      label-repository-mode: Arkiv godkendt som
+      repository-flag: -r flag på hver kommando
+      repository-env: RESTIC_REPOSITORY miljøvariabel
+      label-repository-uri: Lagringssteds-URI
+      label-password: Adgangskode til arkivet
+      password-prompt: Spørg efter det i skallen (læs -rs, forbliver ude af historikken)
+      password-file: --adgangskodefil
+      password-command: --adgangskode-kommando
+      password-placeholder: RESTIC_PASSWORD-eksport med en pladsholder
+      password-none: Allerede indstillet i mit miljø
+      label-password-file: Adgangskodefil
+      label-password-command: Adgangskodekommando
+      label-credentials: Backend-legitimationsoplysninger
+      credentials-prompt: Spørg efter hemmeligheden i skallen
+      credentials-placeholder: Eksportér dem med pladsholdere
+      credentials-none: Allerede indstillet i mit miljø
+      label-account-id: Nøgle-ID / kontonavn
+      hint-secrets: 'Der lægges aldrig nogen hemmelighed i den genererede kommando:
+        promptindstillingerne læser dem ind i din shell med "read -rs", så de
+        forbliver ude af din historik.'
+      title-operation: Hvad vil du gøre?
+      operation-restore: gendan — skriv filer fra et snapshot tilbage til disken
+      operation-dump: dump — stream én fil eller mappe ud af et snapshot
+      operation-mount: mount — gennemse arkivet som et filsystem
+      operation-snapshots: snapshots — liste over snapshots af arkivet
+      operation-ls: ls — liste filerne i et snapshot
+      operation-find: find — find en fil på tværs af snapshots
+      operation-diff: diff — sammenlign to snapshots
+      operation-check: tjek — verificer integriteten af depotet
+      operation-stats: statistik — størrelsen på et snapshot eller arkivet
+      operation-unlock: oplåsning — fjern gamle låse
+      title-snapshot: Valg af snapshot
+      label-snapshot-id: Snapshot-ID
+      label-subfolder: Kun denne undermappe af snapshottet
+      label-plan: Ryglænsplan-ID
+      label-instance: Ryglænsinstans-ID
+      label-filter-host: Vært
+      label-tags: Ekstra tags
+      placeholder-tag: manuel
+      label-filter-paths: Stier
+      placeholder-path: /hjem/mig/dokumenter
+      hint-tags: Backrest tagger de snapshots, den opretter, med "plan:" og
+        "created-by:" efterfulgt af plan- og instans-ID'erne. Tags i et enkelt
+        --tag AND-behandles, mens gentagne --tag-flag OR-behandles, så planen og
+        instansen forbliver i ét flag, og hvert ekstra tag får sit eget.
+      title-restore-options: Gendannelsesmuligheder
+      label-target: Målmappe
+      label-include: Gendan kun disse stier eller mønstre
+      placeholder-include: /hjem/mig/dokumenter/**/*.pdf
+      label-exclude: Udeluk disse stier eller mønstre
+      placeholder-exclude: "**/node_modules"
+      label-overwrite: Overskriv eksisterende filer
+      overwrite-default: restic standard (altid)
+      overwrite-always: altid
+      overwrite-if-changed: hvis-ændret
+      overwrite-if-newer: hvis-nyere
+      overwrite-never: aldrig
+      label-case-insensitive: Mønstre der ikke skelner mellem store og små bogstaver
+      label-dry-run: Tørløb
+      label-verify: Bekræft gendannede filer
+      label-sparse: Skriv sparse filer
+      label-delete: Slet filer, der mangler fra snapshottet
+      title-dump-options: Dump-muligheder
+      label-dump-path: Fil eller mappe i snapshottet
+      label-archive: Arkivformat
+      archive-none: Rå fil
+      archive-tar: tager
+      archive-zip: postnummer
+      label-output-file: Omdiriger til en lokal fil (valgfrit)
+      hint-dump: dump streamer en enkelt fil eller mappe direkte ud af arkivet, så du
+        ikke behøver at gendanne et helt snapshot for at få én konfigurationsfil
+        tilbage.
+      title-mount-options: Monteringsmuligheder
+      label-mount-point: Monteringspunkt
+      label-allow-other: Tillad andre brugere at få adgang til monteringen
+      title-ls-options: Listeindstillinger
+      label-ls-directory: Katalog til liste (valgfrit)
+      label-long: Lang liste
+      label-recursive: Rekursiv
+      title-find-options: Find muligheder
+      label-find-pattern: Mønster
+      label-restrict-snapshot: Søg kun i det valgte snapshot
+      title-diff-options: Forskellige muligheder
+      label-diff-snapshot: Sammenlign med et øjebliksbillede
+      label-metadata: Rapportér også ændringer i metadata
+      title-snapshots-options: Valgmuligheder for snapshots
+      label-compact: Kompakt udgang
+      title-check-options: Tjek muligheder
+      label-read-data-subset: Læs datadelmængde
+      label-read-data: Læs og bekræft hver pakkefil
+      label-check-unused: Rapportér ubrugte blobs
+      label-with-cache: Brug den eksisterende cache
+      title-stats-options: Statistikindstillinger
+      label-stats-mode: Tælletilstand
+      stats-restore-size: restore-size — størrelsen på en gendannelse
+      stats-files-by-contents: filer-efter-indhold — unikke filer
+      stats-raw-data: rådata — størrelse før deduplikering
+      stats-blobs-per-file: blobs-per-fil
+      label-stats-all: Alle snapshots
+      title-unlock-options: Oplåsningsmuligheder
+      label-remove-all: Fjern alle låse, inklusive dem der er i brug
+      title-global-options: Globale muligheder
+      label-cache-dir: Cache-mappe
+      label-limit-download: Downloadgrænse (KiB/s)
+      label-retry-lock: Prøv et låst arkiv igen for
+      label-extra-options: Backend-indstillinger (-o)
+      placeholder-extra-option: s3.forbindelser=4
+      label-extra-arguments: Ekstra argumenter (tilføjet som de er)
+      label-no-lock: --ingen-lås
+      label-no-cache: --ingen-cache
+      label-insecure-tls: --usikker-tls
+      label-json: --json
+      label-quiet: --stille
+      label-verbose: --udførlig
+      title-output: Genereret kommando
+      label-include-environment: Inkluder miljøopsætningen
+      label-multiline: Ét argument pr. linje
+      button-reset: Nulstil til standardindstillinger
+      warning-history: "Pladsholdereksporter forbliver i din shell-historik, når de er
+        udfyldt: foretræk prompt-indstillingerne, eller ryd historikken
+        bagefter."
+      warning-target: "`restore` genskaber den fulde sti for hver fil i
+        destinationsmappen, så `/etc/hosts` ender i `etc/hosts`-undermappen i
+        destinationsmappen."
+      warning-delete: --delete fjerner filerne i målmappen, som ikke er i snapshottet.
+        Prøv det først med --dry-run.
+      warning-restic-version: --dry-run, --delete og --overwrite kræver restic 0.17 eller nyere.
+      warning-mount: Mount kræver FUSE, eksponerer snapshots skrivebeskyttet og
+        fortsætter med at køre, indtil du stopper den med Ctrl-C.
+      title-walkthrough: Gennemgang af genopretning
+      hint-walkthrough: Den sædvanlige rækkefølge, når arkivet er alt, hvad der er
+        tilbage, bygget ud fra ovenstående indstillinger.
+      walkthrough-snapshots: Liste over snapshots af arkivet
+      walkthrough-find: Find hvilket snapshot der indeholder den fil du har brug for
+      walkthrough-ls: List filerne fra det valgte snapshot
+      walkthrough-restore: Gendan kun de filer, du har brug for
+      walkthrough-mount: Eller gennemse arkivet og kopier filer ud manuelt
+      title-backrest: Ryglæns-snydeark
+      table-item: Punkt
+      table-value: Standardsti eller -format (Docker-billede mellem parenteser)
+      backrest-config: Konfigurationsfil, der indeholder repository-URI'en, dens
+        adgangskode og backend-miljøvariablerne
+      backrest-data: Datakatalog
+      backrest-binary: Restic binær downloadet af Backrest
+      backrest-plan-tag: Etiket, der identificerer planen
+      backrest-instance-tag: Tag, der identificerer forekomsten
+      hint-backrest: "Et Backrest-repository er et almindeligt restic-repository: hvis
+        web-UI'en er væk, skal du læse URI'en og adgangskoden ud af config.json
+        og køre den med den restic binære Backrest, der allerede er downloadet."
+  epc-qrcode-generator:
+    title: EPC QR-kodegenerator
+    description: Generer en QR-kode fra Det Europæiske Betalingsråd (EPC) til at
+      initiere en SEPA-kreditoverførsel
+    externalAccess: nul
+    texts:
+      text-copied-to-clipboard: Kopieret til udklipsholderen
+      label-v1: V1
+      label-v2: V2
+      label-beneficiary-name: "Modtagernavn:"
+      placeholder-beneficiary-name: Modtagernavn
+      label-account-iban: "Konto (IBAN):"
+      placeholder-fr76: FR76...
+      label-bic: "BIC:"
+      placeholder-bank-bic-optional: Bankens BIC (valgfrit)
+      label-amount-eur: "Beløb (EUR):"
+      label-payment-reference: "Betalingsreference:"
+      placeholder-optional: Valgfri
+      label-purpose: "Formål:"
+      label-version: "Version:"
+      label-foreground-color: "Forgrundsfarve:"
+      label-background-color: "Baggrundsfarve:"
+      label-qr-size: "QR-størrelse:"
+      tag-generate-qr: Generer QR
+      tag-download-qrcode: Download QR-kode
+      tag-copy-qrcode-text: Kopiér QR-kodetekst
+  url-redirection-checker:
+    title: URL-omdirigeringstjekker
+    description: Tjek om en URL omdirigerer til en anden URL.
+    externalAccess: nul
+    texts:
+      label-get: FÅ
+      label-head: HOVED
+      label-url: "URL:"
+      placeholder-https-example-com: https://eksempel.com
+      label-method: "Metode:"
+      label-user-agent: "Brugeragent:"
+      label-max-hops: "Maks. humle:"
+      label-include-body-preview: Inkluder forhåndsvisning af brødtekst
+      label-preview-bytes: "Forhåndsvisningsbytes:"
+      title-warnings: Advarsler
+      title-summary: Oversigt
+      label-input-url: "Indtast URL:"
+      label-final-url: "Endelig URL:"
+      label-hop-count: "Humpetælling:"
+      title-redirect-chain: Omdirigeringskæde
+      tag-inspect-redirect-chain: Inspicer omdirigeringskæden
+      tag-: "-"
+      tag-url: URL
+      tag-status: Status
+      tag-duration: Varighed
+      tag-redirect: Omdiriger
+      tag-location: Beliggenhed
+      tag-300-hop-status-code: = 300 && hop.status_code
+      tag-headers-body-preview: Forhåndsvisning af overskrifter og brødtekst
+      tag-truncated: Afkortet
 about:
   alltools-title: Alle {toolsCount} værktøjer
   tools:

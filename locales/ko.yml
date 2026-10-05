@@ -1022,6 +1022,8 @@ tools:
       tag-refresh-key-pair: 키 쌍 새로 고침
       tag-public-key: 공개 키
       tag-private-key: 개인 키
+      tag-fingerprint: 지문
+      tag-md5-fingerprint: 지문(MD5)
     text:
       bits-should-be-256-less-than-bits-less-than-16384-and-be-a-multiple-of-8: 비트 수는 256비트 이하, 16384비트 이하이어야 하며 8의 배수여야 합니다.
   html-wysiwyg-editor:
@@ -2365,6 +2367,8 @@ tools:
       tag-refresh-key-pair: 키 쌍 새로 고침
       tag-public-key: 공개 키
       tag-private-key: 개인 키
+      tag-fingerprint: 지문
+      tag-md5-fingerprint: 지문(MD5)
   ed25519-key-pair-generator:
     title: Ed25519 키 쌍 생성기
     description: 새로운 무작위 Ed25519 개인 및 공개 키(암호 문구 포함 또는 미포함)를 생성합니다.
@@ -2383,6 +2387,8 @@ tools:
       tag-refresh-key-pair: 키 쌍 새로 고침
       tag-public-key: 공개 키
       tag-private-key: 개인 키
+      tag-md5-fingerprint: 지문(MD5)
+      tag-fingerprint: 지문
   energy-computer:
     title: 에너지 소비 및 비용 컴퓨터
     description: 에너지 소비량과 비용을 계산합니다
@@ -2938,6 +2944,7 @@ tools:
       title-schema-validation-errors: 스키마 유효성 검사 오류
       label-indent-size-0-compact: "들여쓰기 크기 (0 = 간결함):"
       repair-json: JSON 복구
+      label-auto-height: 자동 높이 조절
     externalAccess: 이 도구는 유효성 검사가 요청될 때 https://www.schemastore.org에서 JSON 스키마를
       다운로드할 수 있습니다. 외부로 데이터가 전송되지는 않습니다.
   json-escaper:
@@ -3268,6 +3275,16 @@ tools:
       tag-export-as-png: PNG로 내보내기
       tag-export-as-jpg: JPG로 내보내기
       tag-export-as-svg: SVG로 내보내기
+      tag-showing-last-valid-diagram: 마지막으로 유효한 다이어그램을 표시합니다.
+      tag-hint-ctrl-scroll-to-zoom: Ctrl 키(또는 ⌘ 키)를 누른 상태에서 스크롤하여 확대/축소하세요.
+      label-diagram-preview: 다이어그램 미리보기 — 드래그하거나 화살표 키를 사용하여 이동하고, + 및 - 키를 사용하여 확대/축소합니다.
+      label-zoom-level-reset: 확대/축소 비율 {zoom}%, 클릭하면 100%로 초기화됩니다.
+      title-zoom-in: 확대
+      title-zoom-out: 축소하기
+      title-reset-zoom: 확대/축소 비율을 100%로 재설정합니다.
+      title-fit-view: 도표를 보려면 맞춤선을 클릭하세요.
+      title-fullscreen: 전체 화면
+      title-exit-fullscreen: 전체 화면 종료
   mime-converter:
     title: MIME 인코딩 변환기
     description: MIME 인코딩된 Word 형식(메일 제목)에서/으로 변환
@@ -3894,6 +3911,11 @@ tools:
       title-country-to-timezones: 국가별 시간대
       label-country: 국가
       title-timezones-to-countries: 국가별 시간대
+      title-posix-timezones: 시간대 POSIX 문자열
+      search-posix-timezones: 검색할 시간대 또는 POSIX 문자열을 입력하세요.
+      tag-no-results: 결과가 없습니다
+      tag-timezone: 시간대
+      tag-posix: POSIX 문자열
   torrent-to-magnet:
     title: 토런트에서 자석으로
     description: 토렌트 파일을 Magnet URL로 변환
@@ -4665,7 +4687,7 @@ tools:
       label-source-port: "소스 포트:"
       label-destination-port: "목적지 항구:"
       label-chain: "체인:"
-      label-rule-order: "규칙 순서:"
+      label-rule-order: "삽입 위치 (비우면 끝에 추가):"
       title-generated-iptables-command: 생성된 iptables 명령
       tag-expression: 표현
       tag-meaning: 의미
@@ -5571,6 +5593,9 @@ tools:
       tag-corners-square-options: 코너 스퀘어 옵션
       tag-small-terminal: 소형 터미널
       title-image: 영상
+      label-qr-code-embeddable-dataurl: "QR 코드 이미지 데이터 URL:"
+      link-qr-code-open-embeddable-link: 임베드 가능한 링크 열기
+      label-qr-code-image-viewer: 내장형 QR 코드
   ies-lighting-guidelines:
     title: IES 조명 지침
     description: 조명공학회(IES)의 현재 조도 권장 사항을 검색해 보세요.
@@ -9380,6 +9405,242 @@ tools:
         random-tool: 랜덤 도구
         tools: 도구
   external-self-hosted-required: 외부 자체 호스팅 필요
+  markdown-format-converter:
+    title: 형식 변환기
+    description: 표준 Markdown, Obsidian, Logseq, Slack, Jira 및 기타 형식 간 변환.
+    texts:
+      label-source-format: 소스 형식
+      label-target-format: 대상 형식
+      placeholder-input-markdown: 여기에 표준 마크다운, 옵시디언 마크다운 또는 로그시퀘 마크다운 코드를 붙여넣거나 입력하세요...
+      label-input-markdown: 마크다운 입력
+      label-converted-output: 변환된 출력
+      label-text: 텍스트
+      label-preview: 시사
+  restic-command-generator:
+    title: 레스틱 명령 생성기
+    description: Backrest 또는 일반 restic 저장소를 복원하는 restic CLI 명령어를 생성합니다. 전체 스냅샷, 일부
+      파일만 복원하거나 탐색 가능한 마운트를 생성할 수 있습니다.
+    texts:
+      intro: 생성기만 사용하세요. 여기서는 아무것도 실행되지 않으며, 입력하는 내용은 브라우저를 벗어나지 않습니다. 저장소를 설명하고 복구할
+        항목을 선택한 다음 셸 스니펫을 복사하세요.
+      title-repository: 저장소
+      label-backend: 백엔드
+      backend-s3: S3 호환(Backblaze B2, MinIO, Wasabi, AWS...)
+      backend-b2: Backblaze B2(네이티브)
+      backend-local: 로컬 경로 또는 마운트된 디스크
+      backend-sftp: SFTP
+      backend-rest: restic REST 서버
+      backend-rclone: R클론
+      backend-azure: Azure Blob Storage
+      backend-gs: 구글 클라우드 스토리지
+      backend-raw: 기타 (원시 저장소 URI)
+      label-local-path: 저장소 경로
+      label-endpoint: 엔드포인트
+      label-bucket: 버킷
+      label-prefix: 양동이 안의 경로
+      label-region: 지역 (선택 사항)
+      label-user: 사용자
+      label-host: 주인
+      label-port: 포트(선택 사항)
+      label-path: 저장소 경로
+      label-url: 서버 URL
+      label-remote: Rclone 원격 및 경로
+      label-container: 컨테이너
+      label-raw-repository: 저장소 URI
+      label-repository-mode: 저장소가 전달되었습니다.
+      repository-flag: 모든 명령에 -r 플래그가 추가됩니다.
+      repository-env: RESTIC_REPOSITORY 환경 변수
+      label-repository-uri: 저장소 URI
+      label-password: 저장소 비밀번호
+      password-prompt: 셸에서 입력하라는 메시지가 표시됩니다(-rs 옵션을 사용하면 기록에 남지 않습니다).
+      password-file: --비밀번호 파일
+      password-command: --비밀번호 명령
+      password-placeholder: 플레이스홀더가 포함된 RESTIC_PASSWORD 내보내기
+      password-none: 이미 내 환경에 설정되어 있습니다.
+      label-password-file: 암호 파일
+      label-password-command: 비밀번호 명령
+      label-credentials: 백엔드 자격 증명
+      credentials-prompt: 조개껍데기 속 비밀을 입력하라는 메시지를 표시합니다.
+      credentials-placeholder: 자리 표시자를 사용하여 내보내기
+      credentials-none: 이미 내 환경에 설정되어 있습니다.
+      label-account-id: 키 ID / 계정 이름
+      hint-secrets: 생성된 명령어에는 비밀 정보가 절대 포함되지 않습니다. 프롬프트 옵션이 "read -rs"를 사용하여 셸로 읽어들이기
+        때문에 명령 기록에 남지 않습니다.
+      title-operation: 무엇을 하고 싶으세요?
+      operation-restore: 복원 — 스냅샷의 파일을 디스크에 다시 기록합니다.
+      operation-dump: 덤프 — 스냅샷에서 파일 하나 또는 폴더 하나를 스트리밍합니다.
+      operation-mount: 마운트 — 저장소를 파일 시스템으로 탐색
+      operation-snapshots: 스냅샷 — 저장소의 스냅샷 목록을 표시합니다.
+      operation-ls: ls — 스냅샷 내의 파일 목록을 표시합니다.
+      operation-find: 찾기 — 여러 스냅샷에서 파일을 찾습니다.
+      operation-diff: diff — 두 스냅샷 비교
+      operation-check: 확인 — 저장소의 무결성을 검증합니다.
+      operation-stats: 통계 - 스냅샷 또는 저장소의 크기
+      operation-unlock: 잠금 해제 — 오래된 잠금을 제거합니다
+      title-snapshot: 스냅샷 선택
+      label-snapshot-id: 스냅샷 ID
+      label-subfolder: 스냅샷의 이 하위 폴더만 해당됩니다.
+      label-plan: 등받이 플랜 ID
+      label-instance: Backrest 인스턴스 ID
+      label-filter-host: 주인
+      label-tags: 추가 태그
+      placeholder-tag: 수동
+      label-filter-paths: 경로
+      placeholder-path: /home/me/documents
+      hint-tags: Backrest는 생성하는 스냅샷에 "plan:" 및 "created-by:" 태그를 추가하고 그 뒤에 플랜 및 인스턴스
+        ID를 붙입니다. 하나의 --tag 플래그 안에 있는 태그들은 AND 연산으로 결합되고, 반복되는 --tag 플래그는 OR
+        연산으로 결합됩니다. 따라서 플랜과 인스턴스는 하나의 플래그에 유지되고, 추가되는 태그는 각각 별도의 플래그를 갖게 됩니다.
+      title-restore-options: 복원 옵션
+      label-target: 대상 디렉터리
+      label-include: 이러한 경로 또는 패턴만 복원하세요
+      placeholder-include: /home/me/documents/**/*.pdf
+      label-exclude: 이러한 경로 또는 패턴을 제외하세요
+      placeholder-exclude: "**/node_modules"
+      label-overwrite: 기존 파일을 덮어씁니다
+      overwrite-default: restic 기본값(항상)
+      overwrite-always: 언제나
+      overwrite-if-changed: 변경된 경우
+      overwrite-if-newer: if-새로운
+      overwrite-never: 절대
+      label-case-insensitive: 대소문자 구분 없는 패턴
+      label-dry-run: 시험 운전
+      label-verify: 복원된 파일을 확인하십시오
+      label-sparse: 희소 파일을 작성합니다.
+      label-delete: 스냅샷에서 누락된 파일을 삭제합니다.
+      title-dump-options: 덤프 옵션
+      label-dump-path: 스냅샷 내의 파일 또는 폴더
+      label-archive: 아카이브 형식
+      archive-none: 원본 파일
+      archive-tar: 가져간다
+      archive-zip: 지퍼
+      label-output-file: 로컬 파일로 리디렉션(선택 사항)
+      hint-dump: "`dump` 명령은 저장소에서 단일 파일 또는 폴더를 바로 스트리밍하므로 구성 파일 하나를 복구하기 위해 전체 스냅샷을
+        복원할 필요가 없습니다."
+      title-mount-options: 장착 옵션
+      label-mount-point: 마운트 포인트
+      label-allow-other: 다른 사용자가 마운트에 접근할 수 있도록 허용합니다.
+      title-ls-options: 목록 옵션
+      label-ls-directory: 목록을 표시할 디렉토리 (선택 사항)
+      label-long: 긴 목록
+      label-recursive: 재귀적
+      title-find-options: 옵션 찾기
+      label-find-pattern: 무늬
+      label-restrict-snapshot: 선택한 스냅샷만 검색합니다.
+      title-diff-options: 다른 옵션
+      label-diff-snapshot: 스냅샷과 비교하세요
+      label-metadata: 메타데이터 변경 사항도 보고합니다.
+      title-snapshots-options: 스냅샷 옵션
+      label-compact: 컴팩트 출력
+      title-check-options: 옵션 선택
+      label-read-data-subset: 데이터 하위 집합을 읽습니다.
+      label-read-data: 모든 팩 파일을 읽고 확인하십시오.
+      label-check-unused: 사용되지 않는 블롭을 보고하세요
+      label-with-cache: 기존 캐시를 사용하세요
+      title-stats-options: 통계 옵션
+      label-stats-mode: 계수 모드
+      stats-restore-size: restore-size — 복원 크기
+      stats-files-by-contents: 파일 내용별 — 고유 파일
+      stats-raw-data: 원본 데이터 - 중복 제거 전 크기
+      stats-blobs-per-file: 파일당 블롭 수
+      label-stats-all: 모든 스냅샷
+      title-unlock-options: 잠금 해제 옵션
+      label-remove-all: 사용 중인 자물쇠를 포함하여 모든 자물쇠를 제거하십시오.
+      title-global-options: 글로벌 옵션
+      label-cache-dir: 캐시 디렉터리
+      label-limit-download: 다운로드 제한 (KiB/s)
+      label-retry-lock: 잠긴 저장소를 다시 시도하세요.
+      label-extra-options: 백엔드 옵션(-o)
+      placeholder-extra-option: s3.connections=4
+      label-extra-arguments: 추가 인수(원래 그대로 추가됨)
+      label-no-lock: --잠금 안 함
+      label-no-cache: --캐시 없음
+      label-insecure-tls: --insecure-tls
+      label-json: --json
+      label-quiet: --조용한
+      label-verbose: --말 수가 많은
+      title-output: 생성된 명령
+      label-include-environment: 환경 설정 포함
+      label-multiline: 한 줄에 하나의 인수
+      button-reset: 기본 설정으로 재설정
+      warning-history: 입력된 자리 표시자 내보내기는 셸 기록에 계속 남아 있습니다. 프롬프트 옵션을 사용하거나 나중에 기록을 삭제하는 것이 좋습니다.
+      warning-target: 복원 명령은 대상 디렉터리 아래에 있는 모든 파일의 전체 경로를 다시 생성하므로 /etc/hosts 파일은 대상
+        디렉터리의 etc/hosts 하위 폴더에 위치하게 됩니다.
+      warning-delete: --delete 옵션은 스냅샷에 포함되지 않은 대상 디렉터리의 파일을 삭제합니다. 먼저 --dry-run 옵션을
+        사용하여 실행해 보세요.
+      warning-restic-version: --dry-run, --delete 및 --overwrite 옵션을 사용하려면 restic 0.17 이상 버전이 필요합니다.
+      warning-mount: mount 명령은 FUSE를 필요로 하며, 스냅샷을 읽기 전용으로 노출하고, Ctrl-C로 중지할 때까지 계속 실행됩니다.
+      title-walkthrough: 복구 과정 안내
+      hint-walkthrough: 위의 설정값을 기반으로 저장소만 남았을 때의 일반적인 순서입니다.
+      walkthrough-snapshots: 저장소의 스냅샷 목록을 표시합니다.
+      walkthrough-find: 필요한 파일이 있는 스냅샷을 찾으세요
+      walkthrough-ls: 선택한 스냅샷의 파일 목록을 표시합니다.
+      walkthrough-restore: 필요한 파일만 복원하세요
+      walkthrough-mount: 또는 저장소를 탐색하여 파일을 수동으로 복사할 수도 있습니다.
+      title-backrest: 등받이 참고 자료
+      table-item: 목
+      table-value: 기본 경로 또는 형식(괄호 안에 Docker 이미지)
+      backrest-config: 저장소 URI, 비밀번호 및 백엔드 환경 변수를 저장하는 설정 파일
+      backrest-data: 데이터 디렉토리
+      backrest-binary: Backrest가 다운로드한 Restic 바이너리
+      backrest-plan-tag: 계획을 식별하는 태그
+      backrest-instance-tag: 인스턴스를 식별하는 태그
+      hint-backrest: Backrest 저장소는 일반 restic 저장소입니다. 웹 UI가 없는 경우 config.json에서 URI와
+        비밀번호를 읽어와 이미 다운로드된 Backrest restic 바이너리를 사용하여 실행합니다.
+  epc-qrcode-generator:
+    title: EPC QR코드 생성기
+    description: SEPA 신용 이체를 시작하기 위한 유럽 결제 위원회(EPC) QR 코드를 생성합니다.
+    externalAccess: 널
+    texts:
+      text-copied-to-clipboard: 클립보드에 복사됨
+      label-v1: V1
+      label-v2: V2
+      label-beneficiary-name: "수혜자 이름:"
+      placeholder-beneficiary-name: 수혜자 이름
+      label-account-iban: "계좌번호(IBAN):"
+      placeholder-fr76: FR76...
+      label-bic: "비크:"
+      placeholder-bank-bic-optional: 은행 BIC (선택 사항)
+      label-amount-eur: "금액(유로):"
+      label-payment-reference: "결제 참조 번호:"
+      placeholder-optional: 선택 과목
+      label-purpose: "목적:"
+      label-version: "버전:"
+      label-foreground-color: "전경색:"
+      label-background-color: "배경색:"
+      label-qr-size: "QR 코드 크기:"
+      tag-generate-qr: QR 코드 생성
+      tag-download-qrcode: QR코드 다운로드
+      tag-copy-qrcode-text: QR 코드 텍스트 복사
+  url-redirection-checker:
+    title: URL 리디렉션 검사기
+    description: URL이 다른 URL로 리디렉션되는지 확인합니다.
+    externalAccess: 널
+    texts:
+      label-get: 얻다
+      label-head: 머리
+      label-url: "URL:"
+      placeholder-https-example-com: https://example.com
+      label-method: "방법:"
+      label-user-agent: "사용자 에이전트:"
+      label-max-hops: "맥스 홉스:"
+      label-include-body-preview: 본문 미리보기 포함
+      label-preview-bytes: "미리보기:"
+      title-warnings: 경고
+      title-summary: 요약
+      label-input-url: "URL 입력:"
+      label-final-url: "최종 URL:"
+      label-hop-count: "홉 수:"
+      title-redirect-chain: 리디렉션 체인
+      tag-inspect-redirect-chain: 리다이렉트 체인 검사
+      tag-: "-"
+      tag-url: URL
+      tag-status: 상태
+      tag-duration: 지속
+      tag-redirect: 리디렉션
+      tag-location: 위치
+      tag-300-hop-status-code: = 300 && hop.status_code
+      tag-headers-body-preview: 헤더 및 본문 미리보기
+      tag-truncated: 잘린
 about:
   alltools-title: 모든 {toolsCount}개 도구
   tools:

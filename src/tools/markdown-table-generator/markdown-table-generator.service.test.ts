@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { createMarkdownTable, escapeMarkdownTableCell, generateMarkdownTable } from './markdown-table-generator.service';
+import {
+  createMarkdownTable,
+  escapeMarkdownTableCell,
+  generateMarkdownTable,
+} from './markdown-table-generator.service';
 
 describe('markdown-table-generator service', () => {
   describe('createMarkdownTable', () => {
@@ -16,18 +20,24 @@ describe('markdown-table-generator service', () => {
     it('escapes pipes and converts line breaks to br tags', () => {
       expect(escapeMarkdownTableCell(' foo | bar\nbaz ')).toBe('foo \\| bar<br>baz');
     });
+
+    it('escapes backslashes so a trailing backslash cannot unescape the pipe', () => {
+      expect(escapeMarkdownTableCell('C:\\temp\\|x')).toBe('C:\\\\temp\\\\\\|x');
+    });
   });
 
   describe('generateMarkdownTable', () => {
     it('generates a markdown table with column alignment', () => {
-      expect(generateMarkdownTable({
-        headers: ['Name', 'Count', 'Notes'],
-        alignments: ['left', 'right', 'center'],
-        rows: [
-          ['Alpha', '10', 'Ready'],
-          ['Beta', '3', 'Needs review'],
-        ],
-      })).toMatchInlineSnapshot(`
+      expect(
+        generateMarkdownTable({
+          headers: ['Name', 'Count', 'Notes'],
+          alignments: ['left', 'right', 'center'],
+          rows: [
+            ['Alpha', '10', 'Ready'],
+            ['Beta', '3', 'Needs review'],
+          ],
+        }),
+      ).toMatchInlineSnapshot(`
         "| Name | Count | Notes |
         | :--- | ---: | :---: |
         | Alpha | 10 | Ready |
@@ -36,11 +46,13 @@ describe('markdown-table-generator service', () => {
     });
 
     it('pads uneven rows to keep the table shape valid', () => {
-      expect(generateMarkdownTable({
-        headers: ['Name'],
-        alignments: ['left'],
-        rows: [['Alpha', 'Extra']],
-      })).toMatchInlineSnapshot(`
+      expect(
+        generateMarkdownTable({
+          headers: ['Name'],
+          alignments: ['left'],
+          rows: [['Alpha', 'Extra']],
+        }),
+      ).toMatchInlineSnapshot(`
         "| Name |  |
         | :--- | :--- |
         | Alpha | Extra |"

@@ -1202,6 +1202,8 @@ tools:
       tag-refresh-key-pair: Обновить пару ключей
       tag-public-key: Открытый ключ
       tag-private-key: Закрытый ключ
+      tag-fingerprint: Отпечаток пальца
+      tag-md5-fingerprint: Отпечаток пальца (MD5)
     text:
       bits-should-be-256-less-than-bits-less-than-16384-and-be-a-multiple-of-8: Количество бит должно быть 256 <= бит <= 16384 и кратно 8.
   html-wysiwyg-editor:
@@ -2754,6 +2756,8 @@ tools:
       tag-refresh-key-pair: Обновить пару ключей
       tag-public-key: Открытый ключ
       tag-private-key: Закрытый ключ
+      tag-fingerprint: Отпечаток пальца
+      tag-md5-fingerprint: Отпечаток пальца (MD5)
   ed25519-key-pair-generator:
     title: Генератор ключей Ed25519
     description: Генерируйте новые случайные приватные и публичные ключи Ed25519 (с
@@ -2773,6 +2777,8 @@ tools:
       tag-refresh-key-pair: Обновить пару ключей
       tag-public-key: Открытый ключ
       tag-private-key: Закрытый ключ
+      tag-md5-fingerprint: Отпечаток пальца (MD5)
+      tag-fingerprint: Отпечаток пальца
   email-normalizer:
     title: Нормализатор email
     description: Нормализуйте email-адреса для упрощения сравнения. Полезно для
@@ -3529,6 +3535,7 @@ tools:
       title-schema-validation-errors: Ошибки проверки схемы
       label-indent-size-0-compact: "Размер отступа (0 = Компактный):"
       repair-json: Исправить JSON
+      label-auto-height: Автоматическая высота
     externalAccess: При запросе проверки этот инструмент может загрузить JSON-схему
       с сайта https://www.schemastore.org. Внешние данные не передаются.
   json-escaper:
@@ -3892,6 +3899,18 @@ tools:
       tag-export-as-png: Экспортировать как PNG
       tag-export-as-jpg: Экспортировать как JPG
       tag-export-as-svg: Экспортировать как SVG
+      tag-showing-last-valid-diagram: Отображается последняя действительная диаграмма.
+      tag-hint-ctrl-scroll-to-zoom: Удерживайте клавишу Ctrl (или ⌘) и прокрутите для масштабирования.
+      label-diagram-preview: Предварительный просмотр диаграммы — перетаскивайте
+        курсор или используйте клавиши со стрелками для перемещения, + и - для
+        масштабирования.
+      label-zoom-level-reset: Масштабирование {zoom}%, нажмите, чтобы сбросить до 100%
+      title-zoom-in: Увеличить масштаб
+      title-zoom-out: Отдалиться
+      title-reset-zoom: Сбросить масштаб до 100%
+      title-fit-view: Подгоните диаграмму для просмотра
+      title-fullscreen: Полноэкранный
+      title-exit-fullscreen: Выйти из полноэкранного режима
   mime-converter:
     title: Конвертер MIME-кодировки
     description: Конвертируйте из/в MIME-кодировку (Mail Subject)
@@ -4778,6 +4797,11 @@ tools:
       title-country-to-timezones: Страна в часовых поясах
       label-country: Страна
       title-timezones-to-countries: Часовые пояса стран
+      title-posix-timezones: Строки POSIX для часовых поясов
+      search-posix-timezones: Введите часовой пояс или строку POSIX для поиска.
+      tag-no-results: Результаты отсутствуют
+      tag-timezone: Часовой пояс
+      tag-posix: Строка POSIX
   torrent-to-magnet:
     title: Конвертер Torrent в Magnet
     description: Преобразуйте торрент-файл в Magnet-ссылку
@@ -5647,7 +5671,7 @@ tools:
       label-source-port: "Исходный порт:"
       label-destination-port: "Порт назначения:"
       label-chain: "Цепь:"
-      label-rule-order: "Порядок правил:"
+      label-rule-order: "Позиция вставки (пусто = добавить в конец):"
       title-generated-iptables-command: Сгенерированная команда iptables
       tag-expression: Выражение
       tag-meaning: Значение
@@ -6302,6 +6326,9 @@ tools:
       tag-corners-square-options: Углы Квадратные Варианты
       tag-small-terminal: Малый Терминал
       title-image: Изображение
+      label-qr-code-embeddable-dataurl: "URL-адрес изображения QR-кода:"
+      link-qr-code-open-embeddable-link: Открыть встраиваемую ссылку
+      label-qr-code-image-viewer: Встраиваемый QR-код
   meta-tag-generator:
     texts:
       label-your-meta-tags: Ваши метатеги
@@ -9911,6 +9938,265 @@ tools:
         random-tool: Случайный инструмент
         tools: Инструменты
   external-self-hosted-required: Требуется внешнее размещение на собственном сервере.
+  markdown-format-converter:
+    title: Конвертер форматов
+    description: Конвертация между стандартным Markdown, Obsidian, Logseq, Slack,
+      Jira и другими форматами.
+    texts:
+      label-source-format: Исходный формат
+      label-target-format: Целевой формат
+      placeholder-input-markdown: Вставьте или введите здесь свой стандартный
+        Markdown-код, код Obsidian или Logseq...
+      label-input-markdown: Ввод Markdown
+      label-converted-output: Преобразованный вывод
+      label-text: Текст
+      label-preview: Предварительный просмотр
+  restic-command-generator:
+    title: Генератор команд Restic
+    description: "Сгенерируйте команды CLI restic для восстановления репозитория
+      Backrest или обычного restic: целого снимка, только некоторых файлов или
+      доступного для просмотра монтирования."
+    texts:
+      intro: "Только генератор: здесь ничего не запускается, и ничто из того, что вы
+        вводите, не покидает ваш браузер. Опишите свой репозиторий, выберите то,
+        что вам нужно восстановить, и скопируйте фрагмент кода оболочки."
+      title-repository: Репозиторий
+      label-backend: Бэкенд
+      backend-s3: Совместимость с S3 (Backblaze B2, MinIO, Wasabi, AWS...)
+      backend-b2: Backblaze B2 (родной)
+      backend-local: Локальный путь или смонтированный диск
+      backend-sftp: SFTP
+      backend-rest: REST-сервер restic
+      backend-rclone: Rclone
+      backend-azure: Azure Blob Storage
+      backend-gs: Google Облачное хранилище
+      backend-raw: Другое (исходный URI репозитория)
+      label-local-path: Путь к репозиторию
+      label-endpoint: Конечная точка
+      label-bucket: Ведро
+      label-prefix: Тропа в ведре
+      label-region: Регион (необязательно)
+      label-user: Пользователь
+      label-host: Хозяин
+      label-port: Порт (необязательно)
+      label-path: Путь к репозиторию
+      label-url: URL сервера
+      label-remote: Rclone удаленный доступ и путь
+      label-container: Контейнер
+      label-raw-repository: URI репозитория
+      label-repository-mode: Репозиторий передан как
+      repository-flag: Флаг -r для каждой команды
+      repository-env: переменная среды RESTIC_REPOSITORY
+      label-repository-uri: URI репозитория
+      label-password: Пароль репозитория
+      password-prompt: Запросите это в командной оболочке (прочитайте -rs, чтобы не
+        просматривать историю).
+      password-file: --файл-пароля
+      password-command: --password-command
+      password-placeholder: Экспорт RESTIC_PASSWORD с заполнителем
+      password-none: Уже настроено в моей среде
+      label-password-file: файл паролей
+      label-password-command: Команда пароля
+      label-credentials: Учетные данные бэкэнда
+      credentials-prompt: Подсказка для разгадки секрета в раковине
+      credentials-placeholder: Экспортируйте их с заполнителями.
+      credentials-none: Уже настроено в моей среде
+      label-account-id: Идентификатор ключа / имя учетной записи
+      hint-secrets: 'В сгенерированную команду никогда не закладываются никакие
+        секреты: параметры приглашения командной строки считывают их в вашу
+        оболочку с помощью команды "read -rs", поэтому они не попадают в историю
+        командной строки.'
+      title-operation: Что ты хочешь делать?
+      operation-restore: Восстановление — запись файлов из снимка обратно на диск.
+      operation-dump: дамп — потоковая передача одного файла или папки из снимка.
+      operation-mount: mount — просмотр репозитория как файловой системы
+      operation-snapshots: snapshots — список снимков репозитория
+      operation-ls: ls — выводит список файлов внутри снимка
+      operation-find: найти — определить местоположение файла в разных снимках.
+      operation-diff: diff — сравнение двух снимков
+      operation-check: проверка — подтверждение целостности репозитория
+      operation-stats: статистика — размер снимка или репозитория
+      operation-unlock: разблокировать — удалить устаревшие замки
+      title-snapshot: Выбор снимка
+      label-snapshot-id: Идентификатор снимка
+      label-subfolder: Только эта подпапка снимка
+      label-plan: Схема спинки ID
+      label-instance: Идентификатор экземпляра спинки
+      label-filter-host: Хозяин
+      label-tags: Дополнительные теги
+      placeholder-tag: руководство
+      label-filter-paths: Пути
+      placeholder-path: /home/me/documents
+      hint-tags: Backrest помечает создаваемые снимки тегами "plan:" и "created-by:",
+        за которыми следуют идентификаторы плана и экземпляра. Теги внутри
+        одного флага --tag объединяются с помощью операции И, а повторяющиеся
+        флаги --tag объединяются с помощью операции ИЛИ, поэтому план и
+        экземпляр остаются в одном флаге, а каждый дополнительный тег получает
+        свой собственный.
+      title-restore-options: Восстановить параметры
+      label-target: Целевой каталог
+      label-include: Восстановите только эти пути или узоры.
+      placeholder-include: /home/me/documents/**/*.pdf
+      label-exclude: Исключите эти пути или шаблоны.
+      placeholder-exclude: "**/node_modules"
+      label-overwrite: Перезаписать существующие файлы
+      overwrite-default: restic по умолчанию (всегда)
+      overwrite-always: всегда
+      overwrite-if-changed: если-измененный
+      overwrite-if-newer: если-новее
+      overwrite-never: никогда
+      label-case-insensitive: шаблоны, нечувствительные к регистру
+      label-dry-run: Пробный запуск
+      label-verify: Проверьте восстановленные файлы.
+      label-sparse: Запись разреженных файлов
+      label-delete: Удалите файлы, отсутствующие в снимке.
+      title-dump-options: Варианты сброса
+      label-dump-path: Файл или папка внутри снимка
+      label-archive: Архивный формат
+      archive-none: Исходный файл
+      archive-tar: берет
+      archive-zip: зип
+      label-output-file: Перенаправление на локальный файл (необязательно)
+      hint-dump: Функция dump streams считывает один файл или папку непосредственно из
+        репозитория, поэтому вам не нужно восстанавливать весь снимок, чтобы
+        получить один конфигурационный файл.
+      title-mount-options: Варианты крепления
+      label-mount-point: Маунт-Пойнт
+      label-allow-other: Разрешите другим пользователям доступ к креплению.
+      title-ls-options: Варианты списка
+      label-ls-directory: Каталог для отображения (необязательно)
+      label-long: Длинный список
+      label-recursive: Рекурсивный
+      title-find-options: Найти варианты
+      label-find-pattern: Шаблон
+      label-restrict-snapshot: Поиск только в выбранном снимке.
+      title-diff-options: Различные варианты
+      label-diff-snapshot: Сравните со снимком
+      label-metadata: Сообщайте также об изменениях метаданных.
+      title-snapshots-options: Параметры снимков
+      label-compact: Компактный вывод
+      title-check-options: Выберите варианты
+      label-read-data-subset: Прочитать подмножество данных
+      label-read-data: Прочитайте и проверьте каждый файл пакета.
+      label-check-unused: Сообщить о неиспользуемых блоках данных
+      label-with-cache: Используйте существующий кэш
+      title-stats-options: Параметры статистики
+      label-stats-mode: Режим подсчета
+      stats-restore-size: restore-size — размер восстанавливаемого файла
+      stats-files-by-contents: файлы по содержимому — уникальные файлы
+      stats-raw-data: необработанные данные — размер до дедупликации
+      stats-blobs-per-file: количество блоков на файл
+      label-stats-all: Все снимки
+      title-unlock-options: Разблокировать параметры
+      label-remove-all: Снимите все замки, включая те, которые используются.
+      title-global-options: Глобальные опции
+      label-cache-dir: Каталог кэша
+      label-limit-download: Ограничение на скачивание (КиБ/с)
+      label-retry-lock: Попробуйте повторно использовать заблокированный репозиторий для
+      label-extra-options: Параметры бэкэнда (-o)
+      placeholder-extra-option: s3.connections=4
+      label-extra-arguments: Дополнительные аргументы (добавлены как есть)
+      label-no-lock: --безблокировки
+      label-no-cache: --no-cache
+      label-insecure-tls: --insecure-tls
+      label-json: --json
+      label-quiet: --тихий
+      label-verbose: --verbose
+      title-output: Сгенерированная команда
+      label-include-environment: Включите настройку среды.
+      label-multiline: Один аргумент на строку
+      button-reset: Сбросить до значений по умолчанию
+      warning-history: "После заполнения поля с заполнителями, значения-заполнители
+        сохраняются в истории командной строки: вы можете выбрать
+        предпочтительные параметры командной строки или очистить историю после
+        этого."
+      warning-target: Функция восстановления воссоздает полный путь ко всем файлам в
+        целевом каталоге, поэтому файл /etc/hosts окажется в подпапке etc/hosts
+        целевого каталога.
+      warning-delete: Параметр --delete удаляет файлы целевого каталога, которых нет в
+        снимке. Сначала попробуйте с параметром --dry-run.
+      warning-restic-version: Для использования параметров --dry-run, --delete и
+        --overwrite требуется restic версии 0.17 или новее.
+      warning-mount: Для работы команды mount требуется FUSE, она делает снимки
+        доступными только для чтения и продолжает работать до тех пор, пока вы
+        не остановите её с помощью Ctrl-C.
+      title-walkthrough: Пошаговое руководство по восстановлению
+      hint-walkthrough: Обычная последовательность действий, когда остается только
+        репозиторий, сформированный на основе указанных выше настроек.
+      walkthrough-snapshots: Перечислите снимки состояния репозитория.
+      walkthrough-find: Найдите снимок, содержащий нужный вам файл.
+      walkthrough-ls: Вывести список файлов выбранного снимка.
+      walkthrough-restore: Восстанавливайте только необходимые файлы.
+      walkthrough-mount: Или просмотрите репозиторий и скопируйте файлы вручную.
+      title-backrest: Шпаргалка по спинке
+      table-item: Элемент
+      table-value: Путь или формат по умолчанию (образ Docker в скобках)
+      backrest-config: Конфигурационный файл, содержащий URI репозитория, его пароль и
+        переменные среды бэкэнда.
+      backrest-data: Каталог данных
+      backrest-binary: Бинарная версия Restic загружена пользователем Backrest.
+      backrest-plan-tag: Метка, идентифицирующая план
+      backrest-instance-tag: Метка, идентифицирующая экземпляр
+      hint-backrest: "Репозиторий Backrest — это обычный репозиторий restic: если
+        веб-интерфейс недоступен, извлеките URI и пароль из файла config.json и
+        запустите его с помощью уже загруженного бинарного файла restic
+        Backrest."
+  epc-qrcode-generator:
+    title: Генератор QR-кодов EPC
+    description: Сгенерируйте QR-код Европейского платежного совета (EPC) для
+      инициирования кредитного перевода SEPA.
+    externalAccess: нулевой
+    texts:
+      text-copied-to-clipboard: Скопировано в буфер обмена
+      label-v1: В1
+      label-v2: V2
+      label-beneficiary-name: "Имя получателя:"
+      placeholder-beneficiary-name: имя бенефициара
+      label-account-iban: "Счет (IBAN):"
+      placeholder-fr76: FR76...
+      label-bic: "BIC:"
+      placeholder-bank-bic-optional: Банковский BIC-код (необязательно)
+      label-amount-eur: "Сумма (евро):"
+      label-payment-reference: "Номер платежа:"
+      placeholder-optional: Необязательный
+      label-purpose: "Цель:"
+      label-version: "Версия:"
+      label-foreground-color: "Цвет переднего плана:"
+      label-background-color: "Цвет фона:"
+      label-qr-size: "Размер QR-кода:"
+      tag-generate-qr: Сгенерировать QR-код
+      tag-download-qrcode: Скачать QR-код
+      tag-copy-qrcode-text: Скопировать текст QR-кода
+  url-redirection-checker:
+    title: Проверка перенаправлений URL
+    description: Проверьте, перенаправляет ли один URL-адрес на другой.
+    externalAccess: нулевой
+    texts:
+      label-get: ПОЛУЧАТЬ
+      label-head: ГОЛОВА
+      label-url: "URL:"
+      placeholder-https-example-com: https://example.com
+      label-method: "Метод:"
+      label-user-agent: "Агент пользователя:"
+      label-max-hops: "Максимальное количество хмеля:"
+      label-include-body-preview: Включить предварительный просмотр содержимого
+      label-preview-bytes: "Предварительный просмотр:"
+      title-warnings: Предупреждения
+      title-summary: Краткое содержание
+      label-input-url: "Введите URL-адрес:"
+      label-final-url: "Итоговая ссылка:"
+      label-hop-count: "Количество хмеля:"
+      title-redirect-chain: Цепочка перенаправлений
+      tag-inspect-redirect-chain: Проверить цепочку перенаправлений
+      tag-: "-"
+      tag-url: URL
+      tag-status: Статус
+      tag-duration: Продолжительность
+      tag-redirect: Перенаправление
+      tag-location: Расположение
+      tag-300-hop-status-code: = 300 && hop.status_code
+      tag-headers-body-preview: Предварительный просмотр заголовков и основного текста
+      tag-truncated: Усеченный
 spanCopyable:
   copy: Копировать в буфер обмена
   copied: Скопировано!

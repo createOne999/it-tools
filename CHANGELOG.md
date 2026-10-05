@@ -2,6 +2,86 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## Version 2026.09.27
+
+### Features
+- **Timezone Converter**: add POSIX string filterable list (7fc4b79)
+- **JSON Editor**: store data and add an auto height option (0f4c7b1)
+- **new tool**: Restic Command Generator (#573) (c96fd39)
+- **Keys Generator**: add fingerprint (bc1d9a3)
+- **new tool**: EPC QR Code Generator (c80a08b)
+- **new tool**: URL Redirection Checker (0039bd7)
+- **QRCode Generator**: add embeddable link and cropy dataurl (39c616f)
+- **docker**: serve the app from any subpath with a runtime BASE_URL (#565) (0a1f5dc)
+-  add i18n internationalization for memo and cheatsheet (#552) (04cfee6)
+-  mermaid live preview (#548) (db3a344)
+- **new tool**: Markdown Format Converter (#488) (671e8a1)
+- **k8s-memo**: add i18n support for memo content (#546) (db9ac4e)
+- **common-regex-memo**: add i18n support for memo content (#547) (bc12798)
+-  add warning about need of external self hosted for related tools (6e89d3d)
+-  useNetworkUtilsConfig and basic auth for all tools requiring external docker services (65955d9)
+- **Math OCR**: replace MathJAX by Katex (b1d3849)
+-  add Cross Origin Isolation (HTTP Headers) (c4f7ded)
+- **Sitemap**: add HOSTNAME env var to generate a sitemap (96a2079)
+-  Integer Base Converter space separator support (#481) (a2d6961)
+- **new tool**: Ping (aa515d9)
+- **IBAN Validator and Parser**: add bank infos (0620f57)
+
+### Bug fixes
+-  c-link to vs href (62ab0bf)
+- **deps**: move the two remaining deprecated direct dependencies onto supported versions (#559) (d39255a)
+- **docker**: run on read-only filesystems, IPv6-less hosts and cpu-limited containers (#556) (8b7bc0a)
+- **i18n**: tool search in current language and handle switching (e5a2017)
+- **Code Block Copyable**: enable lineWrapping (be4d225)
+- **Units Converter**: make units translatable (66e2ac5)
+- **Units Converter**: ensure label fits (fb6cc73)
+- **Regex Tester**: navigation bug due to shaddowroot (3864323)
+- **layout**: prevent horizontal page overflow with wide code content (#483) (f1358d5)
+-  allows cross origin isolation for tools with img and iframe (db32bb0)
+- **i18n**: some text (e1de52b)
+- **Dockerfile**: Add source label to Dockerfile (175c860)
+- **Cron Expression Generator**: handle input cron and standard only (fe2766e)
+
+### Performance
+- **bundle**: improve initial load + loading of tools (#575) (641fa85)
+
+### Refactoring
+- **websocket-tester**: use the native WebSocket instead of w-websocket-client (#558) (903ffb8)
+
+### Continuous integration
+-  pnpm 12, pnpm/setup v3, faster and pinned CI, single Vercel deploy workflow (#577) (da38faa)
+-  rework the test and lint toolchain — per-browser E2E, scoped jsdom, type-aware oxlint (#561) (ec740dd)
+-  use pnpm/setup for pnpm and Node setup, pin Node in package.json (#560) (fbc7d47)
+
+### Chores
+-  fix release script (51cb093)
+-  update deps (90b7793)
+-  remove fm:check ypass (a049d1c)
+-  global code formatting (bc44870)
+- **deps**: replace the five deprecated packages from the dependency dashboard (#557) (5e4972e)
+- **deps**: update dependency @playwright/test to ^1.62.0 (#511) (9bc3cb7)
+- **deps**: update type packages with their dependencies (#452) (db050b2)
+-  update deps (23dc0d4)
+
+### Other
+-  Restructure and enhance cheat sheets for improved readability (#566) (5bf94bc)
+-  add proxmox helper script (#568) (a5607e0)
+-  Enhance Docker Swarm documentation (#564) (002a211)
+-  Fix regex to clean base64 data URI (#563) (2912cf3)
+-  Optimize the Chinese translationUpdate zh.yml (#549) (69f5084)
+-  Update FUNDING.yml to include Buy Me a Coffee (c82794a)
+-  Fix French translations in fr.yml (#551) (07102a6)
+-  Optimize Chinese translation (#487) (27ab891)
+-  Translate another docker cheatsheets to zh-cn (#479) (c105c1e)
+
+### I18n
+-  extract and translate remaining (6aa2e1c)
+-  translate remaining (e725356)
+-  translate remaining (bbc819f)
+
+### Doc
+-  add a docker compose sample with all related services (2abda9b)
+
 ## Version 2026.07.11
 
 ### Features

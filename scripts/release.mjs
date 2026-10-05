@@ -49,7 +49,7 @@ try {
   consola.success('Changelog changes committed');
 
   consola.info('Creating version and tag');
-  await $`npm version ${version} -m "chore(version): release ${version}"`;
+  await $`pnpm version ${version} -m "chore(version): release ${version}"`;
   consola.info('Npm version released with tag');
 } catch (error) {
   consola.error(error);

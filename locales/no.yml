@@ -1206,6 +1206,8 @@ tools:
       tag-refresh-key-pair: Oppdater nøkkelpar
       tag-public-key: Offentlig nøkkel
       tag-private-key: Privat nøkkel
+      tag-fingerprint: Fingeravtrykk
+      tag-md5-fingerprint: Fingeravtrykk (MD5)
     text:
       bits-should-be-256-less-than-bits-less-than-16384-and-be-a-multiple-of-8: Bitene skal være 256 <= bits <= 16384 og være et multiplum av 8
   html-wysiwyg-editor:
@@ -2597,6 +2599,8 @@ tools:
       tag-refresh-key-pair: Oppdater nøkkelpar
       tag-public-key: Offentlig nøkkel
       tag-private-key: Privat nøkkel
+      tag-fingerprint: Fingeravtrykk
+      tag-md5-fingerprint: Fingeravtrykk (MD5)
   ed25519-key-pair-generator:
     title: Ed25519 nøkkelpargenerator
     description: Generer nye tilfeldige private og offentlige Ed25519-nøkler (med
@@ -2616,6 +2620,8 @@ tools:
       tag-refresh-key-pair: Oppdater nøkkelpar
       tag-public-key: Offentlig nøkkel
       tag-private-key: Privat nøkkel
+      tag-md5-fingerprint: Fingeravtrykk (MD5)
+      tag-fingerprint: Fingeravtrykk
   energy-computer:
     title: Energiforbruks- og utgiftsdatamaskin
     description: Beregn energiforbruk og -utgifter
@@ -3185,6 +3191,7 @@ tools:
       title-schema-validation-errors: Skjemavalideringsfeil
       label-indent-size-0-compact: "Innrykksstørrelse (0 = Kompakt):"
       repair-json: Reparer JSON
+      label-auto-height: Automatisk høyde
     externalAccess: Dette verktøyet kan laste ned et JSON-skjema fra
       https://www.schemastore.org når validering blir forespurt. Ingen data
       sendes eksternt.
@@ -3526,6 +3533,17 @@ tools:
       tag-export-as-png: Eksporter som PNG
       tag-export-as-jpg: Eksporter som JPG
       tag-export-as-svg: Eksporter som SVG
+      tag-showing-last-valid-diagram: Viser det siste gyldige diagrammet
+      tag-hint-ctrl-scroll-to-zoom: Hold Ctrl (eller ⌘) nede og bla for å zoome
+      label-diagram-preview: Forhåndsvisning av diagram – dra eller bruk piltastene
+        for å panorere, + og - for å zoome
+      label-zoom-level-reset: Zoom {zoom}%, klikk for å tilbakestille til 100%
+      title-zoom-in: Zoom inn
+      title-zoom-out: Zoom ut
+      title-reset-zoom: Tilbakestill zoom til 100 %
+      title-fit-view: Tilpass diagrammet for å se det
+      title-fullscreen: Fullskjerm
+      title-exit-fullscreen: Avslutt fullskjerm
   mime-converter:
     title: MIME-kodingskonverter
     description: Konverter fra/til MIME-kodet Word-format (e-postemne)
@@ -4172,6 +4190,11 @@ tools:
       title-country-to-timezones: Land til tidssoner
       label-country: Land
       title-timezones-to-countries: Tidssoner til land
+      title-posix-timezones: Tidssoner POSIX-strenger
+      search-posix-timezones: Skriv inn en tidssone eller POSIX-streng for å søke
+      tag-no-results: Ingen resultater
+      tag-timezone: Tidssone
+      tag-posix: POSIX-streng
   torrent-to-magnet:
     title: Torrent til magnet
     description: Konverter en torrentfil til en magnet-URL
@@ -4962,7 +4985,7 @@ tools:
       label-source-port: "Kildeport:"
       label-destination-port: "Destinasjonshavn:"
       label-chain: "Kjede:"
-      label-rule-order: "Regelrekkefølge:"
+      label-rule-order: "Innsettingsposisjon (tom = legg til på slutten):"
       title-generated-iptables-command: Genererte iptables-kommandoen
       tag-expression: Uttrykk
       tag-meaning: Betydning
@@ -5906,6 +5929,9 @@ tools:
       tag-corners-square-options: Alternativer for hjørner og firkanter
       tag-small-terminal: Liten terminal
       title-image: Bilde
+      label-qr-code-embeddable-dataurl: "QRCode-bildedata-URL:"
+      link-qr-code-open-embeddable-link: Åpne innebygd lenke
+      label-qr-code-image-viewer: Innebygd QR-kode
   ies-lighting-guidelines:
     title: IES-belysningsretningslinjer
     description: Søk i Illuminating Engineering Societys (IES) gjeldende
@@ -9822,6 +9848,257 @@ tools:
         random-tool: Tilfeldig verktøy
         tools: Verktøy
   external-self-hosted-required: Ekstern selvhostet kreves
+  markdown-format-converter:
+    title: Formatkonverter
+    description: Konverter mellom standard Markdown, Obsidian, Logseq, Slack, Jira
+      og andre formater.
+    texts:
+      label-source-format: Kildeformat
+      label-target-format: Målformat
+      placeholder-input-markdown: Lim inn eller skriv inn standard-, obsidian- eller
+        Logseq-markdownen din her ...
+      label-input-markdown: Nedsatt inngang
+      label-converted-output: Konvertert utgang
+      label-text: Tekst
+      label-preview: Forhåndsvisning
+  restic-command-generator:
+    title: Restic-kommandogenerator
+    description: "Generer restic CLI-kommandoer for å gjenopprette et Backrest-
+      eller vanlig restic-repositorium: et helt øyeblikksbilde, bare noen filer
+      eller en søkbar montering."
+    texts:
+      intro: "Kun generator: ingenting kjører her, og ingenting du skriver forlater
+        nettleseren din. Beskriv depotet ditt, velg hva du trenger å
+        gjenopprette, og kopier skall-kodebiten."
+      title-repository: Repository
+      label-backend: Bakenden
+      backend-s3: S3-kompatibel (Backblaze B2, MinIO, Wasabi, AWS...)
+      backend-b2: Backblaze B2 (innfødt)
+      backend-local: Lokal sti eller montert disk
+      backend-sftp: SFTP
+      backend-rest: restic REST-server
+      backend-rclone: Rclone
+      backend-azure: Azure Blob Storage
+      backend-gs: Google Cloud Storage
+      backend-raw: Annet (rå repository-URI)
+      label-local-path: Lagringsbane
+      label-endpoint: Endepunkt
+      label-bucket: Bøtte
+      label-prefix: Sti i bøtta
+      label-region: Region (valgfritt)
+      label-user: Bruker
+      label-host: Vert
+      label-port: Port (valgfritt)
+      label-path: Lagringsbane
+      label-url: Server-URL
+      label-remote: Rclone-fjernkontroll og sti
+      label-container: Container
+      label-raw-repository: Repository-URI
+      label-repository-mode: Repositoriet ble godkjent som
+      repository-flag: -r flagg på hver kommando
+      repository-env: RESTIC_REPOSITORY miljøvariabel
+      label-repository-uri: Repository-URI
+      label-password: Passord for arkivet
+      password-prompt: Spør etter det i skallet (les -rs, forblir utenfor historikken)
+      password-file: --passordfil
+      password-command: --passord-kommando
+      password-placeholder: RESTIC_PASSWORD-eksport med en plassholder
+      password-none: Allerede satt i mitt miljø
+      label-password-file: Passordfil
+      label-password-command: Passordkommando
+      label-credentials: Backend-legitimasjon
+      credentials-prompt: Spør etter hemmeligheten i skallet
+      credentials-placeholder: Eksporter dem med plassholdere
+      credentials-none: Allerede satt i mitt miljø
+      label-account-id: Nøkkel-ID / kontonavn
+      hint-secrets: 'Ingen hemmelighet legges noen gang i den genererte kommandoen:
+        promptalternativene leser dem inn i skallet ditt med "read -rs" slik at
+        de holder seg ute av historikken din.'
+      title-operation: Hva vil du gjøre?
+      operation-restore: gjenopprett — skriv filer fra et øyeblikksbilde tilbake til disken
+      operation-dump: dump — strøm én fil eller mappe ut av et øyeblikksbilde
+      operation-mount: montere — bla gjennom depotet som et filsystem
+      operation-snapshots: øyeblikksbilder — liste opp øyeblikksbildene av depotet
+      operation-ls: ls — liste opp filene i et øyeblikksbilde
+      operation-find: finn – finn en fil på tvers av øyeblikksbilder
+      operation-diff: diff — sammenlign to øyeblikksbilder
+      operation-check: sjekk — verifiser integriteten til depotet
+      operation-stats: statistikk – størrelsen på et øyeblikksbilde eller et arkiv
+      operation-unlock: låse opp – fjern gamle låser
+      title-snapshot: Valg av øyeblikksbilde
+      label-snapshot-id: Øyeblikksbilde-ID
+      label-subfolder: Bare denne undermappen til øyeblikksbildet
+      label-plan: Ryggstøtteplan-ID
+      label-instance: Ryggstøtteforekomst-ID
+      label-filter-host: Vert
+      label-tags: Ekstra tagger
+      placeholder-tag: håndbok
+      label-filter-paths: Stier
+      placeholder-path: /hjem/meg/dokumenter
+      hint-tags: Backrest tagger øyeblikksbildene den lager med «plan:» og
+        «created-by:» etterfulgt av plan- og instans-ID-ene. Tagger i en enkelt
+        --tag AND-es, mens gjentatte --tag-flagg OR-es, slik at planen og
+        instansen forblir i ett flagg, og hver ekstra tagg får sin egen.
+      title-restore-options: Gjenopprettingsalternativer
+      label-target: Målkatalog
+      label-include: Gjenopprett bare disse stiene eller mønstrene
+      placeholder-include: /hjem/meg/dokumenter/**/*.pdf
+      label-exclude: Ekskluder disse stiene eller mønstrene
+      placeholder-exclude: "**/node_modules"
+      label-overwrite: Overskriv eksisterende filer
+      overwrite-default: restisk standard (alltid)
+      overwrite-always: alltid
+      overwrite-if-changed: hvis-endret
+      overwrite-if-newer: hvis-nyere
+      overwrite-never: aldri
+      label-case-insensitive: Store/små mønstre uten skille mellom store og små bokstaver
+      label-dry-run: Tørrløp
+      label-verify: Bekreft gjenopprettede filer
+      label-sparse: Skriv sparsomme filer
+      label-delete: Slett filer som mangler fra øyeblikksbildet
+      title-dump-options: Dump-alternativer
+      label-dump-path: Fil eller mappe i øyeblikksbildet
+      label-archive: Arkivformat
+      archive-none: Råfil
+      archive-tar: tar
+      archive-zip: postnummer
+      label-output-file: Omdiriger til en lokal fil (valgfritt)
+      hint-dump: dump strømmer en enkelt fil eller mappe rett ut av depotet, slik at
+        du ikke trenger å gjenopprette et helt øyeblikksbilde for å få tilbake
+        én konfigurasjonsfil.
+      title-mount-options: Monteringsalternativer
+      label-mount-point: Monteringspunkt
+      label-allow-other: Tillat andre brukere å få tilgang til monteringen
+      title-ls-options: Listealternativer
+      label-ls-directory: Katalog som skal listes (valgfritt)
+      label-long: Lang liste
+      label-recursive: Rekursiv
+      title-find-options: Finn alternativer
+      label-find-pattern: Mønster
+      label-restrict-snapshot: Søk bare i det valgte øyeblikksbildet
+      title-diff-options: Differensielle alternativer
+      label-diff-snapshot: Sammenlign med øyeblikksbilde
+      label-metadata: Rapporter også endringer i metadata
+      title-snapshots-options: Alternativer for øyeblikksbilder
+      label-compact: Kompakt utgang
+      title-check-options: Sjekk alternativer
+      label-read-data-subset: Les datadelsett
+      label-read-data: Les og bekreft hver pakkefil
+      label-check-unused: Rapporter ubrukte blobs
+      label-with-cache: Bruk den eksisterende hurtigbufferen
+      title-stats-options: Statistikkalternativer
+      label-stats-mode: Tellemodus
+      stats-restore-size: gjenopprettingsstørrelse — størrelsen på en gjenoppretting
+      stats-files-by-contents: filer-etter-innhold — unike filer
+      stats-raw-data: rådata — størrelse før deduplisering
+      stats-blobs-per-file: blobs per fil
+      label-stats-all: Alle øyeblikksbilder
+      title-unlock-options: Lås opp alternativer
+      label-remove-all: Fjern alle låser, inkludert de som er i bruk
+      title-global-options: Globale alternativer
+      label-cache-dir: Hurtigbufferkatalog
+      label-limit-download: Nedlastingsgrense (KiB/s)
+      label-retry-lock: Prøv et låst arkiv på nytt for
+      label-extra-options: Backend-alternativer (-o)
+      placeholder-extra-option: s3.tilkoblinger=4
+      label-extra-arguments: Ekstra argumenter (lagt til som de er)
+      label-no-lock: --ingen lås
+      label-no-cache: --ingen-hurtigbuffer
+      label-insecure-tls: --usikker-tls
+      label-json: --json
+      label-quiet: --stille
+      label-verbose: --utførlig
+      title-output: Generert kommando
+      label-include-environment: Inkluder miljøoppsettet
+      label-multiline: Ett argument per linje
+      button-reset: Tilbakestill til standardinnstillinger
+      warning-history: "Plassholdereksporter forblir i skallhistorikken din når de er
+        fylt ut: foretrekk ledetekstalternativene, eller fjern historikken
+        etterpå."
+      warning-target: restore gjenskaper den fullstendige banen til hver fil i
+        målkatalogen, slik at /etc/hosts havner i undermappen etc/hosts til
+        målet.
+      warning-delete: --delete fjerner filene i målkatalogen som ikke er i
+        snapshot-bildet. Prøv det med --dry-run først.
+      warning-restic-version: --dry-run, --delete og --overwrite krever restic 0.17 eller nyere.
+      warning-mount: Monteringen trenger FUSE, eksponerer snapshotene skrivebeskyttet
+        og fortsetter å kjøre til du stopper den med Ctrl-C.
+      title-walkthrough: Gjennomgang av gjenoppretting
+      hint-walkthrough: Den vanlige sekvensen når depotet er alt som er igjen, bygget
+        fra innstillingene ovenfor.
+      walkthrough-snapshots: List opp øyeblikksbildene av depotet
+      walkthrough-find: Finn hvilket øyeblikksbilde som inneholder filen du trenger
+      walkthrough-ls: List opp filene til det valgte øyeblikksbildet
+      walkthrough-restore: Gjenopprett bare filene du trenger
+      walkthrough-mount: Eller bla gjennom arkivet og kopier filer ut manuelt
+      title-backrest: Ryggstøtte-jukselapp
+      table-item: Punkt
+      table-value: Standardsti eller -format (Docker-bilde mellom parenteser)
+      backrest-config: Konfigurasjonsfil, som inneholder depotets URI, passordet og
+        backend-miljøvariablene
+      backrest-data: Datakatalog
+      backrest-binary: Restic binærfil lastet ned av Backrest
+      backrest-plan-tag: Tagg som identifiserer planen
+      backrest-instance-tag: Tagg som identifiserer forekomsten
+      hint-backrest: "Et Backrest-repositorium er et vanlig restic-repositorium: hvis
+        webgrensesnittet er borte, les URI-en og passordet ut av config.json og
+        kjør det med den restic-binærfilen Backrest som allerede er nedlastet."
+  epc-qrcode-generator:
+    title: EPC QR-kodegenerator
+    description: Generer en QR-kode fra Det europeiske betalingsrådet (EPC) for å
+      starte en SEPA-kredittoverføring
+    externalAccess: "null"
+    texts:
+      text-copied-to-clipboard: Kopiert til utklippstavlen
+      label-v1: V1
+      label-v2: V2
+      label-beneficiary-name: "Navn på mottaker:"
+      placeholder-beneficiary-name: Navn på mottaker
+      label-account-iban: "Konto (IBAN):"
+      placeholder-fr76: FR76...
+      label-bic: "BIC:"
+      placeholder-bank-bic-optional: Bankens BIC (valgfritt)
+      label-amount-eur: "Beløp (EUR):"
+      label-payment-reference: "Betalingsreferanse:"
+      placeholder-optional: Valgfri
+      label-purpose: "Hensikt:"
+      label-version: "Versjon:"
+      label-foreground-color: "Forgrunnsfarge:"
+      label-background-color: "Bakgrunnsfarge:"
+      label-qr-size: "QR-størrelse:"
+      tag-generate-qr: Generer QR-kode
+      tag-download-qrcode: Last ned QR-kode
+      tag-copy-qrcode-text: Kopier QR-kodetekst
+  url-redirection-checker:
+    title: URL-omdirigeringskontroll
+    description: Sjekk om en URL omdirigerer til en annen URL.
+    externalAccess: "null"
+    texts:
+      label-get: BLI
+      label-head: HODE
+      label-url: "URL:"
+      placeholder-https-example-com: https://example.com
+      label-method: "Metode:"
+      label-user-agent: "Brukeragent:"
+      label-max-hops: "Maks humle:"
+      label-include-body-preview: Inkluder forhåndsvisning av brødtekst
+      label-preview-bytes: "Forhåndsvisningsbyte:"
+      title-warnings: Advarsler
+      title-summary: Sammendrag
+      label-input-url: "Inndata-URL:"
+      label-final-url: "Endelig URL:"
+      label-hop-count: "Hoppantall:"
+      title-redirect-chain: Omdirigeringskjede
+      tag-inspect-redirect-chain: Inspiser omdirigeringskjeden
+      tag-: "-"
+      tag-url: URL-adresse
+      tag-status: Status
+      tag-duration: Varighet
+      tag-redirect: Omdiriger
+      tag-location: Sted
+      tag-300-hop-status-code: = 300 && hopp.statuskode
+      tag-headers-body-preview: Forhåndsvisning av overskrifter og brødtekst
+      tag-truncated: Avkortet
 spanCopyable:
   copy: Kopier til utklippstavlen
   copied: Kopiert!

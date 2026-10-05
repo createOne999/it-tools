@@ -869,6 +869,8 @@ tools:
       tag-refresh-key-pair: Ανανέωση ζεύγους κλειδιών
       tag-public-key: Δημόσιο κλειδί
       tag-private-key: Ιδιωτικό κλειδί
+      tag-fingerprint: Δακτυλικό αποτύπωμα
+      tag-md5-fingerprint: Δακτυλικό αποτύπωμα (MD5)
     text:
       bits-should-be-256-less-than-bits-less-than-16384-and-be-a-multiple-of-8:
         Τα bits πρέπει να είναι 256 <= bits <= 16384 και να είναι πολλαπλάσιο
@@ -2087,6 +2089,8 @@ tools:
       tag-refresh-key-pair: Ανανέωση ζεύγους κλειδιών
       tag-public-key: Δημόσιο κλειδί
       tag-private-key: Ιδιωτικό κλειδί
+      tag-fingerprint: Δακτυλικό αποτύπωμα
+      tag-md5-fingerprint: Δακτυλικό αποτύπωμα (MD5)
   ed25519-key-pair-generator:
     title: Γεννήτρια ζεύγους κλειδιών Ed25519
     description: Δημιουργήστε νέα τυχαία ιδιωτικά και δημόσια κλειδιά Ed25519 (με ή
@@ -2106,6 +2110,8 @@ tools:
       tag-refresh-key-pair: Ανανέωση ζεύγους κλειδιών
       tag-public-key: Δημόσιο κλειδί
       tag-private-key: Ιδιωτικό κλειδί
+      tag-md5-fingerprint: Δακτυλικό αποτύπωμα (MD5)
+      tag-fingerprint: Δακτυλικό αποτύπωμα
   energy-computer:
     title: Υπολογιστής Κατανάλωσης και Εξόδων Ενέργειας
     description: Υπολογισμός κατανάλωσης ενέργειας και εξόδων
@@ -2700,6 +2706,7 @@ tools:
       title-schema-validation-errors: Σφάλματα επικύρωσης σχήματος
       label-indent-size-0-compact: "Μέγεθος εσοχής (0 = Συμπαγές):"
       repair-json: Επισκευή JSON
+      label-auto-height: Αυτόματο ύψος
     externalAccess: Αυτό το εργαλείο μπορεί να κατεβάσει ένα σχήμα JSON από τη
       διεύθυνση https://www.schemastore.org όταν ζητηθεί επικύρωση. Δεν
       αποστέλλονται δεδομένα εξωτερικά.
@@ -3044,6 +3051,17 @@ tools:
       tag-export-as-png: Εξαγωγή ως PNG
       tag-export-as-jpg: Εξαγωγή ως JPG
       tag-export-as-svg: Εξαγωγή ως SVG
+      tag-showing-last-valid-diagram: Εμφάνιση του τελευταίου έγκυρου διαγράμματος
+      tag-hint-ctrl-scroll-to-zoom: Κρατήστε πατημένο το Ctrl (ή ⌘) και κάντε κύλιση για μεγέθυνση
+      label-diagram-preview: Προεπισκόπηση διαγράμματος — σύρετε ή χρησιμοποιήστε τα
+        πλήκτρα βέλους για μετατόπιση και τα + και - για ζουμ
+      label-zoom-level-reset: Ζουμ {zoom}%, κάντε κλικ για επαναφορά στο 100%
+      title-zoom-in: Μεγέθυνση
+      title-zoom-out: Σμίκρυνση
+      title-reset-zoom: Επαναφορά ζουμ στο 100%
+      title-fit-view: Προσαρμογή διαγράμματος για προβολή
+      title-fullscreen: Πλήρης οθόνη
+      title-exit-fullscreen: Έξοδος από πλήρη οθόνη
   mime-converter:
     title: Μετατροπέας κωδικοποίησης MIME
     description: Μετατροπή από/σε μορφή MIME Encoded-Word (Θέμα αλληλογραφίας)
@@ -3722,6 +3740,11 @@ tools:
       title-country-to-timezones: Χώρα σε Ζώνες Ώρας
       label-country: Χώρα
       title-timezones-to-countries: Ζώνες ώρας προς χώρες
+      title-posix-timezones: Ζώνες ώρας POSIX Strings
+      search-posix-timezones: Εισαγάγετε μια ζώνη ώρας ή μια συμβολοσειρά POSIX για αναζήτηση
+      tag-no-results: Δεν υπάρχουν αποτελέσματα
+      tag-timezone: Ζώνη ώρας
+      tag-posix: Συμβολοσειρά POSIX
   torrent-to-magnet:
     title: Torrent σε Magnet
     description: Μετατροπή αρχείου torrent σε URL Magnet
@@ -4537,7 +4560,7 @@ tools:
       label-source-port: "Θύρα πηγής:"
       label-destination-port: "Λιμάνι προορισμού:"
       label-chain: "Αλυσίδα:"
-      label-rule-order: "Σειρά κανόνων:"
+      label-rule-order: "Θέση εισαγωγής (κενό = προσθήκη στο τέλος):"
       title-generated-iptables-command: Δημιουργήθηκε εντολή iptables
       tag-expression: Εκφραση
       tag-meaning: Εννοια
@@ -5738,6 +5761,9 @@ tools:
       tag-corners-square-options: Επιλογές τετραγώνων γωνιών
       tag-small-terminal: Μικρό τερματικό σταθμό
       title-image: Εικών
+      label-qr-code-embeddable-dataurl: "Δεδομένα εικόνας QRCode-Url:"
+      link-qr-code-open-embeddable-link: Άνοιγμα ενσωματωμένου συνδέσμου
+      label-qr-code-image-viewer: Ενσωματωμένος QRCode
   basic-auth-generator:
     title: Βασική γεννήτρια εξουσιοδότησης
     description: Δημιουργήστε μια βασική κεφαλίδα ελέγχου ταυτότητας base64 από ένα
@@ -10130,6 +10156,265 @@ tools:
         random-tool: Τυχαίο εργαλείο
         tools: Εργαλεία
   external-self-hosted-required: Απαιτείται εξωτερική αυτοφιλοξενία
+  markdown-format-converter:
+    title: Μετατροπέας μορφής
+    description: Μετατρέψτε μεταξύ τυπικών μορφών Markdown, Obsidian, Logseq, Slack,
+      Jira και άλλων.
+    texts:
+      label-source-format: Μορφή πηγής
+      label-target-format: Μορφή στόχου
+      placeholder-input-markdown: Επικολλήστε ή πληκτρολογήστε εδώ το πρότυπο, το
+        Obsidian ή το Logseq Markdown σας...
+      label-input-markdown: Μείωση Εισαγωγής
+      label-converted-output: Μετατρεπόμενη έξοδος
+      label-text: Κείμενο
+      label-preview: Πρεμιέρα
+  restic-command-generator:
+    title: Γεννήτρια εντολών Restic
+    description: "Δημιουργήστε εντολές restic CLI για να επαναφέρετε ένα αποθετήριο
+      Backrest ή απλό restic: ένα ολόκληρο στιγμιότυπο, μόνο ορισμένα αρχεία ή
+      μια προσάρτηση με δυνατότητα περιήγησης."
+    texts:
+      intro: "Μόνο γεννήτρια: τίποτα δεν εκτελείται εδώ και τίποτα που πληκτρολογείτε
+        δεν φεύγει από το πρόγραμμα περιήγησής σας. Περιγράψτε το αποθετήριό
+        σας, επιλέξτε τι χρειάζεστε για να ανακτήσετε και αντιγράψτε το
+        απόσπασμα κελύφους."
+      title-repository: Αποθήκη
+      label-backend: Παρασκήνιο
+      backend-s3: Συμβατό με S3 (Backblaze B2, MinIO, Wasabi, AWS...)
+      backend-b2: Backblaze B2 (μητρική έκδοση)
+      backend-local: Τοπική διαδρομή ή τοποθετημένος δίσκος
+      backend-sftp: SFTP
+      backend-rest: διακομιστής restic REST
+      backend-rclone: Κλώνος
+      backend-azure: Αποθήκευση Azure Blob
+      backend-gs: Αποθήκευση στο Google Cloud
+      backend-raw: Άλλο (URI ακατέργαστου αποθετηρίου)
+      label-local-path: Διαδρομή αποθετηρίου
+      label-endpoint: Τελικό σημείο
+      label-bucket: Κάδος
+      label-prefix: Μονοπάτι στον κουβά
+      label-region: Περιοχή (προαιρετικό)
+      label-user: Μεταχειριζόμενος
+      label-host: Πλήθος
+      label-port: Θύρα (προαιρετικά)
+      label-path: Διαδρομή αποθετηρίου
+      label-url: URL διακομιστή
+      label-remote: Απομακρυσμένο Rclone και διαδρομή
+      label-container: Δοχείο
+      label-raw-repository: URI αποθετηρίου
+      label-repository-mode: Το αποθετήριο διαβιβάστηκε ως
+      repository-flag: -r flag σε κάθε εντολή
+      repository-env: Μεταβλητή περιβάλλοντος RESTIC_REPOSITORY
+      label-repository-uri: URI αποθετηρίου
+      label-password: Κωδικός πρόσβασης αποθετηρίου
+      password-prompt: Προτροπή για αυτό στο κέλυφος (διαβάστε -rs, μένει εκτός ιστορικού)
+      password-file: --αρχείο-κωδικού πρόσβασης
+      password-command: --εντολή-κωδικού πρόσβασης
+      password-placeholder: Εξαγωγή RESTIC_PASSWORD με σύμβολο κράτησης θέσης
+      password-none: Ήδη έχει οριστεί στο περιβάλλον μου
+      label-password-file: Αρχείο κωδικού πρόσβασης
+      label-password-command: Εντολή κωδικού πρόσβασης
+      label-credentials: Διαπιστευτήρια παρασκηνίου
+      credentials-prompt: Προτροπή για το μυστικό στο κέλυφος
+      credentials-placeholder: Εξαγωγή τους με σύμβολα κράτησης θέσης
+      credentials-none: Ήδη έχει οριστεί στο περιβάλλον μου
+      label-account-id: Αναγνωριστικό κλειδιού / όνομα λογαριασμού
+      hint-secrets: 'Δεν υπάρχει ποτέ μυστικό στην παραγόμενη εντολή: οι επιλογές της
+        γραμμής εντολών τις διαβάζουν στο κέλυφος σας με "read -rs", ώστε να μην
+        περιλαμβάνονται στο ιστορικό σας.'
+      title-operation: Τι θέλεις να κάνεις;
+      operation-restore: επαναφορά — εγγραφή αρχείων από ένα στιγμιότυπο πίσω στον δίσκο
+      operation-dump: dump — ροή ενός αρχείου ή φακέλου από ένα στιγμιότυπο
+      operation-mount: mount — περιηγηθείτε στο αποθετήριο ως σύστημα αρχείων
+      operation-snapshots: στιγμιότυπα — λίστα με τα στιγμιότυπα του αποθετηρίου
+      operation-ls: ls — λίστα των αρχείων μέσα σε ένα στιγμιότυπο
+      operation-find: εύρεση — εντοπισμός ενός αρχείου σε στιγμιότυπα
+      operation-diff: διαφορά — σύγκριση δύο στιγμιότυπων
+      operation-check: έλεγχος — επαλήθευση της ακεραιότητας του αποθετηρίου
+      operation-stats: στατιστικά στοιχεία — μέγεθος ενός στιγμιότυπου ή του αποθετηρίου
+      operation-unlock: ξεκλείδωμα — αφαίρεση παλιών κλειδαριών
+      title-snapshot: Επιλογή στιγμιότυπου
+      label-snapshot-id: Αναγνωριστικό στιγμιότυπου
+      label-subfolder: Μόνο αυτός ο υποφάκελος του στιγμιότυπου
+      label-plan: Αναγνωριστικό σχεδίου πλάτης
+      label-instance: Αναγνωριστικό εμφάνισης πλάτης
+      label-filter-host: Πλήθος
+      label-tags: Επιπλέον ετικέτες
+      placeholder-tag: εγχειρίδιο
+      label-filter-paths: Μονοπάτια
+      placeholder-path: /home/εγώ/έγγραφα
+      hint-tags: Το Backrest επισημαίνει τα στιγμιότυπα που δημιουργεί με "plan:" και
+        "created-by:", ακολουθούμενα από τα ID του σχεδίου και των στιγμιότυπων.
+        Οι ετικέτες μέσα σε μία μόνο --tag επισημαίνονται με AND, ενώ οι
+        επαναλαμβανόμενες σημαίες --tag επισημαίνονται με OR, επομένως το σχέδιο
+        και η στιγμιότυπη παραμένουν σε μία σημαία και κάθε επιπλέον ετικέτα
+        αποκτά τη δική της.
+      title-restore-options: Επιλογές επαναφοράς
+      label-target: Κατάλογος προορισμού
+      label-include: Επαναφορά μόνο αυτών των διαδρομών ή μοτίβων
+      placeholder-include: /home/me/documents/**/*.pdf
+      label-exclude: Εξαιρέστε αυτές τις διαδρομές ή τα μοτίβα
+      placeholder-exclude: "**/μονάδες_κόμβου"
+      label-overwrite: Αντικατάσταση υπαρχόντων αρχείων
+      overwrite-default: restic προεπιλογή (πάντα)
+      overwrite-always: πάντοτε
+      overwrite-if-changed: αν αλλάξει
+      overwrite-if-newer: αν-νεότερο
+      overwrite-never: ποτέ
+      label-case-insensitive: Μοτίβα χωρίς διάκριση πεζών-κεφαλαίων
+      label-dry-run: Ξηρή λειτουργία
+      label-verify: Επαλήθευση ανακτημένων αρχείων
+      label-sparse: Εγγραφή αραιών αρχείων
+      label-delete: Διαγραφή αρχείων που λείπουν από το στιγμιότυπο
+      title-dump-options: Επιλογές απόρριψης
+      label-dump-path: Αρχείο ή φάκελος μέσα στο στιγμιότυπο
+      label-archive: Μορφή αρχειοθέτησης
+      archive-none: Ακατέργαστο αρχείο
+      archive-tar: παίρνει
+      archive-zip: ενεργητικότης
+      label-output-file: Ανακατεύθυνση σε τοπικό αρχείο (προαιρετικό)
+      hint-dump: Η λειτουργία dump streams (συνεχής ροή δεδομένων) μεταδίδει ένα μόνο
+        αρχείο ή φάκελο απευθείας από το αποθετήριο, επομένως δεν χρειάζεται να
+        επαναφέρετε ένα ολόκληρο στιγμιότυπο για να ανακτήσετε ένα αρχείο
+        ρυθμίσεων.
+      title-mount-options: Επιλογές τοποθέτησης
+      label-mount-point: Σημείο προσάρτησης
+      label-allow-other: Επιτρέψτε σε άλλους χρήστες να έχουν πρόσβαση στη βάση
+      title-ls-options: Επιλογές λίστας
+      label-ls-directory: Κατάλογος προς λίστα (προαιρετικό)
+      label-long: Μακροχρόνια καταχώριση
+      label-recursive: Αναδρομική
+      title-find-options: Εύρεση επιλογών
+      label-find-pattern: Πρότυπο
+      label-restrict-snapshot: Αναζήτηση μόνο στο επιλεγμένο στιγμιότυπο
+      title-diff-options: Επιλογές διαφοράς
+      label-diff-snapshot: Σύγκριση με στιγμιότυπο
+      label-metadata: Αναφορά αλλαγών στα μεταδεδομένα επίσης
+      title-snapshots-options: Επιλογές στιγμιότυπων
+      label-compact: Συμπαγής έξοδος
+      title-check-options: Ελέγξτε τις επιλογές
+      label-read-data-subset: Ανάγνωση υποσυνόλου δεδομένων
+      label-read-data: Διαβάστε και επαληθεύστε κάθε αρχείο πακέτου
+      label-check-unused: Αναφορά αχρησιμοποίητων blobs
+      label-with-cache: Χρήση της υπάρχουσας προσωρινής μνήμης
+      title-stats-options: Επιλογές στατιστικών
+      label-stats-mode: Λειτουργία μέτρησης
+      stats-restore-size: μέγεθος-επαναφοράς — μέγεθος μιας επαναφοράς
+      stats-files-by-contents: αρχεία-ανά-περιεχόμενο — μοναδικά αρχεία
+      stats-raw-data: ακατέργαστα δεδομένα — μέγεθος πριν από την αφαίρεση διπλότυπων
+      stats-blobs-per-file: blobs-ανά-αρχείο
+      label-stats-all: Όλα τα στιγμιότυπα
+      title-unlock-options: Ξεκλείδωμα επιλογών
+      label-remove-all: Αφαιρέστε κάθε κλειδαριά, συμπεριλαμβανομένων και αυτών που
+        χρησιμοποιούνται
+      title-global-options: Καθολικές επιλογές
+      label-cache-dir: Κατάλογος προσωρινής αποθήκευσης
+      label-limit-download: Όριο λήψης (KiB/s)
+      label-retry-lock: Επαναλάβετε μια κλειδωμένη αποθήκη για
+      label-extra-options: Επιλογές backend (-o)
+      placeholder-extra-option: s3.connections=4
+      label-extra-arguments: Επιπλέον ορίσματα (προστίθενται ως έχουν)
+      label-no-lock: --χωρίς κλείδωμα
+      label-no-cache: --χωρίς-κρυφή μνήμη
+      label-insecure-tls: --ανασφαλές-tls
+      label-json: --json
+      label-quiet: --ησυχία
+      label-verbose: --πολύλογος
+      title-output: Δημιουργήθηκε εντολή
+      label-include-environment: Συμπεριλάβετε τη ρύθμιση περιβάλλοντος
+      label-multiline: Ένα όρισμα ανά γραμμή
+      button-reset: Επαναφορά στις προεπιλογές
+      warning-history: "Οι εξαγωγές placeholder παραμένουν στο ιστορικό του κελύφους
+        σας μόλις συμπληρωθούν: προτιμήστε τις επιλογές προτροπής ή διαγράψτε το
+        ιστορικό αργότερα."
+      warning-target: Η εντολή restore αναδημιουργεί την πλήρη διαδρομή κάθε αρχείου
+        στον κατάλογο προορισμού, επομένως το /etc/hosts καταλήγει στον
+        υποφάκελο etc/hosts του καταλόγου προορισμού.
+      warning-delete: Η συνάρτηση --delete καταργεί τα αρχεία του καταλόγου προορισμού
+        που δεν βρίσκονται στο στιγμιότυπο. Δοκιμάστε το πρώτα με την συνάρτηση
+        --dry-run.
+      warning-restic-version: Οι --dry-run, --delete και --overwrite απαιτούν restic
+        0.17 ή νεότερη έκδοση.
+      warning-mount: Η προσάρτηση χρειάζεται FUSE, εκθέτει τα στιγμιότυπα μόνο για
+        ανάγνωση και συνεχίζει να εκτελείται μέχρι να τη σταματήσετε με Ctrl-C.
+      title-walkthrough: Αναλυτική περιγραφή ανάκτησης
+      hint-walkthrough: Η συνήθης ακολουθία όταν έχει απομείνει μόνο το αποθετήριο,
+        δημιουργημένη από τις παραπάνω ρυθμίσεις.
+      walkthrough-snapshots: Παραθέστε τα στιγμιότυπα του αποθετηρίου
+      walkthrough-find: Βρείτε ποιο στιγμιότυπο περιέχει το αρχείο που χρειάζεστε
+      walkthrough-ls: Λίστα με τα αρχεία του επιλεγμένου στιγμιότυπου
+      walkthrough-restore: Επαναφέρετε μόνο τα αρχεία που χρειάζεστε
+      walkthrough-mount: Ή περιηγηθείτε στο αποθετήριο και αντιγράψτε αρχεία χειροκίνητα
+      title-backrest: Φύλλο οδηγιών για την πλάτη του καθίσματος
+      table-item: Είδος
+      table-value: Προεπιλεγμένη διαδρομή ή μορφή (εικόνα Docker μεταξύ παρενθέσεων)
+      backrest-config: Αρχείο διαμόρφωσης, που περιέχει το URI του αποθετηρίου, τον
+        κωδικό πρόσβασής του και τις μεταβλητές περιβάλλοντος backend
+      backrest-data: Κατάλογος δεδομένων
+      backrest-binary: Το δυαδικό αρχείο Restic λήφθηκε από το Backrest από το αρχείο Backrest.
+      backrest-plan-tag: Ετικέτα που προσδιορίζει το σχέδιο
+      backrest-instance-tag: Ετικέτα που προσδιορίζει την παρουσία
+      hint-backrest: "Ένα αποθετήριο Backrest είναι ένα απλό αποθετήριο restic: εάν το
+        web UI δεν υπάρχει, διαβάστε το URI και τον κωδικό πρόσβασης από το
+        config.json και εκτελέστε το με το δυαδικό αρχείο restic Backrest που
+        έχει ήδη ληφθεί."
+  epc-qrcode-generator:
+    title: Γεννήτρια QRCode EPC
+    description: Δημιουργήστε έναν κωδικό QR του Ευρωπαϊκού Συμβουλίου Πληρωμών
+      (EPC) για την έναρξη μιας μεταφοράς πίστωσης SEPA
+    externalAccess: άκυρος
+    texts:
+      text-copied-to-clipboard: Αντιγράφηκε στο πρόχειρο
+      label-v1: Έκδοση 1
+      label-v2: Έκδοση 2
+      label-beneficiary-name: "Όνομα Δικαιούχου:"
+      placeholder-beneficiary-name: Όνομα δικαιούχου
+      label-account-iban: "Λογαριασμός (IBAN):"
+      placeholder-fr76: FR76...
+      label-bic: "BIC:"
+      placeholder-bank-bic-optional: BIC τράπεζας (προαιρετικό)
+      label-amount-eur: "Ποσό (ευρώ):"
+      label-payment-reference: "Αναφορά Πληρωμής:"
+      placeholder-optional: Προαιρετικός
+      label-purpose: "Σκοπός:"
+      label-version: "Εκδοχή:"
+      label-foreground-color: "Χρώμα προσκηνίου:"
+      label-background-color: "Χρώμα φόντου:"
+      label-qr-size: "Μέγεθος QR:"
+      tag-generate-qr: Δημιουργία QR
+      tag-download-qrcode: Λήψη QRCode
+      tag-copy-qrcode-text: Αντιγραφή κειμένου κωδικού QR
+  url-redirection-checker:
+    title: Έλεγχος ανακατεύθυνσης URL
+    description: Ελέγξτε αν μια διεύθυνση URL ανακατευθύνει σε άλλη διεύθυνση URL.
+    externalAccess: άκυρος
+    texts:
+      label-get: ΠΑΙΡΝΩ
+      label-head: ΚΕΦΑΛΙ
+      label-url: "URL:"
+      placeholder-https-example-com: https://example.com
+      label-method: "Μέθοδος:"
+      label-user-agent: "Παράγοντας χρήστη:"
+      label-max-hops: "Μαξ Χοπς:"
+      label-include-body-preview: Συμπερίληψη προεπισκόπησης σώματος
+      label-preview-bytes: "Προεπισκόπηση bytes:"
+      title-warnings: Προειδοποιήσεις
+      title-summary: Περίληψη
+      label-input-url: "Εισαγωγή URL:"
+      label-final-url: "Τελική διεύθυνση URL:"
+      label-hop-count: "Αριθμός λυκίσκου:"
+      title-redirect-chain: Αλυσίδα ανακατεύθυνσης
+      tag-inspect-redirect-chain: Επιθεώρηση αλυσίδας ανακατεύθυνσης
+      tag-: "-"
+      tag-url: URL
+      tag-status: Κατάσταση
+      tag-duration: Διάρκεια
+      tag-redirect: Διευθύνω πάλιν
+      tag-location: Τοποθεσία
+      tag-300-hop-status-code: = 300 && hop.status_code
+      tag-headers-body-preview: Προεπισκόπηση κεφαλίδων και σώματος
+      tag-truncated: Κολοβός
 collapsibleToolMenu:
   text:
     expanding: Επέκταση...

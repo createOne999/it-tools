@@ -1211,6 +1211,8 @@ tools:
       tag-refresh-key-pair: تحديث زوج المفاتيح
       tag-public-key: المفتاح العام
       tag-private-key: مفتاح خاص
+      tag-fingerprint: بصمة
+      tag-md5-fingerprint: بصمة الإصبع (MD5)
     text:
       bits-should-be-256-less-than-bits-less-than-16384-and-be-a-multiple-of-8: يجب أن يكون عدد البتات 256 ≤ بتات ≤ 16384 وأن يكون من مضاعفات العدد 8
   html-wysiwyg-editor:
@@ -2588,6 +2590,8 @@ tools:
       tag-refresh-key-pair: تحديث زوج المفاتيح
       tag-public-key: المفتاح العام
       tag-private-key: مفتاح خاص
+      tag-fingerprint: بصمة
+      tag-md5-fingerprint: بصمة الإصبع (MD5)
   ed25519-key-pair-generator:
     title: مولد زوج المفاتيح Ed25519
     description: إنشاء مفاتيح خاصة وعامة جديدة عشوائية Ed25519 (مع أو بدون عبارة مرور).
@@ -2606,6 +2610,8 @@ tools:
       tag-refresh-key-pair: تحديث زوج المفاتيح
       tag-public-key: المفتاح العام
       tag-private-key: مفتاح خاص
+      tag-md5-fingerprint: بصمة الإصبع (MD5)
+      tag-fingerprint: بصمة
   energy-computer:
     title: استهلاك الطاقة ونفقاتها في الكمبيوتر
     description: حساب استهلاك الطاقة والنفقات
@@ -3174,6 +3180,7 @@ tools:
       title-schema-validation-errors: أخطاء التحقق من صحة المخطط
       label-indent-size-0-compact: "حجم المسافة البادئة (0 = مضغوط):"
       repair-json: إصلاح JSON
+      label-auto-height: الارتفاع التلقائي
     externalAccess: قد تقوم هذه الأداة بتنزيل مخطط JSON من
       https://www.schemastore.org عند طلب التحقق. لا يتم إرسال أي بيانات إلى
       جهات خارجية.
@@ -3513,6 +3520,17 @@ tools:
       tag-export-as-png: تصدير بصيغة PNG
       tag-export-as-jpg: تصدير بصيغة JPG
       tag-export-as-svg: التصدير بصيغة SVG
+      tag-showing-last-valid-diagram: عرض آخر رسم بياني صالح
+      tag-hint-ctrl-scroll-to-zoom: اضغط باستمرار على مفتاح Ctrl (أو ⌘) وقم بالتمرير للتكبير/التصغير
+      label-diagram-preview: معاينة الرسم التخطيطي — اسحب أو استخدم مفاتيح الأسهم
+        للتحريك، و+ و- للتكبير والتصغير
+      label-zoom-level-reset: تكبير {zoom}%، انقر لإعادة التعيين إلى 100%
+      title-zoom-in: تكبير الصورة
+      title-zoom-out: تصغير العرض
+      title-reset-zoom: أعد ضبط التكبير إلى 100%
+      title-fit-view: قم بمطابقة الرسم التوضيحي لعرضه
+      title-fullscreen: ملء الشاشة
+      title-exit-fullscreen: الخروج من وضع ملء الشاشة
   mime-converter:
     title: محول ترميز MIME
     description: التحويل من/إلى تنسيق MIME Encoded-Word (موضوع البريد)
@@ -4149,6 +4167,11 @@ tools:
       title-country-to-timezones: البلد إلى المناطق الزمنية
       label-country: دولة
       title-timezones-to-countries: المناطق الزمنية للدول
+      title-posix-timezones: سلاسل POSIX للمناطق الزمنية
+      search-posix-timezones: أدخل المنطقة الزمنية أو سلسلة POSIX للبحث
+      tag-no-results: لا توجد نتائج
+      tag-timezone: المنطقة الزمنية
+      tag-posix: سلسلة POSIX
   torrent-to-magnet:
     title: تورنت إلى مغناطيس
     description: تحويل ملف تورنت إلى رابط مغناطيسي
@@ -4939,7 +4962,7 @@ tools:
       label-source-port: "منفذ المصدر:"
       label-destination-port: "ميناء الوجهة:"
       label-chain: "سلسلة:"
-      label-rule-order: "ترتيب القواعد:"
+      label-rule-order: "موضع الإدراج (فارغ = إلحاق بالنهاية):"
       title-generated-iptables-command: أمر iptables المُولَّد
       tag-expression: تعبير
       tag-meaning: معنى
@@ -5815,6 +5838,9 @@ tools:
       tag-corners-square-options: خيارات الزوايا المربعة
       tag-small-terminal: محطة صغيرة
       title-image: صورة
+      label-qr-code-embeddable-dataurl: "بيانات صورة رمز الاستجابة السريعة - عنوان URL:"
+      link-qr-code-open-embeddable-link: افتح الرابط القابل للتضمين
+      label-qr-code-image-viewer: رمز الاستجابة السريعة القابل للتضمين
   ies-lighting-guidelines:
     title: إرشادات الإضاءة من IES
     description: ابحث في توصيات الإضاءة الحالية لجمعية الهندسة المضيئة (IES).
@@ -9699,6 +9725,256 @@ tools:
         random-tool: أداة عشوائية
         tools: أدوات
   external-self-hosted-required: مطلوب استضافة خارجية ذاتية
+  markdown-format-converter:
+    title: محول التنسيق
+    description: التحويل بين تنسيقات Markdown القياسية، و Obsidian، و Logseq، و
+      Slack، و Jira، وغيرها من التنسيقات.
+    texts:
+      label-source-format: تنسيق المصدر
+      label-target-format: تنسيق الهدف
+      placeholder-input-markdown: ألصق أو اكتب هنا تنسيق Markdown القياسي أو تنسيق
+        Obsidian أو تنسيق Logseq الخاص بك...
+      label-input-markdown: إدخال Markdown
+      label-converted-output: الناتج المحول
+      label-text: نص
+      label-preview: معاينة
+  restic-command-generator:
+    title: مولد أوامر ريستيك
+    description: "قم بإنشاء أوامر سطر الأوامر restic لاستعادة مستودع Backrest أو
+      مستودع restic عادي: لقطة كاملة، أو بعض الملفات فقط، أو نقطة ربط قابلة
+      للتصفح."
+    texts:
+      intro: "للمولد فقط: لا يتم تشغيل أي شيء هنا، ولا يخرج أي شيء تكتبه من متصفحك. صف
+        مستودعك، وحدد ما تحتاج إلى استعادته، وانسخ مقتطف الشفرة البرمجية."
+      title-repository: مستودع
+      label-backend: الواجهة الخلفية
+      backend-s3: متوافق مع S3 (Backblaze B2، MinIO، Wasabi، AWS...)
+      backend-b2: Backblaze B2 (أصلي)
+      backend-local: المسار المحلي أو القرص المُثبَّت
+      backend-sftp: SFTP
+      backend-rest: خادم REST الخاص بـ restic
+      backend-rclone: Rclone
+      backend-azure: تخزين Azure Blob
+      backend-gs: تخزين جوجل السحابي
+      backend-raw: أخرى (معرّف الموارد الموحد للمستودع الخام)
+      label-local-path: مسار المستودع
+      label-endpoint: نقطة النهاية
+      label-bucket: دلو
+      label-prefix: المسار في الدلو
+      label-region: المنطقة (اختياري)
+      label-user: مستخدم
+      label-host: يستضيف
+      label-port: المنفذ (اختياري)
+      label-path: مسار المستودع
+      label-url: عنوان الخادم
+      label-remote: Rclone remote and path
+      label-container: حاوية
+      label-raw-repository: معرّف الموارد الموحد للمستودع
+      label-repository-mode: تم تمرير المستودع كـ
+      repository-flag: الخيار -r في كل أمر
+      repository-env: متغير البيئة RESTIC_REPOSITORY
+      label-repository-uri: معرّف الموارد الموحد للمستودع
+      label-password: كلمة مرور المستودع
+      password-prompt: اطلب ذلك في سطر الأوامر (اقرأ -rs، يبقى خارج سجل الأوامر)
+      password-file: ملف كلمة المرور
+      password-command: --password-command
+      password-placeholder: تصدير كلمة مرور RESTIC مع عنصر نائب
+      password-none: تم ضبطه مسبقًا في بيئتي
+      label-password-file: ملف كلمة المرور
+      label-password-command: أمر كلمة المرور
+      label-credentials: بيانات اعتماد الواجهة الخلفية
+      credentials-prompt: اطلب الكشف عن السر الموجود في الصدفة
+      credentials-placeholder: قم بتصديرها مع العناصر النائبة
+      credentials-none: تم ضبطه مسبقًا في بيئتي
+      label-account-id: معرّف المفتاح / اسم الحساب
+      hint-secrets: 'لا يتم وضع أي سر في الأمر المُنشأ: تقرأ خيارات الموجه هذه
+        المعلومات في غلاف النظام الخاص بك باستخدام "read -rs" بحيث تبقى خارج سجل
+        الأوامر.'
+      title-operation: ماذا تريد أن تفعل؟
+      operation-restore: استعادة — كتابة الملفات من لقطة إلى القرص
+      operation-dump: تفريغ — بث ملف أو مجلد واحد من لقطة
+      operation-mount: قم بتثبيت المستودع — تصفح المستودع كنظام ملفات
+      operation-snapshots: اللقطات — قائمة لقطات المستودع
+      operation-ls: ls — لعرض قائمة الملفات داخل اللقطة
+      operation-find: البحث — تحديد موقع ملف عبر اللقطات
+      operation-diff: diff — مقارنة لقطتين
+      operation-check: التحقق — التحقق من سلامة المستودع
+      operation-stats: الإحصائيات - حجم اللقطة أو حجم المستودع
+      operation-unlock: فتح القفل — إزالة الأقفال القديمة
+      title-snapshot: اختيار اللقطة
+      label-snapshot-id: معرف اللقطة
+      label-subfolder: هذا المجلد الفرعي فقط من اللقطة
+      label-plan: معرف خطة مسند الظهر
+      label-instance: معرف مثيل مسند الظهر
+      label-filter-host: يستضيف
+      label-tags: علامات إضافية
+      placeholder-tag: يدوي
+      label-filter-paths: المسارات
+      placeholder-path: /home/me/documents
+      hint-tags: يُضيف Backrest وسومًا إلى اللقطات التي يُنشئها، وهي "plan:"
+        و"created-by:"، متبوعةً بمعرف الخطة ومعرف المثيل. تُربط الوسوم داخل وسم
+        --tag واحد باستخدام AND، بينما تُربط الوسوم المتكررة باستخدام OR، بحيث
+        تبقى الخطة والمثيل في وسم واحد، ويحصل كل وسم إضافي على وسم خاص به.
+      title-restore-options: خيارات الاستعادة
+      label-target: الدليل المستهدف
+      label-include: استعد هذه المسارات أو الأنماط فقط
+      placeholder-include: /home/me/documents/**/*.pdf
+      label-exclude: استبعد هذه المسارات أو الأنماط
+      placeholder-exclude: "**/node_modules"
+      label-overwrite: استبدال الملفات الموجودة
+      overwrite-default: الوضع الافتراضي لـ restic (دائماً)
+      overwrite-always: دائماً
+      overwrite-if-changed: إذا تم التغيير
+      overwrite-if-newer: إذا كان أحدث
+      overwrite-never: أبداً
+      label-case-insensitive: أنماط غير حساسة لحالة الأحرف
+      label-dry-run: تجربة جافة
+      label-verify: تحقق من الملفات المستعادة
+      label-sparse: كتابة ملفات متفرقة
+      label-delete: احذف الملفات المفقودة من اللقطة
+      title-dump-options: خيارات التفريغ
+      label-dump-path: ملف أو مجلد داخل اللقطة
+      label-archive: تنسيق الأرشيف
+      archive-none: ملف خام
+      archive-tar: يأخذ
+      archive-zip: أَزِيز
+      label-output-file: إعادة التوجيه إلى ملف محلي (اختياري)
+      hint-dump: تقوم وظيفة dump streams باستخراج ملف أو مجلد واحد مباشرة من المستودع،
+        لذلك لن تضطر إلى استعادة لقطة كاملة لاستعادة ملف تكوين واحد.
+      title-mount-options: خيارات التثبيت
+      label-mount-point: نقطة التثبيت
+      label-allow-other: السماح للمستخدمين الآخرين بالوصول إلى الحامل
+      title-ls-options: خيارات القائمة
+      label-ls-directory: دليل لعرضه (اختياري)
+      label-long: قائمة طويلة
+      label-recursive: التكراري
+      title-find-options: ابحث عن الخيارات
+      label-find-pattern: نمط
+      label-restrict-snapshot: ابحث فقط في اللقطة المحددة
+      title-diff-options: خيارات Diff
+      label-diff-snapshot: قارن مع اللقطة
+      label-metadata: أبلغ عن تغييرات البيانات الوصفية أيضًا
+      title-snapshots-options: خيارات اللقطات
+      label-compact: مخرج مضغوط
+      title-check-options: تحقق من الخيارات
+      label-read-data-subset: مجموعة بيانات القراءة الفرعية
+      label-read-data: اقرأ وتحقق من كل ملف حزمة
+      label-check-unused: الإبلاغ عن الكتل غير المستخدمة
+      label-with-cache: استخدم ذاكرة التخزين المؤقت الموجودة
+      title-stats-options: خيارات الإحصائيات
+      label-stats-mode: وضع العد
+      stats-restore-size: حجم الاستعادة — حجم الاستعادة
+      stats-files-by-contents: الملفات حسب المحتويات — ملفات فريدة
+      stats-raw-data: البيانات الأولية — الحجم قبل إزالة التكرارات
+      stats-blobs-per-file: عدد الكتل لكل ملف
+      label-stats-all: جميع اللقطات
+      title-unlock-options: خيارات الفتح
+      label-remove-all: قم بإزالة جميع الأقفال، بما في ذلك الأقفال المستخدمة.
+      title-global-options: خيارات عالمية
+      label-cache-dir: دليل التخزين المؤقت
+      label-limit-download: حد التنزيل (كيلوبايت/ثانية)
+      label-retry-lock: أعد محاولة الوصول إلى مستودع مغلق لـ
+      label-extra-options: خيارات الواجهة الخلفية (-o)
+      placeholder-extra-option: s3.connections=4
+      label-extra-arguments: وسائط إضافية (مرفقة كما هي)
+      label-no-lock: --بدون قفل
+      label-no-cache: --no-cache
+      label-insecure-tls: --insecure-tls
+      label-json: --json
+      label-quiet: --هادئ
+      label-verbose: --مطول
+      title-output: الأمر المُنشأ
+      label-include-environment: قم بتضمين إعداد البيئة
+      label-multiline: وسيط واحد لكل سطر
+      button-reset: إعادة ضبط الإعدادات الافتراضية
+      warning-history: "تبقى عمليات تصدير العناصر النائبة في سجل الأوامر بمجرد ملئها:
+        فضل استخدام خيارات المطالبة، أو امسح السجل بعد ذلك."
+      warning-target: تقوم عملية الاستعادة بإعادة إنشاء المسار الكامل لكل ملف ضمن
+        الدليل الهدف، بحيث ينتهي الأمر بملف /etc/hosts في المجلد الفرعي
+        etc/hosts الخاص بالهدف.
+      warning-delete: يحذف الخيار --delete الملفات الموجودة في المجلد المستهدف والتي
+        لا توجد في اللقطة. جربه أولاً باستخدام الخيار --dry-run.
+      warning-restic-version: تتطلب الخيارات --dry-run و --delete و --overwrite
+        الإصدار 0.17 من restic أو أحدث.
+      warning-mount: يحتاج برنامج mount إلى FUSE، ويعرض اللقطات للقراءة فقط، ويستمر في
+        العمل حتى تقوم بإيقافه باستخدام Ctrl-C.
+      title-walkthrough: دليل التعافي
+      hint-walkthrough: التسلسل المعتاد عندما يكون المستودع هو كل ما تبقى، والذي تم
+        إنشاؤه من الإعدادات المذكورة أعلاه.
+      walkthrough-snapshots: اذكر لقطات المستودع
+      walkthrough-find: ابحث عن اللقطة التي تحتوي على الملف الذي تحتاجه
+      walkthrough-ls: اذكر ملفات اللقطة المختارة
+      walkthrough-restore: استعد الملفات التي تحتاجها فقط
+      walkthrough-mount: أو تصفح المستودع وانسخ الملفات يدويًا
+      title-backrest: ورقة غش مسند الظهر
+      table-item: غرض
+      table-value: المسار أو التنسيق الافتراضي (صورة Docker بين قوسين)
+      backrest-config: ملف التكوين، الذي يحتوي على عنوان URI للمستودع وكلمة المرور
+        الخاصة به ومتغيرات بيئة الواجهة الخلفية
+      backrest-data: دليل البيانات
+      backrest-binary: تم تنزيل ملف Restic الثنائي بواسطة Backrest
+      backrest-plan-tag: بطاقة تعريف الخطة
+      backrest-instance-tag: الوسم الذي يحدد الحالة
+      hint-backrest: "مستودع Backrest هو مستودع restic عادي: إذا اختفت واجهة المستخدم
+        على الويب، فاقرأ عنوان URI وكلمة المرور من ملف config.json وقم بتشغيله
+        باستخدام ملف backrest الثنائي restic الذي تم تنزيله مسبقًا."
+  epc-qrcode-generator:
+    title: مولد رمز الاستجابة السريعة EPC
+    description: قم بإنشاء رمز الاستجابة السريعة (QR Code) الخاص بمجلس المدفوعات
+      الأوروبي (EPC) لبدء عملية تحويل ائتماني ضمن منطقة المدفوعات الأوروبية
+      الموحدة (SEPA).
+    externalAccess: باطل
+    texts:
+      text-copied-to-clipboard: تم نسخها إلى الحافظة
+      label-v1: الإصدار الأول
+      label-v2: V2
+      label-beneficiary-name: "اسم المستفيد:"
+      placeholder-beneficiary-name: اسم المستفيد
+      label-account-iban: "رقم الحساب (IBAN):"
+      placeholder-fr76: FR76...
+      label-bic: "رمز تعريف البنك (BIC):"
+      placeholder-bank-bic-optional: رمز تعريف البنك (اختياري)
+      label-amount-eur: "المبلغ (باليورو):"
+      label-payment-reference: "رقم مرجع الدفع:"
+      placeholder-optional: خياري
+      label-purpose: "غاية:"
+      label-version: "إصدار:"
+      label-foreground-color: "لون المقدمة:"
+      label-background-color: "لون الخلفية:"
+      label-qr-size: "حجم رمز الاستجابة السريعة:"
+      tag-generate-qr: إنشاء رمز الاستجابة السريعة (QR)
+      tag-download-qrcode: تنزيل رمز الاستجابة السريعة
+      tag-copy-qrcode-text: انسخ نص رمز الاستجابة السريعة
+  url-redirection-checker:
+    title: مدقق إعادة توجيه عناوين URL
+    description: تحقق مما إذا كان عنوان URL يعيد التوجيه إلى عنوان URL آخر.
+    externalAccess: باطل
+    texts:
+      label-get: يحصل
+      label-head: رأس
+      label-url: "عنوان URL:"
+      placeholder-https-example-com: https://example.com
+      label-method: "طريقة:"
+      label-user-agent: "وكيل المستخدم:"
+      label-max-hops: "أقصى عدد من القفزات:"
+      label-include-body-preview: تضمين معاينة النص
+      label-preview-bytes: "بايتات المعاينة:"
+      title-warnings: تحذيرات
+      title-summary: ملخص
+      label-input-url: "عنوان URL المدخل:"
+      label-final-url: "الرابط النهائي:"
+      label-hop-count: "عدد القفزات:"
+      title-redirect-chain: سلسلة إعادة التوجيه
+      tag-inspect-redirect-chain: فحص سلسلة إعادة التوجيه
+      tag-: "-"
+      tag-url: عنوان URL
+      tag-status: حالة
+      tag-duration: مدة
+      tag-redirect: إعادة التوجيه
+      tag-location: موقع
+      tag-300-hop-status-code: = 300 && hop.status_code
+      tag-headers-body-preview: معاينة العناوين والمحتوى
+      tag-truncated: مختصر
 spanCopyable:
   copy: نسخ إلى الحافظة
   copied: تم النسخ!

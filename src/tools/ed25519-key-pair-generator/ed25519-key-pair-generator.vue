@@ -13,7 +13,7 @@ const password = ref('');
 const comment = ref('');
 const debouncedComment = useDebounce(comment, 250);
 const debouncedPassword = useDebounce(password, 250);
-const emptyCerts = { publicKey: '', privateKey: '' };
+const emptyCerts = { publicKey: '', privateKey: '', fingerprint: '', md5Fingerprint: '' };
 
 const format = useITStorage('ed25519-key-pair-generator:format', 'ssh');
 const formatOptions = [
@@ -27,13 +27,16 @@ const formatOptions = [
 const supportsPassphrase = computed(() => format.value === 'ssh');
 
 const [certs, refreshCerts] = computedRefreshableAsync(
-  () => withDefaultOnErrorAsync(() => generateKeyPair(
-    {
-      password: debouncedPassword.value,
-      format: format.value as sshpk.PrivateKeyFormatType,
-      comment: debouncedComment.value,
-    },
-  ), emptyCerts),
+  () =>
+    withDefaultOnErrorAsync(
+      () =>
+        generateKeyPair({
+          password: debouncedPassword.value,
+          format: format.value as sshpk.PrivateKeyFormatType,
+          comment: debouncedComment.value,
+        }),
+      emptyCerts,
+    ),
   emptyCerts,
 );
 </script>
@@ -49,7 +52,11 @@ const [certs, refreshCerts] = computedRefreshableAsync(
         :placeholder="t('tools.ed25519-key-pair-generator.texts.placeholder-select-a-key-format')"
       />
 
-      <n-form-item v-if="supportsPassphrase" :label="t('tools.ed25519-key-pair-generator.texts.label-passphrase')" label-placement="left">
+      <n-form-item
+        v-if="supportsPassphrase"
+        :label="t('tools.ed25519-key-pair-generator.texts.label-passphrase')"
+        label-placement="left"
+      >
         <n-input
           v-model:value="password"
           type="password"
@@ -81,6 +88,16 @@ const [certs, refreshCerts] = computedRefreshableAsync(
     <div>
       <h3>{{ t('tools.ed25519-key-pair-generator.texts.tag-private-key') }}</h3>
       <TextareaCopyable :value="certs.privateKey" />
+    </div>
+
+    <div>
+      <h3>{{ t('tools.ed25519-key-pair-generator.texts.tag-fingerprint') }}</h3>
+      <TextareaCopyable :value="certs.fingerprint" />
+    </div>
+
+    <div>
+      <h3>{{ t('tools.ed25519-key-pair-generator.texts.tag-md5-fingerprint') }}</h3>
+      <TextareaCopyable :value="certs.md5Fingerprint" />
     </div>
   </div>
 </template>

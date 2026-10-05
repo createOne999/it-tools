@@ -1270,6 +1270,8 @@ tools:
       tag-refresh-key-pair: Schlüsselpaar aktualisieren
       tag-public-key: Öffentlicher Schlüssel
       tag-private-key: Privater Schlüssel
+      tag-fingerprint: Fingerabdruck
+      tag-md5-fingerprint: Fingerabdruck (MD5)
     text:
       bits-should-be-256-less-than-bits-less-than-16384-and-be-a-multiple-of-8:
         Die Anzahl der Bits sollte zwischen 256 und 16384 liegen und ein
@@ -2805,6 +2807,8 @@ tools:
       tag-refresh-key-pair: Schlüsselpaar aktualisieren
       tag-public-key: Öffentlicher Schlüssel
       tag-private-key: Privater Schlüssel
+      tag-fingerprint: Fingerabdruck
+      tag-md5-fingerprint: Fingerabdruck (MD5)
   ed25519-key-pair-generator:
     title: Ed25519 Schlüsselpaargenerator
     description: Generieren Sie neue zufällige private und öffentliche
@@ -2824,6 +2828,8 @@ tools:
       tag-refresh-key-pair: Schlüsselpaar aktualisieren
       tag-public-key: Öffentlicher Schlüssel
       tag-private-key: Privater Schlüssel
+      tag-md5-fingerprint: Fingerabdruck (MD5)
+      tag-fingerprint: Fingerabdruck
   energy-computer:
     title: Energieverbrauchs- und -kostencomputer
     description: Berechnen Sie Energieverbrauch und -kosten
@@ -3418,6 +3424,7 @@ tools:
       title-schema-validation-errors: Schema-Validierungsfehler
       label-indent-size-0-compact: "Einrückungsgröße (0 = Kompakt):"
       repair-json: JSON reparieren
+      label-auto-height: Automatische Höhe
     externalAccess: Dieses Tool lädt möglicherweise ein JSON-Schema von
       https://www.schemastore.org herunter, wenn eine Validierung angefordert
       wird. Es werden keine Daten extern gesendet.
@@ -3761,6 +3768,17 @@ tools:
       tag-export-as-png: Als PNG exportieren
       tag-export-as-jpg: Als JPG exportieren
       tag-export-as-svg: Als SVG exportieren
+      tag-showing-last-valid-diagram: Das letzte gültige Diagramm wird angezeigt
+      tag-hint-ctrl-scroll-to-zoom: Halten Sie Strg (oder ⌘) gedrückt und scrollen Sie zum Zoomen.
+      label-diagram-preview: Diagrammvorschau – zum Verschieben ziehen oder die
+        Pfeiltasten verwenden, + und - zum Zoomen
+      label-zoom-level-reset: Zoom {zoom}%, klicken Sie, um auf 100 % zurückzusetzen.
+      title-zoom-in: Vergrößern
+      title-zoom-out: Herauszoomen
+      title-reset-zoom: Zoom auf 100 % zurücksetzen
+      title-fit-view: Passen Sie das Diagramm an, um es anzuzeigen
+      title-fullscreen: Vollbild
+      title-exit-fullscreen: Vollbildmodus beenden
   mime-converter:
     title: MIME-Kodierungskonverter
     description: Konvertieren vom/zum MIME-codierten Word-Format (E-Mail-Betreff)
@@ -4432,6 +4450,11 @@ tools:
       title-country-to-timezones: Land zu Zeitzonen
       label-country: Land
       title-timezones-to-countries: Zeitzonen zu Ländern
+      title-posix-timezones: Zeitzonen POSIX-Zeichenketten
+      search-posix-timezones: Geben Sie eine Zeitzone oder eine POSIX-Zeichenfolge ein, um zu suchen.
+      tag-no-results: Keine Ergebnisse
+      tag-timezone: Zeitzone
+      tag-posix: POSIX-Zeichenkette
   torrent-to-magnet:
     title: Torrent zu Magnet
     description: Konvertieren Sie eine Torrent-Datei in eine Magnet-URL
@@ -5177,7 +5200,7 @@ tools:
       label-source-port: "Quellport:"
       label-destination-port: "Zielhafen:"
       label-chain: "Kette:"
-      label-rule-order: "Regelreihenfolge:"
+      label-rule-order: "Einfügeposition (leer = anhängen):"
       title-generated-iptables-command: Generierter iptables-Befehl
       tag-expression: Ausdruck
       tag-meaning: Bedeutung
@@ -6147,6 +6170,9 @@ tools:
       tag-corners-square-options: Ecken Quadrat Optionen
       tag-small-terminal: Kleines Terminal
       title-image: Bild
+      label-qr-code-embeddable-dataurl: "QR-Code-Bilddaten-URL:"
+      link-qr-code-open-embeddable-link: Link zum Einbetten öffnen
+      label-qr-code-image-viewer: Einbettbarer QR-Code
   ies-lighting-guidelines:
     title: IES-Beleuchtungsrichtlinien
     description: Suchen Sie in den aktuellen Beleuchtungsstärkeempfehlungen der
@@ -10087,6 +10113,264 @@ tools:
         random-tool: Zufallswerkzeug
         tools: Werkzeuge
   external-self-hosted-required: Externes, selbst gehostetes Hosting erforderlich
+  markdown-format-converter:
+    title: Formatkonverter
+    description: Konvertierung zwischen Standard-Markdown, Obsidian, Logseq, Slack,
+      Jira und anderen Formaten.
+    texts:
+      label-source-format: Quellformat
+      label-target-format: Zielformat
+      placeholder-input-markdown: Fügen Sie hier Ihren Standard-, Obsidian- oder
+        Logseq-Markdown-Code ein oder geben Sie ihn ein...
+      label-input-markdown: Markdown-Eingabe
+      label-converted-output: Konvertierte Ausgabe
+      label-text: Text
+      label-preview: Vorschau
+  restic-command-generator:
+    title: Restic-Befehlsgenerator
+    description: "Generieren Sie restic CLI-Befehle, um ein Backrest- oder einfaches
+      restic-Repository wiederherzustellen: einen kompletten Snapshot, nur
+      einige Dateien oder eine durchsuchbare Einbindung."
+    texts:
+      intro: "Nur Generator: Hier wird nichts ausgeführt und Ihre Eingaben verlassen
+        nicht Ihren Browser. Beschreiben Sie Ihr Repository, wählen Sie die
+        wiederherzustellenden Daten aus und kopieren Sie den
+        Shell-Codeausschnitt."
+      title-repository: Repository
+      label-backend: Backend
+      backend-s3: S3-kompatibel (Backblaze B2, MinIO, Wasabi, AWS...)
+      backend-b2: Backblaze B2 (nativ)
+      backend-local: Lokaler Pfad oder eingebundene Festplatte
+      backend-sftp: SFTP
+      backend-rest: restic REST-Server
+      backend-rclone: Rclone
+      backend-azure: Azure Blob Storage
+      backend-gs: Google Cloud Storage
+      backend-raw: Andere (URI des Roh-Repositorys)
+      label-local-path: Repository-Pfad
+      label-endpoint: Endpunkt
+      label-bucket: Eimer
+      label-prefix: Pfad im Eimer
+      label-region: Region (optional)
+      label-user: Benutzer
+      label-host: Gastgeber
+      label-port: Anschluss (optional)
+      label-path: Repository-Pfad
+      label-url: Server-URL
+      label-remote: Rclone remote und Pfad
+      label-container: Container
+      label-raw-repository: Repository-URI
+      label-repository-mode: Repository übergeben als
+      repository-flag: -r-Flag bei jedem Befehl
+      repository-env: Umgebungsvariable RESTIC_REPOSITORY
+      label-repository-uri: Repository-URI
+      label-password: Repository-Passwort
+      password-prompt: Fordern Sie dies in der Shell an (lesen Sie -rs, bleibt
+        außerhalb des Verlaufs).
+      password-file: --password-file
+      password-command: --password-command
+      password-placeholder: RESTIC_PASSWORD-Export mit einem Platzhalter
+      password-none: Bereits in meiner Umgebung eingerichtet
+      label-password-file: Passwortdatei
+      label-password-command: Passwortbefehl
+      label-credentials: Backend-Zugangsdaten
+      credentials-prompt: Aufforderung zur Entdeckung des Geheimnisses in der Schale
+      credentials-placeholder: Exportieren Sie sie mit Platzhaltern
+      credentials-none: Bereits in meiner Umgebung eingerichtet
+      label-account-id: Schlüssel-ID / Kontoname
+      hint-secrets: 'Es werden niemals Geheimnisse in den generierten Befehl
+        eingefügt: Die Eingabeaufforderungsoptionen lesen sie mit "read -rs" in
+        Ihre Shell ein, sodass sie nicht in Ihrem Verlauf landen.'
+      title-operation: Was möchten Sie tun?
+      operation-restore: Wiederherstellen – Dateien aus einem Snapshot zurück auf die
+        Festplatte schreiben
+      operation-dump: Dump – eine Datei oder einen Ordner aus einem Snapshot streamen
+      operation-mount: mount — das Repository als Dateisystem durchsuchen
+      operation-snapshots: Snapshots – Listet die Snapshots des Repositorys auf
+      operation-ls: ls – listet die Dateien innerhalb eines Snapshots auf
+      operation-find: suchen – eine Datei in verschiedenen Snapshots finden
+      operation-diff: diff – Vergleich zweier Momentaufnahmen
+      operation-check: Überprüfen – die Integrität des Repositorys überprüfen
+      operation-stats: Statistiken – Größe eines Snapshots oder des Repositorys
+      operation-unlock: Entsperren – veraltete Sperren entfernen
+      title-snapshot: Snapshot-Auswahl
+      label-snapshot-id: Snapshot-ID
+      label-subfolder: Nur dieser Unterordner des Snapshots
+      label-plan: Rückenlehnenplan-ID
+      label-instance: Backrest-Instanz-ID
+      label-filter-host: Gastgeber
+      label-tags: Zusätzliche Tags
+      placeholder-tag: Handbuch
+      label-filter-paths: Wege
+      placeholder-path: /home/me/documents
+      hint-tags: Backrest versieht die erstellten Snapshots mit den Tags „plan:“ und
+        „created-by:“, gefolgt von der Plan- und der Instanz-ID. Tags innerhalb
+        eines einzelnen `--tag`-Tags werden mit UND verknüpft, während
+        wiederholte `--tag`-Flags mit ODER verknüpft werden. Dadurch bleiben
+        Plan und Instanz in einem Flag erhalten, und jedes weitere Tag erhält
+        ein eigenes.
+      title-restore-options: Wiederherstellungsoptionen
+      label-target: Zielverzeichnis
+      label-include: Stellen Sie nur diese Pfade oder Muster wieder her.
+      placeholder-include: /home/me/documents/**/*.pdf
+      label-exclude: Diese Pfade oder Muster ausschließen
+      placeholder-exclude: "**/node_modules"
+      label-overwrite: Vorhandene Dateien überschreiben
+      overwrite-default: restic Standardeinstellung (immer)
+      overwrite-always: stets
+      overwrite-if-changed: if-changed
+      overwrite-if-newer: if-newer
+      overwrite-never: niemals
+      label-case-insensitive: Groß-/Kleinschreibung wird nicht beachtet
+      label-dry-run: Trockenübung
+      label-verify: Überprüfen Sie die wiederhergestellten Dateien.
+      label-sparse: Schreiben Sie Sparse-Dateien
+      label-delete: Löschen Sie die im Snapshot fehlenden Dateien.
+      title-dump-options: Optionen zum Abladen
+      label-dump-path: Datei oder Ordner innerhalb des Snapshots
+      label-archive: Archivformat
+      archive-none: Rohdatei
+      archive-tar: benötigt
+      archive-zip: Reißverschluss
+      label-output-file: Umleitung zu einer lokalen Datei (optional)
+      hint-dump: dump streamt eine einzelne Datei oder einen Ordner direkt aus dem
+        Repository, sodass Sie nicht einen kompletten Snapshot wiederherstellen
+        müssen, um eine Konfigurationsdatei zurückzuerhalten.
+      title-mount-options: Montageoptionen
+      label-mount-point: Montagepunkt
+      label-allow-other: Anderen Benutzern den Zugriff auf die Halterung ermöglichen
+      title-ls-options: Optionen auflisten
+      label-ls-directory: Aufzulistendes Verzeichnis (optional)
+      label-long: Lange Liste
+      label-recursive: Rekursiv
+      title-find-options: Optionen finden
+      label-find-pattern: Muster
+      label-restrict-snapshot: Nur den ausgewählten Snapshot durchsuchen
+      title-diff-options: Diff-Optionen
+      label-diff-snapshot: Vergleiche mit der Momentaufnahme
+      label-metadata: Auch Änderungen an den Metadaten melden
+      title-snapshots-options: Snapshot-Optionen
+      label-compact: Kompakter Ausgang
+      title-check-options: Optionen prüfen
+      label-read-data-subset: Datenteilmenge lesen
+      label-read-data: Lesen und überprüfen Sie jede Packdatei.
+      label-check-unused: Nicht verwendete Blobs melden
+      label-with-cache: Verwenden Sie den vorhandenen Cache.
+      title-stats-options: Statistikoptionen
+      label-stats-mode: Zählmodus
+      stats-restore-size: restore-size — Größe einer Wiederherstellung
+      stats-files-by-contents: Dateien nach Inhalt — eindeutige Dateien
+      stats-raw-data: Rohdaten – Größe vor der Deduplizierung
+      stats-blobs-per-file: Blobs pro Datei
+      label-stats-all: Alle Snapshots
+      title-unlock-options: Optionen freischalten
+      label-remove-all: Entfernen Sie alle Schlösser, auch die, die gerade benutzt werden.
+      title-global-options: Globale Optionen
+      label-cache-dir: Cache-Verzeichnis
+      label-limit-download: Downloadlimit (KiB/s)
+      label-retry-lock: Versuchen Sie erneut, ein gesperrtes Repository für
+      label-extra-options: Backend-Optionen (-o)
+      placeholder-extra-option: s3.connections=4
+      label-extra-arguments: Zusätzliche Argumente (unverändert angehängt)
+      label-no-lock: --no-lock
+      label-no-cache: --no-cache
+      label-insecure-tls: --insecure-tls
+      label-json: --json
+      label-quiet: --ruhig
+      label-verbose: --verbose
+      title-output: Generierter Befehl
+      label-include-environment: Beinhaltet die Umgebungskonfiguration
+      label-multiline: Ein Argument pro Zeile
+      button-reset: Auf Standardeinstellungen zurücksetzen
+      warning-history: "Platzhalter-Exporte bleiben nach dem Ausfüllen in Ihrem
+        Shell-Verlauf erhalten: Verwenden Sie am besten die Eingabeaufforderung
+        oder löschen Sie den Verlauf anschließend."
+      warning-target: restore erstellt den vollständigen Pfad jeder Datei unter dem
+        Zielverzeichnis neu, sodass /etc/hosts am Ende im Unterordner etc/hosts
+        des Zielverzeichnisses landet.
+      warning-delete: --delete entfernt die Dateien im Zielverzeichnis, die nicht im
+        Snapshot enthalten sind. Versuchen Sie es zuerst mit --dry-run.
+      warning-restic-version: --dry-run, --delete und --overwrite erfordern restic 0.17 oder neuer.
+      warning-mount: mount benötigt FUSE, stellt die Snapshots schreibgeschützt bereit
+        und läuft so lange, bis Sie es mit Strg+C beenden.
+      title-walkthrough: Wiederherstellungs-Walkthrough
+      hint-walkthrough: Die übliche Vorgehensweise, wenn nur noch das Repository übrig
+        ist, das aus den oben genannten Einstellungen erstellt wurde.
+      walkthrough-snapshots: Listen Sie die Snapshots des Repositorys auf.
+      walkthrough-find: Ermitteln Sie, welcher Snapshot die benötigte Datei enthält.
+      walkthrough-ls: Listen Sie die Dateien des ausgewählten Snapshots auf.
+      walkthrough-restore: Stellen Sie nur die benötigten Dateien wieder her.
+      walkthrough-mount: Oder durchsuchen Sie das Repository und kopieren Sie die
+        Dateien manuell heraus.
+      title-backrest: Spickzettel für Rückenlehnen
+      table-item: Artikel
+      table-value: Standardpfad oder -format (Docker-Image in Klammern)
+      backrest-config: Konfigurationsdatei, die die Repository-URI, das zugehörige
+        Passwort und die Backend-Umgebungsvariablen enthält
+      backrest-data: Datenverzeichnis
+      backrest-binary: Restic-Binärdatei von Backrest heruntergeladen
+      backrest-plan-tag: Kennzeichnung des Plans
+      backrest-instance-tag: Tag zur Identifizierung der Instanz
+      hint-backrest: "Ein Backrest-Repository ist ein einfaches restic-Repository:
+        Wenn die Web-UI nicht verfügbar ist, werden URI und Passwort aus der
+        config.json ausgelesen und mit der bereits heruntergeladenen
+        restic-Binärdatei Backrest verwendet."
+  epc-qrcode-generator:
+    title: EPC QR-Code-Generator
+    description: Generieren Sie einen QR-Code des Europäischen Zahlungsverkehrsrats
+      (EPC) zur Einleitung einer SEPA-Überweisung.
+    externalAccess: "null"
+    texts:
+      text-copied-to-clipboard: In die Zwischenablage kopiert
+      label-v1: V1
+      label-v2: V2
+      label-beneficiary-name: "Name des Begünstigten:"
+      placeholder-beneficiary-name: Name des Begünstigten
+      label-account-iban: "Konto (IBAN):"
+      placeholder-fr76: FR76...
+      label-bic: "BIC:"
+      placeholder-bank-bic-optional: Bank-BIC (optional)
+      label-amount-eur: "Betrag (EUR):"
+      label-payment-reference: "Zahlungsreferenz:"
+      placeholder-optional: Optional
+      label-purpose: "Zweck:"
+      label-version: "Version:"
+      label-foreground-color: "Vordergrundfarbe:"
+      label-background-color: "Hintergrundfarbe:"
+      label-qr-size: "QR-Größe:"
+      tag-generate-qr: QR-Code generieren
+      tag-download-qrcode: QR-Code herunterladen
+      tag-copy-qrcode-text: Copy QRCode text
+  url-redirection-checker:
+    title: URL-Weiterleitungsprüfer
+    description: Prüfen, ob eine URL auf eine andere URL weiterleitet.
+    externalAccess: "null"
+    texts:
+      label-get: ERHALTEN
+      label-head: KOPF
+      label-url: "URL:"
+      placeholder-https-example-com: https://example.com
+      label-method: "Verfahren:"
+      label-user-agent: "Benutzeragent:"
+      label-max-hops: "Max Hops:"
+      label-include-body-preview: Vorschau des Körpers einbeziehen
+      label-preview-bytes: "Vorschau-Bytes:"
+      title-warnings: Warnungen
+      title-summary: Zusammenfassung
+      label-input-url: "Eingabe-URL:"
+      label-final-url: "Endgültige URL:"
+      label-hop-count: "Anzahl der Sprünge:"
+      title-redirect-chain: Umleitungskette
+      tag-inspect-redirect-chain: Umleitungskette prüfen
+      tag-: "-"
+      tag-url: URL
+      tag-status: Status
+      tag-duration: Dauer
+      tag-redirect: Umleiten
+      tag-location: Standort
+      tag-300-hop-status-code: = 300 && hop.status_code
+      tag-headers-body-preview: Vorschau von Kopfzeilen und Textkörper
+      tag-truncated: Gekürzt
 locale-selector:
   select-a-language: Wählen Sie eine Sprache
 collapsibleToolMenu:

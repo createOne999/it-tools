@@ -1187,6 +1187,8 @@ tools:
       tag-refresh-key-pair: Оновити пару ключів
       tag-public-key: Відкритий ключ
       tag-private-key: Закритий ключ
+      tag-fingerprint: Відбиток пальця
+      tag-md5-fingerprint: Відбиток пальця (MD5)
     text:
       bits-should-be-256-less-than-bits-less-than-16384-and-be-a-multiple-of-8: Біти повинні бути 256 <= біти <= 16384 та кратними 8
   html-wysiwyg-editor:
@@ -2738,6 +2740,8 @@ tools:
       tag-refresh-key-pair: Оновити пару ключів
       tag-public-key: Відкритий ключ
       tag-private-key: Закритий ключ
+      tag-fingerprint: Відбиток пальця
+      tag-md5-fingerprint: Відбиток пальця (MD5)
   ed25519-key-pair-generator:
     title: Генератор ключів Ed25519
     description: Генеруйте нові випадкові приватні та публічні ключі Ed25519 (з
@@ -2757,6 +2761,8 @@ tools:
       tag-refresh-key-pair: Оновити пару ключів
       tag-public-key: Відкритий ключ
       tag-private-key: Закритий ключ
+      tag-md5-fingerprint: Відбиток пальця (MD5)
+      tag-fingerprint: Відбиток пальця
   email-normalizer:
     title: Нормалізатор електронної пошти
     description: Нормалізуйте адреси електронної пошти до стандартного формату для
@@ -3508,6 +3514,7 @@ tools:
       title-schema-validation-errors: Помилки перевірки схеми
       label-indent-size-0-compact: "Розмір відступу (0 = Компактний):"
       repair-json: Відновлення JSON
+      label-auto-height: Автоматична висота
     externalAccess: Цей інструмент може завантажити схему JSON з
       https://www.schemastore.org, коли запитується перевірка. Дані не
       надсилаються зовні.
@@ -3873,6 +3880,18 @@ tools:
       tag-export-as-png: Експортувати як PNG
       tag-export-as-jpg: Експортувати як JPG
       tag-export-as-svg: Експортувати як SVG
+      tag-showing-last-valid-diagram: Показано останню дійсну діаграму
+      tag-hint-ctrl-scroll-to-zoom: Утримуйте Ctrl (або ⌘) та прокрутіть, щоб збільшити
+      label-diagram-preview: Попередній перегляд діаграми — перетягуйте або
+        використовуйте клавіші зі стрілками для панорамування, + та - для
+        масштабування
+      label-zoom-level-reset: Масштаб {zoom}%, натисніть, щоб скинути до 100%
+      title-zoom-in: Збільшити масштаб
+      title-zoom-out: Зменшити масштаб
+      title-reset-zoom: Скинути масштаб до 100%
+      title-fit-view: Пристосувати діаграму до перегляду
+      title-fullscreen: Повноекранний режим
+      title-exit-fullscreen: Вийти з повноекранного режиму
   mime-converter:
     title: Конвертер MIME кодування
     description: Конвертуйте з/у формат MIME Encoded-Word (Mail Subject)
@@ -4756,6 +4775,11 @@ tools:
       title-country-to-timezones: Країна за часовими поясами
       label-country: Країна
       title-timezones-to-countries: Часові пояси за країнами
+      title-posix-timezones: Рядки POSIX часових поясів
+      search-posix-timezones: Введіть часовий пояс або рядок POSIX для пошуку
+      tag-no-results: Немає результатів
+      tag-timezone: Часовий пояс
+      tag-posix: Рядок POSIX
   torrent-to-magnet:
     title: Torrent у Magnet
     description: Конвертуйте torrent файл у Magnet URL
@@ -5618,7 +5642,7 @@ tools:
       label-source-port: "Порт джерела:"
       label-destination-port: "Порт призначення:"
       label-chain: "Ланцюг:"
-      label-rule-order: "Порядок правил:"
+      label-rule-order: "Позиція вставки (пусто = додати в кінець):"
       title-generated-iptables-command: Згенерована команда iptables
       tag-expression: Вираз
       tag-meaning: Значення
@@ -6272,6 +6296,9 @@ tools:
       tag-corners-square-options: Варіанти кутових квадратів
       tag-small-terminal: Малий термінал
       title-image: Зображення
+      label-qr-code-embeddable-dataurl: "URL-адреса даних зображення QR-коду:"
+      link-qr-code-open-embeddable-link: Відкрити посилання для вбудовування
+      label-qr-code-image-viewer: Вбудовуваний QR-код
   meta-tag-generator:
     texts:
       label-your-meta-tags: Ваші метатеги
@@ -9862,6 +9889,258 @@ tools:
         random-tool: Випадковий інструмент
         tools: Інструменти
   external-self-hosted-required: Потрібне зовнішнє власне розміщення
+  markdown-format-converter:
+    title: Конвертер форматів
+    description: Конвертуйте між стандартними форматами Markdown, Obsidian, Logseq,
+      Slack, Jira та іншими.
+    texts:
+      label-source-format: Формат джерела
+      label-target-format: Цільовий формат
+      placeholder-input-markdown: Вставте або введіть тут свій стандартний, Obsidian або Logseq Markdown...
+      label-input-markdown: Вхідний Markdown
+      label-converted-output: Перетворений вихід
+      label-text: Текст
+      label-preview: Попередній перегляд
+  restic-command-generator:
+    title: Генератор команд Restic
+    description: "Генеруйте restic-команди CLI для відновлення Backrest або простого
+      restic-репозиторію: повний знімок, лише деякі файли або монтування з
+      можливістю перегляду."
+    texts:
+      intro: "Тільки генератор: тут нічого не працює, і ніщо з того, що ви вводите, не
+        залишає ваш браузер. Опишіть свій репозиторій, виберіть те, що потрібно
+        відновити, та скопіюйте фрагмент оболонки."
+      title-repository: Репозиторій
+      label-backend: Бекенд
+      backend-s3: Сумісність з S3 (Backblaze B2, MinIO, Wasabi, AWS...)
+      backend-b2: Backblaze B2 (рідний)
+      backend-local: Локальний шлях або змонтований диск
+      backend-sftp: SFTP
+      backend-rest: рестичний REST-сервер
+      backend-rclone: Клон
+      backend-azure: Сховище BLOB-об'єктів Azure
+      backend-gs: Хмарне сховище Google
+      backend-raw: Інше (URI необробленого репозиторію)
+      label-local-path: Шлях до репозиторію
+      label-endpoint: Кінцева точка
+      label-bucket: Відро
+      label-prefix: Шлях у відрі
+      label-region: Регіон (необов'язково)
+      label-user: Користувач
+      label-host: Хост
+      label-port: Порт (необов'язково)
+      label-path: Шлях до репозиторію
+      label-url: URL-адреса сервера
+      label-remote: Rclone віддалений і шлях
+      label-container: Контейнер
+      label-raw-repository: URI репозиторію
+      label-repository-mode: Репозиторій передано як
+      repository-flag: прапорець -r для кожної команди
+      repository-env: Змінна середовища RESTIC_REPOSITORY
+      label-repository-uri: URI репозиторію
+      label-password: Пароль репозиторію
+      password-prompt: Запитувати це в оболонці (читати -rs, не враховувати історію)
+      password-file: --файл-паролів
+      password-command: --команда-пароля
+      password-placeholder: Експорт RESTIC_PASSWORD із заповнювачем
+      password-none: Вже встановлено в моєму середовищі
+      label-password-file: Файл паролів
+      label-password-command: Команда пароля
+      label-credentials: Облікові дані сервера
+      credentials-prompt: Запит на секрет в оболонці
+      credentials-placeholder: Експортуйте їх із заповнювачами
+      credentials-none: Вже встановлено в моєму середовищі
+      label-account-id: Ідентифікатор ключа / назва облікового запису
+      hint-secrets: 'У згенерованій команді ніколи не міститься жодного секрету:
+        параметри запиту зчитують їх у вашу оболонку за допомогою "read -rs",
+        щоб вони не потрапляли до вашої історії.'
+      title-operation: Що ти хочеш зробити?
+      operation-restore: відновити — записати файли зі знімка назад на диск
+      operation-dump: дамп — потокове передавання одного файлу або папки зі знімка
+      operation-mount: mount — переглядати репозиторій як файлову систему
+      operation-snapshots: знімки — список знімків репозиторію
+      operation-ls: ls — перерахувати файли у знімку
+      operation-find: знайти — знайти файл серед знімків
+      operation-diff: diff — порівняння двох знімків
+      operation-check: перевірити — перевірити цілісність репозиторію
+      operation-stats: статистика — розмір знімка або репозиторію
+      operation-unlock: розблокувати — видалити застарілі блокування
+      title-snapshot: Вибір знімка
+      label-snapshot-id: Ідентифікатор знімка
+      label-subfolder: Тільки ця підпапка знімка
+      label-plan: Ідентифікатор плану спинки
+      label-instance: Ідентифікатор екземпляра спинки
+      label-filter-host: Хост
+      label-tags: Додаткові теги
+      placeholder-tag: ручний
+      label-filter-paths: Шляхи
+      placeholder-path: /головна/я/документи
+      hint-tags: Backrest позначає створені знімки тегами "plan:" та "created-by:", а
+        потім ідентифікаторами плану та екземпляра. Теги всередині одного
+        прапорця --- об'єднуються оператором AND, тоді як повторювані прапорці
+        ---- об'єднуються оператором OR, тому план та екземпляр залишаються в
+        одному прапорці, а кожен додатковий тег отримує свій власний.
+      title-restore-options: Параметри відновлення
+      label-target: Цільовий каталог
+      label-include: Відновити лише ці контури або візерунки
+      placeholder-include: /головна/я/документи/**/*.pdf
+      label-exclude: Виключити ці шляхи або шаблони
+      placeholder-exclude: "**/modules_node"
+      label-overwrite: Перезаписати існуючі файли
+      overwrite-default: restic за замовчуванням (завжди)
+      overwrite-always: завжди
+      overwrite-if-changed: якщо змінилося
+      overwrite-if-newer: якщо новіший
+      overwrite-never: ніколи
+      label-case-insensitive: Шаблони без урахування регістру
+      label-dry-run: Сухий пробіг
+      label-verify: Перевірити відновлені файли
+      label-sparse: Запис розріджених файлів
+      label-delete: Видалити файли, відсутні на знімку
+      title-dump-options: Варіанти дампу
+      label-dump-path: Файл або папка всередині знімка
+      label-archive: Формат архіву
+      archive-none: Необроблений файл
+      archive-tar: бере
+      archive-zip: поштовий індекс
+      label-output-file: Перенаправлення на локальний файл (необов'язково)
+      hint-dump: dump передає один файл або папку безпосередньо з репозиторію, тому
+        вам не потрібно відновлювати цілий знімок, щоб отримати один файл
+        конфігурації.
+      title-mount-options: Варіанти кріплення
+      label-mount-point: Точка монтування
+      label-allow-other: Дозволити іншим користувачам доступ до монтування
+      title-ls-options: Параметри списку
+      label-ls-directory: Каталог для додавання до списку (необов'язково)
+      label-long: Довгий список
+      label-recursive: Рекурсивний
+      title-find-options: Знайти варіанти
+      label-find-pattern: Візерунок
+      label-restrict-snapshot: Пошук лише у вибраному знімку
+      title-diff-options: Різні варіанти
+      label-diff-snapshot: Порівняти зі знімком
+      label-metadata: Повідомити також про зміни метаданих
+      title-snapshots-options: Параметри знімків
+      label-compact: Компактний вихід
+      title-check-options: Перевірте параметри
+      label-read-data-subset: Читання підмножини даних
+      label-read-data: Прочитайте та перевірте кожен файл пакета
+      label-check-unused: Повідомити про невикористані блоби
+      label-with-cache: Використовувати існуючий кеш
+      title-stats-options: Параметри статистики
+      label-stats-mode: Режим підрахунку
+      stats-restore-size: restore-size — розмір відновлення
+      stats-files-by-contents: файли за вмістом — унікальні файли
+      stats-raw-data: сирі-дані — розмір до дедуплікації
+      stats-blobs-per-file: блобів на файл
+      label-stats-all: Усі знімки
+      title-unlock-options: Параметри розблокування
+      label-remove-all: Зніміть усі замки, включаючи ті, що використовуються
+      title-global-options: Глобальні опції
+      label-cache-dir: Каталог кешу
+      label-limit-download: Ліміт завантаження (КіБ/с)
+      label-retry-lock: Повторіть спробу заблокованого репозиторію для
+      label-extra-options: Параметри серверної частини (-o)
+      placeholder-extra-option: s3.з'єднання=4
+      label-extra-arguments: Додаткові аргументи (додаються як є)
+      label-no-lock: --без блокування
+      label-no-cache: --без кешу
+      label-insecure-tls: --insecure-tls
+      label-json: --json
+      label-quiet: --тихо
+      label-verbose: --багатословний
+      title-output: Згенерована команда
+      label-include-environment: Включити налаштування середовища
+      label-multiline: Один аргумент на рядок
+      button-reset: Скинути до налаштувань за замовчуванням
+      warning-history: "Експортовані заповнювачі залишаються в історії вашої оболонки
+        після заповнення: віддайте перевагу параметрам запиту або очистіть
+        історію після цього."
+      warning-target: Команда restore відтворює повний шлях до кожного файлу в
+        цільовому каталозі, тому /etc/hosts потрапляє до підпапки etc/hosts
+        цільового каталогу.
+      warning-delete: --delete видаляє файли цільового каталогу, яких немає у знімку.
+        Спочатку спробуйте це зробити з --dry-run.
+      warning-restic-version: --dry-run, --delete та --overwrite вимагають restic 0.17
+        або новішої версії.
+      warning-mount: mount потребує FUSE, надає знімки лише для читання та продовжує
+        працювати, доки ви не зупините його за допомогою Ctrl-C.
+      title-walkthrough: Покрокове керівництво по відновленню
+      hint-walkthrough: Звичайна послідовність, коли залишається лише репозиторій,
+        зібраний з налаштувань вище.
+      walkthrough-snapshots: Перелічіть знімки репозиторію
+      walkthrough-find: Знайдіть знімок, який містить потрібний вам файл
+      walkthrough-ls: Перелічіть файли вибраного знімка
+      walkthrough-restore: Відновіть лише ті файли, які вам потрібні
+      walkthrough-mount: Або перегляньте репозиторій та скопіюйте файли вручну
+      title-backrest: Шпаргалка для спинки
+      table-item: Елемент
+      table-value: Шлях або формат за замовчуванням (зображення Docker у дужках)
+      backrest-config: Файл конфігурації, що містить URI репозиторію, його пароль та
+        змінні середовища бекенду
+      backrest-data: Каталог даних
+      backrest-binary: Бінарний файл Restic, завантажений Backrest, завантажується
+      backrest-plan-tag: Тег, що ідентифікує план
+      backrest-instance-tag: Тег, що ідентифікує екземпляр
+      hint-backrest: "Репозиторій Backrest — це звичайний restic-репозиторій: якщо
+        веб-інтерфейс відсутній, зчитується URI та пароль з config.json та
+        запускається з уже завантаженим restic-бінарним файлом Backrest."
+  epc-qrcode-generator:
+    title: Генератор EPC QR-кодів
+    description: Згенеруйте QR-код Європейської платіжної ради (EPC) для ініціювання
+      кредитного переказу SEPA
+    externalAccess: нульовий
+    texts:
+      text-copied-to-clipboard: Скопійовано в буфер обміну
+      label-v1: Версія 1
+      label-v2: В2
+      label-beneficiary-name: "Ім'я бенефіціара:"
+      placeholder-beneficiary-name: Ім'я бенефіціара
+      label-account-iban: "Рахунок (IBAN):"
+      placeholder-fr76: ФР76...
+      label-bic: "БІК:"
+      placeholder-bank-bic-optional: BIC банку (необов'язково)
+      label-amount-eur: "Сума (євро):"
+      label-payment-reference: "Довідка про платіж:"
+      placeholder-optional: Необов'язково
+      label-purpose: "Призначення:"
+      label-version: "Версія:"
+      label-foreground-color: "Колір переднього плану:"
+      label-background-color: "Колір фону:"
+      label-qr-size: "Розмір QR-коду:"
+      tag-generate-qr: Згенерувати QR-код
+      tag-download-qrcode: Завантажити QR-код
+      tag-copy-qrcode-text: Скопіюйте текст QR-коду
+  url-redirection-checker:
+    title: Перевірка перенаправлення URL-адрес
+    description: Перевірте, чи URL-адреса перенаправляє на іншу URL-адресу.
+    externalAccess: нульовий
+    texts:
+      label-get: ОТРИМАТИ
+      label-head: ГОЛОВА
+      label-url: "URL-адреса:"
+      placeholder-https-example-com: https://example.com
+      label-method: "Метод:"
+      label-user-agent: "Агент користувача:"
+      label-max-hops: "Макс Хопс:"
+      label-include-body-preview: Включити попередній перегляд основного тексту
+      label-preview-bytes: "Байти попереднього перегляду:"
+      title-warnings: Попередження
+      title-summary: Короткий зміст
+      label-input-url: "Введіть URL-адресу:"
+      label-final-url: "Кінцева URL-адреса:"
+      label-hop-count: "Кількість стрибків:"
+      title-redirect-chain: Ланцюг перенаправлення
+      tag-inspect-redirect-chain: Перевірте ланцюжок перенаправлення
+      tag-: "-"
+      tag-url: URL-адреса
+      tag-status: Статус
+      tag-duration: Тривалість
+      tag-redirect: Перенаправлення
+      tag-location: Розташування
+      tag-300-hop-status-code: = 300 && hop.status_code
+      tag-headers-body-preview: Попередній перегляд заголовків і основного тексту
+      tag-truncated: Укорочено
 spanCopyable:
   copy: Копіювати в буфер обміну
   copied: Скопійовано!

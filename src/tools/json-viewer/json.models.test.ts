@@ -83,6 +83,13 @@ describe('json models', () => {
         expect(result).toBe(expected);
       });
 
+      it('does not unescape an escaped backslash twice', () => {
+        const escapedJson = '{\\"text\\":\\"line1\\\\nline2\\",\\"path\\":\\"C:\\\\\\\\new\\"}';
+        const result = formatJson({ rawJson: escapedJson, unescapeJsonString: true, indentSize: 2 });
+        const expected = '{\n  "path": "C:\\\\new",\n  "text": "line1\\nline2"\n}';
+        expect(result).toBe(expected);
+      });
+
       it('handles single-quoted outer strings', () => {
         const escapedJson = '\'{\\\"id\\\":\\\"123\\\"}\'';
         const result = formatJson({ rawJson: escapedJson, unescapeJsonString: true, indentSize: 2 });
@@ -104,9 +111,11 @@ describe('json models', () => {
       });
 
       it('works with complex nested objects', () => {
-        const complexEscaped = '"{\\\"users\\\":[{\\\"id\\\":\\\"1\\\",\\\"data\\\":{\\\"active\\\":true}}],\\\"meta\\\":{\\\"total\\\":1}}"';
+        const complexEscaped =
+          '"{\\\"users\\\":[{\\\"id\\\":\\\"1\\\",\\\"data\\\":{\\\"active\\\":true}}],\\\"meta\\\":{\\\"total\\\":1}}"';
         const result = formatJson({ rawJson: complexEscaped, unescapeJsonString: true, indentSize: 2 });
-        const expected = '{\n  "meta": {\n    "total": 1\n  },\n  "users": [\n    {\n      "data": {\n        "active": true\n      },\n      "id": "1"\n    }\n  ]\n}';
+        const expected =
+          '{\n  "meta": {\n    "total": 1\n  },\n  "users": [\n    {\n      "data": {\n        "active": true\n      },\n      "id": "1"\n    }\n  ]\n}';
         expect(result).toBe(expected);
       });
 

@@ -2,6 +2,8 @@
 import { useI18n } from 'vue-i18n';
 import * as ctz from 'countries-and-timezones';
 import getTimezoneOffset from 'get-timezone-offset';
+import posixTimezones from './posix-timezones.json';
+import { useFlexSearch } from '@/composable/flexSearch';
 
 const { t } = useI18n();
 
@@ -45,6 +47,19 @@ const allCountries = Object.values(ctz.getAllCountries()).map((c) => ({
 }));
 const countryToTimezonesInput = ref('FR');
 const countryToTimezonesOutput = computed(() => ctz.getTimezonesForCountry(countryToTimezonesInput.value));
+
+const searchPosix = ref('');
+
+const { searchResult: searchPosixResult } = useFlexSearch({
+  search: searchPosix,
+  data: Object.entries(posixTimezones).map(([timezone, posix]) => ({
+    timezone,
+    posix,
+  })),
+  options: {
+    keys: ['timezone', 'posix'],
+  },
+});
 </script>
 
 <template>
@@ -145,6 +160,39 @@ const countryToTimezonesOutput = computed(() => ctz.getTimezonesForCountry(count
           {{ country.name }} ({{ country.id }}): {{ country.timezones.join(', ') }}
         </li>
       </ul>
+    </c-card>
+
+    <c-card :title="t('tools.timezone-converter.texts.title-posix-timezones')" mb-2>
+      <div flex items-center gap-3>
+        <c-input-text
+          v-model:value="searchPosix"
+          :placeholder="t('tools.timezone-converter.texts.search-posix-timezones')"
+          mx-auto
+          max-w-600px
+        >
+          <template #prefix>
+            <icon-mdi-search mr-6px color-black op-70 dark:color-white />
+          </template>
+        </c-input-text>
+      </div>
+
+      <n-alert v-if="!searchPosixResult.length" type="info" mt-2>
+        {{ t('tools.timezone-converter.texts.tag-no-results') }}
+      </n-alert>
+      <n-table v-else mt-2>
+        <thead>
+          <tr>
+            <th>{{ t('tools.timezone-converter.texts.tag-timezone') }}</th>
+            <th>{{ t('tools.timezone-converter.texts.tag-posix') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(result, ix) in searchPosixResult" :key="ix">
+            <td><input-copyable readonly :value="result.timezone" /></td>
+            <td><input-copyable readonly :value="result.posix" /></td>
+          </tr>
+        </tbody>
+      </n-table>
     </c-card>
   </div>
 </template>

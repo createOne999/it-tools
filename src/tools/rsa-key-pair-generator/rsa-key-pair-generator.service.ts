@@ -17,22 +17,26 @@ function generateRawPairs({ bits = 2048 }) {
   );
 }
 
-async function generateKeyPair(config: {
-  bits?: number
-  password?: string
-  format?: sshpk.PrivateKeyFormatType
-  comment?: string
-} = {}) {
+async function generateKeyPair(
+  config: {
+    bits?: number;
+    password?: string;
+    format?: sshpk.PrivateKeyFormatType;
+    comment?: string;
+  } = {},
+) {
   const { privateKey, publicKey } = await generateRawPairs(config);
 
   const privateUnencryptedKeyPem = pki.privateKeyToPem(privateKey);
 
   if (config?.format === 'pem') {
+    const publicKeyPEM = pki.publicKeyToPem(publicKey);
+    const parsedPubicKey = sshpk.parseKey(publicKeyPEM);
     return {
-      publicKey: pki.publicKeyToPem(publicKey),
-      privateKey: config?.password
-        ? pki.encryptRsaPrivateKey(privateKey, config?.password)
-        : privateUnencryptedKeyPem,
+      publicKey: publicKeyPEM,
+      fingerprint: publicKey ? parsedPubicKey.fingerprint('sha256').toString() : '',
+      md5Fingerprint: publicKey ? parsedPubicKey.fingerprint('md5').toString() : '',
+      privateKey: config?.password ? pki.encryptRsaPrivateKey(privateKey, config?.password) : privateUnencryptedKeyPem,
     };
   }
 
@@ -46,10 +50,10 @@ async function generateKeyPair(config: {
   const pubKey = privKey.toPublic();
   return {
     publicKey: pubKey.toString(pubFormat),
+    fingerprint: pubKey.fingerprint('sha256').toString(),
+    md5Fingerprint: pubKey.fingerprint('md5').toString(),
     privateKey: config?.password
-      ? privKey.toString(privFormat,
-        { passphrase: config?.password, comment: config?.comment },
-      )
+      ? privKey.toString(privFormat, { passphrase: config?.password, comment: config?.comment })
       : privKey.toString(privFormat, { comment: config?.comment }),
   };
 }

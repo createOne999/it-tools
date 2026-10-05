@@ -871,6 +871,8 @@ tools:
       tag-refresh-key-pair: Odśwież parę kluczy
       tag-public-key: Klucz publiczny
       tag-private-key: Klucz prywatny
+      tag-fingerprint: Odcisk palca
+      tag-md5-fingerprint: Odcisk palca (MD5)
     text:
       bits-should-be-256-less-than-bits-less-than-16384-and-be-a-multiple-of-8:
         Liczba bitów powinna wynosić 256 <= bitów <= 16384 i być wielokrotnością
@@ -2061,6 +2063,8 @@ tools:
       tag-refresh-key-pair: Odśwież parę kluczy
       tag-public-key: Klucz publiczny
       tag-private-key: Klucz prywatny
+      tag-fingerprint: Odcisk palca
+      tag-md5-fingerprint: Odcisk palca (MD5)
   ed25519-key-pair-generator:
     title: Generator par kluczy Ed25519
     description: Wygeneruj nowe losowe klucze prywatne i publiczne Ed25519 (z hasłem
@@ -2080,6 +2084,8 @@ tools:
       tag-refresh-key-pair: Odśwież parę kluczy
       tag-public-key: Klucz publiczny
       tag-private-key: Klucz prywatny
+      tag-md5-fingerprint: Odcisk palca (MD5)
+      tag-fingerprint: Odcisk palca
   energy-computer:
     title: Komputer do pomiaru zużycia i wydatków energii
     description: Oblicz zużycie energii i wydatki
@@ -2655,6 +2661,7 @@ tools:
       title-schema-validation-errors: Błędy walidacji schematu
       label-indent-size-0-compact: "Rozmiar wcięcia (0 = Kompaktowy):"
       repair-json: Napraw JSON
+      label-auto-height: Wysokość automatyczna
     externalAccess: To narzędzie może pobrać schemat JSON z
       https://www.schemastore.org po otrzymaniu prośby o weryfikację. Żadne dane
       nie są wysyłane na zewnątrz.
@@ -2996,6 +3003,17 @@ tools:
       tag-export-as-png: Eksportuj jako PNG
       tag-export-as-jpg: Eksportuj jako JPG
       tag-export-as-svg: Eksportuj jako SVG
+      tag-showing-last-valid-diagram: Pokazywanie ostatniego prawidłowego diagramu
+      tag-hint-ctrl-scroll-to-zoom: Przytrzymaj klawisz Ctrl (lub ⌘) i przewiń, aby powiększyć
+      label-diagram-preview: Podgląd diagramu — przeciągnij lub użyj klawiszy
+        strzałek, aby przesunąć, + i -, aby powiększyć
+      label-zoom-level-reset: Powiększ {zoom}%, kliknij, aby zresetować do 100%
+      title-zoom-in: Powiększ
+      title-zoom-out: Oddal
+      title-reset-zoom: Zresetuj powiększenie do 100%
+      title-fit-view: Dopasuj diagram, aby wyświetlić
+      title-fullscreen: Pełny ekran
+      title-exit-fullscreen: Wyjdź z trybu pełnoekranowego
   mime-converter:
     title: Konwerter kodowania MIME
     description: Konwersja z/do formatu MIME Encoded-Word (Temat wiadomości)
@@ -3645,6 +3663,11 @@ tools:
       title-country-to-timezones: Kraj do stref czasowych
       label-country: Kraj
       title-timezones-to-countries: Strefy czasowe dla krajów
+      title-posix-timezones: Strefy czasowe POSIX Strings
+      search-posix-timezones: Wprowadź strefę czasową lub ciąg znaków POSIX, aby wyszukać
+      tag-no-results: Brak wyników
+      tag-timezone: Strefa czasowa
+      tag-posix: Ciąg POSIX
   torrent-to-magnet:
     title: Torrent do magnesu
     description: Konwertuj plik torrent na adres URL Magnet
@@ -4444,7 +4467,7 @@ tools:
       label-source-port: "Port źródłowy:"
       label-destination-port: "Port docelowy:"
       label-chain: "Łańcuch:"
-      label-rule-order: "Kolejność zasad:"
+      label-rule-order: "Pozycja wstawienia (puste = dodaj na końcu):"
       title-generated-iptables-command: Wygenerowano polecenie iptables
       tag-expression: Wyrażenie
       tag-meaning: Oznaczający
@@ -5569,6 +5592,9 @@ tools:
       tag-corners-square-options: Opcje narożników kwadratowych
       tag-small-terminal: Mały terminal
       title-image: Obraz
+      label-qr-code-embeddable-dataurl: "Dane obrazu kodu QR-URL:"
+      link-qr-code-open-embeddable-link: Otwórz osadzony link
+      label-qr-code-image-viewer: Wbudowany kod QR
   basic-auth-generator:
     title: Podstawowy generator uwierzytelniania
     description: Wygeneruj nagłówek uwierzytelniania Base64 na podstawie nazwy
@@ -9877,6 +9903,259 @@ tools:
         random-tool: Narzędzie losowe
         tools: Narzędzia
   external-self-hosted-required: Wymagany zewnętrzny hosting własny
+  markdown-format-converter:
+    title: Konwerter formatów
+    description: Konwertuj między standardowymi formatami Markdown, Obsidian,
+      Logseq, Slack, Jira i innymi.
+    texts:
+      label-source-format: Format źródłowy
+      label-target-format: Format docelowy
+      placeholder-input-markdown: Wklej lub wpisz tutaj swój standardowy kod Markdown,
+        kod Obsidian lub Logseq Markdown...
+      label-input-markdown: Wprowadź Markdown
+      label-converted-output: Przekonwertowane wyjście
+      label-text: Tekst
+      label-preview: Zapowiedź
+  restic-command-generator:
+    title: Generator poleceń Restic
+    description: "Generuj polecenia CLI restic w celu przywrócenia repozytorium
+      Backrest lub zwykłego repozytorium restic: całej migawki, tylko niektórych
+      plików lub przeglądalnego montowania."
+    texts:
+      intro: "Tylko generator: nic się tu nie uruchamia i nic, co wpisujesz, nie
+        opuszcza przeglądarki. Opisz swoje repozytorium, wybierz, co chcesz
+        odzyskać, i skopiuj fragment kodu powłoki."
+      title-repository: Magazyn
+      label-backend: Zaplecze
+      backend-s3: Kompatybilny z S3 (Backblaze B2, MinIO, Wasabi, AWS...)
+      backend-b2: Backblaze B2 (natywny)
+      backend-local: Ścieżka lokalna lub zamontowany dysk
+      backend-sftp: SFTP
+      backend-rest: serwer REST restic
+      backend-rclone: Klonowanie
+      backend-azure: Magazyn obiektów blob platformy Azure
+      backend-gs: Przechowywanie w chmurze Google
+      backend-raw: Inne (surowy URI repozytorium)
+      label-local-path: Ścieżka repozytorium
+      label-endpoint: Punkt końcowy
+      label-bucket: Wiaderko
+      label-prefix: Ścieżka w wiadrze
+      label-region: Region (opcjonalnie)
+      label-user: Użytkownik
+      label-host: Gospodarz
+      label-port: Port (opcjonalnie)
+      label-path: Ścieżka repozytorium
+      label-url: Adres URL serwera
+      label-remote: Rclone zdalny i ścieżka
+      label-container: Pojemnik
+      label-raw-repository: URI repozytorium
+      label-repository-mode: Repozytorium przekazane jako
+      repository-flag: flaga -r przy każdym poleceniu
+      repository-env: Zmienna środowiskowa RESTIC_REPOSITORY
+      label-repository-uri: URI repozytorium
+      label-password: Hasło repozytorium
+      password-prompt: Wyświetla monit w powłoce (odczytaj -rs, pozostaje poza historią)
+      password-file: --plik-hasła
+      password-command: --polecenie-hasła
+      password-placeholder: Eksport RESTIC_PASSWORD z symbolem zastępczym
+      password-none: Już ustawione w moim środowisku
+      label-password-file: Plik haseł
+      label-password-command: Polecenie hasła
+      label-credentials: Poświadczenia zaplecza
+      credentials-prompt: Monit o sekret w powłoce
+      credentials-placeholder: Eksportuj je z symbolami zastępczymi
+      credentials-none: Już ustawione w moim środowisku
+      label-account-id: Identyfikator klucza / nazwa konta
+      hint-secrets: "W generowanym poleceniu nie jest nigdy umieszczany żaden sekret:
+        opcje wiersza poleceń odczytują je do powłoki za pomocą polecenia „read
+        -rs”, dzięki czemu nie są one uwzględniane w historii."
+      title-operation: Co chcesz zrobić?
+      operation-restore: przywróć — zapisz pliki z migawki z powrotem na dysk
+      operation-dump: dump — przesyłanie strumieniowe jednego pliku lub folderu z migawki
+      operation-mount: montuj — przeglądaj repozytorium jako system plików
+      operation-snapshots: migawki — wyświetl listę migawek repozytorium
+      operation-ls: ls — wyświetl listę plików znajdujących się w migawce
+      operation-find: znajdź — zlokalizuj plik wśród migawek
+      operation-diff: diff — porównaj dwie migawki
+      operation-check: sprawdź — zweryfikuj integralność repozytorium
+      operation-stats: statystyki — rozmiar migawki lub repozytorium
+      operation-unlock: odblokuj — usuń stare blokady
+      title-snapshot: Wybór migawki
+      label-snapshot-id: Identyfikator migawki
+      label-subfolder: Tylko ten podfolder migawki
+      label-plan: ID planu oparcia
+      label-instance: Identyfikator instancji oparcia
+      label-filter-host: Gospodarz
+      label-tags: Dodatkowe tagi
+      placeholder-tag: podręcznik
+      label-filter-paths: Ścieżki
+      placeholder-path: /strona główna/ja/dokumenty
+      hint-tags: Backrest oznacza tworzone migawki tagami „plan:” i „created-by:”, a
+        następnie identyfikatorami planu i instancji. Tagi wewnątrz pojedynczego
+        tagu „--tag” są łączone operatorem AND, a powtórzone flagi „--tag” są
+        łączone operatorem OR, dzięki czemu plan i instancja pozostają w jednej
+        fladze, a każdy dodatkowy tag otrzymuje swój własny.
+      title-restore-options: Opcje przywracania
+      label-target: Katalog docelowy
+      label-include: Przywróć tylko te ścieżki lub wzorce
+      placeholder-include: /strona główna/ja/dokumenty/**/*.pdf
+      label-exclude: Wyklucz te ścieżki lub wzorce
+      placeholder-exclude: "**/moduły_węzła"
+      label-overwrite: Nadpisz istniejące pliki
+      overwrite-default: restic default (zawsze)
+      overwrite-always: zawsze
+      overwrite-if-changed: jeśli zmienione
+      overwrite-if-newer: jeśli-nowszy
+      overwrite-never: nigdy
+      label-case-insensitive: Wzory nieuwzględniające wielkości liter
+      label-dry-run: Próba generalna
+      label-verify: Zweryfikuj przywrócone pliki
+      label-sparse: Zapisuj pliki rozrzedzone
+      label-delete: Usuń pliki brakujące w migawce
+      title-dump-options: Opcje zrzutu
+      label-dump-path: Plik lub folder wewnątrz migawki
+      label-archive: Format archiwum
+      archive-none: Surowy plik
+      archive-tar: bierze
+      archive-zip: zamek błyskawiczny
+      label-output-file: Przekieruj do pliku lokalnego (opcjonalnie)
+      hint-dump: dump przesyła strumieniowo pojedynczy plik lub folder bezpośrednio z
+        repozytorium, dzięki czemu nie musisz przywracać całej migawki, aby
+        uzyskać jeden plik konfiguracyjny.
+      title-mount-options: Opcje montażu
+      label-mount-point: Punkt montowania
+      label-allow-other: Zezwól innym użytkownikom na dostęp do wierzchowca
+      title-ls-options: Opcje listy
+      label-ls-directory: Katalog do wyświetlenia (opcjonalnie)
+      label-long: Długa lista
+      label-recursive: Rekurencyjny
+      title-find-options: Znajdź opcje
+      label-find-pattern: Wzór
+      label-restrict-snapshot: Wyszukaj tylko wybraną migawkę
+      title-diff-options: Opcje różnicowe
+      label-diff-snapshot: Porównaj ze migawką
+      label-metadata: Zgłoś również zmiany w metadanych
+      title-snapshots-options: Opcje migawek
+      label-compact: Kompaktowe wyjście
+      title-check-options: Sprawdź opcje
+      label-read-data-subset: Odczytaj podzbiór danych
+      label-read-data: Przeczytaj i zweryfikuj każdy plik pakietu
+      label-check-unused: Zgłoś nieużywane bloby
+      label-with-cache: Użyj istniejącej pamięci podręcznej
+      title-stats-options: Opcje statystyk
+      label-stats-mode: Tryb liczenia
+      stats-restore-size: restore-size — rozmiar przywracania
+      stats-files-by-contents: pliki według zawartości — unikalne pliki
+      stats-raw-data: surowe dane — rozmiar przed deduplikacją
+      stats-blobs-per-file: blobów na plik
+      label-stats-all: Wszystkie migawki
+      title-unlock-options: Odblokuj opcje
+      label-remove-all: Usuń wszystkie blokady, łącznie z tymi, które są aktualnie używane
+      title-global-options: Opcje globalne
+      label-cache-dir: Katalog pamięci podręcznej
+      label-limit-download: Limit pobierania (KiB/s)
+      label-retry-lock: Spróbuj ponownie zablokować repozytorium
+      label-extra-options: Opcje zaplecza (-o)
+      placeholder-extra-option: s3.connections=4
+      label-extra-arguments: Dodatkowe argumenty (dołączone w stanie takim, jaki jest)
+      label-no-lock: --bez blokady
+      label-no-cache: --no-cache
+      label-insecure-tls: --niezabezpieczone-tls
+      label-json: --json
+      label-quiet: --cichy
+      label-verbose: --gadatliwy
+      title-output: Wygenerowane polecenie
+      label-include-environment: Uwzględnij konfigurację środowiska
+      label-multiline: Jeden argument na wiersz
+      button-reset: Przywróć ustawienia domyślne
+      warning-history: "Zastępcze eksporty pozostają w historii powłoki po ich
+        wypełnieniu: możesz wybrać opcje monitu lub wyczyścić historię później."
+      warning-target: polecenie restore odtwarza pełną ścieżkę do każdego pliku w
+        katalogu docelowym, więc /etc/hosts znajdzie się w podfolderze etc/hosts
+        katalogu docelowego.
+      warning-delete: Opcja --delete usuwa pliki z katalogu docelowego, których nie ma
+        w migawce. Najpierw wypróbuj opcję --dry-run.
+      warning-restic-version: Opcje --dry-run, --delete i --overwrite wymagają wersji
+        restic 0.17 lub nowszej.
+      warning-mount: mount wymaga FUSE, udostępnia migawki tylko do odczytu i działa
+        dopóki nie zatrzymasz go za pomocą Ctrl-C.
+      title-walkthrough: Przewodnik odzyskiwania
+      hint-walkthrough: Typowa sekwencja, w której jedyne co pozostało to
+        repozytorium, zbudowane na podstawie powyższych ustawień.
+      walkthrough-snapshots: Wyświetl listę migawek repozytorium
+      walkthrough-find: Znajdź migawkę zawierającą potrzebny Ci plik
+      walkthrough-ls: Wyświetl listę plików wybranej migawki
+      walkthrough-restore: Przywróć tylko te pliki, których potrzebujesz
+      walkthrough-mount: Możesz też przeglądać repozytorium i kopiować pliki ręcznie
+      title-backrest: ściągawka dotycząca oparcia
+      table-item: Przedmiot
+      table-value: Domyślna ścieżka lub format (obraz Dockera w nawiasach)
+      backrest-config: Plik konfiguracyjny zawierający adres URI repozytorium, jego
+        hasło i zmienne środowiskowe zaplecza
+      backrest-data: Katalog danych
+      backrest-binary: Plik binarny Restic pobrany przez Backrest
+      backrest-plan-tag: Etykieta identyfikująca plan
+      backrest-instance-tag: Tag identyfikujący instancję
+      hint-backrest: "Repozytorium Backrest jest zwykłym repozytorium restic: jeśli
+        interfejs sieciowy zniknął, należy odczytać URI i hasło z pliku
+        config.json i uruchomić je przy użyciu wcześniej pobranego pliku
+        binarnego restic Backrest."
+  epc-qrcode-generator:
+    title: Generator kodów QR EPC
+    description: Wygeneruj kod QR Europejskiej Rady ds. Płatności (EPC) w celu
+      zainicjowania przelewu SEPA
+    externalAccess: nieważny
+    texts:
+      text-copied-to-clipboard: Skopiowano do schowka
+      label-v1: Wersja 1
+      label-v2: Wersja 2
+      label-beneficiary-name: "Nazwa beneficjenta:"
+      placeholder-beneficiary-name: Nazwa beneficjenta
+      label-account-iban: "Konto (IBAN):"
+      placeholder-fr76: FR76...
+      label-bic: "BIC:"
+      placeholder-bank-bic-optional: Bankowy kod BIC (opcjonalnie)
+      label-amount-eur: "Kwota (EUR):"
+      label-payment-reference: "Numer referencyjny płatności:"
+      placeholder-optional: Fakultatywny
+      label-purpose: "Zamiar:"
+      label-version: "Wersja:"
+      label-foreground-color: "Kolor pierwszego planu:"
+      label-background-color: "Kolor tła:"
+      label-qr-size: "Rozmiar kodu QR:"
+      tag-generate-qr: Wygeneruj kod QR
+      tag-download-qrcode: Pobierz kod QR
+      tag-copy-qrcode-text: Skopiuj tekst kodu QR
+  url-redirection-checker:
+    title: Kontroler przekierowań URL
+    description: Sprawdź, czy adres URL przekierowuje do innego adresu URL.
+    externalAccess: nieważny
+    texts:
+      label-get: DOSTAWAĆ
+      label-head: GŁOWA
+      label-url: "Adres URL:"
+      placeholder-https-example-com: https://example.com
+      label-method: "Metoda:"
+      label-user-agent: "Agent użytkownika:"
+      label-max-hops: "Max Hops:"
+      label-include-body-preview: Dołącz podgląd treści
+      label-preview-bytes: "Podgląd bajtów:"
+      title-warnings: Ostrzeżenia
+      title-summary: Streszczenie
+      label-input-url: "Wprowadź adres URL:"
+      label-final-url: "Ostateczny adres URL:"
+      label-hop-count: "Liczba przeskoków:"
+      title-redirect-chain: Łańcuch przekierowań
+      tag-inspect-redirect-chain: Sprawdź łańcuch przekierowań
+      tag-: "-"
+      tag-url: Adres URL
+      tag-status: Status
+      tag-duration: Czas trwania
+      tag-redirect: Przeadresować
+      tag-location: Lokalizacja
+      tag-300-hop-status-code: = 300 i kod_statusu_hopu
+      tag-headers-body-preview: Podgląd nagłówków i treści
+      tag-truncated: Kadłubowy
 favoriteButton:
   remove: Usuń z ulubionych
   add: Dodaj do ulubionych

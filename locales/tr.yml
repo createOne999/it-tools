@@ -1086,6 +1086,8 @@ tools:
       tag-refresh-key-pair: Anahtar çiftini yenile
       tag-public-key: Genel anahtar
       tag-private-key: Özel anahtar
+      tag-fingerprint: Parmak izi
+      tag-md5-fingerprint: Parmak izi (MD5)
     text:
       bits-should-be-256-less-than-bits-less-than-16384-and-be-a-multiple-of-8: Bit sayısı 256 ile 16384 arasında olmalı ve 8'in katı olmalıdır.
   html-wysiwyg-editor:
@@ -2266,6 +2268,8 @@ tools:
       tag-refresh-key-pair: Anahtar çiftini yenile
       tag-public-key: Genel anahtar
       tag-private-key: Özel anahtar
+      tag-fingerprint: Parmak izi
+      tag-md5-fingerprint: Parmak izi (MD5)
   ed25519-key-pair-generator:
     title: Ed25519 anahtar çifti üreteci
     description: Yeni rastgele Ed25519 özel ve genel anahtarları (şifreli veya
@@ -2285,6 +2289,8 @@ tools:
       tag-refresh-key-pair: Anahtar çiftini yenile
       tag-public-key: Genel anahtar
       tag-private-key: Özel anahtar
+      tag-md5-fingerprint: Parmak izi (MD5)
+      tag-fingerprint: Parmak izi
   energy-computer:
     title: Enerji Tüketimi ve Gider Bilgisayarı
     description: Enerji tüketimini ve giderini hesaplayın
@@ -2871,6 +2877,7 @@ tools:
       title-schema-validation-errors: Şema Doğrulama Hataları
       label-indent-size-0-compact: "Girinti boyutu (0 = Kompakt):"
       repair-json: JSON'u onar
+      label-auto-height: Otomatik Yükseklik
     externalAccess: Bu araç, doğrulama isteği yapıldığında
       https://www.schemastore.org adresinden bir JSON şeması indirebilir.
       Dışarıya hiçbir veri gönderilmez.
@@ -3212,6 +3219,17 @@ tools:
       tag-export-as-png: PNG olarak dışa aktar
       tag-export-as-jpg: JPG olarak dışa aktar
       tag-export-as-svg: SVG olarak dışa aktar
+      tag-showing-last-valid-diagram: Son geçerli diyagram gösteriliyor.
+      tag-hint-ctrl-scroll-to-zoom: Ctrl (veya ⌘) tuşunu basılı tutun ve kaydırarak yakınlaştırın.
+      label-diagram-preview: Diyagram önizlemesi — kaydırmak için sürükleyin veya ok
+        tuşlarını kullanın, yakınlaştırmak için + ve - tuşlarını kullanın.
+      label-zoom-level-reset: Yakınlaştırma yüzdesi {zoom}, %100'e sıfırlamak için tıklayın.
+      title-zoom-in: Yakınlaştır
+      title-zoom-out: Uzaklaştır
+      title-reset-zoom: Yakınlaştırma oranını %100'e sıfırla
+      title-fit-view: Uygunluk şemasını görüntülemek için
+      title-fullscreen: Tam ekran
+      title-exit-fullscreen: Tam ekrandan çık
   mime-converter:
     title: MIME Kodlama Dönüştürücü
     description: MIME Kodlu Word biçimine (Posta Konusu) dönüştür
@@ -3875,6 +3893,11 @@ tools:
       title-country-to-timezones: Ülkeden Zaman Dilimlerine
       label-country: Ülke
       title-timezones-to-countries: Ülkelere Göre Saat Dilimleri
+      title-posix-timezones: Zaman Dilimleri POSIX Dizeleri
+      search-posix-timezones: Arama yapmak için bir saat dilimi veya POSIX dizesi girin.
+      tag-no-results: Sonuç bulunamadı.
+      tag-timezone: Saat dilimi
+      tag-posix: POSIX Dizisi
   torrent-to-magnet:
     title: Torrent'ten Mıknatısa
     description: Bir torrent dosyasını Magnet URL'sine dönüştürün
@@ -4682,7 +4705,7 @@ tools:
       label-source-port: "Kaynak Portu:"
       label-destination-port: "Hedef Liman:"
       label-chain: "Zincir:"
-      label-rule-order: "Kural Sırası:"
+      label-rule-order: "Ekleme konumu (boş = sona ekle):"
       title-generated-iptables-command: Oluşturulan iptables komutu
       tag-expression: İfade
       tag-meaning: Anlam
@@ -5748,6 +5771,9 @@ tools:
       tag-corners-square-options: Köşe Kare Seçenekleri
       tag-small-terminal: Küçük Terminal
       title-image: Görüntü
+      label-qr-code-embeddable-dataurl: "QR Kod Görüntü Veri URL'si:"
+      link-qr-code-open-embeddable-link: Gömülebilir Bağlantıyı Aç
+      label-qr-code-image-viewer: Gömülebilir QR Kodu
   basic-auth-generator:
     title: Temel kimlik doğrulama oluşturucu
     description: Kullanıcı adı ve paroladan base64 temel kimlik doğrulama başlığı oluşturun.
@@ -9863,6 +9889,261 @@ tools:
         random-tool: Rastgele araç
         tools: Aletler
   external-self-hosted-required: Harici Kendi Sunucunuzda Barındırma Gereklidir
+  markdown-format-converter:
+    title: Biçim Dönüştürücü
+    description: Markdown, Obsidian, Logseq, Slack, Jira ve diğer standart formatlar
+      arasında dönüştürme yapın.
+    texts:
+      label-source-format: Kaynak Formatı
+      label-target-format: Hedef Biçim
+      placeholder-input-markdown: Buraya standart, Obsidian veya Logseq Markdown
+        metninizi yapıştırın veya yazın...
+      label-input-markdown: Markdown Girişi
+      label-converted-output: Dönüştürülmüş Çıktı
+      label-text: Metin
+      label-preview: Önizleme
+  restic-command-generator:
+    title: Restic Komut Üreticisi
+    description: "Backrest veya düz restic deposunu geri yüklemek için restic CLI
+      komutları oluşturun: tüm bir anlık görüntü, yalnızca bazı dosyalar veya
+      göz atılabilir bir bağlantı."
+    texts:
+      intro: "Yalnızca oluşturucu: burada hiçbir şey çalışmaz ve yazdığınız hiçbir şey
+        tarayıcınızdan dışarı çıkmaz. Deponuzu tanımlayın, kurtarmak istediğiniz
+        şeyi seçin ve shell kod parçasını kopyalayın."
+      title-repository: Depo
+      label-backend: Arka uç
+      backend-s3: S3 uyumlu (Backblaze B2, MinIO, Wasabi, AWS...)
+      backend-b2: Backblaze B2 (yerel)
+      backend-local: Yerel yol veya bağlı disk
+      backend-sftp: SFTP
+      backend-rest: restic REST sunucusu
+      backend-rclone: Rclone
+      backend-azure: Azure Blob Depolama
+      backend-gs: Google Bulut Depolama
+      backend-raw: Diğer (ham depo URI'si)
+      label-local-path: Depo yolu
+      label-endpoint: Uç nokta
+      label-bucket: Kova
+      label-prefix: Kovadaki yol
+      label-region: Bölge (isteğe bağlı)
+      label-user: Kullanıcı
+      label-host: Ev sahibi
+      label-port: Liman (isteğe bağlı)
+      label-path: Depo yolu
+      label-url: Sunucu URL'si
+      label-remote: Rclone uzak ve yol
+      label-container: Konteyner
+      label-raw-repository: Depo URI'si
+      label-repository-mode: "Depo şu şekilde iletildi:"
+      repository-flag: Her komutta -r bayrağını kullanın.
+      repository-env: RESTIC_REPOSITORY ortam değişkeni
+      label-repository-uri: Depo URI'si
+      label-password: Depo şifresi
+      password-prompt: Kabukta bunun için komut istemi oluşturun (-rs seçeneğini
+        okuyun, geçmişe kaydedilmez).
+      password-file: --şifre-dosyası
+      password-command: --şifre-komutu
+      password-placeholder: RESTIC_PASSWORD, yer tutucu ile dışa aktarılıyor.
+      password-none: Çevremde zaten ayarlanmış durumda.
+      label-password-file: Parola dosyası
+      label-password-command: Parola komutu
+      label-credentials: Arka uç kimlik bilgileri
+      credentials-prompt: Kabuğun içindeki sırrı ortaya çıkaracak ipucu.
+      credentials-placeholder: Bunları yer tutucularla dışa aktarın
+      credentials-none: Çevremde zaten ayarlanmış durumda.
+      label-account-id: Anahtar Kimliği / hesap adı
+      hint-secrets: 'Oluşturulan komutta hiçbir gizli bilgi yer almaz: komut istemi
+        seçenekleri bunları "read -rs" ile kabuğunuza okur, böylece geçmişinizde
+        kalmazlar.'
+      title-operation: Ne yapmak istiyorsunuz?
+      operation-restore: geri yükle — anlık görüntüden dosyaları diske geri yaz
+      operation-dump: dump — anlık görüntüden tek bir dosyayı veya klasörü akış
+        halinde dışa aktarın
+      operation-mount: mount — depoyu bir dosya sistemi olarak inceleyin
+      operation-snapshots: anlık görüntüler — depodaki anlık görüntüleri listele
+      operation-ls: ls — anlık görüntü içindeki dosyaları listeler
+      operation-find: bul — anlık görüntüler arasında bir dosyayı bul
+      operation-diff: fark — iki anlık görüntüyü karşılaştır
+      operation-check: kontrol et — deponun bütünlüğünü doğrula
+      operation-stats: istatistikler — bir anlık görüntünün veya deponun boyutu
+      operation-unlock: kilidi aç — eski kilitleri kaldır
+      title-snapshot: Anlık görüntü seçimi
+      label-snapshot-id: Anlık Görüntü Kimliği
+      label-subfolder: Anlık görüntünün yalnızca bu alt klasörü
+      label-plan: Sırtlık planı kimliği
+      label-instance: Backrest örneği kimliği
+      label-filter-host: Ev sahibi
+      label-tags: Ekstra etiketler
+      placeholder-tag: manuel
+      label-filter-paths: Yollar
+      placeholder-path: /ev/ben/belgeler
+      hint-tags: Backrest, oluşturduğu anlık görüntülere "plan:" ve "created-by:"
+        ifadelerini, ardından plan ve örnek kimliklerini ekler. Tek bir --tag
+        içindeki etiketler AND işlemiyle, tekrarlanan --tag bayrakları ise OR
+        işlemiyle birleştirilir; böylece plan ve örnek tek bir bayrakta kalır ve
+        her ek etiket kendi bayrağını alır.
+      title-restore-options: Geri yükleme seçenekleri
+      label-target: Hedef dizin
+      label-include: Yalnızca bu yolları veya kalıpları geri yükle
+      placeholder-include: /home/me/documents/**/*.pdf
+      label-exclude: Bu yolları veya kalıpları hariç tutun.
+      placeholder-exclude: "**/node_modülleri"
+      label-overwrite: Mevcut dosyaların üzerine yaz
+      overwrite-default: restic varsayılan (her zaman)
+      overwrite-always: Her zaman
+      overwrite-if-changed: eğer değiştiyse
+      overwrite-if-newer: daha yeni ise
+      overwrite-never: Asla
+      label-case-insensitive: Büyük/küçük harf duyarsız desenler
+      label-dry-run: Deneme sürüşü
+      label-verify: Geri yüklenen dosyaları doğrulayın.
+      label-sparse: Seyrek dosyalar yazın
+      label-delete: Anlık görüntüde bulunmayan dosyaları silin.
+      title-dump-options: Döküm seçenekleri
+      label-dump-path: Anlık görüntünün içindeki dosya veya klasör
+      label-archive: Arşiv formatı
+      archive-none: Ham dosya
+      archive-tar: almak
+      archive-zip: zip
+      label-output-file: Yerel bir dosyaya yönlendirme (isteğe bağlı)
+      hint-dump: "`dump` komutu, tek bir dosyayı veya klasörü doğrudan depodan dışa
+        aktarır; bu sayede tek bir yapılandırma dosyasını geri almak için tüm
+        bir anlık görüntüyü geri yüklemenize gerek kalmaz."
+      title-mount-options: Montaj seçenekleri
+      label-mount-point: Montaj noktası
+      label-allow-other: Diğer kullanıcıların binek hayvanına erişmesine izin verin.
+      title-ls-options: Liste seçenekleri
+      label-ls-directory: Listelenecek dizin (isteğe bağlı)
+      label-long: Uzun liste
+      label-recursive: Özyinelemeli
+      title-find-options: Seçenekleri bulun
+      label-find-pattern: Model
+      label-restrict-snapshot: Yalnızca seçili anlık görüntüde arama yapın
+      title-diff-options: Farklı seçenekler
+      label-diff-snapshot: Anlık görüntüyle karşılaştırın
+      label-metadata: Meta veri değişikliklerini de raporlayın.
+      title-snapshots-options: Anlık Görüntü seçenekleri
+      label-compact: Kompakt çıktı
+      title-check-options: Seçenekleri kontrol edin
+      label-read-data-subset: Veri alt kümesini okuyun
+      label-read-data: Her paket dosyasını okuyun ve doğrulayın.
+      label-check-unused: Kullanılmayan verileri raporla
+      label-with-cache: Mevcut önbelleği kullanın
+      title-stats-options: İstatistik seçenekleri
+      label-stats-mode: Sayma modu
+      stats-restore-size: geri yükleme boyutu — bir geri yüklemenin boyutu
+      stats-files-by-contents: Dosya içeriğine göre — benzersiz dosyalar
+      stats-raw-data: ham veri — tekilleştirme öncesi boyut
+      stats-blobs-per-file: dosya başına bloblar
+      label-stats-all: Tüm anlık görüntüler
+      title-unlock-options: Seçeneklerin kilidini aç
+      label-remove-all: Kullanımda olanlar da dahil olmak üzere tüm kilitleri sökün.
+      title-global-options: Küresel seçenekler
+      label-cache-dir: Önbellek dizini
+      label-limit-download: İndirme limiti (KiB/s)
+      label-retry-lock: Kilitli bir depoyu yeniden dene
+      label-extra-options: Arka uç seçenekleri (-o)
+      placeholder-extra-option: s3.bağlantılar=4
+      label-extra-arguments: Ek argümanlar (olduğu gibi eklenmiştir)
+      label-no-lock: --kilit yok
+      label-no-cache: --önbellek yok
+      label-insecure-tls: --güvensiz-tls
+      label-json: --json
+      label-quiet: --sessizlik
+      label-verbose: --ayrıntılı
+      title-output: Oluşturulan komut
+      label-include-environment: Ortam kurulumunu dahil edin.
+      label-multiline: Her satırda bir argüman
+      button-reset: Varsayılan ayarlara sıfırla
+      warning-history: "Yer tutucu dışa aktarımlar, doldurulduktan sonra kabuk
+        geçmişinizde kalır: Tercih ettiğiniz seçenek budur veya daha sonra
+        geçmişi temizleyebilirsiniz."
+      warning-target: "`restore` komutu, hedef dizin altındaki her dosyanın tam yolunu
+        yeniden oluşturur; bu nedenle `/etc/hosts` dosyası hedef dizinin
+        `etc/hosts` alt klasörüne taşınır."
+      warning-delete: --delete seçeneği, hedef dizindeki anlık görüntüde bulunmayan
+        dosyaları siler. Öncelikle --dry-run seçeneğiyle deneyin.
+      warning-restic-version: --dry-run, --delete ve --overwrite seçenekleri restic
+        0.17 veya daha yeni bir sürümünü gerektirir.
+      warning-mount: "`mount` komutu FUSE gerektirir, anlık görüntüleri salt okunur
+        olarak sunar ve Ctrl-C ile durdurana kadar çalışmaya devam eder."
+      title-walkthrough: Kurtarma kılavuzu
+      hint-walkthrough: Yukarıdaki ayarlardan yola çıkarak oluşturulan ve geriye
+        yalnızca depo kaldığında izlenen olağan sıra.
+      walkthrough-snapshots: Deponun anlık görüntülerini listeleyin.
+      walkthrough-find: İhtiyacınız olan dosyayı içeren anlık görüntüyü bulun.
+      walkthrough-ls: Seçilen anlık görüntünün dosyalarını listeleyin.
+      walkthrough-restore: Yalnızca ihtiyacınız olan dosyaları geri yükleyin.
+      walkthrough-mount: Veya depoyu tarayın ve dosyaları elle kopyalayın.
+      title-backrest: Sırtlık kullanım kılavuzu
+      table-item: Öğe
+      table-value: Varsayılan yol veya biçim (parantez içinde Docker imajı)
+      backrest-config: Depo URI'sini, parolasını ve arka uç ortam değişkenlerini
+        içeren yapılandırma dosyası.
+      backrest-data: Veri dizini
+      backrest-binary: Backrest tarafından indirilen Restic ikili dosyası
+      backrest-plan-tag: Planı tanımlayan etiket
+      backrest-instance-tag: Örneği tanımlayan etiket
+      hint-backrest: "Bir Backrest deposu, basit bir restic deposudur: eğer web
+        arayüzü yoksa, config.json dosyasından URI ve şifreyi okuyun ve önceden
+        indirilmiş olan restic ikili dosyası Backrest ile çalıştırın."
+  epc-qrcode-generator:
+    title: EPC QR Kod Oluşturucu
+    description: SEPA kredi transferini başlatmak için Avrupa Ödeme Konseyi (EPC) QR
+      kodu oluşturun.
+    externalAccess: hükümsüz
+    texts:
+      text-copied-to-clipboard: Panoya kopyalandı
+      label-v1: V1
+      label-v2: V2
+      label-beneficiary-name: "Hak Sahibinin Adı:"
+      placeholder-beneficiary-name: Lehtarın adı
+      label-account-iban: "Hesap (IBAN):"
+      placeholder-fr76: FR76...
+      label-bic: "BIC:"
+      placeholder-bank-bic-optional: Banka BIC kodu (isteğe bağlı)
+      label-amount-eur: "Miktar (EUR):"
+      label-payment-reference: "Ödeme Referansı:"
+      placeholder-optional: İsteğe bağlı
+      label-purpose: "Amaç:"
+      label-version: "Sürüm:"
+      label-foreground-color: "Ön plan rengi:"
+      label-background-color: "Arka plan rengi:"
+      label-qr-size: "QR Kod Boyutu:"
+      tag-generate-qr: QR kod oluştur
+      tag-download-qrcode: QR kodunu indir
+      tag-copy-qrcode-text: QR kod metnini kopyala
+  url-redirection-checker:
+    title: URL Yönlendirme Denetleyicisi
+    description: Bir URL'nin başka bir URL'ye yönlendirme yapıp yapmadığını kontrol edin.
+    externalAccess: hükümsüz
+    texts:
+      label-get: ELDE ETMEK
+      label-head: KAFA
+      label-url: "URL:"
+      placeholder-https-example-com: https://example.com
+      label-method: "Yöntem:"
+      label-user-agent: "Kullanıcı Aracısı:"
+      label-max-hops: "Max Hops:"
+      label-include-body-preview: Gövde Önizlemesini Dahil Et
+      label-preview-bytes: "Önizleme Bilgileri:"
+      title-warnings: Uyarılar
+      title-summary: Özet
+      label-input-url: "Giriş URL'si:"
+      label-final-url: "Son URL:"
+      label-hop-count: "Şerbetçiotu Sayısı:"
+      title-redirect-chain: Yönlendirme Zinciri
+      tag-inspect-redirect-chain: Yönlendirme Zincirini İncele
+      tag-: "-"
+      tag-url: URL
+      tag-status: Durum
+      tag-duration: Süre
+      tag-redirect: Yönlendirme
+      tag-location: Konum
+      tag-300-hop-status-code: = 300 && hop.status_code
+      tag-headers-body-preview: Başlıklar ve Gövde Önizlemesi
+      tag-truncated: Kısaltılmış
 about:
   alltools-title: Tüm {toolsCount} Araç
   tools:

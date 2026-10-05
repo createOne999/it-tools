@@ -7,27 +7,18 @@ import { useQueryParamOrStorage } from '@/composable/queryParams';
 
 const { t } = useI18n();
 
-const headingsStyle = useQueryParamOrStorage<string>({ name: 'headings', storageName: 'html-to-md:hs', defaultValue: 'hash' });
-const emphasisStyle = useQueryParamOrStorage<string>({ name: 'emphasis', storageName: 'html-to-md:em', defaultValue: 'standard' });
+const headingsStyle = useQueryParamOrStorage<string>({
+  name: 'headings',
+  storageName: 'html-to-md:hs',
+  defaultValue: 'hash',
+});
+const emphasisStyle = useQueryParamOrStorage<string>({
+  name: 'emphasis',
+  storageName: 'html-to-md:em',
+  defaultValue: 'standard',
+});
 
 const turndownService = new TurndownService();
-
-function escapeMarkdown(text: string) {
-  return text
-    .replace(/\\/g, '\\\\') // escape backslash first
-    .replace(/([*_#>|`])/g, '\\$1') // escape common markdown symbols
-    .replace(/([\[\]\(\)])/g, '\\$1') // escape brackets and parentheses
-    .replace(/\|/g, '\\|'); // escape table pipes
-}
-
-turndownService.addRule('escapeText', {
-  filter(node) {
-    return node.nodeType === 3; // text nodes
-  },
-  replacement(content) {
-    return escapeMarkdown(content);
-  },
-});
 
 addGFM(turndownService);
 
@@ -47,8 +38,7 @@ turndownService.addRule('normalizedHeading', {
       if (level === 2) {
         return `\n${text}\n${'-'.repeat(text.length)}\n\n`;
       }
-    }
-    else if (headingsStyle.value === 'surround') {
+    } else if (headingsStyle.value === 'surround') {
       return `\n${'='.repeat(level)} ${text} ${'='.repeat(level)}\n\n`;
     }
 
@@ -88,8 +78,7 @@ const inputHtml = ref('');
 const outputMarkdown = computed(() => {
   try {
     return turndownService.turndown(inputHtml.value ?? '');
-  }
-  catch (e: any) {
+  } catch (e: any) {
     return e.toString();
   }
 });
@@ -124,7 +113,8 @@ const outputMarkdown = computed(() => {
 
     <c-input-text
       v-model:value="inputHtml"
-      multiline raw-text
+      multiline
+      raw-text
       :placeholder="t('tools.html-to-markdown.texts.placeholder-your-html-content')"
       rows="8"
       autofocus

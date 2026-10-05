@@ -1145,6 +1145,8 @@ tools:
       tag-refresh-key-pair: Sleutelpaar vernieuwen
       tag-public-key: Publieke sleutel
       tag-private-key: Privésleutel
+      tag-fingerprint: Vingerafdruk
+      tag-md5-fingerprint: Vingerafdruk (MD5)
     text:
       bits-should-be-256-less-than-bits-less-than-16384-and-be-a-multiple-of-8:
         Het aantal bits moet tussen 256 en 16384 liggen en een veelvoud van 8
@@ -2546,6 +2548,8 @@ tools:
       tag-refresh-key-pair: Sleutelpaar vernieuwen
       tag-public-key: Publieke sleutel
       tag-private-key: Privésleutel
+      tag-fingerprint: Vingerafdruk
+      tag-md5-fingerprint: Vingerafdruk (MD5)
   ed25519-key-pair-generator:
     title: Ed25519 sleutelpaargenerator
     description: Genereer nieuwe willekeurige Ed25519-privé- en openbare sleutels
@@ -2565,6 +2569,8 @@ tools:
       tag-refresh-key-pair: Sleutelpaar vernieuwen
       tag-public-key: Publieke sleutel
       tag-private-key: Privésleutel
+      tag-md5-fingerprint: Vingerafdruk (MD5)
+      tag-fingerprint: Vingerafdruk
   energy-computer:
     title: Energieverbruik- en kostencomputer
     description: Bereken energieverbruik en -kosten
@@ -3144,6 +3150,7 @@ tools:
       title-schema-validation-errors: Schemavalidatiefouten
       label-indent-size-0-compact: "Inspringgrootte (0 = Compact):"
       repair-json: JSON repareren
+      label-auto-height: Automatische hoogte
     externalAccess: Deze tool kan een JSON-schema downloaden van
       https://www.schemastore.org wanneer validatie wordt aangevraagd. Er worden
       geen gegevens extern verzonden.
@@ -3485,6 +3492,17 @@ tools:
       tag-export-as-png: Exporteren als PNG
       tag-export-as-jpg: Exporteren als JPG
       tag-export-as-svg: Exporteren als SVG
+      tag-showing-last-valid-diagram: Het laatst geldige diagram weergeven
+      tag-hint-ctrl-scroll-to-zoom: Houd Ctrl (of ⌘) ingedrukt en scroll om in te zoomen.
+      label-diagram-preview: Diagramvoorbeeld — sleep of gebruik de pijltjes toetsen
+        om te verschuiven, + en - om in te zoomen
+      label-zoom-level-reset: Zoom {zoom}%, klik om terug te zetten naar 100%
+      title-zoom-in: Zoom in
+      title-zoom-out: Uitzoomen
+      title-reset-zoom: Zoom terugzetten naar 100%
+      title-fit-view: Pas het diagram aan om te bekijken
+      title-fullscreen: Volledig scherm
+      title-exit-fullscreen: Verlaat de volledige schermmodus
   mime-converter:
     title: MIME-coderingsconverter
     description: Converteren van/naar MIME Encoded-Word-formaat (e-mailonderwerp)
@@ -4142,6 +4160,11 @@ tools:
       title-country-to-timezones: Land naar tijdzones
       label-country: Land
       title-timezones-to-countries: Tijdzones naar landen
+      title-posix-timezones: Tijdzones POSIX-strings
+      search-posix-timezones: Voer een tijdzone of POSIX-tekenreeks in om te zoeken
+      tag-no-results: Geen resultaten
+      tag-timezone: Tijdzone
+      tag-posix: POSIX-string
   torrent-to-magnet:
     title: Torrent naar Magneet
     description: Converteer een torrentbestand naar een Magnet-url
@@ -4950,7 +4973,7 @@ tools:
       label-source-port: "Bronpoort:"
       label-destination-port: "Bestemmingshaven:"
       label-chain: "Ketting:"
-      label-rule-order: "Regelvolgorde:"
+      label-rule-order: "Invoegpositie (leeg = toevoegen aan het einde):"
       title-generated-iptables-command: Gegenereerde iptables-opdracht
       tag-expression: Uitdrukking
       tag-meaning: Betekenis
@@ -5929,6 +5952,9 @@ tools:
       tag-corners-square-options: Hoeken Vierkante Opties
       tag-small-terminal: Kleine terminal
       title-image: Afbeelding
+      label-qr-code-embeddable-dataurl: "QR-code afbeeldingsgegevens-URL:"
+      link-qr-code-open-embeddable-link: Open insluitbare link
+      label-qr-code-image-viewer: Insluitbare QR-code
   ies-lighting-guidelines:
     title: IES-verlichtingsrichtlijnen
     description: Zoek in de huidige aanbevelingen voor verlichtingssterkte van de
@@ -9868,6 +9894,259 @@ tools:
         random-tool: Willekeurig gereedschap
         tools: Hulpmiddelen
   external-self-hosted-required: Externe, zelf gehoste installatie vereist.
+  markdown-format-converter:
+    title: Formaatomzetter
+    description: Converteer tussen standaard Markdown, Obsidian, Logseq, Slack, Jira
+      en andere formaten.
+    texts:
+      label-source-format: Bronformaat
+      label-target-format: Doelformaat
+      placeholder-input-markdown: Plak of typ hier uw standaard Markdown-, Obsidian- of Logseq-code...
+      label-input-markdown: Markdown-invoer
+      label-converted-output: Omgezette uitvoer
+      label-text: Tekst
+      label-preview: Voorbeeld
+  restic-command-generator:
+    title: Restic Command Generator
+    description: "Genereer restic CLI-opdrachten om een Backrest- of gewone
+      restic-repository te herstellen: een volledige snapshot, slechts enkele
+      bestanden of een doorzoekbare mount."
+    texts:
+      intro: "Generator: hier wordt niets uitgevoerd en niets wat u typt verlaat uw
+        browser. Beschrijf uw repository, selecteer wat u wilt herstellen en
+        kopieer het shell-fragment."
+      title-repository: Opslagplaats
+      label-backend: Backend
+      backend-s3: S3-compatibel (Backblaze B2, MinIO, Wasabi, AWS...)
+      backend-b2: Backblaze B2 (native)
+      backend-local: Lokaal pad of gekoppelde schijf
+      backend-sftp: SFTP
+      backend-rest: restic REST-server
+      backend-rclone: Rclone
+      backend-azure: Azure Blob Storage
+      backend-gs: Google Cloud Storage
+      backend-raw: Overig (URI van de onbewerkte repository)
+      label-local-path: Pad naar de repository
+      label-endpoint: Eindpunt
+      label-bucket: Emmer
+      label-prefix: Pad in de emmer
+      label-region: Regio (optioneel)
+      label-user: Gebruiker
+      label-host: Gastheer
+      label-port: Poort (optioneel)
+      label-path: Pad naar de repository
+      label-url: Server-URL
+      label-remote: Rclone remote en pad
+      label-container: Container
+      label-raw-repository: Repository-URI
+      label-repository-mode: Repository doorgegeven als
+      repository-flag: De -r vlag bij elk commando
+      repository-env: RESTIC_REPOSITORY omgevingsvariabele
+      label-repository-uri: Repository-URI
+      label-password: Repositorywachtwoord
+      password-prompt: Vraag ernaar in de shell (lees -rs, blijft buiten de geschiedenis).
+      password-file: --wachtwoordbestand
+      password-command: --wachtwoord-commando
+      password-placeholder: RESTIC_PASSWORD exporteren met een placeholder
+      password-none: Reeds ingesteld in mijn omgeving
+      label-password-file: Wachtwoordbestand
+      label-password-command: Wachtwoordopdracht
+      label-credentials: Backend-inloggegevens
+      credentials-prompt: Vraag naar het geheim in de schelp.
+      credentials-placeholder: Exporteer ze met plaatsaanduidingen.
+      credentials-none: Reeds ingesteld in mijn omgeving
+      label-account-id: Sleutel-ID / accountnaam
+      hint-secrets: 'Er wordt nooit een geheim in het gegenereerde commando geplaatst:
+        de promptopties lezen ze in je shell in met "read -rs", zodat ze niet in
+        je geschiedenis terechtkomen.'
+      title-operation: Wat wil je doen?
+      operation-restore: herstellen — bestanden vanuit een momentopname terugschrijven
+        naar de schijf
+      operation-dump: dump — één bestand of map streamen vanuit een momentopname
+      operation-mount: mount — bekijk de repository als een bestandssysteem
+      operation-snapshots: snapshots — toon de snapshots van de repository
+      operation-ls: ls — geeft een lijst van de bestanden in een snapshot weer
+      operation-find: find — een bestand lokaliseren in meerdere snapshots
+      operation-diff: diff — vergelijk twee momentopnamen
+      operation-check: controleren — de integriteit van de repository verifiëren
+      operation-stats: statistieken — grootte van een momentopname of van de repository
+      operation-unlock: ontgrendelen — oude sloten verwijderen
+      title-snapshot: Momentopname selectie
+      label-snapshot-id: Momentopname-ID
+      label-subfolder: Alleen deze submap van de momentopname
+      label-plan: Rugleuning plan ID
+      label-instance: Backrest-instantie-ID
+      label-filter-host: Gastheer
+      label-tags: Extra tags
+      placeholder-tag: handmatig
+      label-filter-paths: Paden
+      placeholder-path: /home/me/documents
+      hint-tags: Backrest tagt de snapshots die het maakt met "plan:" en
+        "created-by:", gevolgd door het plan en de instantie-ID's. Tags binnen
+        één --tag worden gecombineerd met een logische AND-bewerking, terwijl
+        herhaalde --tag-vlaggen worden gecombineerd met een logische
+        OR-bewerking. Hierdoor blijven het plan en de instantie in één vlag
+        staan en krijgt elke extra tag een eigen vlag.
+      title-restore-options: Herstelopties
+      label-target: Doelmap
+      label-include: Herstel alleen deze paden of patronen.
+      placeholder-include: /home/me/documents/**/*.pdf
+      label-exclude: Sluit deze paden of patronen uit.
+      placeholder-exclude: "**/node_modules"
+      label-overwrite: Bestaande bestanden overschrijven
+      overwrite-default: restic standaard (altijd)
+      overwrite-always: altijd
+      overwrite-if-changed: als-gewijzigd
+      overwrite-if-newer: als-nieuwer
+      overwrite-never: nooit
+      label-case-insensitive: Patroonherkenning is niet van toepassing op hoofdletters.
+      label-dry-run: Proefloop
+      label-verify: Controleer de herstelde bestanden.
+      label-sparse: Schrijf sparse bestanden
+      label-delete: Verwijder bestanden die ontbreken in de momentopname.
+      title-dump-options: Dump-opties
+      label-dump-path: Bestand of map in de momentopname
+      label-archive: Archiefformaat
+      archive-none: Onbewerkt bestand
+      archive-tar: neemt
+      archive-zip: rits
+      label-output-file: Doorverwijzen naar een lokaal bestand (optioneel)
+      hint-dump: Met dump streamt u een enkel bestand of een enkele map rechtstreeks
+        uit de repository, zodat u geen volledige snapshot hoeft te herstellen
+        om één configuratiebestand terug te krijgen.
+      title-mount-options: Montagemogelijkheden
+      label-mount-point: Bergpunt
+      label-allow-other: Sta andere gebruikers toe om toegang te krijgen tot de mount.
+      title-ls-options: Lijstopties
+      label-ls-directory: Map om weer te geven (optioneel)
+      label-long: Lange lijst
+      label-recursive: Recursief
+      title-find-options: Zoek opties
+      label-find-pattern: Patroon
+      label-restrict-snapshot: Zoek alleen in de geselecteerde momentopname.
+      title-diff-options: Verschillende opties
+      label-diff-snapshot: Vergelijk met momentopname
+      label-metadata: Rapporteer ook wijzigingen in de metadata.
+      title-snapshots-options: Momentopnameopties
+      label-compact: Compacte output
+      title-check-options: Opties controleren
+      label-read-data-subset: Lees de subset van de gegevens
+      label-read-data: Lees en controleer elk pakketbestand.
+      label-check-unused: Meld ongebruikte blobs
+      label-with-cache: Gebruik de bestaande cache.
+      title-stats-options: Statistiekopties
+      label-stats-mode: Telmodus
+      stats-restore-size: restore-size — grootte van een herstel
+      stats-files-by-contents: bestanden op inhoud — unieke bestanden
+      stats-raw-data: ruwe data — grootte vóór deduplicatie
+      stats-blobs-per-file: blobs per bestand
+      label-stats-all: Alle momentopnamen
+      title-unlock-options: Ontgrendel opties
+      label-remove-all: Verwijder alle sloten, inclusief de sloten die in gebruik zijn.
+      title-global-options: Wereldwijde opties
+      label-cache-dir: Cachemap
+      label-limit-download: Downloadlimiet (KiB/s)
+      label-retry-lock: Probeer een vergrendelde repository opnieuw voor
+      label-extra-options: Backend-opties (-o)
+      placeholder-extra-option: s3.connections=4
+      label-extra-arguments: Extra argumenten (worden ongewijzigd toegevoegd)
+      label-no-lock: --geen-vergrendeling
+      label-no-cache: --geen cache
+      label-insecure-tls: --insecure-tls
+      label-json: --json
+      label-quiet: --rustig
+      label-verbose: --verbose
+      title-output: Gegenereerde opdracht
+      label-include-environment: Voeg de omgevingsinstellingen toe.
+      label-multiline: Eén argument per regel
+      button-reset: Terugzetten naar standaardinstellingen
+      warning-history: "Exports die als placeholder zijn ingevuld, blijven in je
+        shellgeschiedenis staan: geef de voorkeur aan de promptopties of wis de
+        geschiedenis achteraf."
+      warning-target: De restore-opdracht herschept het volledige pad van elk bestand
+        in de doeldirectory, waardoor /etc/hosts uiteindelijk in de submap
+        etc/hosts van de doeldirectory terechtkomt.
+      warning-delete: --delete verwijdert de bestanden in de doelmap die niet in de
+        momentopname zijn opgenomen. Probeer het eerst met --dry-run.
+      warning-restic-version: --dry-run, --delete en --overwrite vereisen restic 0.17 of nieuwer.
+      warning-mount: Het mountproces vereist FUSE, maakt de snapshots alleen-lezen en
+        blijft actief totdat je het stopt met Ctrl-C.
+      title-walkthrough: Herstelprocedure
+      hint-walkthrough: De gebruikelijke procedure wanneer alleen de repository
+        overblijft, opgebouwd uit de bovenstaande instellingen.
+      walkthrough-snapshots: Toon de momentopnamen van de repository
+      walkthrough-find: Zoek in welke momentopname het bestand staat dat u nodig hebt.
+      walkthrough-ls: Toon de bestanden van de gekozen momentopname.
+      walkthrough-restore: Herstel alleen de bestanden die u nodig hebt.
+      walkthrough-mount: Of blader door de repository en kopieer de bestanden handmatig.
+      title-backrest: Spiekbriefje voor rugleuningen
+      table-item: Item
+      table-value: Standaardpad of -indeling (Docker-image tussen haakjes)
+      backrest-config: Configuratiebestand met de URI van de repository, het
+        wachtwoord en de omgevingsvariabelen van de backend.
+      backrest-data: Gegevensmap
+      backrest-binary: Restic-binary gedownload door Backrest
+      backrest-plan-tag: Label ter identificatie van het plan
+      backrest-instance-tag: Label dat het exemplaar identificeert
+      hint-backrest: "Een Backrest-repository is een gewone Restic-repository: als de
+        webinterface niet meer beschikbaar is, lees dan de URI en het wachtwoord
+        uit config.json en start deze met de reeds gedownloade Restic-binary."
+  epc-qrcode-generator:
+    title: EPC QR-code generator
+    description: Genereer een QR-code van de European Payments Council (EPC) om een
+      SEPA-creditoverboeking te starten.
+    externalAccess: "null"
+    texts:
+      text-copied-to-clipboard: Gekopieerd naar het klembord
+      label-v1: V1
+      label-v2: V2
+      label-beneficiary-name: "Naam van de begunstigde:"
+      placeholder-beneficiary-name: Naam van de begunstigde
+      label-account-iban: "Rekeningnummer (IBAN):"
+      placeholder-fr76: FR76...
+      label-bic: "BIC:"
+      placeholder-bank-bic-optional: Bank BIC (optioneel)
+      label-amount-eur: "Bedrag (EUR):"
+      label-payment-reference: "Betalingskenmerk:"
+      placeholder-optional: Optioneel
+      label-purpose: "Doel:"
+      label-version: "Versie:"
+      label-foreground-color: "Voorgrondkleur:"
+      label-background-color: "Achtergrondkleur:"
+      label-qr-size: "QR-formaat:"
+      tag-generate-qr: Genereer QR-code
+      tag-download-qrcode: Download QR-code
+      tag-copy-qrcode-text: Kopieer de QR-code
+  url-redirection-checker:
+    title: URL-omleidingscontrole
+    description: Controleer of een URL doorverwijst naar een andere URL.
+    externalAccess: "null"
+    texts:
+      label-get: KRIJGEN
+      label-head: HOOFD
+      label-url: "URL:"
+      placeholder-https-example-com: https://example.com
+      label-method: "Methode:"
+      label-user-agent: "Gebruikersagent:"
+      label-max-hops: "Max Hops:"
+      label-include-body-preview: Inclusief voorbeeldweergave
+      label-preview-bytes: "Voorbeeldbytes:"
+      title-warnings: Waarschuwingen
+      title-summary: Samenvatting
+      label-input-url: "URL-invoer:"
+      label-final-url: "Definitieve URL:"
+      label-hop-count: "Aantal sprongen:"
+      title-redirect-chain: Omleidingsketen
+      tag-inspect-redirect-chain: Inspecteer de omleidingsketen
+      tag-: "-"
+      tag-url: URL
+      tag-status: Status
+      tag-duration: Duur
+      tag-redirect: Omleiding
+      tag-location: Locatie
+      tag-300-hop-status-code: = 300 && hop.status_code
+      tag-headers-body-preview: Kopteksten en voorbeeldtekst
+      tag-truncated: Afgekapt
 about:
   alltools-title: Alle {toolsCount}-hulpmiddelen
   tools:

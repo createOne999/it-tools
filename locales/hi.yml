@@ -876,6 +876,8 @@ tools:
       tag-refresh-key-pair: कुंजी-जोड़ी को रीफ़्रेश करें
       tag-public-key: सार्वजनिक कुंजी
       tag-private-key: निजी चाबी
+      tag-fingerprint: अंगुली की छाप
+      tag-md5-fingerprint: फिंगरप्रिंट (एमडी5)
     text:
       bits-should-be-256-less-than-bits-less-than-16384-and-be-a-multiple-of-8:
         बिट्स की संख्या 256 <= बिट्स <= 16384 होनी चाहिए और यह 8 का गुणक होना
@@ -2090,6 +2092,8 @@ tools:
       tag-refresh-key-pair: कुंजी-जोड़ी को रीफ़्रेश करें
       tag-public-key: सार्वजनिक कुंजी
       tag-private-key: निजी चाबी
+      tag-fingerprint: अंगुली की छाप
+      tag-md5-fingerprint: फिंगरप्रिंट (एमडी5)
   ed25519-key-pair-generator:
     title: Ed25519 कुंजी जोड़ी जनरेटर
     description: नए रैंडम Ed25519 प्राइवेट और पब्लिक कीज़ जनरेट करें (पासफ़्रेज़ के
@@ -2109,6 +2113,8 @@ tools:
       tag-refresh-key-pair: कुंजी-जोड़ी को रीफ़्रेश करें
       tag-public-key: सार्वजनिक कुंजी
       tag-private-key: निजी चाबी
+      tag-md5-fingerprint: फिंगरप्रिंट (एमडी5)
+      tag-fingerprint: अंगुली की छाप
   energy-computer:
     title: ऊर्जा खपत और व्यय कंप्यूटर
     description: ऊर्जा खपत और व्यय की गणना करें
@@ -2686,6 +2692,7 @@ tools:
       title-schema-validation-errors: स्कीमा सत्यापन त्रुटियाँ
       label-indent-size-0-compact: "इंडेंट आकार (0 = कॉम्पैक्ट):"
       repair-json: JSON की मरम्मत करें
+      label-auto-height: ऑटो ऊंचाई
     externalAccess: सत्यापन का अनुरोध किए जाने पर यह टूल https://www.schemastore.org
       से JSON स्कीमा डाउनलोड कर सकता है। कोई भी डेटा बाहरी रूप से नहीं भेजा जाता
       है।
@@ -3026,6 +3033,17 @@ tools:
       tag-export-as-png: PNG के रूप में निर्यात करें
       tag-export-as-jpg: जेपीजी के रूप में निर्यात करें
       tag-export-as-svg: SVG के रूप में निर्यात करें
+      tag-showing-last-valid-diagram: अंतिम वैध आरेख प्रदर्शित किया जा रहा है
+      tag-hint-ctrl-scroll-to-zoom: ज़ूम करने के लिए Ctrl (या ⌘) दबाकर स्क्रॉल करें
+      label-diagram-preview: आरेख का पूर्वावलोकन — पैन करने के लिए ड्रैग करें या तीर
+        कुंजियों का उपयोग करें, ज़ूम करने के लिए + और - का उपयोग करें
+      label-zoom-level-reset: ज़ूम {zoom}%, 100% पर रीसेट करने के लिए क्लिक करें
+      title-zoom-in: ज़ूम इन
+      title-zoom-out: ज़ूम आउट
+      title-reset-zoom: ज़ूम को 100% पर रीसेट करें
+      title-fit-view: देखने के लिए आरेख को फिट करें
+      title-fullscreen: पूर्ण स्क्रीन
+      title-exit-fullscreen: पूर्ण स्क्रीन से बाहर निकलें
   mime-converter:
     title: एमआईएम एन्कोडिंग कनवर्टर
     description: ईमेल विषय को MIME एन्कोडेड-वर्ड प्रारूप में रूपांतरित करें/करें
@@ -3680,6 +3698,11 @@ tools:
       title-country-to-timezones: देश से समय क्षेत्र
       label-country: देश
       title-timezones-to-countries: देशों के समयक्षेत्र
+      title-posix-timezones: टाइमज़ोन POSIX स्ट्रिंग्स
+      search-posix-timezones: खोज करने के लिए टाइमज़ोन या POSIX स्ट्रिंग दर्ज करें
+      tag-no-results: कोई परिणाम नहीं
+      tag-timezone: समय क्षेत्र
+      tag-posix: पॉसिक्स स्ट्रिंग
   torrent-to-magnet:
     title: टोरेंट से मैग्नेट तक
     description: टोरेंट फ़ाइल को मैग्नेट यूआरएल में बदलें
@@ -4480,7 +4503,7 @@ tools:
       label-source-port: "स्रोत पोर्ट:"
       label-destination-port: "गंतव्य बंदरगाह:"
       label-chain: "जंजीर:"
-      label-rule-order: "नियम क्रम:"
+      label-rule-order: "सम्मिलन स्थान (खाली = अंत में जोड़ें):"
       title-generated-iptables-command: iptables कमांड जनरेट किया गया
       tag-expression: अभिव्यक्ति
       tag-meaning: अर्थ
@@ -5672,6 +5695,9 @@ tools:
       tag-corners-square-options: कॉर्नर स्क्वायर विकल्प
       tag-small-terminal: छोटा टर्मिनल
       title-image: छवि
+      label-qr-code-embeddable-dataurl: "क्यूआरसीोड छवि डेटा-यूआरएल:"
+      link-qr-code-open-embeddable-link: एम्बेड करने योग्य लिंक खोलें
+      label-qr-code-image-viewer: एम्बेड करने योग्य क्यूआरकोड
   basic-auth-generator:
     title: बुनियादी प्रमाणीकरण जनरेटर
     description: उपयोगकर्ता नाम और पासवर्ड से बेस64 बेसिक ऑथेंटिकेशन हेडर जनरेट करें।
@@ -9940,6 +9966,261 @@ tools:
         random-tool: यादृच्छिक उपकरण
         tools: औजार
   external-self-hosted-required: बाह्य स्व-होस्टेड आवश्यक है
+  markdown-format-converter:
+    title: प्रारूप कनवर्टर
+    description: स्टैंडर्ड मार्कडाउन, ऑब्सीडियन, लॉगसेक, स्लैक, जीरा और अन्य फॉर्मेट
+      के बीच रूपांतरण करें।
+    texts:
+      label-source-format: स्रोत प्रारूप
+      label-target-format: लक्ष्य प्रारूप
+      placeholder-input-markdown: यहां अपना स्टैंडर्ड, ऑब्सीडियन या लॉगसेक मार्कडाउन
+        पेस्ट करें या टाइप करें...
+      label-input-markdown: इनपुट मार्कडाउन
+      label-converted-output: परिवर्तित आउटपुट
+      label-text: मूलपाठ
+      label-preview: पूर्व दर्शन
+  restic-command-generator:
+    title: रेस्टिक कमांड जनरेटर
+    description: "बैकरेस्ट या सामान्य रेस्टिक रिपॉजिटरी को पुनर्स्थापित करने के लिए
+      रेस्टिक CLI कमांड जेनरेट करें: एक संपूर्ण स्नैपशॉट, केवल कुछ फाइलें, या एक
+      ब्राउज़ करने योग्य माउंट।"
+    texts:
+      intro: "यह केवल जनरेटर है: यहाँ कुछ भी नहीं चलता और आपके द्वारा टाइप किया गया
+        कुछ भी आपके ब्राउज़र से बाहर नहीं जाता। अपने रिपॉजिटरी का विवरण दें, जो
+        कुछ भी आपको पुनर्प्राप्त करने की आवश्यकता है उसे चुनें और शेल स्निपेट को
+        कॉपी करें।"
+      title-repository: कोष
+      label-backend: बैकएंड
+      backend-s3: S3 संगत (बैकब्लेज़ B2, MiniIO, वसाबी, AWS...)
+      backend-b2: बैकब्लेज़ बी2 (नेटिव)
+      backend-local: स्थानीय पथ या माउंटेड डिस्क
+      backend-sftp: एसएफटीपी
+      backend-rest: restic REST सर्वर
+      backend-rclone: आरक्लोन
+      backend-azure: एज़्योर ब्लोब स्टोरेज
+      backend-gs: गूगल क्लाउड स्टोरेज
+      backend-raw: अन्य (कच्चे रिपॉजिटरी यूआरआई)
+      label-local-path: रिपॉजिटरी पथ
+      label-endpoint: endpoint
+      label-bucket: बाल्टी
+      label-prefix: बाल्टी में पथ
+      label-region: क्षेत्र (वैकल्पिक)
+      label-user: उपयोगकर्ता
+      label-host: मेज़बान
+      label-port: पोर्ट (वैकल्पिक)
+      label-path: रिपॉजिटरी पथ
+      label-url: सर्वर यूआरएल
+      label-remote: Rclone रिमोट और पथ
+      label-container: पात्र
+      label-raw-repository: रिपॉजिटरी यूआरआई
+      label-repository-mode: रिपॉजिटरी को इस प्रकार पास किया गया
+      repository-flag: प्रत्येक कमांड पर -r फ़्लैग
+      repository-env: RESTIC_REPOSITORY पर्यावरण चर
+      label-repository-uri: रिपॉजिटरी यूआरआई
+      label-password: रिपॉजिटरी पासवर्ड
+      password-prompt: शेल में इसके लिए प्रॉम्प्ट करें (read -rs, यह इतिहास से बाहर रहता है)
+      password-file: --पासवर्ड-फ़ाइल
+      password-command: --पासवर्ड-कमांड
+      password-placeholder: प्लेसहोल्डर के साथ RESTIC_PASSWORD निर्यात करें
+      password-none: मेरे वातावरण में पहले से ही सेट है
+      label-password-file: पासवर्ड फ़ाइल
+      label-password-command: पासवर्ड कमांड
+      label-credentials: बैकएंड क्रेडेंशियल
+      credentials-prompt: खोल में छिपे रहस्य के लिए संकेत
+      credentials-placeholder: उन्हें प्लेसहोल्डर्स के साथ निर्यात करें
+      credentials-none: मेरे वातावरण में पहले से ही सेट है
+      label-account-id: कुंजी आईडी / खाता नाम
+      hint-secrets: 'जनरेट किए गए कमांड में कभी भी कोई गुप्त जानकारी नहीं डाली जाती
+        है: प्रॉम्प्ट विकल्प "read -rs" कमांड का उपयोग करके उन्हें आपके शेल में
+        पढ़ लेते हैं, इसलिए वे आपके इतिहास से बाहर रहते हैं।'
+      title-operation: आप क्या करना चाहते हैं?
+      operation-restore: पुनर्स्थापित करें — स्नैपशॉट से फ़ाइलों को वापस डिस्क पर लिखें
+      operation-dump: डंप — स्नैपशॉट से एक फ़ाइल या फ़ोल्डर को स्ट्रीम करें
+      operation-mount: माउंट — रिपॉजिटरी को फ़ाइल सिस्टम के रूप में ब्राउज़ करें
+      operation-snapshots: स्नैपशॉट — रिपॉजिटरी के स्नैपशॉट की सूची
+      operation-ls: ls — स्नैपशॉट के अंदर मौजूद फ़ाइलों की सूची दिखाता है
+      operation-find: खोजें — स्नैपशॉट में फ़ाइल का पता लगाएं
+      operation-diff: अंतर — दो स्नैपशॉट की तुलना करें
+      operation-check: जाँच करें — रिपॉजिटरी की अखंडता को सत्यापित करें
+      operation-stats: सांख्यिकी — स्नैपशॉट या रिपॉजिटरी का आकार
+      operation-unlock: ताला खोलें — पुराने ताले हटाएँ
+      title-snapshot: स्नैपशॉट चयन
+      label-snapshot-id: स्नैपशॉट आईडी
+      label-subfolder: स्नैपशॉट का केवल यही सबफ़ोल्डर
+      label-plan: बैकरेस्ट प्लान आईडी
+      label-instance: बैकरेस्ट इंस्टेंस आईडी
+      label-filter-host: मेज़बान
+      label-tags: अतिरिक्त टैग
+      placeholder-tag: नियमावली
+      label-filter-paths: के रास्ते
+      placeholder-path: /होम/मी/डॉक्यूमेंट्स
+      hint-tags: बैकरेस्ट द्वारा बनाए गए स्नैपशॉट को "plan:" और "created-by:" टैग के
+        साथ टैग किया जाता है, जिसके बाद प्लान और इंस्टेंस आईडी आते हैं। एक ही
+        --tag फ्लैग के अंदर मौजूद टैग्स को AND द्वारा जोड़ा जाता है, जबकि दोहराए
+        गए --tag फ्लैग को OR द्वारा जोड़ा जाता है, इसलिए प्लान और इंस्टेंस एक ही
+        फ्लैग में रहते हैं और प्रत्येक अतिरिक्त टैग को अपना अलग फ्लैग मिलता है।
+      title-restore-options: विकल्प पुनर्स्थापित करें
+      label-target: लक्ष्य निर्देशिका
+      label-include: केवल इन्हीं पथों या पैटर्न को पुनर्स्थापित करें
+      placeholder-include: /home/me/documents/**/*.pdf
+      label-exclude: इन पथों या पैटर्न को बाहर रखें
+      placeholder-exclude: "**/नोड_मॉड्यूल्स"
+      label-overwrite: मौजूदा फ़ाइलों को ओवरराइट करें
+      overwrite-default: restic default (हमेशा)
+      overwrite-always: हमेशा
+      overwrite-if-changed: यदि-परिवर्तित
+      overwrite-if-newer: यदि-नया
+      overwrite-never: कभी नहीं
+      label-case-insensitive: केस असंवेदनशील पैटर्न
+      label-dry-run: पूर्वाभ्यास
+      label-verify: पुनर्स्थापित फ़ाइलों का सत्यापन करें
+      label-sparse: विरल फ़ाइलें लिखें
+      label-delete: स्नैपशॉट से अनुपस्थित फ़ाइलों को हटाएँ
+      title-dump-options: डंप विकल्प
+      label-dump-path: स्नैपशॉट के अंदर फ़ाइल या फ़ोल्डर
+      label-archive: संग्रह प्रारूप
+      archive-none: अधूरी फ़ाइल
+      archive-tar: लेता है
+      archive-zip: ज़िप
+      label-output-file: स्थानीय फ़ाइल पर रीडायरेक्ट करें (वैकल्पिक)
+      hint-dump: डंप रिपॉजिटरी से सीधे एक फ़ाइल या फ़ोल्डर को स्ट्रीम करता है, इसलिए
+        आपको एक कॉन्फ़िगरेशन फ़ाइल वापस पाने के लिए पूरे स्नैपशॉट को
+        पुनर्स्थापित करने की आवश्यकता नहीं है।
+      title-mount-options: माउंट विकल्प
+      label-mount-point: माउंट पॉइंट
+      label-allow-other: अन्य उपयोगकर्ताओं को माउंट तक पहुँचने की अनुमति दें
+      title-ls-options: विकल्पों की सूची
+      label-ls-directory: सूची बनाने के लिए निर्देशिका (वैकल्पिक)
+      label-long: लंबी सूची
+      label-recursive: पुनरावर्ती
+      title-find-options: विकल्प खोजें
+      label-find-pattern: नमूना
+      label-restrict-snapshot: केवल चयनित स्नैपशॉट में खोजें
+      title-diff-options: विभिन्न विकल्प
+      label-diff-snapshot: स्नैपशॉट से तुलना करें
+      label-metadata: रिपोर्ट के मेटाडेटा में भी बदलाव होते हैं।
+      title-snapshots-options: स्नैपशॉट विकल्प
+      label-compact: कॉम्पैक्ट आउटपुट
+      title-check-options: विकल्पों की जाँच करें
+      label-read-data-subset: डेटा उपसमूह पढ़ें
+      label-read-data: प्रत्येक पैक फ़ाइल को पढ़ें और सत्यापित करें
+      label-check-unused: अप्रयुक्त ब्लॉब्स की रिपोर्ट करें
+      label-with-cache: मौजूदा कैश का उपयोग करें
+      title-stats-options: सांख्यिकी विकल्प
+      label-stats-mode: गिनती मोड
+      stats-restore-size: रिस्टोर-साइज़ — रिस्टोर का आकार
+      stats-files-by-contents: विषयवस्तु के आधार पर फ़ाइलें — अद्वितीय फ़ाइलें
+      stats-raw-data: रॉ डेटा — डुप्लिकेशन हटाने से पहले का आकार
+      stats-blobs-per-file: प्रति फ़ाइल ब्लब्स
+      label-stats-all: सभी स्नैपशॉट
+      title-unlock-options: अनलॉक विकल्प
+      label-remove-all: उपयोग में आने वाले तालों सहित सभी तालों को हटा दें।
+      title-global-options: वैश्विक विकल्प
+      label-cache-dir: कैश निर्देशिका
+      label-limit-download: डाउनलोड सीमा (KiB/s)
+      label-retry-lock: लॉक किए गए रिपॉजिटरी के लिए पुनः प्रयास करें
+      label-extra-options: बैकएंड विकल्प (-o)
+      placeholder-extra-option: s3.connections=4
+      label-extra-arguments: अतिरिक्त तर्क (यथावत संलग्न)
+      label-no-lock: --नो-लॉक
+      label-no-cache: --नो-कैश
+      label-insecure-tls: --असुरक्षित-टीएलएस
+      label-json: --जेसन
+      label-quiet: --शांत
+      label-verbose: --विस्तृत
+      title-output: उत्पन्न कमांड
+      label-include-environment: पर्यावरण सेटअप को शामिल करें
+      label-multiline: प्रति पंक्ति एक तर्क
+      button-reset: डिफ़ॉल्ट पर पुनः सेट करें
+      warning-history: "प्लेसहोल्डर एक्सपोर्ट्स एक बार भर जाने के बाद आपकी शेल
+        हिस्ट्री में बने रहते हैं: प्रॉम्प्ट विकल्पों को प्राथमिकता दें, या बाद
+        में हिस्ट्री को साफ़ कर दें।"
+      warning-target: रिस्टोर कमांड टारगेट डायरेक्टरी के अंतर्गत प्रत्येक फ़ाइल का
+        पूरा पाथ फिर से बनाता है, इसलिए /etc/hosts फ़ाइल टारगेट के etc/hosts
+        सबफ़ोल्डर में आ जाती है।
+      warning-delete: --delete कमांड टारगेट डायरेक्टरी की उन फाइलों को हटा देता है जो
+        स्नैपशॉट में शामिल नहीं हैं। पहले इसे --dry-run कमांड के साथ इस्तेमाल
+        करके देखें।
+      warning-restic-version: --dry-run, --delete और --overwrite के लिए restic 0.17 या
+        उससे नया संस्करण आवश्यक है।
+      warning-mount: माउंट कमांड को FUSE की आवश्यकता होती है, यह स्नैपशॉट को केवल
+        पढ़ने योग्य मोड में रखता है, और Ctrl-C से रोकने तक चलता रहता है।
+      title-walkthrough: रिकवरी वॉकथ्रू
+      hint-walkthrough: जब केवल रिपॉजिटरी ही शेष रह जाती है, तो ऊपर दी गई सेटिंग्स से
+        निर्मित होने वाली सामान्य प्रक्रिया यही होती है।
+      walkthrough-snapshots: रिपॉजिटरी के स्नैपशॉट की सूची बनाएं
+      walkthrough-find: वह स्नैपशॉट ढूंढें जिसमें आपको आवश्यक फ़ाइल मौजूद है।
+      walkthrough-ls: चयनित स्नैपशॉट की फ़ाइलों की सूची बनाएं
+      walkthrough-restore: केवल वही फ़ाइलें पुनर्स्थापित करें जिनकी आपको आवश्यकता है
+      walkthrough-mount: या फिर रिपॉजिटरी ब्राउज़ करें और फ़ाइलों को मैन्युअल रूप से कॉपी करें।
+      title-backrest: बैकरेस्ट चीट शीट
+      table-item: वस्तु
+      table-value: डिफ़ॉल्ट पथ या प्रारूप (कोष्ठकों के बीच डॉकर छवि)
+      backrest-config: कॉन्फ़िगरेशन फ़ाइल, जिसमें रिपॉज़िटरी यूआरआई, उसका पासवर्ड और
+        बैकएंड पर्यावरण चर शामिल हैं।
+      backrest-data: डेटा निर्देशिका
+      backrest-binary: बैकरेस्ट द्वारा डाउनलोड की गई रेस्टिक बाइनरी
+      backrest-plan-tag: योजना की पहचान करने वाला टैग
+      backrest-instance-tag: उदाहरण की पहचान करने वाला टैग
+      hint-backrest: "बैकरेस्ट रिपॉजिटरी एक साधारण रेस्टिक रिपॉजिटरी है: यदि वेब यूआई
+        मौजूद नहीं है, तो config.json से यूआरआई और पासवर्ड पढ़ें और पहले से
+        डाउनलोड किए गए बैकरेस्ट बाइनरी के साथ इसे चलाएं।"
+  epc-qrcode-generator:
+    title: ईपीसी क्यूआरकोड जनरेटर
+    description: SEPA क्रेडिट ट्रांसफर शुरू करने के लिए यूरोपियन पेमेंट्स काउंसिल
+      (EPC) का QR कोड जनरेट करें
+    externalAccess: व्यर्थ
+    texts:
+      text-copied-to-clipboard: क्लिपबोर्ड पर कॉपी हो गया
+      label-v1: वी1
+      label-v2: वी 2
+      label-beneficiary-name: "लाभार्थी का नाम:"
+      placeholder-beneficiary-name: लाभार्थी का नाम
+      label-account-iban: "खाता (IBAN):"
+      placeholder-fr76: एफआर76...
+      label-bic: "बीआईसी:"
+      placeholder-bank-bic-optional: बैंक बीआईसी (वैकल्पिक)
+      label-amount-eur: "राशि (यूआर):"
+      label-payment-reference: "भुगतान संदर्भ:"
+      placeholder-optional: वैकल्पिक
+      label-purpose: "उद्देश्य:"
+      label-version: "संस्करण:"
+      label-foreground-color: "अग्रभूमि का रंग:"
+      label-background-color: "पृष्ठभूमि का रंग:"
+      label-qr-size: "क्यूआर आकार:"
+      tag-generate-qr: क्यूआर जनरेट करें
+      tag-download-qrcode: क्यूआरकोड डाउनलोड करें
+      tag-copy-qrcode-text: क्यूआर कोड का टेक्स्ट कॉपी करें
+  url-redirection-checker:
+    title: यूआरएल रीडायरेक्शन चेकर
+    description: जांचें कि क्या कोई यूआरएल किसी दूसरे यूआरएल पर रीडायरेक्ट करता है।
+    externalAccess: व्यर्थ
+    texts:
+      label-get: पाना
+      label-head: सिर
+      label-url: "यूआरएल:"
+      placeholder-https-example-com: https://example.com
+      label-method: "तरीका:"
+      label-user-agent: "उपयोगकर्ता एजेंट:"
+      label-max-hops: "अधिकतम हॉप्स:"
+      label-include-body-preview: बॉडी प्रीव्यू शामिल करें
+      label-preview-bytes: "पूर्वावलोकन बाइट्स:"
+      title-warnings: चेतावनी
+      title-summary: सारांश
+      label-input-url: "इनपुट यूआरएल:"
+      label-final-url: "अंतिम यूआरएल:"
+      label-hop-count: "हॉप काउंट:"
+      title-redirect-chain: पुनर्निर्देशन श्रृंखला
+      tag-inspect-redirect-chain: रीडायरेक्ट चेन का निरीक्षण करें
+      tag-: "-"
+      tag-url: यूआरएल
+      tag-status: स्थिति
+      tag-duration: अवधि
+      tag-redirect: पुनर्निर्देशन
+      tag-location: जगह
+      tag-300-hop-status-code: = 300 && hop.status_code
+      tag-headers-body-preview: शीर्षक और मुख्य भाग का पूर्वावलोकन
+      tag-truncated: छंटनी की गई
 collapsibleToolMenu:
   text:
     expanding: विस्तार हो रहा है...

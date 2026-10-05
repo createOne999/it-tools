@@ -2,6 +2,7 @@
 import { RouterView, useRoute } from 'vue-router';
 import { NGlobalStyle, NMessageProvider, NNotificationProvider, darkTheme } from 'naive-ui';
 import { darkThemeOverrides, lightThemeOverrides } from './themes';
+import BaseLayout from './layouts/base.layout.vue';
 import { layouts } from './layouts';
 import { useStyleStore } from './stores/style.store';
 import { useAppTheme } from './ui/theme/themes';
@@ -51,9 +52,13 @@ watch(locale, (value) => {
     <NMessageProvider placement="bottom">
       <NNotificationProvider placement="bottom-right">
         <div class="app-root">
-          <component :is="layout">
-            <RouterView />
-          </component>
+          <!-- Wraps the switch: inside it, this is to prevent moving between a plain and a tool route
+               tearing down down the sider and remounted its ~460 menu items. -->
+          <BaseLayout>
+            <component :is="layout">
+              <RouterView />
+            </component>
+          </BaseLayout>
         </div>
       </NNotificationProvider>
     </NMessageProvider>
