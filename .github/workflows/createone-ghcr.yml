@@ -33,6 +33,7 @@ jobs:
             *) echo "::error::'$tag' is not a version tag (v*)"; exit 1 ;;
           esac
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "owner=${GITHUB_REPOSITORY_OWNER,,}" >> "$GITHUB_OUTPUT"
 
       - uses: actions/checkout@v7.0.0
         with:
@@ -53,5 +54,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/it-tools:latest
-            ghcr.io/${{ github.repository_owner }}/it-tools:${{ steps.version.outputs.tag }}
+            ghcr.io/${{ steps.version.outputs.owner }}/it-tools:latest
+            ghcr.io/${{ steps.version.outputs.owner }}/it-tools:${{ steps.version.outputs.tag }}
